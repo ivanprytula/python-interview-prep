@@ -8,3 +8,5 @@ nikola
 cache
 .doit.db
 output
+
+.env
