@@ -8,3 +8,4 @@
 .. type: text
 
 Write your page here.
+Hello world
