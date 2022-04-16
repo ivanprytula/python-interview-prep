@@ -1,4 +1,10 @@
 .idea
 .vscode
 
-__pycache__/
+__pycache__
+
+# SSG-specific
+nikola
+cache
+.doit.db
+output

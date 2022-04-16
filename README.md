@@ -1,3 +1,4 @@
 # Mastering Python
 
-## [TOC]
+## Code base for website made with Pelican SSG (static-site generator)
+
