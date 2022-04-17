@@ -6,31 +6,35 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://localhost.com/archive.html</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
+  <loc>https://localhost.com/</loc>
+  <lastmod>2022-04-17T13:50:00Z</lastmod>
  </url>
  <url>
-  <loc>https://localhost.com/blog/</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
+  <loc>https://localhost.com/about/</loc>
+  <lastmod>2022-04-17T12:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://localhost.com/archive.html</loc>
+  <lastmod>2022-04-17T13:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/categories/</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
+  <lastmod>2022-04-17T12:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/galleries/</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
+  <lastmod>2022-04-17T12:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://localhost.com/interview-prep/</loc>
+  <lastmod>2022-04-17T13:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://localhost.com/links-lake/</loc>
+  <lastmod>2022-04-17T13:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/listings/</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
- </url>
- <url>
-  <loc>https://localhost.com/pages/hello-ssg-nikola/</loc>
-  <lastmod>2022-04-16T13:31:00Z</lastmod>
- </url>
- <url>
-  <loc>https://localhost.com/pages/markdown-sample/</loc>
-  <lastmod>2022-04-16T13:36:00Z</lastmod>
+  <lastmod>2022-04-17T12:45:00Z</lastmod>
  </url>
 </urlset>
