@@ -142,9 +142,10 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        ("/interview-prep", "Interview prep"),
+        ("/links-lake", "Lake of links"),
+        ("/about", "About"),
+        ("/todo", "TODO"),
     ),
 }
 
@@ -235,17 +236,12 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
-POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.html", "posts", "post.tmpl"),
-)
+POSTS = ()
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
 )
 
 
@@ -323,7 +319,7 @@ COMPILERS = {
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ['.php'],
+    # "php": ['.php'],
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
@@ -972,7 +968,7 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
+LICENSE = "MIT"
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
 # LICENSE = """
@@ -1012,9 +1008,9 @@ CONTENT_FOOTER_FORMATS = {
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
-RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
-RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
-RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
+# RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
+# RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
+# RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
@@ -1172,7 +1168,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # SHOW_SOURCELINK = True
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
-# COPY_SOURCES = True
+COPY_SOURCES = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -1180,7 +1176,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
-# GENERATE_RSS = True
+GENERATE_RSS = False
 
 # By default, Nikola does not generates Atom files for indexes and links to
 # them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.
@@ -1352,9 +1348,9 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 
 # Special settings to disable only parts of the indexes plugin.
 # Use with care.
-# DISABLE_INDEXES = False
-# DISABLE_MAIN_ATOM_FEED = False
-# DISABLE_MAIN_RSS_FEED = False
+DISABLE_INDEXES = True
+DISABLE_MAIN_ATOM_FEED = True
+DISABLE_MAIN_RSS_FEED = True
 
 # Add the absolute paths to directories containing plugins to use them.
 # For example, the `plugins` directory of your clone of the Nikola plugins
