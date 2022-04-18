@@ -6,7 +6,7 @@ __pycache__
 # SSG-specific
 nikola
 cache
-**/.doit.db.db
+/snake_path/.doit.db.db
 output
 
 .env
