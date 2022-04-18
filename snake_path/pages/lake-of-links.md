@@ -1,6 +1,6 @@
 <!--
-.. title: Lake of links
-.. slug: links-lake
+.. title: Lake of Links
+.. slug: lake-of-links
 .. date: 2022-04-17 16:16:05 UTC+03:00
 .. description: 
 .. type: text
