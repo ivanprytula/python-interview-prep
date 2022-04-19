@@ -8,9 +8,15 @@
 
 **Acquisition & refreshment of knowledge based on:**
 
-A. Interview questions/answers _[[Qs&As](#section2)]_  
-B. Exercises/idioms/snippets/"easter eggs"  _[[Listing](#section3)]_  
-C. Quizzes/games  _[[Workbook](#section4)]_  
+<details>
+    <summary id="toc">[TOC]</summary>
+    <ol>
+        <li>Interview questions/answers <a href="#section-interview-questions"><em>[Qs&As]</em></a></li>
+        <li>Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a></li>
+        <li>Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a></li>
+        <li>... <a href="#"><em>[...TODO...]</em></a></li>
+    </ol>
+</details>
 
 ---
 
@@ -18,7 +24,7 @@ C. Quizzes/games  _[[Workbook](#section4)]_
 
 # A. Interview questions/answers
 
-<div id="section2"></div>
+<div id="section-interview-questions"><a href="#">[Return Up]</a></div>
 
 ## A.1 Language Core
 
@@ -27,41 +33,49 @@ C. Quizzes/games  _[[Workbook](#section4)]_
 [Ground rules glossary: READ IT NOW, BRO!](https://docs.python.org/3/glossary.html)
 
 #### Q: What is Python? Name some characteristics of Python?
+
 1. Python (CPython) is an interpreted language (like PHP, Ruby). That means that, unlike languages like C and its
- variants, Python does not need to be compiled before it is run (well, some compilation happens)  
+   variants, Python does not need to be compiled before it is run (well, some compilation happens)
 2. Ease of use and ease of refactoring, thanks to the flexibility of Python’s syntax, which makes it especially useful
- for rapid prototyping.  
+   for rapid prototyping.
 3. Python is dynamically-typed and strongly-typed:
-    - flexibility - means that you don't need to state the types of variables when you declare them. `x = 111` and then `x=" I'm a string"` without error;
+    - flexibility - means that you don't need to state the types of variables when you declare them. `x = 111` and
+      then `x=" I'm a string"` without error;
     - avoiding pesky implicit-type-conversion - you can't perform operations inappropriate to the type of the object.
-       e.g. `>>> 'x' + 3` will raise `TypeError`. [details](https://opensource.com/article/20/5/duck-typing-python)  
-4. More compact code, thanks again to Python’s syntax, along with a wealth of functionally-rich Python libraries (distributed freely with most Python language implementations).
+      e.g. `>>> 'x' + 3` will raise `TypeError`. [details](https://opensource.com/article/20/5/duck-typing-python)
+4. More compact code, thanks again to Python’s syntax, along with a wealth of functionally-rich Python libraries (
+   distributed freely with most Python language implementations).
    Python is well suited to object orientated programming in that it allows the definition of classes along with
    composition and inheritance. Python does not have access specifiers (like C++'s public, private), the justification
-   for this point is given as "we are all adults here". In Python, functions are first-class objects. This means that they can be assigned to variables, returned from other
-   functions and passed into functions. Classes are also first-class objects  
-5. Python does not support pointers  
+   for this point is given as "we are all adults here". In Python, functions are first-class objects. This means that
+   they can be assigned to variables, returned from other
+   functions and passed into functions. Classes are also first-class objects
+5. Python does not support pointers
 6. Writing Python code is quick but running it is often slower than compiled languages. Fortunately, Python allows the
    inclusion of C based extensions so bottlenecks can be optimised away and often are. The `numpy` package is a good
-   example of this, it's really quite quick because a lot of the number crunching it does isn't actually done by Python  
+   example of this, it's really quite quick because a lot of the number crunching it does isn't actually done by Python
 7. Python finds use in many spheres - web applications, automation, scientific modeling, big data applications and many
    more. It's also often used as "glue" code to get other languages and components to play nice. It’s free and open
-   source! Need we say more?  
+   source! Need we say more?
 
 #### Q:  What are some drawbacks of the Python language?
-The two most common valid answers to this question (by no means intended as an exhaustive list) are:  
+
+The two most common valid answers to this question (by no means intended as an exhaustive list) are:
+
 1. **Global Interpreter Lock (GIL)**. CPython (the most common Python implementation) is not fully thread safe. In order
-  to support multithreading Python programs, CPython provides a global lock that must be held by the current thread
-  before it can safely access Python objects. As a result, no matter how many threads or processors are present, only
-  one thread is ever being executed at any given time. In comparison, it is worth noting that the PyPy implementation
-  provides a stackless mode that supports micro-threads for massive concurrency.  
-2. **Execution speed**. Python can be slower than compiled languages since it is interpreted.  
+   to support multithreading Python programs, CPython provides a global lock that must be held by the current thread
+   before it can safely access Python objects. As a result, no matter how many threads or processors are present, only
+   one thread is ever being executed at any given time. In comparison, it is worth noting that the PyPy implementation
+   provides a stackless mode that supports micro-threads for massive concurrency.
+2. **Execution speed**. Python can be slower than compiled languages since it is interpreted.
 
 #### Q: Is Python interpreted or compiled?
-As noted in _[Why Are There So Many Pythons?](https://www.toptal.com/python/why-are-there-so-many-pythons)_, this is, frankly, a bit of a trick question in that it is malformed.
+
+As noted in _[Why Are There So Many Pythons?](https://www.toptal.com/python/why-are-there-so-many-pythons)_, this is,
+frankly, a bit of a trick question in that it is malformed.
 Python itself is nothing more than an interface definition (as is true with any language specification) of which there
 are multiple implementations. Accordingly, whether “Python” is interpreted or compiled does not apply
-to the Python language itself; rather, it applies to each specific implementation of the Python specification.  
+to the Python language itself; rather, it applies to each specific implementation of the Python specification.
 
 Further complicating the answer to this question is the fact that, in the case of CPython, the answer really is “sort
 of both”. Specifically, with CPython, code is first ‘compiled’ and then interpreted. More precisely, it is not
@@ -70,137 +84,151 @@ _portable_ and _secure_. The bytecode is then interpreted in the case of CPython
 optimized machine code at runtime in the case of [PyPy](https://www.pypy.org/)).
 
 #### Q: What does “Python is an interpreted language” mean?
+
 In Python, the source is compiled into a much simpler form called _bytecode_. These are instructions similar in spirit
 to CPU instructions. But instead of being executed by the CPU of the target OS, they are executed by a Python Virtual
 Machine (PVM)/interpreter. The built-in `dis` module is the disassembler that can show you bytecode (_*.pyc_ files).
 The PVM executes Python programs that have been compiled from the Python language into a bytecode representation. The
 PVM assumes that any bytecode being executed is "well-formed" with regard to a number of implicit constraints.
-[official docs](https://www.python.org/dev/peps/pep-0330/)  
+[official docs](https://www.python.org/dev/peps/pep-0330/)
 
 ![Compiler_vs_Interpreter_comparison](/images/Compiler_vs_Interpreter_comparison.png)
 
 #### Q: What are the built-in data types that Python provides? Which of them are immutable/mutable?
 
-_Immutable_ built-in datatypes/structures  
-- `int`, `float`, `bool`, `str`, `bytes`  
+_Immutable_ built-in datatypes/structures
+
+- `int`, `float`, `bool`, `str`, `bytes`
 - `tuple`, `frozenset`
 
-_Mutable_ built-in datatypes/structures  
-- `list`, `dict`, `set`, `bytearray`  
+_Mutable_ built-in datatypes/structures
 
-### A.1.2 Standard Library
+- `list`, `dict`, `set`, `bytearray`
 
-## A.2.1 Frameworks
+#### Q: What is PEP8?
 
-## ATools
+Style Guide for Python Code. It is the latest Python coding standard, a set of coding recommendations, coding
+conventions. (Python Enhancement Proposal)
+One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
+intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
+says, "Readability counts".
+A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
+more significant. Consistency within one module or function is the most
+important. [more details...](https://www.python.org/dev/peps/pep-0008/)
 
-### Package Managers
+#### Q: How do I modify a string in Python?
 
-### Quality Tools
+You can’t, because strings are immutable. In most situations, you should simply construct a new string from the
+various parts you want to assemble it from.
 
-### VCS
+#### Q: Does Python have an `array` data type? What is the difference between arrays and lists?
 
-## Software Design and Development Process
+`array` module defines an object type which can compactly represent an array of basic values: characters, integers,
+floating point numbers. Arrays are sequence types and behave very much like lists, except that the type of objects
+stored in them is constrained (homogeneous). The type is specified at object creation time by using a type code, which
+is a single character. Array objects also implement the _buffer interface_, and may be used wherever bytes-like objects
+are supported. [official docs](https://docs.python.org/3/library/array.html)
 
-### Networking
+    import array
+    my_array=array.array('i', [1, 2, 3, 4])  # ‘i’ signed int (C type), int (Python type)
+    my_list=[1,'abc', 1.20]  # cf. with regular list
+    print(my_array)  # array(‘i’, [1, 2, 3, 4])
+    print(type(my_array))  # <class 'array.array'>
 
+#### Q: What is `pass` in Python?
 
-  Q: What is PEP8?
-  Style Guide for Python Code. It is the latest Python coding standard, a set of coding recommendations, coding
-  conventions. (Python Enhancement Proposal)
-  One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
-  intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
-  says, "Readability counts".
-  A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
-  more important. Consistency within one module or function is the most important. more
-  Q: How do I modify a string in Python?
-  You can’t, because strings are immutable. In most situations, you should simply construct a new string from the
-  various parts you want to assemble it from.
-  Q: Does Python have an array data type? What is the difference between arrays and lists?
-  array module defines an object type which can compactly represent an array of basic values: characters, integers,
-  floating point numbers. Arrays are sequence types and behave very much like lists, except that the type of objects
-  stored in them is constrained (homogeneous). The type is specified at object creation time by using a type code, which
-  is a single character. Array objects also implement the buffer interface, and may be used wherever bytes-like objects
-  are supported. official docs
-  import array as arr
-  my_array=arr.array('i', [1, 2, 3, 4])  # ‘i’ signed int (C type), int (Python type)
-  my_list=[1,'abc’, 1.20]
-  print(my_array)  # array(‘i’, [1, 2, 3, 4])
-  print(type(my_array)  # <class 'array.array'>
-  Q: What is pass in Python?
-  Pass means, no-operation Python statement, or in other words it is a placeholder in compound statement, where there
-  should be a blank left and nothing has to be written there.
-  Python has the syntactical requirement that code blocks cannot be empty. Empty code blocks are however useful in a
-  variety of different contexts, for example if you are designing a new class with some methods that you don't want to
-  implement:
-  class MyClass(object):  # (object) is for Python 2.*
-  def method_a(self):
-  pass
+Pass means, no-operation Python statement, or in other words it is a placeholder in compound statement, where there
+should be a blank left and nothing has to be written there.
+Python has the syntactical requirement that code blocks cannot be empty. Empty code blocks are however useful in a
+variety of different contexts, for example if you are designing a new class with some methods that you don't want to
+implement:
 
-    def method_b(self):
-        print("I'm method_b")
+    class MyClass(object):  # (object) is for Python 2.*
+        def method_a(self):
+            pass
+    
+        def method_b(self):
+            print("I'm method_b")
 
-If you were to leave out the pass, the code wouldn't run and you'll get an error:
+If you were to leave out the `pass`, the code wouldn't run, and you'll get an error:
 IndentationError: expected an indented block
 
-Other examples when we could use pass:
+Other examples when we could use `pass`:
 
-* Ignoring (all or) a certain type of Exception
+* Ignoring (all or) a certain type of `Exception`
 * Deriving an exception class that does not add new behavior
 * Testing that code runs properly for a few test values, without caring about the results
-  Q:   Given variables a and b, switch/swap their values so that b has the value of a, and a has the value of b without
-  using an intermediary variable.
-  a, b = 5, 10 # tuple unpacking
-  a, b = b, a
-  Q: What is *args, **kwargs in function definition? And why would we use it?
-  Use *args when we aren't sure how many arguments are going to be passed to a function, or if we want to pass a stored
-  list or tuple of arguments to a function. **kwargs is used when we don't know how many keyword arguments will be
-  passed to a function, or it can be used to pass the values of a dictionary as keyword arguments. The identifiers args
-  and kwargs are a convention, you could also use *bob and **billy but that would not be wise.
-  def f(*args,**kwargs): print(args, kwargs)
 
-l = [1,2,3]
-t = (4,5,6)
-d = {'a':7,'b':8,'c':9}
+#### Q: Given variables a and b, switch/swap their values so that b has the value of a, and a has the value of b without using an intermediary variable.
+
+a, b = 5, 10 # tuple unpacking
+a, b = b, a
+
+#### Q: What is `*args`, `**kwargs` in function definition? And why would we use it?
+
+Use *args when we aren't sure how many arguments are going to be passed to a function, or if we want to pass a stored
+list or tuple of arguments to a function. **kwargs is used when we don't know how many keyword arguments will be
+passed to a function, or it can be used to pass the values of a dictionary as keyword arguments. The identifiers args
+and kwargs are a convention, you could also use *bob and **billy but that would not be wise.
+
+```python
+def f(*args, **kwargs):
+    print(args, kwargs)
+
+
+l = [1, 2, 3]
+t = (4, 5, 6)
+d = {'a': 7, 'b': 8, 'c': 9}
 
 f()
-f(1,2,3)                    # (1, 2, 3) {}
-f(1,2,3,"groovy")           # (1, 2, 3, 'groovy') {}
-f(a=1,b=2,c=3)              # () {'a': 1, 'c': 3, 'b': 2}
-f(a=1,b=2,c=3,zzz="hi")     # () {'a': 1, 'c': 3, 'b': 2, 'zzz': 'hi'}
-f(1,2,3,a=1,b=2,c=3)        # (1, 2, 3) {'a': 1, 'c': 3, 'b': 2}
+f(1, 2, 3)  # (1, 2, 3) {}
+f(1, 2, 3, "groovy")  # (1, 2, 3, 'groovy') {}
+f(a=1, b=2, c=3)  # () {'a': 1, 'c': 3, 'b': 2}
+f(a=1, b=2, c=3, zzz="hi")  # () {'a': 1, 'c': 3, 'b': 2, 'zzz': 'hi'}
+f(1, 2, 3, a=1, b=2, c=3)  # (1, 2, 3) {'a': 1, 'c': 3, 'b': 2}
 
-f(*l,**d)                   # (1, 2, 3) {'a': 7, 'c': 9, 'b': 8}
-f(*t,**d)                   # (4, 5, 6) {'a': 7, 'c': 9, 'b': 8}
-f(1,2,*t)                   # (1, 2, 4, 5, 6) {}
-f(q="winning",**d)          # () {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
-f(1,2,*t,q="winning",**d)   # (1, 2, 4, 5, 6) {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
+f(*l, **d)  # (1, 2, 3) {'a': 7, 'c': 9, 'b': 8}
+f(*t, **d)  # (4, 5, 6) {'a': 7, 'c': 9, 'b': 8}
+f(1, 2, *t)  # (1, 2, 4, 5, 6) {}
+f(q="winning", **d)  # () {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
+f(1, 2, *t, q="winning", **d)  # (1, 2, 4, 5, 6) {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
 
-def f2(arg1, arg2,*args,**kwargs): print(arg1, arg2, args, kwargs)
 
-f2(1,2,3)                       # 1 2 (3,) {}
-f2(1,2,3,"groovy")              # 1 2 (3, 'groovy') {}
-f2(arg1=1,arg2=2,c=3)           # 1 2 () {'c': 3}
-f2(arg1=1,arg2=2,c=3,zzz="hi")  # 1 2 () {'c': 3, 'zzz': 'hi'}
-f2(1,2,3,a=1,b=2,c=3)           # 1 2 (3,) {'a': 1, 'c': 3, 'b': 2}
+def f2(arg1, arg2, *args, **kwargs):
+    print(arg1, arg2, args, kwargs)
 
-f2(*l,**d)                   # 1 2 (3,) {'a': 7, 'c': 9, 'b': 8}
-f2(*t,**d)                   # 4 5 (6,) {'a': 7, 'c': 9, 'b': 8}
-f2(1,2,*t)                   # 1 2 (4, 5, 6) {}
-f2(1,1,q="winning",**d)      # 1 1 () {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
-f2(1,2,*t,q="winning",**d)   # 1 2 (4, 5, 6) {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
-Q: What is docstring in Python?
+
+f2(1, 2, 3)  # 1 2 (3,) {}
+f2(1, 2, 3, "groovy")  # 1 2 (3, 'groovy') {}
+f2(arg1=1, arg2=2, c=3)  # 1 2 () {'c': 3}
+f2(arg1=1, arg2=2, c=3, zzz="hi")  # 1 2 () {'c': 3, 'zzz': 'hi'}
+f2(1, 2, 3, a=1, b=2, c=3)  # 1 2 (3,) {'a': 1, 'c': 3, 'b': 2}
+
+f2(*l, **d)  # 1 2 (3,) {'a': 7, 'c': 9, 'b': 8}
+f2(*t, **d)  # 4 5 (6,) {'a': 7, 'c': 9, 'b': 8}
+f2(1, 2, *t)  # 1 2 (4, 5, 6) {}
+f2(1, 1, q="winning", **d)  # 1 1 () {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
+f2(1, 2, *t, q="winning", **d)  # 1 2 (4, 5, 6) {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}
+```
+
+#### Q: What is docstring in Python?
+
 Python docstrings are the string literals that appear right after the definition of a function, method, class, or
-module. We can access these docstrings using the __doc__ attribute. PEP 257
-def square(n):
-“””Takes in a number n, returns the square of n””” # single quotes ‘ are valid as well
-return n**2
-print(square.__doc__)
-print(print.__doc__)
-Q:  How can you copy an object in Python?
+module. We can access these docstrings using the __doc__ attribute. [PEP 257](https://www.python.org/dev/peps/pep-0257/)
+
+    def square(n):
+    “””Takes in a number n, returns the square of n””” # single quotes ‘ are valid as well
+    return n**2
+    print(square.__doc__)
+    print(print.__doc__)
+
+#### Q:  How can you copy an object in Python?
+
 Use copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.
-x = copy.copy(y)     # make a shallow copy of y
-x = copy.deepcopy(y) # make a deep copy of y; module specific errors >copy.Error
+
+    x = copy.copy(y)     # make a shallow copy of y
+    x = copy.deepcopy(y) # make a deep copy of y; module specific errors >copy.Error
+
 The difference between shallow and deep copying is only relevant for compound objects (objects that contain other
 objects, like lists or class instances).
 
@@ -208,51 +236,70 @@ objects, like lists or class instances).
   that the original contains.
 * A deep copy constructs a new compound object and then, recursively, inserts *copies* into it of the objects found in
   the original.
-  Python's deep copy operation avoids problems (recursive objects, too much data for copy, e.g. administrative data
-  structures) by:
-  a) keeping a table of objects already copied during the current copying pass
-  b) letting user-defined classes override the copying operation or the set of components copied
-  Q:  When to use a tuple vs list vs dictionary in Python?
-* Use a tuple (immutable) to store a sequence of items that will not change. Tuples are faster than lists; can be hashed
+
+Python's deep copy operation avoids problems (recursive objects, too much data for copy, e.g. administrative data
+structures) by:
+
+* keeping a table of objects already copied during the current copying pass
+* letting user-defined classes override the copying operation or the set of components copied
+
+#### Q:  When to use a `tuple` vs `list` vs `dictionary` in Python?
+
+* Use a `tuple` (immutable) to store a sequence of items that will not change. Tuples are faster than lists; can be
+  hashed
   for, e.g. as a key for dictionaries.
-* Use a list (mutable) to store a sequence of items that may change. Lists are slower than tuples.
-* Use a dictionary when you want to associate pairs of two items.
-  Q: What keywords can be used in conjunction with the for keyword?
-  in; break, continue, pass, else
-  The else keyword after for loop specifies a block of code to be executed when the loop is finished normally.
-  Break
-  Allows loop termination when some condition is met and the control is transferred to the next statement.
-  Continue
-  Allows skipping some part of a loop when some specific condition is met and the control is transferred to the
-  beginning of the loop
-  Pass
-  Used when you need some block of code syntactically, but you want to skip its execution.Nothing happens when this is
-  executed.
-  Q: What could be the dict key?
-  First, a dictionary key must be of a type that is hashable ~ immutable. For example, you can use an integer, float,
-  string, or boolean as a dictionary key. However, neither a list nor another dictionary can serve as a dictionary key,
-  because lists and dictionaries are mutable (TypeError: unhashable type: 'list'). Values, on the other hand, can be any
-  type and can be used more than once.
-  Second, a given key can appear in a dictionary only once (must be unique). Duplicate keys are not allowed. A
-  dictionary maps each key (using hash()) to a corresponding value (creates hashtable), so it doesn’t make sense to map
-  a particular key more than once. If you specify a key a second time during the initial creation of a dictionary, then
-  the second occurrence will override the first. more details
-  Q: What's the difference between globals(), locals(), and vars()?
-* globals() always returns the dictionary of the module namespace
-* locals() always returns a dictionary of the current namespace (e.g. funcs)
-* vars([obj]) returns either a dictionary of the current namespace(symbol table) (if called with no argument) or the
-  dictionary of the arguments of any module / class / instance of a class, etc. If the object does not have __dict__, it
-  will raise a TypeError exception (e.g. print(vars(12)) ). We can also use it on a module, to find out all its
-  containing methods, along with other relevant information and even docstrings! more details
-  Q:  What are local variables and global variables in Python?
-* Global Variables: Variables declared outside a function or in global space are called global variables. These
+* Use a `list` (mutable) to store a sequence of items that may change. Lists are slower than tuples.
+* Use a `dict` when you want to associate pairs of two items.
+
+#### Q: What keywords can be used in conjunction with the `for` keyword?
+
+    [not] in ..., break, continue, pass, else:
+
+The `else` keyword after `for` loop specifies a block of code to be executed when the loop is finished normally.
+
+`break`
+: Allows loop termination when some condition is met and the control is transferred to the next statement.
+
+`continue`
+: Allows skipping some part of a loop when some specific condition is met and the control is transferred to the
+beginning of the loop
+
+`pass`
+: Used when you need some block of code syntactically, but you want to skip its execution. Nothing happens when this is
+executed.
+
+#### Q: What could be the `dict` key?
+
+First, a _dictionary key must be of a type that is hashable ~ immutable_. For example, you can use an `int`, `float`,
+`str`, or `bool` as a dictionary key. However, neither a `list` nor another `dict` can serve as a key, because lists and
+dictionaries are mutable (`TypeError: unhashable type: 'list'`). Values, on the other hand, can be any
+type and can be used more than once.
+
+Second, a given key can appear in a dictionary only once (must be unique). Duplicate keys are not allowed. A
+dictionary maps each key (using hash()) to a corresponding value (creates hashtable), so it doesn’t make sense to map
+a particular key more than once. If you specify a key a second time during the initial creation of a dictionary, then
+the second occurrence will override the first. [more details...](https://realpython.com/python-dicts/)  
+
+#### Q: What's the difference between `globals()`, `locals()`, and `vars()`?
+
+* `globals()` _always_ returns the dictionary of the module namespace  
+* `locals()` always returns a dictionary of the _current_ namespace (e.g. funcs)  
+* `vars([obj])` returns _either_ a dictionary of the current namespace(symbol table) (if called with no argument) or the
+  _dictionary of the arguments_ of any module / class / instance of a class, etc. If the object does not have \__dict\__, it
+  will raise a `TypeError` exception (e.g. print(vars(12)) ). We can also use it on a module, to find out all its
+  containing methods, along with other relevant information and even docstrings. [more details...](https://www.askpython.com/python/built-in-methods/python-vars-method)
+
+#### Q: What are local variables and global variables in Python?
+- **Global Variables**: Variables declared outside a function or in global space are called global variables. These
   variables can be accessed/be referenced by any function in the program.
-* Local Variables: Any variable assigned inside a function is known as a local variable. This variable is present in the
-  local space (unless explicitly declared as global) and not in the global space.
-  Q: How can you share global variables across modules?
-  To share global variables across modules within a single program, create a special module. Import the config module in
-  all modules of your application. The module will be available as a global variable across modules.
-  Q: What is slicing in Python?
+- **Local Variables**: Any variable assigned inside a block is known as a local variable. This variable is present in the
+  local space _(unless explicitly declared as global)_ and not in the global space.  
+
+#### Q: How can you share global variables across modules?
+To share global variables across modules within a single program, create a special module. Import the config module in
+all modules of your application. The module will be available as a global variable across modules. 
+
+#### Q: What is slicing in Python?
   Select and change (only mutable types) a specific region of the sequence. A mechanism to select a range of items from
   sequence types like list, tuple, strings etc.:
   a = [1, 2, 3, 4, 5]
@@ -309,13 +356,18 @@ taken to be the list of module names that should be imported when from package i
 Q: How do I see the object methods? How do you list the functions in a module?
 > > > dir(demo_obj)
 > > > dir()  # dir calls __dir__() internally
-> > > The built-in function dir([object]) with an argument, attempts to return a list of valid attributes/members for that
+> > > The built-in function dir([object]) with an argument, attempts to return a list of valid attributes/members for
+> > > that
 > > > object. Without arguments, return the list of names in the current local scope.
-> > > If the object has a method named __dir__(), this method will be called and must return the list of attributes. This
-> > > allows objects that implement a custom __getattr__() or __getattribute__() function to customize the way dir() reports
+> > > If the object has a method named __dir__(), this method will be called and must return the list of attributes.
+> > > This
+> > > allows objects that implement a custom __getattr__() or __getattribute__() function to customize the way dir()
+> > > reports
 > > > their attributes.
-> > > If the object does not provide __dir__(), the function tries its best to gather information from the object’s __dict__
-> > > attribute, if defined, and from its type object (ancestor classes). The resulting list is not necessarily complete, and
+> > > If the object does not provide __dir__(), the function tries its best to gather information from the object’s __
+> > > dict__
+> > > attribute, if defined, and from its type object (ancestor classes). The resulting list is not necessarily
+> > > complete, and
 > > > may be inaccurate when the object has a custom __getattr__(). more details
 
 
@@ -334,9 +386,12 @@ It can be used with all built-in types without error
 Q: How do you get documentation on objects' methods in Python?
 > > > help(some_obj.its_method())
 > > > Q: What is a module in Python? What is a Python package? What is the difference between packages and modules?
-> > > A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py
-> > > appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.
-> > > Packages are a way of structuring Python’s module namespaces by using “dotted module names”. Packages contain modules (
+> > > A module is a file containing Python definitions and statements. The file name is the module name with the suffix
+> > > .py
+> > > appended. Within a module, the module’s name (as a string) is available as the value of the global variable __
+> > > name__.
+> > > Packages are a way of structuring Python’s module namespaces by using “dotted module names”. Packages contain
+> > > modules (
 > > > collection of modules (a “package”)). Modules contain methods.
 > > > Q: How to import modules in Python?
 > > > import array # importing using the original module name
@@ -347,11 +402,14 @@ Q: How do you get documentation on objects' methods in Python?
 > > > A decorator is essentially a callable Python object that is used to modify or extend a function/method or class
 > > > definition.
 > > > One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
-> > > classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or even
+> > > classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
+> > > even
 > > > worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
-> > > application. Examples of some of the more common uses of decorators include adding synchronization, type enforcement,
+> > > application. Examples of some of the more common uses of decorators include adding synchronization, type
+> > > enforcement,
 > > > logging, or pre/post conditions to a class or function.
-> > > Firstly, you have to know or remember that function names are references to functions and that we can assign multiple
+> > > Firstly, you have to know or remember that function names are references to functions and that we can assign
+> > > multiple
 > > > names/”references” to the same function.
 > > > The next important fact is that we can delete one of the references without deleting the function itself.
 > > > Concepts to understand: Functions as Parameters, Functions returning Functions
@@ -362,10 +420,12 @@ Q: How do you get documentation on objects' methods in Python?
 > > > Is equivalent to:
 > > > def func_a(stuff):
 > > > do_things
-> > > func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2 versions,
+> > > func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2
+> > > versions,
 > > > before decoration and after decoration.
 > > > It should be noted: this notation can be used only for third-party functions
-> > > The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the definition.
+> > > The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
+> > > definition.
 
 
 def time_this(original_function):                              # 1
@@ -528,11 +588,17 @@ iter_obj = iter(iterable)
 
 while True:
 try:
+
 # get the next item
+
 element = next(iter_obj)
+
 # do something with element
+
 except StopIteration:
+
 # if StopIteration is raised, break from loop
+
 break
 Q: What are Python generators?
 Primarily as syntactic sugar for implementing iterators (like it). Generators are regular functions but instead of using
@@ -546,10 +612,13 @@ yield value
 > > > The code in the generator function only executes when next() is called on the generator object:
 > > > generator_obj = repeater('Hey')
 > > > next(generator_obj)  # ‘Hey’
-> > > In practical terms, this means local variables and the execution state of the generator function are only stashed away
-> > > temporarily and not thrown out completely. Execution can be resumed at any time by calling next() on the generator. This
+> > > In practical terms, this means local variables and the execution state of the generator function are only stashed
+> > > away
+> > > temporarily and not thrown out completely. Execution can be resumed at any time by calling next() on the
+> > > generator. This
 > > > makes generators fully compatible with the iterator protocol.
-> > > Generators stop generating values as soon as control flow returns from the generator function by any means other than a
+> > > Generators stop generating values as soon as control flow returns from the generator function by any means other
+> > > than a
 > > > yield statement. This means you no longer have to worry about raising StopIteration at all.
 > > > def repeat_three_times(value):
 > > > yield value
@@ -841,8 +910,10 @@ vowels = ['a', 'e', 'i', 'o', 'u']
 for i, letter in enumerate(vowels):
 print(i, letter)
 > > > 0, 'a' // 1, 'e' ...
-> > > Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0 and 1.
-> > > An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that your
+> > > Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0
+> > > and 1.
+> > > An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
+> > > your
 > > > answer is correct?
 > > > def f1(lIn):
 > > > l1 = sorted(lIn)
@@ -873,9 +944,10 @@ lIn = [random.random() for i in range(100000)]
 
 Why Care?
 Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding for efficiency comes down to common sense
+
 - in the example above it's obviously quicker to sort a list if it's a smaller list, so if you have the choice of
-filtering before a sort it's often a good idea. The less obvious stuff can still be located through use of the proper
-tools. It's good to know about these tools.
+  filtering before a sort it's often a good idea. The less obvious stuff can still be located through use of the proper
+  tools. It's good to know about these tools.
 
 Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting
 arrays differ and why should you use one initialization approach vs the other?
@@ -920,7 +992,8 @@ Q: How to translate a string of chars into a string containing a binary code (1 
 > > > set(tuple2).issuperset(tuple1)  # True
 > > > Q: How to check if both tuples contain unique values?
 > > > len(set(tup)) == len(tup)
-> > > This creates a set of tup and checks if it is the same length as the original tup. The only case in which they would
+> > > This creates a set of tup and checks if it is the same length as the original tup. The only case in which they
+> > > would
 > > > have the same length is if all elements in tup were unique.
 > > > Q: Mention the use of / and // operators in Python?
 
@@ -1092,12 +1165,19 @@ assert checks if the condition inside the brackets is True. If it isn’t, then 
 program will stop.
 
 try:
+
 # code to attempt running
+
 if '1' != 1:
+
 # raise ‘some error’ will be wrong ‘cause new exception class must inherit from a BaseException.
+
 # raise Exception
+
 except ZeroDivisionError:
+
 # execute this code if there is an exception generated
+
 print("someError has occurred")
 except TypeError:  
 ...
@@ -1732,6 +1812,7 @@ Parent.__init__(self)
 
 child = Child() # Parent init
 child.method()  # Parent method
+
 2. Classes that are not related by kinship can have the same interface with different implementations.
 
 class English:
@@ -2462,7 +2543,25 @@ The reasons for this are many. No two ever projects have:
 
 “Count, compute, judge“ principle images source
 
-Additional areas (not needed, JFYI)
+### A.1.2 Standard Library
+
+## A.2.1 Frameworks
+
+## ATools
+
+### Package Managers
+
+### Quality Tools
+
+### VCS
+
+[<img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""/>](https://adriaanrol.com/images/GitFlowchart.png)
+
+## Software Design and Development Process
+
+### Networking
+
+Additional areas
 Cloud
 Q: Explain the basic concepts of MapReduce, key-value / NoSQL stores
 Q: What cloud middleware technologies that are fundamental to cloud based applications?
@@ -2470,7 +2569,7 @@ Q: What are key cloud resources as WebApp, Databases, Virtual Machines?
 
 # ...content...Exercises/idioms/snippets
 
-<div id="section3"></div>
+<div id="section-exercises"><a href="#">[Return Up]</a></div>
 
 dsfsdf
 sdf  
@@ -2480,7 +2579,7 @@ sdf
 
 # ...content...Quizzes/games
 
-<div id="section4"></div>
+<div id="section-quizzes"><a href="#">[Return Up]</a></div>
 
 dsfsdf
 sdf  
