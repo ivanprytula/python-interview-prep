@@ -9,11 +9,20 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="canonical" href="https://localhost.com/">
+<link rel="icon" href="py_icon_512x512.png" sizes="512x512">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><meta name="author" content="Ivan Prytula">
 <meta property="og:site_name" content="Mastering Python">
 <meta property="og:title" content="Handy materials for knowledge refreshing &amp; interview prep">
 <meta property="og:url" content="https://localhost.com/">
-<meta property="og:description" content="">
+<meta property="og:description" content="def hello_world():
+    &quot;&quot;&quot;
+    A function that prints &quot;Hello world!&quot;
+    &quot;&quot;&quot;
+    print('Hello world!')
+args_passing.py  (Source)
+def main():
+    ln = [9001]
+    print(f&quot;Initial address of n: {id(ln)}&quot;">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2022-04-17T15:20:53+03:00">
 </head>
@@ -37,6 +46,9 @@ bg-dark
 
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
 <li class="nav-item">
 <a href="knowledge-base" class="nav-link">Knowledge Base</a>
                 </li>
@@ -76,13 +88,60 @@ bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div class="docutils container">
-<img alt="Alternative text" class="rounded mx-auto d-block col-md-6" src="images/Python_logo_01.png">
+<img alt="Alternative text" class="rounded mx-auto d-block col-md-6 align-center" src="images/Python_logo_01.png">
 </div>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_8c12df00e7b84456a22755bd9d1b05b2-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_8c12df00e7b84456a22755bd9d1b05b2-1" name="rest_code_8c12df00e7b84456a22755bd9d1b05b2-1"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_8c12df00e7b84456a22755bd9d1b05b2-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_8c12df00e7b84456a22755bd9d1b05b2-2" name="rest_code_8c12df00e7b84456a22755bd9d1b05b2-2"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_8c12df00e7b84456a22755bd9d1b05b2-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_8c12df00e7b84456a22755bd9d1b05b2-3" name="rest_code_8c12df00e7b84456a22755bd9d1b05b2-3"></a><span class="sd">    A function that prints "Hello world!"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_8c12df00e7b84456a22755bd9d1b05b2-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_8c12df00e7b84456a22755bd9d1b05b2-4" name="rest_code_8c12df00e7b84456a22755bd9d1b05b2-4"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_8c12df00e7b84456a22755bd9d1b05b2-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_8c12df00e7b84456a22755bd9d1b05b2-5" name="rest_code_8c12df00e7b84456a22755bd9d1b05b2-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello world!'</span><span class="p">)</span>
+</code></td>
+</tr>
+</table></div>
+<p><a class="reference external" href="listings/args_passing.py.html">args_passing.py</a>  <a class="reference external" href="listings/args_passing.py">(Source)</a></p>
+<pre class="code python"><a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-1" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-1" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-1"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-2" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-2" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-2"></a>    <span class="n">ln</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9001</span><span class="p">]</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-3" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-3" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">ln</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-4" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-4" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-4"></a>    <span class="n">increment</span><span class="p">(</span><span class="n">ln</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-5" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-5" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">ln</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-6" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-6" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-6"></a>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-7" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-7" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-7"></a>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-8" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-8" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-8"></a><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-9" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-9" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of x: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-10" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-10" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-10"></a>    <span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-11" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-11" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-11"></a>    <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-12" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-12" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-13" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-13" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of x.: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-14" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-14" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-14"></a>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-15" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-15" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-15"></a>
+<a id="rest_code_e6aef12ef99c45f0866f2d749a92bc09-16" name="rest_code_e6aef12ef99c45f0866f2d749a92bc09-16" href="#rest_code_e6aef12ef99c45f0866f2d749a92bc09-16"></a><span class="n">main</span><span class="p">()</span>
+</pre>
     </div>
     
 
 </article><!--End of body content--><footer id="footer">
             Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
             
             
         </footer>
