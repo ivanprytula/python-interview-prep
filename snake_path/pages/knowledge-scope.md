@@ -38,9 +38,9 @@ certifications_levels_desc: dict[str, dict] = {
 
 # Developer Skills To Become a Successful Python Developer
 
-You often see them in vacancy description. Let's use more fancy words 😉
+~~Sometimes~~ Often you can see them in vacancy description. Let's use more <mark>fancy/stylish</mark> words  
 
-1. Expertise in Core Python
+1. Expertise in Core Python 
 2. Sound Knowledge of Web Frameworks
 3. Object Relational Mappers (ORM)
 4. Good Debugging and Unit Test Skills
@@ -531,3 +531,5 @@ You often see them in vacancy description. Let's use more fancy words 😉
     - db read
     - db update
     - db delete
+
+<div><a href="#">[Return Up]</a></div>

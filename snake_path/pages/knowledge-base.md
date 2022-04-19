@@ -12,6 +12,7 @@
     <summary id="toc">[TOC]</summary>
     <ol>
         <li>Interview questions/answers <a href="#section-interview-questions"><em>[Qs&As]</em></a></li>
+        <li>Best practices <a href="#section-best-practices"><em>[Action Items]</em></a></li>
         <li>Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a></li>
         <li>Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a></li>
         <li>... <a href="#"><em>[...TODO...]</em></a></li>
@@ -19,8 +20,6 @@
 </details>
 
 ---
-
-***
 
 # A. Interview questions/answers
 
@@ -278,44 +277,54 @@ type and can be used more than once.
 Second, a given key can appear in a dictionary only once (must be unique). Duplicate keys are not allowed. A
 dictionary maps each key (using hash()) to a corresponding value (creates hashtable), so it doesn’t make sense to map
 a particular key more than once. If you specify a key a second time during the initial creation of a dictionary, then
-the second occurrence will override the first. [more details...](https://realpython.com/python-dicts/)  
+the second occurrence will override the first. [more details...](https://realpython.com/python-dicts/)
 
 #### Q: What's the difference between `globals()`, `locals()`, and `vars()`?
 
-* `globals()` _always_ returns the dictionary of the module namespace  
-* `locals()` always returns a dictionary of the _current_ namespace (e.g. funcs)  
+* `globals()` _always_ returns the dictionary of the module namespace
+* `locals()` always returns a dictionary of the _current_ namespace (e.g. funcs)
 * `vars([obj])` returns _either_ a dictionary of the current namespace(symbol table) (if called with no argument) or the
-  _dictionary of the arguments_ of any module / class / instance of a class, etc. If the object does not have \__dict\__, it
+  _dictionary of the arguments_ of any module / class / instance of a class, etc. If the object does not have \__dict\__
+  , it
   will raise a `TypeError` exception (e.g. print(vars(12)) ). We can also use it on a module, to find out all its
-  containing methods, along with other relevant information and even docstrings. [more details...](https://www.askpython.com/python/built-in-methods/python-vars-method)
+  containing methods, along with other relevant information and even
+  docstrings. [more details...](https://www.askpython.com/python/built-in-methods/python-vars-method)
 
 #### Q: What are local variables and global variables in Python?
+
 - **Global Variables**: Variables declared outside a function or in global space are called global variables. These
   variables can be accessed/be referenced by any function in the program.
-- **Local Variables**: Any variable assigned inside a block is known as a local variable. This variable is present in the
-  local space _(unless explicitly declared as global)_ and not in the global space.  
+- **Local Variables**: Any variable assigned inside a block is known as a local variable. This variable is present in
+  the
+  local space _(unless explicitly declared as global)_ and not in the global space.
 
 #### Q: How can you share global variables across modules?
+
 To share global variables across modules within a single program, create a special module. Import the config module in
-all modules of your application. The module will be available as a global variable across modules. 
+all modules of your application. The module will be available as a global variable across modules.
 
 #### Q: What is slicing in Python?
-  Select and change (only mutable types) a specific region of the sequence. A mechanism to select a range of items from
-  sequence types like list, tuple, strings etc.:
-  a = [1, 2, 3, 4, 5]
-  print(a[0:2]) # Choose elements [0-2), upper-bound non inclusive
-  print(a[0:-1]) # Choose all but the last
-  print(a[::-1]) # Reverse the list
-  print(a[::2]) # Skip by 2
-  print(a[::-2]) # Skip by -2 from the back
-  Q: What are sequence comprehensions?
-  They are short syntax constructions to ease the creation of lists, dicts, tuples, sets based on existing iterable.
 
+Select and change (only mutable types) a specific region of the sequence. A mechanism to select a range of items from
+sequence types like list, tuple, strings etc.:
+
+    a = [1, 2, 3, 4, 5]
+    print(a[0:2])  # Choose elements [0-2), upper-bound non inclusive
+    print(a[0:-1])  # Choose all but the last
+    print(a[::-1])  # Reverse the list
+    print(a[::2])  # Skip by 2
+    print(a[::-2])  # Skip by -2 from the end
+
+#### Q: What are sequence comprehensions?
+
+They are short syntax constructions to ease the creation of lists, dicts, tuples, sets based on existing iterable.
+
+```python
 # Simple List Append
 
 a = []
 for x in range(1, 10):
-a.append(x)
+    a.append(x)
 print(a)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # List Comprehension
@@ -327,106 +336,121 @@ A1 = range(10)
 A2 = sorted([i for i in A1 if i in A0])
 A3 = sorted([A0[s] for s in A0])
 A4 = [i for i in A1 if i in A3]
-A5 = {i:i*i for i in A1}
-A6 = [[i,i*i] for i in A1]
-******
-A0 = {'a': 1, 'c': 3, 'b': 2, 'e': 5, 'd': 4} # the order may vary
+A5 = {i: i * i for i in A1}
+A6 = [[i, i * i] for i in A1]
+
+A0 = {'a': 1, 'c': 3, 'b': 2, 'e': 5, 'd': 4}  # the order may vary
 A1 = range(0, 10)
 A2 = []
 A3 = [1, 2, 3, 4, 5]
 A4 = [1, 2, 3, 4, 5]
 A5 = {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
 A6 = [[0, 0], [1, 1], [2, 4], [3, 9], [4, 16], [5, 25], [6, 36], [7, 49], [8, 64], [9, 81]]
+```
+
 In Python, list comprehensions provide an alternative to using the built-in map() and filter() functions.
-Q: What is the negative index in Python?
+
+#### Q: What is the negative index in Python?
+
 For slicing/accessing from the end of list, types and other sequences.
 Python sequences can be indexed with positive and negative numbers. For positive index, 0 is the first index, 1 is the
 second index and so forth. For negative index, (-1) is the last index and (-2) is the second last index and so forth.
-demo_lst = [2, 33, 222, 14, 25] demo_lst[-1] >> 25.
-Q: What is type conversion?
-Way of conversion variable of one type to another. For this purpose we use built-in functions, e.g. int(), float(),
-str(), bool(), list() etc.
-Q: What is the __init__.py module? What is it for?
-The __init__.py files are required to make Python treat the directories as containing packages; this is done to prevent
+
+    demo_lst = [2, 33, 222, 14, 25] 
+    demo_lst[-1] >> 25.
+
+#### Q: What is type conversion?
+
+Way of conversion variable of one type to another. For this purpose we use built-in functions, e.g. `int()`, `float()`,
+`str()`, `bool()`, `list()`, etc.
+
+#### Q: What is the `__init__.py` module? What is it for?
+
+The `__init__.py` files are required to make Python treat the directories as containing packages; this is done to
+prevent
 directories with a common name, such as string, from unintentionally hiding valid modules that occur later on the module
 search path. In the simplest case, __init__.py can just be an empty file, but it can also execute initialization code (
 initializing the module) for the package or set the __all__ variable.
-The import statement uses the following convention: if a package’s __init__.py code defines a list named __all__, it is
-taken to be the list of module names that should be imported when from package import * is encountered.
-Q: How do I see the object methods? How do you list the functions in a module?
-> > > dir(demo_obj)
-> > > dir()  # dir calls __dir__() internally
-> > > The built-in function dir([object]) with an argument, attempts to return a list of valid attributes/members for
-> > > that
-> > > object. Without arguments, return the list of names in the current local scope.
-> > > If the object has a method named __dir__(), this method will be called and must return the list of attributes.
-> > > This
-> > > allows objects that implement a custom __getattr__() or __getattribute__() function to customize the way dir()
-> > > reports
-> > > their attributes.
-> > > If the object does not provide __dir__(), the function tries its best to gather information from the object’s __
-> > > dict__
-> > > attribute, if defined, and from its type object (ancestor classes). The resulting list is not necessarily
-> > > complete, and
-> > > may be inaccurate when the object has a custom __getattr__(). more details
+The `import` statement uses the following convention: if a package’s `__init__.py` code defines a list named `__all__`,
+it is
+taken to be the list of module names that should be imported when `from <package_name> import *` is encountered.
 
+#### Q: How do I see the object methods? How do you list the functions in a module?
 
-vars()
-dir()
-Returns a dictionary of objects of single class where used
-Returns a dictionary of objects of single class where used and its base classes
-It returns a dictionary corresponding to the current local symbol table when no argument is passed
-It returns the list of names in the current local scope when passed no argument
-It returns a dictionary corresponding to the object’s symbol table if a module, class or class instance object as
-argument (or anything else that has a __dict__ attribute) is passed.
-It attempt to return a list of valid attributes for that object when passed an argument
-As instances builtin types do not have __dict__ attribute, it returns an Error when used in a built-in type instance.
-It can be used with all built-in types without error
+    >>> dir(demo_obj)
+    >>> dir()  # dir calls __dir__() internally
 
-Q: How do you get documentation on objects' methods in Python?
-> > > help(some_obj.its_method())
-> > > Q: What is a module in Python? What is a Python package? What is the difference between packages and modules?
-> > > A module is a file containing Python definitions and statements. The file name is the module name with the suffix
-> > > .py
-> > > appended. Within a module, the module’s name (as a string) is available as the value of the global variable __
-> > > name__.
-> > > Packages are a way of structuring Python’s module namespaces by using “dotted module names”. Packages contain
-> > > modules (
-> > > collection of modules (a “package”)). Modules contain methods.
-> > > Q: How to import modules in Python?
-> > > import array # importing using the original module name
-> > > import array as arr # importing using an alias name
-> > > from array import * # imports everything present in the array module
-> > > from <module> import (<func>, <class>, <CONSTANT>)  # selective import
-> > > Q: What are decorators? How to create a custom decorator?
-> > > A decorator is essentially a callable Python object that is used to modify or extend a function/method or class
-> > > definition.
-> > > One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
-> > > classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
-> > > even
-> > > worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
-> > > application. Examples of some of the more common uses of decorators include adding synchronization, type
-> > > enforcement,
-> > > logging, or pre/post conditions to a class or function.
-> > > Firstly, you have to know or remember that function names are references to functions and that we can assign
-> > > multiple
-> > > names/”references” to the same function.
-> > > The next important fact is that we can delete one of the references without deleting the function itself.
-> > > Concepts to understand: Functions as Parameters, Functions returning Functions
-> > > @time_this
-> > > def func_a(stuff):
-> > > name_of_the_func = func_a.__name__
-> > > do_things
-> > > Is equivalent to:
-> > > def func_a(stuff):
-> > > do_things
-> > > func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2
-> > > versions,
-> > > before decoration and after decoration.
-> > > It should be noted: this notation can be used only for third-party functions
-> > > The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
-> > > definition.
+The built-in function _dir([object])_ with an argument, attempts to return a list of valid attributes/members for
+that object. Without arguments, return the list of names in the current local scope.
 
+If the object has a method named `__dir__()`, this method will be called and must return the list of attributes.
+This allows objects that implement a custom `__getattr__()` or `__getattribute__()` function to customize the
+way `dir()`
+reports their attributes.
+
+If the object does not provide `__dir__()`, the function tries its best to gather information from the
+object’s `__dict__`
+attribute, if defined, and from its type object (ancestor classes). The resulting list is not necessarily
+complete, and may be inaccurate when the object has a custom `__getattr__()`
+. [more details...](https://www.geeksforgeeks.org/difference-between-dir-and-vars-in-python/)
+
+| vars()                                                                                                                                                                                   | dir()                                                                                   |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|
+| Returns a dictionary of objects of single class where used                                                                                                                               | Returns a dictionary of objects of single class where used and its base classes         |
+| It returns a dictionary corresponding to the current local symbol table when no argument is passed                                                                                       | It returns the list of names in the current local scope when passed no argument         |
+| It returns a dictionary corresponding to the object’s symbol table if a module, class or class instance object as argument (or anything else that has a `__dict__` attribute) is passed. | It attempt to return a list of valid attributes for that object when passed an argument |
+| As instances builtin types do not have `__dict__` attribute, it returns an Error when used in a built-in type instance.                                                                  | It can be used with all built-in types without error                                    |
+| &nbsp;                                                                                                                                                                                   | &nbsp;                                                                                  |
+
+#### Q: How do you get documentation on objects' methods in Python?
+
+    >>> help(some_obj.its_method())
+
+#### Q: What is a module in Python? What is a Python package? What is the difference between packages and modules?
+
+A module is a file containing Python definitions and statements. The file name is the module name with the suffix
+`.py` appended. Within a module, the module’s name (as a string) is available as the value of the global
+variable `__name__`.
+
+Packages are a way of structuring Python’s module namespaces by using “dotted module names”. Packages contain
+modules (collection of modules (a “package”)).
+
+#### Q: How to import modules in Python?
+
+    import array  # importing using the original module name
+    import array as arr  # importing using an alias name
+    from array import *  # imports everything present in the array module
+    from <module> import (<func>, <class>, <CONSTANT>)  # selective import
+
+#### Q: What are decorators? How to create a custom decorator?
+
+A decorator is essentially a callable Python object that is used to modify or extend a function/method or class
+definition.
+One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
+classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
+even
+worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
+application. Examples of some of the more common uses of decorators include adding synchronization, type
+enforcement,
+logging, or pre/post conditions to a class or function.
+Firstly, you have to know or remember that function names are references to functions and that we can assign
+multiple
+names/”references” to the same function.
+The next important fact is that we can delete one of the references without deleting the function itself.
+Concepts to understand: Functions as Parameters, Functions returning Functions
+@time_this
+def func_a(stuff):
+name_of_the_func = func_a.__name__
+do_things
+Is equivalent to:
+def func_a(stuff):
+do_things
+func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2
+versions,
+before decoration and after decoration.
+It should be noted: this notation can be used only for third-party functions
+The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
+definition.
 
 def time_this(original_function):                              # 1
 def new_function(*args, **kwargs):                         # 2
@@ -1651,7 +1675,9 @@ x = threading.Thread(target=thread_function, args=(1,))
 x.start()
 When you create a Thread, you pass it a function and a list containing the arguments to that function. In this case,
 you’re telling the Thread to run thread_function() and to pass it 1 as an argument.
-Q: Explain the concept of the general synchronization blocks (like mutex, semaphore)
+
+#### Q: Explain the concept of the general synchronization blocks (like mutex, semaphore)
+
 Proper synchronization between multiple threads.
 Using Locks
 threading module provides a Lock class to deal with the race conditions. Lock is implemented using a Semaphore object
@@ -1682,11 +1708,13 @@ Summary:
 * Polymorphism is provided by the virtuality of all methods
 * Metaprogramming is available
 
-Q: Does Python fully support OOP?
+#### Q: Does Python fully support OOP?
+
 Yes. Python supports all the concepts of "object oriented programming" (Classes, Encapsulation, Polymorphism,
 Inheritance) but it is NOT fully object-oriented because the code in Python can also be written without creating
 classes.
-Q: Tell a brief overview of the 4 Python coding styles
+
+#### Q: Tell a brief overview of the 4 Python coding styles
 
 1. Functional: Every statement is treated as a mathematical equation and any forms of state or mutable data are avoided.
    The main advantage of this approach is that it lends itself well to parallel processing because there is no state to
@@ -1723,7 +1751,9 @@ least two leading underscores, at most one trailing underscore) is textually rep
 classname is the current class name with leading underscore(s) stripped.
 Instead of manually creating getters and setters for each attribute, you can overload the built-in __getattr__, __
 setattr__, and __delattr__ methods.
-Q: Explain Inheritance in Python with an example
+
+#### Q: Explain Inheritance in Python with an example
+
 Inheritance is a way of creating a new class and gaining all the attributes/methods of another class without modifying
 it. The class from which we are inheriting is called super class and the class that is inherited is called a derived /
 child class.
@@ -1775,10 +1805,14 @@ def pause(self):
 print("wait D wait!")
 
 class E(B,C): pass
-Q: Explain Abstraction in Python
+
+#### Q: Explain Abstraction in Python
+
 It is providing only the required details and hiding the implementation from the world. It can be achieved by using
 interfaces and abstract classes.
-Q: Explain Polymorphism in Python
+
+#### Q: Explain Polymorphism in Python
+
 Using the same interface for multiple forms (data types).
 
 1. Child class redefines the parent method (which is called in this case “virtual”), has the same name and does the same
@@ -1830,7 +1864,8 @@ gerard = French()
 intro(john)   # Hello
 intro(gerard) # Bonjour
 
-Q: Composition and object construction
+#### Q: Composition and object construction
+
 Composition is an OOD concept that models a relationship. In composition, a class known as composite contains an object
 of another class known as component. In other words, a composite class has-a component of another class.
 Composition allows composite classes to reuse the implementation of the components it contains. The composite class
@@ -1850,7 +1885,8 @@ Aggregation - if the link between two objects is weaker, and neither object has 
 details
 
 Refactoring
-Q: Explain most common “Bad smells in code”
+
+#### Q: Explain most common “Bad smells in code”
 
 * Correctness: Anti-patterns that will literally break your code or make it do the wrong things.
 * Maintainability: Anti-patterns that will make your code hard to maintain or extend.
@@ -1862,7 +1898,8 @@ Q: Explain most common “Bad smells in code”
   more 'code smells' examples, Python-anti-patterns book, Transforming Code into Beautiful, Idiomatic Python
   Other classification:Bloaters, Object-Orientation Abusers, Change Preventers, Dispensables, Couplers
 
-Q: Explain the most common “Composing Methods” strategies
+#### Q: Explain the most common “Composing Methods” strategies
+
 Much of refactoring is devoted to correctly composing methods. In most cases, excessively long methods are the root of
 all evil. The vagaries of code inside these methods conceal the execution logic and make the method extremely hard to
 understand—and even harder to change.
@@ -1947,7 +1984,8 @@ $ Introduce Local Extension
 Problem: A utility class doesn’t contain some methods that you need. But you can’t add these methods to the class.
 Solution: Create a new class containing the methods and make it either the child or wrapper of the utility class.
 
-Q: Explain the most common “Organizing Data” strategies
+#### Q: Explain the most common “Organizing Data” strategies
+
 These refactoring techniques help with data handling, replacing primitives with rich class functionality.
 Another important result is untangling of class associations, which makes classes more portable and reusable.
 $ Self Encapsulate Field
@@ -2241,7 +2279,8 @@ Full article on described TOC below
   GROUP BY country
   HAVING COUNT(studentID) > 5;
 
-Q: Explain the basics of Key-value, document, column-family databases and form of aggregate-oriented databases
+#### Q: Explain the basics of Key-value, document, column-family databases and form of aggregate-oriented databases
+
 more details, more details1, more details2(rus)
 
 Key Value Pair Based
@@ -2283,6 +2322,7 @@ Compared to a relational database where tables are loosely connected, a Graph da
 Traversing relationship is fast as they are already captured into the DB, and there is no need to calculate them.
 Graph based database mostly used for social networks, logistics, spatial data.
 Neo4J, Infinite Graph, OrientDB, FlockDB are some popular graph-based databases.
+
 Q: How to make optimization of the existing SQL queries and approaches of data storing/managing?
 more details, more details2
 
@@ -2336,7 +2376,9 @@ big chance that the steps mentioned above might not be the right choice for all 
 optimization techniques uniquely specific to its needs.
 
 Unit Testing
-Q: What’s your approach to unit testing in Python?
+
+#### Q: What’s your approach to unit testing in Python?
+
 The most fundamental answer to this ? centers around unittest testing framework.
 unittest supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections,
 and independence of the tests from the reporting framework. The unittest module provides classes that make it easy to
@@ -2349,7 +2391,9 @@ candidates for mocking: whether writing a script to eject a CD drive, a web serv
 from /tmp, or a socket server which binds to a TCP port, these calls all feature undesired side-effects in the context
 of unit tests. Similarly, keeping your unit-tests efficient and performant means keeping as much “slow code” as possible
 out of the automated test runs, namely file system and network access. other test libraries
-Q: What are the key elements of the unittest framework?
+
+#### Q: What are the key elements of the unittest framework?
+
 unittest contains both a testing framework and a test runner. It has some important requirements for writing and
 executing tests:
 
@@ -2567,9 +2611,79 @@ Q: Explain the basic concepts of MapReduce, key-value / NoSQL stores
 Q: What cloud middleware technologies that are fundamental to cloud based applications?
 Q: What are key cloud resources as WebApp, Databases, Virtual Machines?
 
-# ...content...Exercises/idioms/snippets
+
+---
+
+<div id="section-best-practices"><a href="#">[Return Up]</a></div>
+
+# Best practices are foundation of your solid skills. _while True: read_and_repeat()_
+
+Refs:
+1. [Jupyter notebooks for teaching/learning Python 3](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/best_practices.html)
+
+### One virtual environment per project
+
+- Isolation  
+- Different projects have different dependency versions
+- You don't want to mess up the system Python
+
+### Structure your code and projects
+
+- Package and module structure gives an overview about the project
+- Modular design == better re-usability
+
+
+    Don't put too much stuff into one module
+    Split project into packages
+    Be consistent with your naming conventions
+
+### Utilize the capabilities of your editor
+
+- Efficient and fluent development
+- There's plenty of tools to make your daily programming easier, why would you not use them
+
+### Use existing solutions
+
+- Python Standard Library is extensive - and stable!
+- There are 370k+ packages in PyPI
+- Someone has most likely solved the problem you're trying to solve
+- Spend 5 minutes doing a Google research before starting to solve a new problem, e.g. stackoverflow is a good place.
+
+### Learn how to debug efficiently
+
+- You won't write completely stable code anyway - impossible looking conditions will occur.
+- When something is not working as expected, there are plenty of tools out there to help you figure out what's going on.
+
+### Test your code
+
+- No surprises (especially in production)
+- Make sure that everything works as expected
+- Make sure that old stuff works as expected after introducing new features (regression)
+- Tests give you confidence while refactoring
+- Good tests demonstrate the use cases of application, i.e. they also document the implementation 
+
+### Write high quality code
+
+- Easy to read
+- Better maintainability
+- Better quality == less bugs
+
+### Use continuous integration and deployment
+
+- Make sure the tests pass
+- CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to skip on their local machines
+- Make sure there's no linting errors
+- Ideally, the place to test against all target versions and platforms
+- Overall, CI is the last resort for automatically ensuring the quality
+- Manual deployments are time consuming and error-prone, CD is automated and deterministic
+- You want to automate as much as possible, human time is expensive
+- Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using those tools. Human time is expensive.
+
+
 
 <div id="section-exercises"><a href="#">[Return Up]</a></div>
+
+# ...content...Exercises/idioms/snippets
 
 dsfsdf
 sdf  
@@ -2585,4 +2699,6 @@ dsfsdf
 sdf  
 sdf  
 sdf  
-sdf  
+sdf
+
+<div><a href="#">[Return Up]</a></div>

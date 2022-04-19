@@ -6,8 +6,7 @@
 .. type: text
 -->
 
-# Python Core
-1. ds
+1. [Jupyter notebooks for teaching/learning Python 3](https://jerry-git.github.io/learn-python3/)
 2. sdsd
 
 # Idioms
