@@ -25,7 +25,8 @@ SITE_URL = "https://localhost.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://localhost.com/"
 BLOG_EMAIL = "ivanprytula87@gmail.com"
-BLOG_DESCRIPTION = "Hands-on materials for knowledge refreshing and interview preparation"  # (translatable)
+BLOG_DESCRIPTION = "Hands-on materials for knowledge refreshing and interview " \
+                   "preparation"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -142,6 +143,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/knowledge-scope", "Knowledge Scope"),
         ("/knowledge-base", "Knowledge Base"),
         ("/lake-of-links", "Lake of Links"),
         ("/todo", "TODO"),
@@ -177,7 +179,8 @@ THEME_COLOR = '#5670d4'
 # Config for bootblog4:
 # THEME_CONFIG = {
 #     DEFAULT_LANG: {
-#         # Show the latest featured post in a large box, with the previewimage as its background.
+#         # Show the latest featured post in a large box, with the previewimage as
+#         its background.
 #         'featured_large': False,
 #         # Show the first (remaining) two featured posts in small boxes.
 #         'featured_small': False,
@@ -247,7 +250,6 @@ PAGES = (
     ("pages/*.html", "", "page.tmpl"),
 )
 
-
 # Below this point, everything is optional
 
 # Post's dates are considered in UTC by default, if you want to use
@@ -265,7 +267,8 @@ TIMEZONE = "Europe/Kiev"
 # FORCE_ISO8601 = False
 
 # Date format used to display post dates. (translatable)
-# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time-1/date-time
+# Used by babel.dates, CLDR style:
+# http://cldr.unicode.org/translation/date-time-1/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
 # DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 
@@ -331,7 +334,8 @@ COMPILERS = {
 
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
-# config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion-enabled
+# config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion
+# -enabled
 # REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
@@ -342,7 +346,8 @@ COMPILERS = {
 # "Nikola": reST comments, wrapped in a HTML comment if needed (default)
 # "YAML": YAML wrapped in "---"
 # "TOML": TOML wrapped in "+++"
-# "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for other formats.
+# "Pelican": Native markdown metadata or reST docinfo fields. Nikola style for other
+# formats.
 # METADATA_FORMAT = "Nikola"
 
 # Use date-based path when creating posts?
@@ -408,7 +413,8 @@ COMPILERS = {
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#        "open source": "My contributions to my many, varied, ever-changing,
+#        and eternal libre software projects."
 #    },
 # }
 
@@ -448,8 +454,10 @@ HIDDEN_TAGS = ['mathjax']
 
 # Final locations are:
 # output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of
+# posts for a category)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION
+# (RSS feed for a category)
 # (translatable)
 # CATEGORY_PATH = "categories"
 # CATEGORY_PREFIX = "cat_"
@@ -483,7 +491,8 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#        "open source": "My contributions to my many, varied, ever-changing,
+#        and eternal libre software projects."
 #    },
 # }
 
@@ -549,7 +558,8 @@ HIDDEN_CATEGORIES = []
 # Path to author pages. Final locations are:
 # output / TRANSLATION[lang] / AUTHOR_PATH / index.html (list of authors)
 # output / TRANSLATION[lang] / AUTHOR_PATH / author.html (list of posts by an author)
-# output / TRANSLATION[lang] / AUTHOR_PATH / author RSS_EXTENSION (RSS feed for an author)
+# output / TRANSLATION[lang] / AUTHOR_PATH / author RSS_EXTENSION (RSS feed for an
+# author)
 # (translatable)
 # AUTHOR_PATH = "authors"
 
@@ -573,7 +583,8 @@ HIDDEN_CATEGORIES = []
 # Author pages and links to them will still be generated.
 HIDDEN_AUTHORS = ['Guest']
 
-# Allow multiple, comma-separated authors for a post? (Requires theme support, present in built-in themes)
+# Allow multiple, comma-separated authors for a post? (Requires theme support,
+# present in built-in themes)
 # MULTIPLE_AUTHORS_PER_POST = False
 
 # Final location for the main blog page and sibling paginated pages is
@@ -873,7 +884,8 @@ IMAGE_FOLDERS = {'images': 'images'}
 # (translatable) If the following is empty, defaults to BLOG_TITLE:
 # INDEXES_TITLE = ""
 #
-# (translatable) If the following is empty, defaults to ' [old posts,] page %d' (see above):
+# (translatable) If the following is empty, defaults to ' [old posts,] page %d' (see
+# above):
 # INDEXES_PAGES = ""
 #
 # If the following is True, INDEXES_PAGES is also displayed on the main (the
@@ -933,10 +945,11 @@ IMAGE_FOLDERS = {'images': 'images'}
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# )
+FAVICONS = (
+    # ("icon", "/favicon.ico", "16x16"),
+    # ("icon", "/py_file_icon_512x512.png", "512x512"),  # also O
+    ("icon", "/py_icon_512x512.png", "512x512"),  # more visible among browser tabs
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
@@ -946,8 +959,10 @@ IMAGE_FOLDERS = {'images': 'images'}
 # {link}                        A link to the full post page.
 # {read_more}                   The string “Read more” in the current language.
 # {reading_time}                An estimate of how long it will take to read the post.
-# {remaining_reading_time}      An estimate of how long it will take to read the post, sans the teaser.
-# {min_remaining_read}          The string “{remaining_reading_time} min remaining to read” in the current language.
+# {remaining_reading_time}      An estimate of how long it will take to read the
+# post, sans the teaser.
+# {min_remaining_read}          The string “{remaining_reading_time} min remaining to
+# read” in the current language.
 # {paragraph_count}             The amount of paragraphs in the post.
 # {remaining_paragraph_count}   The amount of paragraphs in the post, sans the teaser.
 # {post_title}                  The title of the post.
@@ -971,18 +986,22 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
+# LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{' \
+                 'author}</a> - Powered by         <a href="https://getnikola.com" ' \
+                 'rel="nofollow">Nikola</a>         {license} - Icons from <a ' \
+                 'href="https://www.flaticon.com" ' \
+                 'title="free icons" target="_blank">Flaticon</a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1090,7 +1109,8 @@ PRETTY_URLS = True
 #         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
 #         processEscapes: true
 #     },
-#     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+#     displayAlign: 'center', // Change this to 'left' if you want left-aligned
+#     equations.
 #     "HTML-CSS": {
 #         styles: {'.MathJax_Display': {"margin": 0}}
 #     }
@@ -1127,9 +1147,11 @@ PRETTY_URLS = True
 #       with the MarkdownExtension class and should not be added here.
 # Defaults are markdown.extensions.(fenced_code|codehilite|extra)
 # markdown.extensions.meta is required for Markdown metadata.
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
+MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
+                       'markdown.extensions.codehilite', 'markdown.extensions.extra']
 
-# Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
+# Options to be passed to markdown extensions (See
+# https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
 # MARKDOWN_EXTENSION_CONFIGS = {}
 
@@ -1155,7 +1177,8 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # (translatable)
 # SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
-# <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+# <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+# addthis_default_style addthis_label_style addthis_32x32_style">
 # <a class="addthis_button_more">Share</a>
 # <ul><li><a class="addthis_button_facebook"></a>
 # <li><a class="addthis_button_google_plusone_share"></a>
@@ -1163,7 +1186,8 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # <li><a class="addthis_button_twitter"></a>
 # </ul>
 # </div>
-# <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+# <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra
+# -4f7088a56bb93798"></script>
 # <!-- End of social buttons -->
 # """
 
@@ -1233,7 +1257,8 @@ GENERATE_RSS = False
 # If you prefer a Google search form, here's an example that should just work:
 # SEARCH_FORM = """
 # <!-- Google custom search -->
-# <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+# <form method="get" action="https://www.google.com/search" class="navbar-form
+# navbar-right" role="search">
 # <div class="form-group">
 # <input type="text" name="q" class="form-control" placeholder="Search">
 # </div>
@@ -1304,7 +1329,8 @@ GENERATE_RSS = False
 #     "rest_docinfo": {"summary": "description", "modified": "updated"},
 #     "markdown_metadata": {"summary": "description", "modified": "updated"}
 # }
-# Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
+# Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other
+# -formats
 
 # Map metadata between types/values. (Runs after METADATA_MAPPING.)
 # Supported formats: nikola, yaml, toml, rest_docinfo, markdown_metadata
@@ -1312,9 +1338,11 @@ GENERATE_RSS = False
 # METADATA_VALUE_MAPPING = {}
 # Examples:
 # METADATA_VALUE_MAPPING = {
-#     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list -> str
+#     "yaml": {"keywords": lambda value: ', '.join(value)},  # yaml: 'keywords' list
+#     -> str
 #     "nikola": {
-#         "widgets": lambda value: value.split(', '),  # nikola: 'widgets' comma-separated string -> list
+#         "widgets": lambda value: value.split(', '),  # nikola: 'widgets'
+#         comma-separated string -> list
 #         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
 #      }
 # }

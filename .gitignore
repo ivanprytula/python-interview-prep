@@ -2,11 +2,12 @@
 .vscode
 
 __pycache__
+*.py[cod]
 
-# SSG-specific
+# Nikola SSG-specific
 nikola
-cache
-/snake_path/.doit.db.db
-output
+cache/
+output/
+.doit.db
 
 .env
