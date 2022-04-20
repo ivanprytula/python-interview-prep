@@ -424,260 +424,366 @@ modules (collection of modules (a “package”)).
 
 #### Q: What are decorators? How to create a custom decorator?
 
-A decorator is essentially a callable Python object that is used to modify or extend a function/method or class
+A decorator is essentially a _callable object_ that is used to modify or extend a function/method or class
 definition.
+
 One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
 classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
-even
-worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
+even worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
 application. Examples of some of the more common uses of decorators include adding synchronization, type
-enforcement,
-logging, or pre/post conditions to a class or function.
+enforcement, logging, or pre- and post-conditions to a class or function.
+
 Firstly, you have to know or remember that function names are references to functions and that we can assign
-multiple
-names/”references” to the same function.
+multiple names/”references” to the same function.
+
 The next important fact is that we can delete one of the references without deleting the function itself.
-Concepts to understand: Functions as Parameters, Functions returning Functions
+Concepts to understand: _Functions as Parameters, Functions returning Functions_
+
+```python
+import datetime
+
+
+def time_this(original_function):  # 1
+    def new_function(*args, **kwargs):  # 2
+        before = datetime.datetime.now()  # 3
+        x = original_function(*args, **kwargs)  # 4
+        after = datetime.datetime.now()  # 5
+        print("Elapsed Time = {0}".format(after - before))  # 6
+        return x  # 7
+
+    return new_function()  # 8
+
+
 @time_this
 def func_a(stuff):
-name_of_the_func = func_a.__name__
-do_things
-Is equivalent to:
+    name_of_the_func = func_a.__name__
+    # do_things
+
+
+# Is equivalent to:
 def func_a(stuff):
-do_things
-func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2
-versions,
-before decoration and after decoration.
-It should be noted: this notation can be used only for third-party functions
+    # do_things
+    pass
+
+
+func_a = time_this(func_a)
+# but it has a design problem ‘cause func_a exists in the same program in 2 versions, before decoration and after decoration. It should be noted: this notation can be used only for third-party functions
+```
+
 The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
 definition.
 
-def time_this(original_function):                              # 1
-def new_function(*args, **kwargs):                         # 2
-before = datetime.datetime.now()                       # 3
-x = original_function(*args, **kwargs)                 # 4
-after = datetime.datetime.now()                        # 5
-print "Elapsed Time = {0}".format(after - before)      # 6
-return x # 7
-return new_function()                                      # 8
-
-1 time_this is a function just like any other and has one parameter.
-2 Inside time_this we are defining a function. Every time time_this executes it will create a new function.
-3 Timing code, just like before.
-4 We call the original function and keep the result for later.
-5,6 The rest of the timing code.
-7 The new_function must act just like the original function and so returns the stored result.
-8 The function created in time_this is finally returned.
+1. `time_this` is a function just like any other and has one parameter.
+2. Inside time_this we are defining a function. Every time `time_this` executes it will create a new function.
+3. Timing code, just like before.
+4. We call the original function and keep the result for later.
+5. The rest of the timing code.
+6. The rest of the timing code.
+7. The new_function must act just like the original function and so returns the stored result.
+8. The function created in time_this is finally returned.
 
 The only constraint upon the object returned by the decorator is that it can be used as a function – which basically
-means it must be callable. Thus, any classes we use as decorators must implement __call__. The __call__ method is
+means it **must be callable**. Thus, any classes we use as decorators must implement `__call__()`. This method is
 called, if the instance is called "like a function", i.e. using brackets.
 
-@time_all_class_methods
-class ImportantStuff:
-def do_stuff_1(self):
-...
-def do_stuff_2(self):
-...
-def do_stuff_3(self):
-...
+    @time_all_class_methods
+    class ImportantStuff:
+        def do_stuff_1(self):
+            ...
+        def do_stuff_2(self):
+            ...
+        def do_stuff_3(self):
+            ...
 
 Here is the general form of a decorator with arguments and an illustration of its use.
-def outer_decorator(*outer_args,**outer_kwargs):
-def decorator(fn):
-def decorated(*args,**kwargs):
-do_something(*outer_args,**outer_kwargs)
-return fn(*args,**kwargs)
-return decorated
-return decorator
 
-@outer_decorator(1,2,3)
-def foo(a,b,c):
-print a
-print b
-print c
-foo()
-You can find an advanced tutorials on how decorators work here1, here2, here3
-Q: What are @classmethod, @staticmethod, @property? What is the difference between @classmethod and @staticmethod?
-The decorators that are used on functions defined within classes. Detailed example
+    def outer_decorator(*outer_args,**outer_kwargs):
+        def decorator(fn):
+            def decorated(*args,**kwargs):
+                do_something(*outer_args,**outer_kwargs)
+                return fn(*args,**kwargs)
+        return decorated
+    return decorator
 
-* classmethod: A method that receives the class as an implicit argument (cls) instead of the instance (self); executing
+    @outer_decorator(1,2,3)
+        def foo(a,b,c):
+        print(a)
+        print(b)
+        print(c)
+    foo()
+
+You can find an advanced tutorials on how decorators
+work [here1](https://www.codementor.io/@sheena/advanced-use-python-decorators-class-function-du107nxsv)
+, [here2](https://www.geeksforgeeks.org/class-as-decorator-in-python/)
+, [here3](https://www.python-course.eu/python3_decorators.php)
+
+#### Q: What are `@classmethod`, `@staticmethod`, `@property`?
+
+The decorators that are used on functions defined within
+classes. [Detailed example](https://www.codementor.io/@sheena/essential-python-interview-questions-du107ozr6#question-9)
+
+- **@classmethod**: A method that receives the class as an implicit argument (cls) instead of the instance (self);
+  executing
   in context of the class
-* staticmethod: A method that does not receive the implicit argument self as a first argument; can access such method
+- **@staticmethod**: A method that does not receive the implicit argument self as a first argument; can access such
+  method
   from instance and class itself as well.
-    * obj.hello() # @staticmethod
-    * SomeClass.hello() # @staticmethod
-* properties with property: Create functions for managing the getting, setting and deleting of an attribute.
-  Q: What is self?
-  Short Ans: Keyword used as “link” to the current object of class.
-  Long Ans: Self is an instance or an object of a class. In Python, this is explicitly included as the first parameter.
-  The self in the __init__ method refers to the newly created object while in other methods, it refers to the object
-  whose method was called.
-  Q: What is __init__ method in class?
-  It's a method which is used for customization of the initial state of newly created objects/instances.
-  def __init__(self, arg1, *data, **kwargs):  # __<>__ double underscores = dunder
-  self.data_name = data[0]
-  self.other_value = arg1
-  Q: How to compare values of variables and two objects?
-* Value comparisons: The operators <, >, ==, >=, <=, and != compare the values of two objects. The objects do not need
+    * `>>> obj.hello()`
+    * `>>> SomeClass.hello()`
+
+* **@property**: Create functions for managing the getting, setting and deleting of an attribute.
+
+#### Q: What is `self`?
+
+**Short Answer**: Keyword used as “link” to the current object of class.
+
+**Long Answer**: `self` is an instance or an object of a class. In Python, this is explicitly included as the first
+parameter.
+The `self` in the `__init__` method refers to the newly created object while in other methods, it refers to the object
+whose method was called.
+
+#### Q: What is `__init__()` in class?
+
+It's a method which is used for customization of the initial state of newly created objects/instances.
+
+    def __init__(self, arg1, *data, **kwargs):  # __<>__ double underscores = dunder
+        self.data_name = data[0]
+        self.other_value = arg1
+
+#### Q: How to compare values of variables and two objects?
+
+- **Value comparisons**: The operators `<`, `>`, `==`, `>=`, `<=`, and `!=` compare the values of two objects. The
+  objects do not need
   to have the same type.
-* Membership test operations: operators in and not in test for membership. x in s evaluates to True if x is a member of
+- **Membership test operations**: operators `in` and `not in` test for membership. x in s evaluates to True if x is a
+  member of
   s, and False otherwise. x not in s returns the negation of x in s.
-* Identity comparisons: operators is and is not test for an object’s identity: x is y is True if and only if x and y are
-  the same object. An Object’s identity is determined using the id() function. x is not y yields the inverse truth
+- **Identity comparisons**: operators `is` and `is not` test for an object’s identity: x is y is True if and only if x
+  and y are
+  the same object. An Object’s identity is determined using the `id()`. x is not y yields the inverse truth
   value.
-  Q: What is __new__ method in class?
-  __new__ is the first step in instance construction, invoked before __init__. The __new__ method is called with the
-  class as its first argument; its responsibility is to return a new instance of that class. Compare this to __
-  init__: __init__ is called with an instance as its first argument, and it doesn't return anything; its responsibility
-  is to initialize the instance. There are situations where a new instance is created without calling __init__ (for
-  example when the instance is loaded from a pickle). There is no way to create a new instance without calling __new__ (
-  although in some cases you can get away with calling a base class's __new__).
-  Here is an example of a subclass that overrides __new__ - this is how you would normally use it.
 
-> > > class inch(float):
-> > > ... “”Convert from inch to meter”””
-> > > ... def __new__(cls, arg=0.0):
-> > > ... return float.__new__(cls, arg*0.0254)
-> > > print inch(12)  # 0.3048
+#### Q: What is `__new__()` method in class?
 
+`__new__()` is the first step in instance construction, invoked _before_ `__init__`. The `__new__()` is called with the
+class as its first argument; its responsibility is to return a new instance of that class. Compare this to `__init__`:
+it is called with an instance as its first argument, and it doesn't return anything; its responsibility
+is to initialize the instance.
 
-Q: Explain how to make a Python script executable on Unix?
-You need to do 2 things: 1) the script file’s mode must be executable and 2) the first line must begin with #! followed
-by the path of the Python interpreter on your platform.
-The first is done by executing “chmod +x scriptfile” or perhaps “chmod 755 scriptfile”.
+There are situations where a new instance is created without calling `__init__()` (for example when the instance is
+loaded from a pickle). There is no way to create a new instance without calling __new__ (although in some cases you can
+get away with calling a base class's `__new__`).
+
+Here is an example of a subclass that overrides `__new__()` - this is how you would normally use it.
+
+    class inch(float):
+        “”Convert from inch to meter.”””
+        def __new__(cls, arg=0.0):
+            return float.__new__(cls, arg*0.0254)
+    print inch(12)  # 0.3048
+
+#### Q: Explain how to make a Python script executable on Unix?
+
+You need to do 2 things:
+
+1) the script file’s mode must be executable and
+2) the first line must begin with #! followed by the path of the Python interpreter on your platform.
+
+3) The first is done by executing `$ chmod +x scriptfile_name` or perhaps `$ chmod 755 scriptfile_name`.
+
+```shell 
 $ chmod +x myscript.py
+``` 
+
 The second can be done in a number of ways. The most straightforward way is to put
+
+```python
 #!/usr/local/bin/python
-#!interpreter [arguments], #! - shebang
+# !interpreter [arguments] #! - shebang
+```
+
 If you would like the script to be independent of where the Python interpreter lives, you can use the “env” program.
-Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s $PATH:
-#! /usr/bin/env python
-more details
-Q: What is pickling and unpickling?
-The pickle module implements a fundamental, but powerful algorithm (binary protocols) for serializing and de-serializing
-a Python object structure.
+Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s `$PATH`:
+[more details...](http://effbot.org/pyfaq/how-do-i-make-a-python-script-executable-on-unix.htm)
 
-* Pickling - is the process whereby a Python object hierarchy is converted into a byte stream (a binary file or
+```python
+#!/usr/bin/env python
+```
+
+#### Q: What is pickling and unpickling?
+
+The `pickle` module implements a fundamental, but powerful algorithm (binary protocols) for serializing and
+de-serializing a Python object structure.
+
+- **Pickling** - is the process whereby a Python object hierarchy is converted into a byte stream (a binary file or
   bytes-like object)
-* Unpickling - is the inverse operation, whereby a byte stream is converted back into an object hierarchy.
-  dump(object, file)
-  dumps(object) -> string
-  load(file) -> object
-  loads(string) -> object
-  Q: What are serialization methods in Python (write some examples)?
-  In the context of data storage, serialization is the process of translating data structures or object state into a
-  format that can be stored (for example, in a file or memory buffer) or transmitted and reconstructed later.
-  Pickle, YAML, JSON. more details
-  Q:  How can the ternary operators be used in Python?
-  Blueprint: value_if_true if condition/expression else value_if_false
-  Example:
-  is_nice = True
-  state = "nice" if is_nice else "not nice"
-  Q:  Does Python have a switch-case statement?
-  Python doesn't have a switch-case statement. Here, you may implement a switch function to use with a dictionary. Else,
-  you may use a set of if-elif-else statements.
-  def switch_demo(argument):
-  switcher = {
-  1: "January",
-  2: "February",
-  3: "March",
-  4: "April",
-  5: "May",
-  6: "June",
-  7: "July",
-  8: "August",
-  9: "September",
-  10: "October",
-  11: "November",
-  12: "December"
-  }
-  print(switcher.get(argument, "Invalid month"))
-  switch_demo(5)  # May
-  Q: In Python what are iterators?
-  Iterator it’s an object (can be iterated upon) that has implemented 2 dunders, __iter__() and __next__(), collectively
-  called the iterator protocol. An object is called iterable if we can get an iterator from it. Most built-in containers
-  in Python like: list, tuple, string etc. are iterables.
-  How to iterate over all the items of an iterator?
+- **Unpickling** - is the inverse operation, whereby a byte stream is converted back into an object hierarchy.
 
-1. Manually with next()
-2. Automatically by using the for loop (can iterate over any object that can return an iterator). Is actually
-   implemented as:
+```python
+import pickle
 
+"""
+The difference between dump and dumps is that dump writes the pickled object to an open file, and dumps returns the pickled object as bytes.
+The file must be opened for writing in binary mode. The pickled version of the object is exactly the same with both dump and dumps.
+"""
+# So, if you did the following for object obj:
+obj = {}
+with open("pickle1", "wb") as f:
+    pickle.dump(obj, f)
+with open("pickle2", "wb") as f:
+    f.write(pickle.dumps(obj))
+    # b'\x80\x03c__main__\nexample_class\nq\x00)\x81q\x01.'
+
+# you'd end up with two files with exactly the same contents.
+
+# The same applies to loading - load "unpickles" from an open (readable) file object, and loads uses a bytes object.
+
+# un-pickle
+with open(r"someobject.pickle", "rb") as input_file:
+    reconstituted_object_hierarchy = pickle.load(input_file)
+
+my_pickled_object = pickle.dumps({})
+pickle.loads(my_pickled_object)  # -> # Unpickling the object
+# {}
+```
+
+#### Q: What are serialization methods in Python (write some examples)?
+
+In the context of data storage, serialization is the process of translating data structures or object state into a
+format that can be stored (for example, in a file or memory buffer) or transmitted and reconstructed later.
+Pickle, YAML,
+JSON. [more details...](https://www.tutorialspoint.com/object_oriented_python/object_oriented_python_serialization.htm)
+
+#### Q: How can the ternary operators be used in Python?
+
+_Blueprint_: `value_if_true if condition/expression else value_if_false`
+_Example_:
+
+    is_nice = True
+    state = "nice" if is_nice else "not nice"
+
+#### Q: Does Python have a switch-case statement?
+
+Python doesn't have a switch-case statement until 3.10. Here, you may implement a switch function to use with a
+dictionary. Else,
+you may use a set of if-elif-else statements.
+
+```python
+def switch_demo(argument):
+    switcher = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+    }
+    print(switcher.get(argument, "Invalid month"))
+
+
+switch_demo(5)  # May
+```
+
+#### Q: What are iterators?
+
+Iterator it’s an object (can be iterated upon) that has implemented 2 dunders, `__iter__()` and `__next__()`,
+collectively called the iterator protocol. An object is called iterable if we can get an iterator from it. Most built-in
+containers in Python like: list, tuple, string etc. are iterables.
+
+How to iterate over all the items of an iterator?
+
+1. Manually with `next()`
+2. Automatically by using the `for` loop (can iterate over any object that can return an iterator). Is actually
+   implemented as [docs.python.org](https://docs.python.org/3/tutorial/classes.html#iterators):
+
+```python
 # create an iterator object from iterable
-
-iter_obj = iter(iterable)
+iter_obj = iter([1, 2, 3])
 
 # infinite loop
-
 while True:
-try:
+    try:
+        # get the next item
+        element = next(iter_obj)
+        # do something with element
+    except StopIteration:
+        # if StopIteration is raised, break from loop
+        break
+```
 
-# get the next item
+#### Q: What are generators?
 
-element = next(iter_obj)
-
-# do something with element
-
-except StopIteration:
-
-# if StopIteration is raised, break from loop
-
-break
-Q: What are Python generators?
 Primarily as syntactic sugar for implementing iterators (like it). Generators are regular functions but instead of using
-the return statement, they use yield to pass data (“lazy iterator”) back to the caller. Whereas a return statement
-disposes of a function’s local state, a yield statement suspends the function and retains its local state.
-def repeater(value):
-while True:
-yield value
-> > > repeater('Hey')
-<generator object repeater at 0x107bcdbf8>
-> > > The code in the generator function only executes when next() is called on the generator object:
-> > > generator_obj = repeater('Hey')
-> > > next(generator_obj)  # ‘Hey’
-> > > In practical terms, this means local variables and the execution state of the generator function are only stashed
-> > > away
-> > > temporarily and not thrown out completely. Execution can be resumed at any time by calling next() on the
-> > > generator. This
-> > > makes generators fully compatible with the iterator protocol.
-> > > Generators stop generating values as soon as control flow returns from the generator function by any means other
-> > > than a
-> > > yield statement. This means you no longer have to worry about raising StopIteration at all.
-> > > def repeat_three_times(value):
-> > > yield value
-> > > yield value
-> > > We’ll take advantage of the fact that Python adds an implicit return None statement to the end of every function.
-> > > def bounded_repeater(value, max_repeats):
-> > > for i in range(max_repeats):
-> > > yield value
+the return statement, they use `yield` to pass data (“lazy iterator”) back to the caller. Whereas a return statement
+disposes of a function’s local state, a `yield` statement suspends the function and retains its local state.
+
+    def repeater(value):
+        while True:
+            yield value
+    >>> repeater('Hey')
+    <generator object repeater at 0x107bcdbf8>
+
+The code in the generator function only executes when `next()` is called on the generator object:
+
+    generator_obj = repeater('Hey')
+    next(generator_obj)  # ‘Hey’
+
+In practical terms, this means local variables and the execution state of the generator function are only stashed away
+temporarily and not thrown out completely. Execution can be resumed at any time by calling `next()` on the generator.
+This makes generators fully compatible with the iterator protocol.
+
+Generators stop generating values as soon as control flow returns from the generator function by any means _other
+than a yield statement_. This means you no longer have to worry about raising `StopIteration` at all.
+
+    def repeat_three_times(value):
+        yield value
+        yield value
+
+We’ll take advantage of the fact that Python adds an implicit return None statement to the end of every function.
+
+    def bounded_repeater(value, max_repeats):
+        for i in range(max_repeats):
+            yield value
 
 * Generator functions are syntactic sugar for writing objects that support the iterator protocol. Generators abstract
   away much of the boilerplate code needed when writing class-based iterators (75% less code).
-* The yield statement allows you to temporarily suspend execution of a generator function and to pass back values from
+* The `yield` statement allows you to temporarily suspend execution of a generator function and to pass back values from
   it.
-* Generators start raising StopIteration exceptions after control flow leaves the generator function by any means other
-  than a yield statement.
-  Q: What is generator expressions (also called a generator comprehension)?
-  It has a very similar syntax to list/tuple comprehensions. In this way, we can use the generator without calling a
-  function.
+* Generators start raising `StopIteration` exceptions after control flow leaves the generator function by any means
+  other
+  than a `yield` statement.
 
+#### Q: What is generator expressions (also called a generator comprehension)?
+
+It has a very similar syntax to list/tuple comprehensions. In this way, we can use the generator without calling a
+function.
+
+```python
 # generator as a function
-
 def csv_reader(file_name):
-for row in open(file_name, "r"):
-yield row
+    for row_ in open(file_name, "r"):
+        yield row_
+
+
 csv_gen = csv_reader("some_csv.txt")
 row_count = 0
 for row in csv_gen:
-row_count += 1
+    row_count += 1
 print(f"Row count is {row_count}")  # Row count is 64186394
 
 # generator expression
+csv_gen = (row for row in open("file_name.txt"))
+```
 
-csv_gen = (row for row in open(file_name))
 They’re also useful in the same cases where list comprehensions are used, with an added benefit: you can create them
-without building and holding the entire object in memory before iteration. In other words, you’ll have no memory penalty
+without building and holding the entire object in memory before iteration. In other words, you’ll have **no memory
+penalty**
 when you use generator expressions. In a nutshell, iterating over a generator expression or list comprehension will
 essentially do the same thing, but the list comprehension will create the entire list in memory first while the
 generator expression will create the items on the fly as needed. Generator expressions can therefore be used for very
@@ -685,228 +791,194 @@ large (and even infinite) sequences and their lazy (i.e., on demand) generation 
 performance and lower memory usage. It is worth noting, though, that the standard Python list methods can be used on the
 result of a list comprehension, but not directly on that of a generator expression.
 
-Profiling Generator Performance
-import sys
-nums_squared_lc = [i * 2 for i in range(10000)]
-sys.getsizeof(nums_squared_lc)  # 87632 bytes, x680 times bigger
+**Profiling Generator Performance**
 
-nums_squared_gc = (i * 2 for i in range(10000))
-sys.getsizeof(nums_squared_gc)  # 128 bytes
+    import sys
+    nums_squared_lc = [i * 2 for i in range(10000)]
+    sys.getsizeof(nums_squared_lc)  # 87632 bytes, x680 times bigger
+    
+    nums_squared_gc = (i * 2 for i in range(10000))
+    sys.getsizeof(nums_squared_gc)  # 128 bytes
 
-If speed is an issue and memory isn’t, then a list comprehension is likely a better tool for the job. Generators have a
-fixed setup time that must be amortized over how many items are called. List comprehensions are faster initially but
-will slow substantially as more memory is used with larger data sets. more advanced details
-Q: What is a context manager?
-It’s a simple “protocol” (or interface) that your object needs to follow so it can be used with the with statement.
-Basically all you need to do is add __enter__ and __exit__ methods to an object if you want it to function as a context
-manager. Python will call these two methods at the appropriate times in the resource management cycle.
-A context manager defines the runtime context to be established when executing, e.g. a with statement. The context
+If **speed is an issue** and **memory isn’t**, then a list comprehension is likely a _better_ tool for the job.
+
+Generators have a fixed setup time that must be amortized over how many items are called. List comprehensions are faster
+initially but will slow substantially as more memory is used with larger data
+sets. [more details...](https://realpython.com/introduction-to-python-generators/)
+
+#### Q: What is a context manager?
+
+It’s a simple “protocol” (or interface) that your object needs to follow, so it can be used with the `with` statement.
+Basically all you need to do is add `__enter__` and `__exit__` methods to an object if you want it to function as a
+context manager. Python will call these two methods at the appropriate times in the resource management cycle.
+A _context manager_ defines the runtime context to be established when executing, e.g. a `with` statement. The context
 manager handles the entry into, and the exit from, the desired runtime context for the execution of the block of code.
 Context managers are normally invoked using the with statement, but can also be used by directly invoking their methods.
-more details1, more details2
+[more details1](https://dbader.org/blog/python-context-managers-and-with-statement)
+, [more details2](https://docs.python.org/3/reference/datamodel.html#context-managers)
 
 Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking
 resources, closing opened files, etc.
-class ManagedFile:
-def __init__(self, name):
-self.name = name
 
-    def __enter__(self):
-        self.file = open(self.name, 'w')
-        return self.file
+    class ManagedFile:
+        def __init__(self, name):
+            self.name = name
+    
+        def __enter__(self):
+            self.file = open(self.name, 'w')
+            return self.file
+    
+    
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            if self.file:
+                self.file.close()
 
+Our ManagedFile class follows the context manager protocol and now supports the `with` statement, just like the
+original `open()` example did:
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.file:
-            self.file.close()
+    with ManagedFile('hello.txt') as f:
+        f.write('hello, world!')
+        f.write('bye now')
 
-Our ManagedFile class follows the context manager protocol and now supports the with statement, just like the original
-open() example did:
-> > > with ManagedFile('hello.txt') as f:
-> > > ... f.write('hello, world!')
-> > > ... f.write('bye now')
+***Things to Remember***
 
-
-Things to Remember
-
-* The with statement simplifies exception handling by encapsulating standard uses of try/finally statements in so-called
-  Context Managers.
+* The `with` statement simplifies exception handling by encapsulating standard uses of `try/finally` statements in
+  so-called Context Managers.
 * Most commonly it is used to manage the safe acquisition and release of system resources. Resources are acquired by the
-  with statement and released automatically when execution leaves the with context.
-* Using with effectively can help you avoid resource leaks and make your code easier to read.
-  Q: What is lambda in Python?
-  An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
-  just one statement.
-  a = lambda x,y : x+y
-  print(a(5, 6))  # -> 11
-  Q: What do we need if __name__ == ‘__main__’: ?
-  Its main purpose is to separate the code that will be executed when the code is called as a module (when imported into
-  another script) - and when the module itself is launched as a separate file.
+  `with` statement and released automatically when execution leaves the with context.
+* Using `with` effectively can help you avoid resource leaks and make your code easier to read.
 
-# this means that if this script is executed, then
+#### Q: What is `lambda` function in Python?
 
-# some_func() will be executed
+An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
+just **one** statement.
 
-if __name__ == '__main__':
-some_func()
-Q: What is monkey patching and is it ever a good idea?
-Term monkey patch refers to dynamic (or run-time) modifications of a class or module, changing the behavior of a
+```python
+a = lambda x, y: x + y  # but it's better to avoid giving name to "anonymous" func
+print(a(5, 6))
+print((lambda x, y: x + y)(5, 6))
+```
+
+#### Q: What do we need `if __name__ == "__main__"`: ?
+
+Its main purpose is to separate the code that will be executed when the code is called as a module (when imported into
+another script) - and when the module itself is launched as a separate file.
+
+    # this means that if this script is executed, then some_func() will be executed
+    
+    if __name__ == '__main__':
+        some_func()
+
+#### Q: What is _monkey patching_ and is it ever a good idea?
+
+Term "monkey patch" refers to dynamic (or run-time) modifications of a class or module, changing the behavior of a
 function/object after it has already been defined. Most of the time it's a pretty terrible idea - it is usually best if
 things act in a well-defined way.
-To patch module (or class) variables or functions is easy, because Python doesn’t create protected or private entities
+
+To patch module (or class) variables or functions is easy, because Python does not create protected or private entities
 and in most cases it’s possible to get reference to them.
 
-# third-party library, __init__.py
+    # third-party library, __init__.py
+    # gorilla_lib/
+    #    └── __init__.py
+    class A:
+        @staticmethod
+        def func():
+            print("func() is being called")
+    DEMO_VAR = ‘don”t change me!’
+    
+    # our cool tricky hook.py
+    import gorilla_lib
+    def monkey_f(self):
+        print("monkey_f() is being called")
+    gorilla_lib.DEMO_VAR = ‘sorry, it”s just a programming’
+    
+    # replacing address of "func" with "monkey_f"
+    gorilla_lib.A.func = monkey_f
+    obj_gor = gorilla_lib.A()
+    
+    # calling function "func" whose address got replaced with function "monkey_f()"
+    obj_gor.func()  # monkey_f() is being called
 
-gorilla_lib/
-└── __init__.py
-
-class A:
-@staticmethod
-def func():
-print("func() is being called")
-DEMO_VAR = ‘don”t change me!’
-
-# our cool tricky hook.py
-
-import gorilla_lib
-def monkey_f(self):
-print("monkey_f() is being called")
-gorilla_lib.DEMO_VAR = ‘sorry, it”s just a programming’
-
-# replacing address of "func" with "monkey_f"
-
-gorilla_lib.A.func = monkey_f
-obj_gor = gorilla_lib.A()
-
-# calling function "func" whose address got replaced
-
-# with function "monkey_f()"
-
-obj_gor.func()  # monkey_f() is being called
-Q: How are arguments passed by value or by reference?
-Background knowledge:
-When you pass function arguments by reference, those arguments are only references to existing values. In contrast, when
+#### Q: How are arguments passed by value or by reference?
+**Background knowledge**:  
+When you pass function arguments **by reference**, those arguments are only references to existing values. In contrast, when
 you pass arguments by value, those arguments become independent copies of the original values.
-!!! Python passes arguments neither by reference nor by value, but by assignment. Python doesn’t exactly pass by value.
-Let’s prove it. more deep details
-Using id(obj) (returns an integer representing the memory address), you can verify the following assertions:
+!!! Python passes arguments neither by reference nor by value, but ***by assignment***. Python does not exactly pass by value.
+Let’s prove it. [more details...](https://realpython.com/python-pass-by-reference/)
+
+Using `id(obj)` (returns an integer representing the memory address), you can verify the following assertions:
 
 1. Function arguments initially refer to the same address as their original variables.
 2. Reassigning the argument within the function gives it a new address while the original variable remains unmodified.
    In the below example, note that the address of x initially matches that of n but changes after reassignment (for
    immutable data types), while the address of n never changes. If we have mutable types - after modification the
    address stays the same.
-   def main():
+
+```python
+def main():
    n = 9001
-   list_n = [100, 200]
    print(f"Initial address of n: {id(n)}")
    increment(n)
    print(f"Final address of n: {id(n)}")
 
 def increment(x):
-print(f"Initial address of x: {id(x)}")
-x += 1
-list_n.extend([444, 555])
-print(f"Final address of x: {id(x)}")
-> > > main()
-> > > Initial address of n: 140562586057840
-> > > Initial address of x: 140562586057840
-> > > Final address of x: 140562586057968
-> > > Final address of n: 140562586057840
+    print(f"Initial address of x: {id(x)}")
+    x += 1
+    print(f"Final address of x: {id(x)}")
+main()
+# Initial address of n: 140562586057840
+# Initial address of x: 140562586057840
+# Final address of x: 140562586057968
+# Final address of n: 140562586057840
+```
 
-
-Q: What is PYTHONPATH?
-PYTHONPATH is an environment variable which you can set to add additional directories where Python will look for modules
-and packages. Augment the default search path for module files. The format is the same as the shell’s PATH: one or more
+#### Q: What is `PYTHONPATH`?
+`PYTHONPATH` is an _environment variable_ which you can set to add additional directories where Python will look for modules
+and packages. Augment the default search path for module files. The format is the same as the shell’s `PATH`: one or more
 directory path names separated by os.pathsep (e.g. “:” on Unix or “;” on Windows). Non-existent directories are silently
 ignored.
+
 For most installations, you should not set these variables since they are not needed for Python to run. Python knows
-where to find its standard library. The only reason to set PYTHONPATH is to maintain directories of custom Python
+where to find its standard library. The only reason to set `PYTHONPATH` is to maintain directories of custom Python
 libraries that you do not want to install in the global default location (i.e., the site-packages directory).
-Q: Duck typing and EAFP and LBYL. How are they connected?
-Python follows the duck typing style of coding.
 
-# LBYL:- Look Before You Leap
+#### Q: Duck typing, EAFP and LBYL. How are they connected?
+Python follows the _duck typing_ style of coding.
 
-if can_fly():
-fly()
+```python
+# LBYL - Look Before You Leap
+if condition := (5 // 2):
+    print('Go!')
 else:
-do_something_else()
+    print('don"t go')
 
-# EAFP:- Easier to Ask Forgiveness than permission
-
+# EAFP- Easier to Ask Forgiveness than permission
 try:
-fly()
-except:
-clean_up()
+    file = open('file_name.txt')
+except FileNotFoundError:
+    ...
+```
 
-duck-typing
-A programming style which does not look at an object’s type to determine if it has the right interface; instead, the
+<mark>duck-typing</mark>
+: A programming style which does not look at an object’s type to determine if it has the right interface; instead, the
 method or attribute is simply called or used (“If it looks like a duck and quacks like a duck, it must be a duck.”) By
 emphasizing interfaces rather than specific types, well-designed code improves its flexibility by allowing polymorphic
 substitution. Duck-typing avoids tests using type() or isinstance(). (Note, however, that duck-typing can be
 complemented with abstract base classes.) Instead, it typically employs hasattr() tests or EAFP programming.
-EAFP
-Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or
+
+<mark>EAFP</mark>
+: Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or
 attributes and catches exceptions if the assumption proves false. This clean and fast style is characterized by the
 presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages
 such as C.
 
-Q: 12 steps to readable and maintainable Python code
 
-1. Declutter the repo with .gitignore
-2. No passwords in the code: use configuration files or environment variables
-3. Have a README.md[.rst]
-4. If you use third-party libraries, have a requirements.txt/Pipfile/pyproject.toml
-5. Format your code with black
-6. Remove unused imports
-7. Remove unused variables
-8. Follow PEP-8 naming conventions
-   #!/usr/bin/env python
-   import sys
 
-DEFAULT_NAME = "someone"   # <- UPPERCASE_UNDERSCORE
 
-class GreetingManager:   # <- CamelCase
 
-    def say_hello(self, arguments):  # <- lowercase_underscores
-        if len(arguments) < 2:
-            target_name = DEFAULT_NAME
-        else:
-            target_name = arguments[1]   # <- lowercase_underscores
-        print(f"Hello, {target_name}")
 
-if __name__ == "__main__":
-GreetingManager().say_hello(sys.argv)
-
-9. Verify your code with a linter: flake8 < pylint (more strict)
-10. Remove debugging print() / breakpoint()
-11. No commented out code
-12. Wrap your script with a function
-
-Q: The 10 Most Common Mistakes That Python Developers Make
-
-1. Misusing expressions as defaults for function arguments
-2. Using class variables incorrectly (NB: list.mro() -> [list], list.__mro__ -> (tuple))
-3. Specifying parameters incorrectly for an exception block
-4. Misunderstanding Python scope rules (LEGB rule)
-5. Modifying a list while iterating over it
-6. Confusing how Python binds variables in closures
-7. Creating circular module dependencies
-8. Name clashing with Python Standard Library modules
-9. Failing to address differences between Python 2 and Python 3
-10. Misusing the __del__ method
-    Code involving questions
-    Q: Chaining Comparison Operators
-    i = 4
-    answer = 1 < i < 10
-    print(answer) # True
-    Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?
-    ‘some string’.capitalize()
-    ‘ABCDE’.lower() // ‘zxcvbnm’.upper()
-
-Q: How to return multiple values in Python?
+#### Q: How to return multiple values in Python?
 Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
 def func():
 return 1, 2, 3, 4, 5
@@ -915,7 +987,7 @@ print(one, two, three, four, five)  # tuple unpacking
 > > > t = func()  # a tuple (1, 2, 3, 4, 5)
 
 
-Q: Does Python have infinity?
+#### Q: Does Python have infinity?
 > > > float('-Infinity')  # “inf”, “Inf”, “INFINITY” and “iNfINity” are all acceptable spellings
 > > > Also:
 > > > nan            ::=  "nan"
@@ -2618,12 +2690,14 @@ Q: What are key cloud resources as WebApp, Databases, Virtual Machines?
 
 # Best practices are foundation of your solid skills. _while True: read_and_repeat()_
 
-Refs:
+Refs.:
+
 1. [Jupyter notebooks for teaching/learning Python 3](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/best_practices.html)
+2. [Python code cleanup for beginners. 12 steps to readable and maintainable code.](https://roman.pt/posts/python-cleanup/)
 
 ### One virtual environment per project
 
-- Isolation  
+- Isolation
 - Different projects have different dependency versions
 - You don't want to mess up the system Python
 
@@ -2632,10 +2706,11 @@ Refs:
 - Package and module structure gives an overview about the project
 - Modular design == better re-usability
 
-
-    Don't put too much stuff into one module
-    Split project into packages
-    Be consistent with your naming conventions
+```text
+Don't put too much stuff into one module  
+Split the project into packages  
+Be consistent with your naming conventions  
+```
 
 ### Utilize the capabilities of your editor
 
@@ -2660,7 +2735,7 @@ Refs:
 - Make sure that everything works as expected
 - Make sure that old stuff works as expected after introducing new features (regression)
 - Tests give you confidence while refactoring
-- Good tests demonstrate the use cases of application, i.e. they also document the implementation 
+- Good tests demonstrate the use cases of application, i.e. they also document the implementation
 
 ### Write high quality code
 
@@ -2671,25 +2746,78 @@ Refs:
 ### Use continuous integration and deployment
 
 - Make sure the tests pass
-- CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to skip on their local machines
+- CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to
+  skip on their local machines
 - Make sure there's no linting errors
 - Ideally, the place to test against all target versions and platforms
 - Overall, CI is the last resort for automatically ensuring the quality
 - Manual deployments are time consuming and error-prone, CD is automated and deterministic
 - You want to automate as much as possible, human time is expensive
-- Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using those tools. Human time is expensive.
+- Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using
+  those tools. Human time is expensive.
 
+## 12 steps to readable and maintainable Python code
+
+1. Declutter the repo with .gitignore
+2. No passwords in the code: use configuration files or environment variables
+3. Have a README.md[.rst]
+4. If you use third-party libraries, have a requirements.txt/Pipfile/pyproject.toml
+5. Format your code with black
+6. Remove unused imports
+7. Remove unused variables
+8. Follow PEP-8 naming conventions
+
+```python
+#!/usr/bin/env python
+import sys
+
+DEFAULT_NAME = "someone"   # <- UPPERCASE_UNDERSCORE
+
+class GreetingManager:   # <- CamelCase
+
+    def say_hello(self, arguments):  # <- lowercase_underscores
+        if len(arguments) < 2:
+            target_name = DEFAULT_NAME
+        else:
+            target_name = arguments[1]   # <- lowercase_underscores
+        print(f"Hello, {target_name}")
+
+if __name__ == "__main__":
+GreetingManager().say_hello(sys.argv)
+```
+9. Verify your code with a linters
+10. Remove debugging print() / breakpoint()
+11. No commented out code
+12. Wrap your script with a function
+  
+## The 10 Most Common Mistakes That Python Developers Make
+
+1. Misusing expressions as defaults in function parameters
+2. Using class variables incorrectly (NB: list.mro() -> [list], list.__mro__ -> (tuple))
+3. Specifying parameters incorrectly for an exception block
+4. Misunderstanding Python scope rules (LEGB rule)
+5. Modifying a list while iterating over it
+6. Confusing how Python binds variables in closures
+7. Creating circular module dependencies
+8. Name clashing with Python Standard Library modules
+9. Failing to address differences between Python 2 and Python 3
+10. Misusing the `__del__` method
 
 
 <div id="section-exercises"><a href="#">[Return Up]</a></div>
 
-# ...content...Exercises/idioms/snippets
+# Exercises/idioms/snippets/"easter eggs"
 
-dsfsdf
-sdf  
-sdf  
-sdf  
-sdf
+#### Q: Chaining Comparison Operators
+
+    num_week_days = 7
+    answer = 1 < i < 10
+    print(answer) # True
+
+#### Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?
+
+    'some string'.capitalize()
+    'ABCDE'.lower() // 'zxcvbnm'.upper()
 
 # ...content...Quizzes/games
 
