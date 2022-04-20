@@ -481,472 +481,504 @@ modules (collection of modules (a “package”)).</p>
 </code></pre>
 
 <h5>Q: What are decorators? How to create a custom decorator?</h5>
-<p>A decorator is essentially a callable Python object that is used to modify or extend a function/method or class
-definition.
-One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
-classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
-even
-worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
-application. Examples of some of the more common uses of decorators include adding synchronization, type
-enforcement,
-logging, or pre/post conditions to a class or function.
-Firstly, you have to know or remember that function names are references to functions and that we can assign
-multiple
-names/”references” to the same function.
-The next important fact is that we can delete one of the references without deleting the function itself.
-Concepts to understand: Functions as Parameters, Functions returning Functions
-@time_this
-def func_a(stuff):
-name_of_the_func = func_a.<strong>name</strong>
-do_things
-Is equivalent to:
-def func_a(stuff):
-do_things
-func_a = my_decorator(func_a) # but it has a design problem ‘cause func_a exists in the same program in 2
-versions,
-before decoration and after decoration.
-It should be noted: this notation can be used only for third-party functions
-The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
+<p>A decorator is essentially a <em>callable object</em> that is used to modify or extend a function/method or class
 definition.</p>
-<p>def time_this(original_function):                              # 1
-def new_function(<em>args, </em><em>kwargs):                         # 2
-before = datetime.datetime.now()                       # 3
-x = original_function(</em>args, **kwargs)                 # 4
-after = datetime.datetime.now()                        # 5
-print "Elapsed Time = {0}".format(after - before)      # 6
-return x # 7
-return new_function()                                      # 8</p>
-<p>1 time_this is a function just like any other and has one parameter.
-2 Inside time_this we are defining a function. Every time time_this executes it will create a new function.
-3 Timing code, just like before.
-4 We call the original function and keep the result for later.
-5,6 The rest of the timing code.
-7 The new_function must act just like the original function and so returns the stored result.
-8 The function created in time_this is finally returned.</p>
+<p>One of the beauties of decorators is that a single decorator definition can be applied to multiple functions (or
+classes). Much can thereby be accomplished with decorators that would otherwise require lots of boilerplate (or
+even worse redundant!) code. Flask, for example, uses decorators as the mechanism for adding new endpoints to a web
+application. Examples of some of the more common uses of decorators include adding synchronization, type
+enforcement, logging, or pre- and post-conditions to a class or function.</p>
+<p>Firstly, you have to know or remember that function names are references to functions and that we can assign
+multiple names/”references” to the same function.</p>
+<p>The next important fact is that we can delete one of the references without deleting the function itself.
+Concepts to understand: <em>Functions as Parameters, Functions returning Functions</em></p>
+<pre class="code literal-block"><span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="k">def</span> <span class="nf">time_this</span><span class="p">(</span><span class="n">original_function</span><span class="p">):</span>  <span class="c1"># 1</span>
+    <span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># 2</span>
+        <span class="n">before</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>  <span class="c1"># 3</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">original_function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># 4</span>
+        <span class="n">after</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>  <span class="c1"># 5</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Elapsed Time = </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">after</span> <span class="o">-</span> <span class="n">before</span><span class="p">))</span>  <span class="c1"># 6</span>
+        <span class="k">return</span> <span class="n">x</span>  <span class="c1"># 7</span>
+
+    <span class="k">return</span> <span class="n">new_function</span><span class="p">()</span>  <span class="c1"># 8</span>
+
+
+<span class="nd">@time_this</span>
+<span class="k">def</span> <span class="nf">func_a</span><span class="p">(</span><span class="n">stuff</span><span class="p">):</span>
+    <span class="n">name_of_the_func</span> <span class="o">=</span> <span class="n">func_a</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="c1"># do_things</span>
+
+
+<span class="c1"># Is equivalent to:</span>
+<span class="k">def</span> <span class="nf">func_a</span><span class="p">(</span><span class="n">stuff</span><span class="p">):</span>
+    <span class="c1"># do_things</span>
+    <span class="k">pass</span>
+
+
+<span class="n">func_a</span> <span class="o">=</span> <span class="n">time_this</span><span class="p">(</span><span class="n">func_a</span><span class="p">)</span>
+<span class="c1"># but it has a design problem ‘cause func_a exists in the same program in 2 versions, before decoration and after decoration. It should be noted: this notation can be used only for third-party functions</span>
+</pre>
+<p>The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
+definition.</p>
+<ol>
+<li>
+<code>time_this</code> is a function just like any other and has one parameter.</li>
+<li>Inside time_this we are defining a function. Every time <code>time_this</code> executes it will create a new function.</li>
+<li>Timing code, just like before.</li>
+<li>We call the original function and keep the result for later.</li>
+<li>The rest of the timing code.</li>
+<li>The rest of the timing code.</li>
+<li>The new_function must act just like the original function and so returns the stored result.</li>
+<li>The function created in time_this is finally returned.</li>
+</ol>
 <p>The only constraint upon the object returned by the decorator is that it can be used as a function – which basically
-means it must be callable. Thus, any classes we use as decorators must implement <strong>call</strong>. The <strong>call</strong> method is
+means it <strong>must be callable</strong>. Thus, any classes we use as decorators must implement <code>__call__()</code>. This method is
 called, if the instance is called "like a function", i.e. using brackets.</p>
-<p>@time_all_class_methods
-class ImportantStuff:
-def do_stuff_1(self):
-...
-def do_stuff_2(self):
-...
-def do_stuff_3(self):
-...</p>
-<p>Here is the general form of a decorator with arguments and an illustration of its use.
-def outer_decorator(<em>outer_args,</em><em>outer_kwargs):
-def decorator(fn):
-def decorated(</em>args,<strong>kwargs):
-do_something(*outer_args,</strong>outer_kwargs)
-return fn(<em>args,</em>*kwargs)
-return decorated
-return decorator</p>
-<p>@outer_decorator(1,2,3)
-def foo(a,b,c):
-print a
-print b
-print c
-foo()
-You can find an advanced tutorials on how decorators work here1, here2, here3
-Q: What are @classmethod, @staticmethod, @property? What is the difference between @classmethod and @staticmethod?
-The decorators that are used on functions defined within classes. Detailed example</p>
+<pre class="code literal-block"><span></span><code><span class="nv">@time_all_class_methods</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nl">ImportantStuff</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_1</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_2</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_3</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+</code></pre>
+
+<p>Here is the general form of a decorator with arguments and an illustration of its use.</p>
+<pre class="code literal-block"><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">outer_decorator</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">decorator</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">decorated</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">do_something</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">decorated</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="n">decorator</span><span class="w"></span>
+
+<span class="nv">@outer_decorator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="n">foo</span><span class="p">()</span><span class="w"></span>
+</code></pre>
+
+<p>You can find an advanced tutorials on how decorators
+work <a href="https://www.codementor.io/@sheena/advanced-use-python-decorators-class-function-du107nxsv">here1</a>
+, <a href="https://www.geeksforgeeks.org/class-as-decorator-in-python/">here2</a>
+, <a href="https://www.python-course.eu/python3_decorators.php">here3</a></p>
+<h5>Q: What are <code>@classmethod</code>, <code>@staticmethod</code>, <code>@property</code>?</h5>
+<p>The decorators that are used on functions defined within
+classes. <a href="https://www.codementor.io/@sheena/essential-python-interview-questions-du107ozr6#question-9">Detailed example</a></p>
 <ul>
-<li>classmethod: A method that receives the class as an implicit argument (cls) instead of the instance (self); executing
+<li>
+<strong>@classmethod</strong>: A method that receives the class as an implicit argument (cls) instead of the instance (self);
+  executing
   in context of the class</li>
-<li>staticmethod: A method that does not receive the implicit argument self as a first argument; can access such method
-  from instance and class itself as well.<ul>
-<li>obj.hello() # @staticmethod</li>
-<li>SomeClass.hello() # @staticmethod</li>
+<li>
+<p><strong>@staticmethod</strong>: A method that does not receive the implicit argument self as a first argument; can access such
+  method
+  from instance and class itself as well.</p>
+<ul>
+<li><code>&gt;&gt;&gt; obj.hello()</code></li>
+<li><code>&gt;&gt;&gt; SomeClass.hello()</code></li>
 </ul>
 </li>
-<li>properties with property: Create functions for managing the getting, setting and deleting of an attribute.
-  Q: What is self?
-  Short Ans: Keyword used as “link” to the current object of class.
-  Long Ans: Self is an instance or an object of a class. In Python, this is explicitly included as the first parameter.
-  The self in the <strong>init</strong> method refers to the newly created object while in other methods, it refers to the object
-  whose method was called.
-  Q: What is <strong>init</strong> method in class?
-  It's a method which is used for customization of the initial state of newly created objects/instances.
-  def <strong>init</strong>(self, arg1, <em>data, </em>*kwargs):  # <strong>&lt;&gt;</strong> double underscores = dunder
-  self.data_name = data[0]
-  self.other_value = arg1
-  Q: How to compare values of variables and two objects?</li>
-<li>Value comparisons: The operators &lt;, &gt;, ==, &gt;=, &lt;=, and != compare the values of two objects. The objects do not need
-  to have the same type.</li>
-<li>Membership test operations: operators in and not in test for membership. x in s evaluates to True if x is a member of
-  s, and False otherwise. x not in s returns the negation of x in s.</li>
-<li>Identity comparisons: operators is and is not test for an object’s identity: x is y is True if and only if x and y are
-  the same object. An Object’s identity is determined using the id() function. x is not y yields the inverse truth
-  value.
-  Q: What is <strong>new</strong> method in class?
-  <strong>new</strong> is the first step in instance construction, invoked before <strong>init</strong>. The <strong>new</strong> method is called with the
-  class as its first argument; its responsibility is to return a new instance of that class. Compare this to <strong>
-  init</strong>: <strong>init</strong> is called with an instance as its first argument, and it doesn't return anything; its responsibility
-  is to initialize the instance. There are situations where a new instance is created without calling <strong>init</strong> (for
-  example when the instance is loaded from a pickle). There is no way to create a new instance without calling <strong>new</strong> (
-  although in some cases you can get away with calling a base class's <strong>new</strong>).
-  Here is an example of a subclass that overrides <strong>new</strong> - this is how you would normally use it.</li>
+<li>
+<p><strong>@property</strong>: Create functions for managing the getting, setting and deleting of an attribute.</p>
+</li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>class inch(float):
-... “”Convert from inch to meter”””
-... def <strong>new</strong>(cls, arg=0.0):
-... return float.<strong>new</strong>(cls, arg*0.0254)
-print inch(12)  # 0.3048</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Q: Explain how to make a Python script executable on Unix?
-You need to do 2 things: 1) the script file’s mode must be executable and 2) the first line must begin with #! followed
-by the path of the Python interpreter on your platform.
-The first is done by executing “chmod +x scriptfile” or perhaps “chmod 755 scriptfile”.
-$ chmod +x myscript.py
-The second can be done in a number of ways. The most straightforward way is to put</p>
-<h2>!/usr/local/bin/python</h2>
-<h2>!interpreter [arguments], #! - shebang</h2>
-<p>If you would like the script to be independent of where the Python interpreter lives, you can use the “env” program.
-Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s $PATH:</p>
-<h2>! /usr/bin/env python</h2>
-<p>more details
-Q: What is pickling and unpickling?
-The pickle module implements a fundamental, but powerful algorithm (binary protocols) for serializing and de-serializing
-a Python object structure.</p>
+<h5>Q: What is <code>self</code>?</h5>
+<p><strong>Short Answer</strong>: Keyword used as “link” to the current object of class.</p>
+<p><strong>Long Answer</strong>: <code>self</code> is an instance or an object of a class. In Python, this is explicitly included as the first
+parameter.
+The <code>self</code> in the <code>__init__</code> method refers to the newly created object while in other methods, it refers to the object
+whose method was called.</p>
+<h5>Q: What is <code>__init__()</code> in class?</h5>
+<p>It's a method which is used for customization of the initial state of newly created objects/instances.</p>
+<pre class="code literal-block"><span></span><code>def __init__(self, arg1, *data, **kwargs):  # __&lt;&gt;__ double underscores = dunder
+    self.data_name = data[0]
+    self.other_value = arg1
+</code></pre>
+
+<h5>Q: How to compare values of variables and two objects?</h5>
 <ul>
-<li>Pickling - is the process whereby a Python object hierarchy is converted into a byte stream (a binary file or
+<li>
+<strong>Value comparisons</strong>: The operators <code>&lt;</code>, <code>&gt;</code>, <code>==</code>, <code>&gt;=</code>, <code>&lt;=</code>, and <code>!=</code> compare the values of two objects. The
+  objects do not need
+  to have the same type.</li>
+<li>
+<strong>Membership test operations</strong>: operators <code>in</code> and <code>not in</code> test for membership. x in s evaluates to True if x is a
+  member of
+  s, and False otherwise. x not in s returns the negation of x in s.</li>
+<li>
+<strong>Identity comparisons</strong>: operators <code>is</code> and <code>is not</code> test for an object’s identity: x is y is True if and only if x
+  and y are
+  the same object. An Object’s identity is determined using the <code>id()</code>. x is not y yields the inverse truth
+  value.</li>
+</ul>
+<h5>Q: What is <code>__new__()</code> method in class?</h5>
+<p><code>__new__()</code> is the first step in instance construction, invoked <em>before</em> <code>__init__</code>. The <code>__new__()</code> is called with the
+class as its first argument; its responsibility is to return a new instance of that class. Compare this to <code>__init__</code>:
+it is called with an instance as its first argument, and it doesn't return anything; its responsibility
+is to initialize the instance.</p>
+<p>There are situations where a new instance is created without calling <code>__init__()</code> (for example when the instance is
+loaded from a pickle). There is no way to create a new instance without calling <strong>new</strong> (although in some cases you can
+get away with calling a base class's <code>__new__</code>).</p>
+<p>Here is an example of a subclass that overrides <code>__new__()</code> - this is how you would normally use it.</p>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">inch</span>(<span class="n">float</span>):
+    “”<span class="n">Convert</span> <span class="nb">from</span> <span class="n">inch</span> <span class="nb">to</span> <span class="n">meter</span>.”””
+    <span class="n">def</span> <span class="n">__new__</span>(<span class="n">cls</span>, <span class="n">arg</span>=<span class="mf">0.0</span>):
+        <span class="k">return</span> <span class="n">float</span>.<span class="n">__new__</span>(<span class="n">cls</span>, <span class="n">arg</span><span class="o">*</span><span class="mf">0.0254</span>)
+<span class="nb">print</span> <span class="n">inch</span>(<span class="mi">12</span>)  <span class="c1"># 0.3048</span>
+</code></pre>
+
+<h5>Q: Explain how to make a Python script executable on Unix?</h5>
+<p>You need to do 2 things:</p>
+<p>1) the script file’s mode must be executable and
+2) the first line must begin with #! followed by the path of the Python interpreter on your platform.</p>
+<p>3) The first is done by executing <code>$ chmod +x scriptfile_name</code> or perhaps <code>$ chmod 755 scriptfile_name</code>.</p>
+<pre class="code literal-block">$ chmod +x myscript.py
+</pre>
+<p>The second can be done in a number of ways. The most straightforward way is to put</p>
+<pre class="code literal-block"><span class="ch">#!/usr/local/bin/python</span>
+<span class="c1"># !interpreter [arguments] #! - shebang</span>
+</pre>
+<p>If you would like the script to be independent of where the Python interpreter lives, you can use the “env” program.
+Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s <code>$PATH</code>:
+<a href="http://effbot.org/pyfaq/how-do-i-make-a-python-script-executable-on-unix.htm">more details...</a></p>
+<pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
+</pre>
+<h5>Q: What is pickling and unpickling?</h5>
+<p>The <code>pickle</code> module implements a fundamental, but powerful algorithm (binary protocols) for serializing and
+de-serializing a Python object structure.</p>
+<ul>
+<li>
+<strong>Pickling</strong> - is the process whereby a Python object hierarchy is converted into a byte stream (a binary file or
   bytes-like object)</li>
 <li>
-<p>Unpickling - is the inverse operation, whereby a byte stream is converted back into an object hierarchy.
-  dump(object, file)
-  dumps(object) -&gt; string
-  load(file) -&gt; object
-  loads(string) -&gt; object
-  Q: What are serialization methods in Python (write some examples)?
-  In the context of data storage, serialization is the process of translating data structures or object state into a
-  format that can be stored (for example, in a file or memory buffer) or transmitted and reconstructed later.
-  Pickle, YAML, JSON. more details
-  Q:  How can the ternary operators be used in Python?
-  Blueprint: value_if_true if condition/expression else value_if_false
-  Example:
-  is_nice = True
-  state = "nice" if is_nice else "not nice"
-  Q:  Does Python have a switch-case statement?
-  Python doesn't have a switch-case statement. Here, you may implement a switch function to use with a dictionary. Else,
-  you may use a set of if-elif-else statements.
-  def switch_demo(argument):
-  switcher = {
-  1: "January",
-  2: "February",
-  3: "March",
-  4: "April",
-  5: "May",
-  6: "June",
-  7: "July",
-  8: "August",
-  9: "September",
-  10: "October",
-  11: "November",
-  12: "December"
-  }
-  print(switcher.get(argument, "Invalid month"))
-  switch_demo(5)  # May
-  Q: In Python what are iterators?
-  Iterator it’s an object (can be iterated upon) that has implemented 2 dunders, <strong>iter</strong>() and <strong>next</strong>(), collectively
-  called the iterator protocol. An object is called iterable if we can get an iterator from it. Most built-in containers
-  in Python like: list, tuple, string etc. are iterables.
-  How to iterate over all the items of an iterator?</p>
-</li>
-<li>
-<p>Manually with next()</p>
-</li>
-<li>Automatically by using the for loop (can iterate over any object that can return an iterator). Is actually
-   implemented as:</li>
+<strong>Unpickling</strong> - is the inverse operation, whereby a byte stream is converted back into an object hierarchy.</li>
 </ul>
-<h2>create an iterator object from iterable</h2>
-<p>iter_obj = iter(iterable)</p>
-<h2>infinite loop</h2>
-<p>while True:
-try:</p>
-<h2>get the next item</h2>
-<p>element = next(iter_obj)</p>
-<h2>do something with element</h2>
-<p>except StopIteration:</p>
-<h2>if StopIteration is raised, break from loop</h2>
-<p>break
-Q: What are Python generators?
-Primarily as syntactic sugar for implementing iterators (like it). Generators are regular functions but instead of using
-the return statement, they use yield to pass data (“lazy iterator”) back to the caller. Whereas a return statement
-disposes of a function’s local state, a yield statement suspends the function and retains its local state.
-def repeater(value):
-while True:
-yield value</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>repeater('Hey')
-<generator object repeater at>
-The code in the generator function only executes when next() is called on the generator object:
-generator_obj = repeater('Hey')
-next(generator_obj)  # ‘Hey’
-In practical terms, this means local variables and the execution state of the generator function are only stashed
-away
-temporarily and not thrown out completely. Execution can be resumed at any time by calling next() on the
-generator. This
-makes generators fully compatible with the iterator protocol.
-Generators stop generating values as soon as control flow returns from the generator function by any means other
-than a
-yield statement. This means you no longer have to worry about raising StopIteration at all.
-def repeat_three_times(value):
-yield value
-yield value
-We’ll take advantage of the fact that Python adds an implicit return None statement to the end of every function.
-def bounded_repeater(value, max_repeats):
-for i in range(max_repeats):
-yield value</generator></p>
-</blockquote>
-</blockquote>
-</blockquote>
+<pre class="code literal-block"><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="sd">"""</span>
+<span class="sd">The difference between dump and dumps is that dump writes the pickled object to an open file, and dumps returns the pickled object as bytes.</span>
+<span class="sd">The file must be opened for writing in binary mode. The pickled version of the object is exactly the same with both dump and dumps.</span>
+<span class="sd">"""</span>
+<span class="c1"># So, if you did the following for object obj:</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"pickle1"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"pickle2"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+    <span class="c1"># b'\x80\x03c__main__\nexample_class\nq\x00)\x81q\x01.'</span>
+
+<span class="c1"># you'd end up with two files with exactly the same contents.</span>
+
+<span class="c1"># The same applies to loading - load "unpickles" from an open (readable) file object, and loads uses a bytes object.</span>
+
+<span class="c1"># un-pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">"someobject.pickle"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+    <span class="n">reconstituted_object_hierarchy</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+
+<span class="n">my_pickled_object</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">({})</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">my_pickled_object</span><span class="p">)</span>  <span class="c1"># -&gt; # Unpickling the object</span>
+<span class="c1"># {}</span>
+</pre>
+<h5>Q: What are serialization methods in Python (write some examples)?</h5>
+<p>In the context of data storage, serialization is the process of translating data structures or object state into a
+format that can be stored (for example, in a file or memory buffer) or transmitted and reconstructed later.
+Pickle, YAML,
+JSON. <a href="https://www.tutorialspoint.com/object_oriented_python/object_oriented_python_serialization.htm">more details...</a></p>
+<h5>Q: How can the ternary operators be used in Python?</h5>
+<p><em>Blueprint</em>: <code>value_if_true if condition/expression else value_if_false</code>
+<em>Example</em>:</p>
+<pre class="code literal-block"><span></span><code><span class="nv">is_nice</span> <span class="o">=</span> <span class="nv">True</span>
+<span class="nv">state</span> <span class="o">=</span> <span class="s2">"</span><span class="s">nice</span><span class="s2">"</span> <span class="k">if</span> <span class="nv">is_nice</span> <span class="k">else</span> <span class="s2">"</span><span class="s">not nice</span><span class="s2">"</span>
+</code></pre>
+
+<h5>Q: Does Python have a switch-case statement?</h5>
+<p>Python doesn't have a switch-case statement until 3.10. Here, you may implement a switch function to use with a
+dictionary. Else,
+you may use a set of if-elif-else statements.</p>
+<pre class="code literal-block"><span class="k">def</span> <span class="nf">switch_demo</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
+    <span class="n">switcher</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s2">"January"</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s2">"February"</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s2">"March"</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s2">"April"</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s2">"May"</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s2">"June"</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s2">"July"</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s2">"August"</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s2">"September"</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s2">"October"</span><span class="p">,</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="s2">"November"</span><span class="p">,</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="s2">"December"</span>
+    <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">switcher</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="s2">"Invalid month"</span><span class="p">))</span>
+
+
+<span class="n">switch_demo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># May</span>
+</pre>
+<h5>Q: What are iterators?</h5>
+<p>Iterator it’s an object (can be iterated upon) that has implemented 2 dunders, <code>__iter__()</code> and <code>__next__()</code>,
+collectively called the iterator protocol. An object is called iterable if we can get an iterator from it. Most built-in
+containers in Python like: list, tuple, string etc. are iterables.</p>
+<p>How to iterate over all the items of an iterator?</p>
+<ol>
+<li>Manually with <code>next()</code>
+</li>
+<li>Automatically by using the <code>for</code> loop (can iterate over any object that can return an iterator). Is actually
+   implemented as <a href="https://docs.python.org/3/tutorial/classes.html#iterators">docs.python.org</a>:</li>
+</ol>
+<pre class="code literal-block"><span class="c1"># create an iterator object from iterable</span>
+<span class="n">iter_obj</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># infinite loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># get the next item</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iter_obj</span><span class="p">)</span>
+        <span class="c1"># do something with element</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="c1"># if StopIteration is raised, break from loop</span>
+        <span class="k">break</span>
+</pre>
+<h5>Q: What are generators?</h5>
+<p>Primarily as syntactic sugar for implementing iterators (like it). Generators are regular functions but instead of using
+the return statement, they use <code>yield</code> to pass data (“lazy iterator”) back to the caller. Whereas a return statement
+disposes of a function’s local state, a <code>yield</code> statement suspends the function and retains its local state.</p>
+<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">repeater</span><span class="ss">(</span><span class="nv">value</span><span class="ss">)</span>:
+    <span class="k">while</span> <span class="nv">True</span>:
+        <span class="nv">yield</span> <span class="nv">value</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">repeater</span><span class="ss">(</span><span class="s1">'</span><span class="s">Hey</span><span class="s1">'</span><span class="ss">)</span>
+<span class="o">&lt;</span><span class="nv">generator</span> <span class="nv">object</span> <span class="nv">repeater</span> <span class="nv">at</span> <span class="mi">0</span><span class="nv">x107bcdbf8</span><span class="o">&gt;</span>
+</code></pre>
+
+<p>The code in the generator function only executes when <code>next()</code> is called on the generator object:</p>
+<pre class="code literal-block"><span></span><code><span class="nv">generator_obj</span> <span class="o">=</span> <span class="nv">repeater</span><span class="ss">(</span><span class="s1">'</span><span class="s">Hey</span><span class="s1">'</span><span class="ss">)</span>
+<span class="k">next</span><span class="ss">(</span><span class="nv">generator_obj</span><span class="ss">)</span>  # ‘<span class="nv">Hey</span>’
+</code></pre>
+
+<p>In practical terms, this means local variables and the execution state of the generator function are only stashed away
+temporarily and not thrown out completely. Execution can be resumed at any time by calling <code>next()</code> on the generator.
+This makes generators fully compatible with the iterator protocol.</p>
+<p>Generators stop generating values as soon as control flow returns from the generator function by any means <em>other
+than a yield statement</em>. This means you no longer have to worry about raising <code>StopIteration</code> at all.</p>
+<pre class="code literal-block"><span></span><code>def repeat_three_times(value):
+    yield value
+    yield value
+</code></pre>
+
+<p>We’ll take advantage of the fact that Python adds an implicit return None statement to the end of every function.</p>
+<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">bounded_repeater</span><span class="ss">(</span><span class="nv">value</span>, <span class="nv">max_repeats</span><span class="ss">)</span>:
+    <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="nv">max_repeats</span><span class="ss">)</span>:
+        <span class="nv">yield</span> <span class="nv">value</span>
+</code></pre>
+
 <ul>
 <li>Generator functions are syntactic sugar for writing objects that support the iterator protocol. Generators abstract
   away much of the boilerplate code needed when writing class-based iterators (75% less code).</li>
-<li>The yield statement allows you to temporarily suspend execution of a generator function and to pass back values from
+<li>The <code>yield</code> statement allows you to temporarily suspend execution of a generator function and to pass back values from
   it.</li>
-<li>Generators start raising StopIteration exceptions after control flow leaves the generator function by any means other
-  than a yield statement.
-  Q: What is generator expressions (also called a generator comprehension)?
-  It has a very similar syntax to list/tuple comprehensions. In this way, we can use the generator without calling a
-  function.</li>
+<li>Generators start raising <code>StopIteration</code> exceptions after control flow leaves the generator function by any means
+  other
+  than a <code>yield</code> statement.</li>
 </ul>
-<h2>generator as a function</h2>
-<p>def csv_reader(file_name):
-for row in open(file_name, "r"):
-yield row
-csv_gen = csv_reader("some_csv.txt")
-row_count = 0
-for row in csv_gen:
-row_count += 1
-print(f"Row count is {row_count}")  # Row count is 64186394</p>
-<h2>generator expression</h2>
-<p>csv_gen = (row for row in open(file_name))
-They’re also useful in the same cases where list comprehensions are used, with an added benefit: you can create them
-without building and holding the entire object in memory before iteration. In other words, you’ll have no memory penalty
+<h5>Q: What is generator expressions (also called a generator comprehension)?</h5>
+<p>It has a very similar syntax to list/tuple comprehensions. In this way, we can use the generator without calling a
+function.</p>
+<pre class="code literal-block"><span class="c1"># generator as a function</span>
+<span class="k">def</span> <span class="nf">csv_reader</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row_</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">row_</span>
+
+
+<span class="n">csv_gen</span> <span class="o">=</span> <span class="n">csv_reader</span><span class="p">(</span><span class="s2">"some_csv.txt"</span><span class="p">)</span>
+<span class="n">row_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_gen</span><span class="p">:</span>
+    <span class="n">row_count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Row count is </span><span class="si">{</span><span class="n">row_count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Row count is 64186394</span>
+
+<span class="c1"># generator expression</span>
+<span class="n">csv_gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file_name.txt"</span><span class="p">))</span>
+</pre>
+<p>They’re also useful in the same cases where list comprehensions are used, with an added benefit: you can create them
+without building and holding the entire object in memory before iteration. In other words, you’ll have <strong>no memory
+penalty</strong>
 when you use generator expressions. In a nutshell, iterating over a generator expression or list comprehension will
 essentially do the same thing, but the list comprehension will create the entire list in memory first while the
 generator expression will create the items on the fly as needed. Generator expressions can therefore be used for very
 large (and even infinite) sequences and their lazy (i.e., on demand) generation of values results in improved
 performance and lower memory usage. It is worth noting, though, that the standard Python list methods can be used on the
 result of a list comprehension, but not directly on that of a generator expression.</p>
-<p>Profiling Generator Performance
-import sys
-nums_squared_lc = [i * 2 for i in range(10000)]
-sys.getsizeof(nums_squared_lc)  # 87632 bytes, x680 times bigger</p>
-<p>nums_squared_gc = (i * 2 for i in range(10000))
-sys.getsizeof(nums_squared_gc)  # 128 bytes</p>
-<p>If speed is an issue and memory isn’t, then a list comprehension is likely a better tool for the job. Generators have a
-fixed setup time that must be amortized over how many items are called. List comprehensions are faster initially but
-will slow substantially as more memory is used with larger data sets. more advanced details
-Q: What is a context manager?
-It’s a simple “protocol” (or interface) that your object needs to follow so it can be used with the with statement.
-Basically all you need to do is add <strong>enter</strong> and <strong>exit</strong> methods to an object if you want it to function as a context
-manager. Python will call these two methods at the appropriate times in the resource management cycle.
-A context manager defines the runtime context to be established when executing, e.g. a with statement. The context
-manager handles the entry into, and the exit from, the desired runtime context for the execution of the block of code.
-Context managers are normally invoked using the with statement, but can also be used by directly invoking their methods.
-more details1, more details2</p>
-<p>Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking
-resources, closing opened files, etc.
-class ManagedFile:
-def <strong>init</strong>(self, name):
-self.name = name</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">__enter__</span><span class="ss">(</span><span class="nv">self</span><span class="ss">)</span>:
-    <span class="nv">self</span>.<span class="nv">file</span> <span class="o">=</span> <span class="nv">open</span><span class="ss">(</span><span class="nv">self</span>.<span class="nv">name</span>, <span class="s1">'</span><span class="s">w</span><span class="s1">'</span><span class="ss">)</span>
-    <span class="k">return</span> <span class="nv">self</span>.<span class="nv">file</span>
+<p><strong>Profiling Generator Performance</strong></p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">nums_squared_lc</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nums_squared_lc</span><span class="p">)</span>  <span class="c1"># 87632 bytes, x680 times bigger</span>
 
-
-<span class="nv">def</span> <span class="nv">__exit__</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">exc_type</span>, <span class="nv">exc_val</span>, <span class="nv">exc_tb</span><span class="ss">)</span>:
-    <span class="k">if</span> <span class="nv">self</span>.<span class="nv">file</span>:
-        <span class="nv">self</span>.<span class="nv">file</span>.<span class="nv">close</span><span class="ss">()</span>
+<span class="n">nums_squared_gc</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nums_squared_gc</span><span class="p">)</span>  <span class="c1"># 128 bytes</span>
 </code></pre>
 
-<p>Our ManagedFile class follows the context manager protocol and now supports the with statement, just like the original
-open() example did:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>with ManagedFile('hello.txt') as f:
-... f.write('hello, world!')
-... f.write('bye now')</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Things to Remember</p>
+<p>If <strong>speed is an issue</strong> and <strong>memory isn’t</strong>, then a list comprehension is likely a <em>better</em> tool for the job.</p>
+<p>Generators have a fixed setup time that must be amortized over how many items are called. List comprehensions are faster
+initially but will slow substantially as more memory is used with larger data
+sets. <a href="https://realpython.com/introduction-to-python-generators/">more details...</a></p>
+<h5>Q: What is a context manager?</h5>
+<p>It’s a simple “protocol” (or interface) that your object needs to follow, so it can be used with the <code>with</code> statement.
+Basically all you need to do is add <code>__enter__</code> and <code>__exit__</code> methods to an object if you want it to function as a
+context manager. Python will call these two methods at the appropriate times in the resource management cycle.
+A <em>context manager</em> defines the runtime context to be established when executing, e.g. a <code>with</code> statement. The context
+manager handles the entry into, and the exit from, the desired runtime context for the execution of the block of code.
+Context managers are normally invoked using the with statement, but can also be used by directly invoking their methods.
+<a href="https://dbader.org/blog/python-context-managers-and-with-statement">more details1</a>
+, <a href="https://docs.python.org/3/reference/datamodel.html#context-managers">more details2</a></p>
+<p>Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking
+resources, closing opened files, etc.</p>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">ManagedFile:</span>
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="nb">name</span>):
+        <span class="nb">self</span>.<span class="nb">name</span> = <span class="nb">name</span>
+
+    <span class="n">def</span> <span class="n">__enter__</span>(<span class="nb">self</span>):
+        <span class="nb">self</span>.<span class="nb">file</span> = <span class="nb">open</span>(<span class="nb">self</span>.<span class="nb">name</span>, <span class="s">'w'</span>)
+        <span class="k">return</span> <span class="nb">self</span>.<span class="nb">file</span>
+
+
+    <span class="n">def</span> <span class="n">__exit__</span>(<span class="nb">self</span>, <span class="n">exc_type</span>, <span class="n">exc_val</span>, <span class="n">exc_tb</span>):
+        <span class="k">if</span> <span class="nb">self</span>.<span class="n">file:</span>
+            <span class="nb">self</span>.<span class="nb">file</span>.<span class="nb">close</span>()
+</code></pre>
+
+<p>Our ManagedFile class follows the context manager protocol and now supports the <code>with</code> statement, just like the
+original <code>open()</code> example did:</p>
+<pre class="code literal-block"><span></span><code>with ManagedFile('hello.txt') as f:
+    f.write('hello, world!')
+    f.write('bye now')
+</code></pre>
+
+<p><strong><em>Things to Remember</em></strong></p>
 <ul>
-<li>The with statement simplifies exception handling by encapsulating standard uses of try/finally statements in so-called
-  Context Managers.</li>
+<li>The <code>with</code> statement simplifies exception handling by encapsulating standard uses of <code>try/finally</code> statements in
+  so-called Context Managers.</li>
 <li>Most commonly it is used to manage the safe acquisition and release of system resources. Resources are acquired by the
-  with statement and released automatically when execution leaves the with context.</li>
-<li>Using with effectively can help you avoid resource leaks and make your code easier to read.
-  Q: What is lambda in Python?
-  An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
-  just one statement.
-  a = lambda x,y : x+y
-  print(a(5, 6))  # -&gt; 11
-  Q: What do we need if <strong>name</strong> == ‘<strong>main</strong>’: ?
-  Its main purpose is to separate the code that will be executed when the code is called as a module (when imported into
-  another script) - and when the module itself is launched as a separate file.</li>
+  <code>with</code> statement and released automatically when execution leaves the with context.</li>
+<li>Using <code>with</code> effectively can help you avoid resource leaks and make your code easier to read.</li>
 </ul>
-<h2>this means that if this script is executed, then</h2>
-<h2>some_func() will be executed</h2>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-some_func()
-Q: What is monkey patching and is it ever a good idea?
-Term monkey patch refers to dynamic (or run-time) modifications of a class or module, changing the behavior of a
+<h5>Q: What is <code>lambda</code> function in Python?</h5>
+<p>An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
+just <strong>one</strong> statement.</p>
+<pre class="code literal-block"><span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># but it's better to avoid giving name to "anonymous" func</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</pre>
+<h5>Q: What do we need <code>if __name__ == "__main__"</code>: ?</h5>
+<p>Its main purpose is to separate the code that will be executed when the code is called as a module (when imported into
+another script) - and when the module itself is launched as a separate file.</p>
+<pre class="code literal-block"><span></span><code># <span class="nv">this</span> <span class="nv">means</span> <span class="nv">that</span> <span class="k">if</span> <span class="nv">this</span> <span class="nv">script</span> <span class="nv">is</span> <span class="nv">executed</span>, <span class="k">then</span> <span class="nv">some_func</span><span class="ss">()</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">executed</span>
+
+<span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">'</span><span class="s">__main__</span><span class="s1">'</span>:
+    <span class="nv">some_func</span><span class="ss">()</span>
+</code></pre>
+
+<h5>Q: What is <em>monkey patching</em> and is it ever a good idea?</h5>
+<p>Term "monkey patch" refers to dynamic (or run-time) modifications of a class or module, changing the behavior of a
 function/object after it has already been defined. Most of the time it's a pretty terrible idea - it is usually best if
-things act in a well-defined way.
-To patch module (or class) variables or functions is easy, because Python doesn’t create protected or private entities
+things act in a well-defined way.</p>
+<p>To patch module (or class) variables or functions is easy, because Python does not create protected or private entities
 and in most cases it’s possible to get reference to them.</p>
-<h2>third-party library, <strong>init</strong>.py</h2>
-<p>gorilla_lib/
-└── <strong>init</strong>.py</p>
-<p>class A:
-@staticmethod
-def func():
-print("func() is being called")
-DEMO_VAR = ‘don”t change me!’</p>
-<h2>our cool tricky hook.py</h2>
-<p>import gorilla_lib
-def monkey_f(self):
-print("monkey_f() is being called")
-gorilla_lib.DEMO_VAR = ‘sorry, it”s just a programming’</p>
-<h2>replacing address of "func" with "monkey_f"</h2>
-<p>gorilla_lib.A.func = monkey_f
-obj_gor = gorilla_lib.A()</p>
-<h2>calling function "func" whose address got replaced</h2>
-<h2>with function "monkey_f()"</h2>
-<p>obj_gor.func()  # monkey_f() is being called
-Q: How are arguments passed by value or by reference?
-Background knowledge:
-When you pass function arguments by reference, those arguments are only references to existing values. In contrast, when
+<pre class="code literal-block"><span></span><code><span class="c1"># third-party library, __init__.py</span>
+<span class="c1"># gorilla_lib/</span>
+<span class="c1">#    └── __init__.py</span>
+<span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"func() is being called"</span><span class="p">)</span>
+<span class="n">DEMO_VAR</span> <span class="o">=</span> <span class="err">‘</span><span class="n">don</span><span class="err">”</span><span class="n">t</span> <span class="n">change</span> <span class="n">me</span><span class="err">!’</span>
+
+<span class="c1"># our cool tricky hook.py</span>
+<span class="kn">import</span> <span class="nn">gorilla_lib</span>
+<span class="k">def</span> <span class="nf">monkey_f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"monkey_f() is being called"</span><span class="p">)</span>
+<span class="n">gorilla_lib</span><span class="o">.</span><span class="n">DEMO_VAR</span> <span class="o">=</span> <span class="err">‘</span><span class="n">sorry</span><span class="p">,</span> <span class="n">it</span><span class="err">”</span><span class="n">s</span> <span class="n">just</span> <span class="n">a</span> <span class="n">programming</span><span class="err">’</span>
+
+<span class="c1"># replacing address of "func" with "monkey_f"</span>
+<span class="n">gorilla_lib</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">monkey_f</span>
+<span class="n">obj_gor</span> <span class="o">=</span> <span class="n">gorilla_lib</span><span class="o">.</span><span class="n">A</span><span class="p">()</span>
+
+<span class="c1"># calling function "func" whose address got replaced with function "monkey_f()"</span>
+<span class="n">obj_gor</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>  <span class="c1"># monkey_f() is being called</span>
+</code></pre>
+
+<h5>Q: How are arguments passed by value or by reference?</h5>
+<p><strong>Background knowledge</strong>:<br>
+When you pass function arguments <strong>by reference</strong>, those arguments are only references to existing values. In contrast, when
 you pass arguments by value, those arguments become independent copies of the original values.
-!!! Python passes arguments neither by reference nor by value, but by assignment. Python doesn’t exactly pass by value.
-Let’s prove it. more deep details
-Using id(obj) (returns an integer representing the memory address), you can verify the following assertions:</p>
+!!! Python passes arguments neither by reference nor by value, but <strong><em>by assignment</em></strong>. Python does not exactly pass by value.
+Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">more details...</a></p>
+<p>Using <code>id(obj)</code> (returns an integer representing the memory address), you can verify the following assertions:</p>
 <ol>
 <li>Function arguments initially refer to the same address as their original variables.</li>
 <li>Reassigning the argument within the function gives it a new address while the original variable remains unmodified.
    In the below example, note that the address of x initially matches that of n but changes after reassignment (for
    immutable data types), while the address of n never changes. If we have mutable types - after modification the
-   address stays the same.
-   def main():
-   n = 9001
-   list_n = [100, 200]
-   print(f"Initial address of n: {id(n)}")
-   increment(n)
-   print(f"Final address of n: {id(n)}")</li>
+   address stays the same.</li>
 </ol>
-<p>def increment(x):
-print(f"Initial address of x: {id(x)}")
-x += 1
-list_n.extend([444, 555])
-print(f"Final address of x: {id(x)}")</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>main()
-Initial address of n: 140562586057840
-Initial address of x: 140562586057840
-Final address of x: 140562586057968
-Final address of n: 140562586057840</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Q: What is PYTHONPATH?
-PYTHONPATH is an environment variable which you can set to add additional directories where Python will look for modules
-and packages. Augment the default search path for module files. The format is the same as the shell’s PATH: one or more
+<pre class="code literal-block"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">n</span> <span class="o">=</span> <span class="mi">9001</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+   <span class="n">increment</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of x: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of x: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="c1"># Initial address of n: 140562586057840</span>
+<span class="c1"># Initial address of x: 140562586057840</span>
+<span class="c1"># Final address of x: 140562586057968</span>
+<span class="c1"># Final address of n: 140562586057840</span>
+</pre>
+<h5>Q: What is <code>PYTHONPATH</code>?</h5>
+<p><code>PYTHONPATH</code> is an <em>environment variable</em> which you can set to add additional directories where Python will look for modules
+and packages. Augment the default search path for module files. The format is the same as the shell’s <code>PATH</code>: one or more
 directory path names separated by os.pathsep (e.g. “:” on Unix or “;” on Windows). Non-existent directories are silently
-ignored.
-For most installations, you should not set these variables since they are not needed for Python to run. Python knows
-where to find its standard library. The only reason to set PYTHONPATH is to maintain directories of custom Python
-libraries that you do not want to install in the global default location (i.e., the site-packages directory).
-Q: Duck typing and EAFP and LBYL. How are they connected?
-Python follows the duck typing style of coding.</p>
-<h2>LBYL:- Look Before You Leap</h2>
-<p>if can_fly():
-fly()
-else:
-do_something_else()</p>
-<h2>EAFP:- Easier to Ask Forgiveness than permission</h2>
-<p>try:
-fly()
-except:
-clean_up()</p>
-<p>duck-typing
-A programming style which does not look at an object’s type to determine if it has the right interface; instead, the
+ignored.</p>
+<p>For most installations, you should not set these variables since they are not needed for Python to run. Python knows
+where to find its standard library. The only reason to set <code>PYTHONPATH</code> is to maintain directories of custom Python
+libraries that you do not want to install in the global default location (i.e., the site-packages directory).</p>
+<h5>Q: Duck typing, EAFP and LBYL. How are they connected?</h5>
+<p>Python follows the <em>duck typing</em> style of coding.</p>
+<pre class="code literal-block"><span class="c1"># LBYL - Look Before You Leap</span>
+<span class="k">if</span> <span class="n">condition</span> <span class="o">:=</span> <span class="p">(</span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Go!'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'don"t go'</span><span class="p">)</span>
+
+<span class="c1"># EAFP- Easier to Ask Forgiveness than permission</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file_name.txt'</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre>
+<dl>
+<dt><mark>duck-typing</mark></dt>
+<dd>A programming style which does not look at an object’s type to determine if it has the right interface; instead, the
 method or attribute is simply called or used (“If it looks like a duck and quacks like a duck, it must be a duck.”) By
 emphasizing interfaces rather than specific types, well-designed code improves its flexibility by allowing polymorphic
 substitution. Duck-typing avoids tests using type() or isinstance(). (Note, however, that duck-typing can be
-complemented with abstract base classes.) Instead, it typically employs hasattr() tests or EAFP programming.
-EAFP
-Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or
+complemented with abstract base classes.) Instead, it typically employs hasattr() tests or EAFP programming.</dd>
+<dt><mark>EAFP</mark></dt>
+<dd>Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or
 attributes and catches exceptions if the assumption proves false. This clean and fast style is characterized by the
 presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages
-such as C.</p>
-<p>Q: 12 steps to readable and maintainable Python code</p>
-<ol>
-<li>Declutter the repo with .gitignore</li>
-<li>No passwords in the code: use configuration files or environment variables</li>
-<li>Have a README.md[.rst]</li>
-<li>If you use third-party libraries, have a requirements.txt/Pipfile/pyproject.toml</li>
-<li>Format your code with black</li>
-<li>Remove unused imports</li>
-<li>Remove unused variables</li>
-<li>Follow PEP-8 naming conventions
-   #!/usr/bin/env python
-   import sys</li>
-</ol>
-<p>DEFAULT_NAME = "someone"   # &lt;- UPPERCASE_UNDERSCORE</p>
-<p>class GreetingManager:   # &lt;- CamelCase</p>
-<pre class="code literal-block"><span></span><code><span class="n">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">arguments</span><span class="p">)</span><span class="o">:</span>  <span class="c1"># &lt;- lowercase_underscores</span>
-    <span class="n">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="o">&lt;</span> <span class="m">2</span><span class="o">:</span>
-        <span class="n">target_name</span> <span class="o">=</span> <span class="n">DEFAULT_NAME</span>
-    <span class="n">else</span><span class="o">:</span>
-        <span class="n">target_name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="c1"># &lt;- lowercase_underscores</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Hello, {target_name}"</span><span class="p">)</span>
-</code></pre>
-
-<p>if <strong>name</strong> == "<strong>main</strong>":
-GreetingManager().say_hello(sys.argv)</p>
-<ol>
-<li>Verify your code with a linter: flake8 &lt; pylint (more strict)</li>
-<li>Remove debugging print() / breakpoint()</li>
-<li>No commented out code</li>
-<li>Wrap your script with a function</li>
-</ol>
-<p>Q: The 10 Most Common Mistakes That Python Developers Make</p>
-<ol>
-<li>Misusing expressions as defaults for function arguments</li>
-<li>Using class variables incorrectly (NB: list.mro() -&gt; [list], list.<strong>mro</strong> -&gt; (tuple))</li>
-<li>Specifying parameters incorrectly for an exception block</li>
-<li>Misunderstanding Python scope rules (LEGB rule)</li>
-<li>Modifying a list while iterating over it</li>
-<li>Confusing how Python binds variables in closures</li>
-<li>Creating circular module dependencies</li>
-<li>Name clashing with Python Standard Library modules</li>
-<li>Failing to address differences between Python 2 and Python 3</li>
-<li>Misusing the <strong>del</strong> method
-    Code involving questions
-    Q: Chaining Comparison Operators
-    i = 4
-    answer = 1 &lt; i &lt; 10
-    print(answer) # True
-    Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?
-    ‘some string’.capitalize()
-    ‘ABCDE’.lower() // ‘zxcvbnm’.upper()</li>
-</ol>
-<p>Q: How to return multiple values in Python?
-Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
+such as C.</dd>
+</dl>
+<h5>Q: How to return multiple values in Python?</h5>
+<p>Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
 def func():
 return 1, 2, 3, 4, 5
 one, two, three, four, five = func()
@@ -958,7 +990,7 @@ print(one, two, three, four, five)  # tuple unpacking</p>
 </blockquote>
 </blockquote>
 </blockquote>
-<p>Q: Does Python have infinity?</p>
+<h5>Q: Does Python have infinity?</h5>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -2571,24 +2603,26 @@ Q: What are key cloud resources as WebApp, Databases, Virtual Machines?</p>
 
 <h2>Best practices are foundation of your solid skills. <em>while True: read_and_repeat()</em>
 </h2>
-<p>Refs:
-1. <a href="https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/best_practices.html">Jupyter notebooks for teaching/learning Python 3</a></p>
+<p>Refs.:</p>
+<ol>
+<li><a href="https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/best_practices.html">Jupyter notebooks for teaching/learning Python 3</a></li>
+<li><a href="https://roman.pt/posts/python-cleanup/">Python code cleanup for beginners. 12 steps to readable and maintainable code.</a></li>
+</ol>
 <h4>One virtual environment per project</h4>
 <ul>
-<li>Isolation  </li>
+<li>Isolation</li>
 <li>Different projects have different dependency versions</li>
 <li>You don't want to mess up the system Python</li>
 </ul>
 <h4>Structure your code and projects</h4>
 <ul>
 <li>Package and module structure gives an overview about the project</li>
-<li>
-<p>Modular design == better re-usability</p>
-<p>Don't put too much stuff into one module
-Split project into packages
-Be consistent with your naming conventions</p>
-</li>
+<li>Modular design == better re-usability</li>
 </ul>
+<pre class="code literal-block">Don't put too much stuff into one module  
+Split the project into packages  
+Be consistent with your naming conventions  
+</pre>
 <h4>Utilize the capabilities of your editor</h4>
 <ul>
 <li>Efficient and fluent development</li>
@@ -2612,7 +2646,7 @@ Be consistent with your naming conventions</p>
 <li>Make sure that everything works as expected</li>
 <li>Make sure that old stuff works as expected after introducing new features (regression)</li>
 <li>Tests give you confidence while refactoring</li>
-<li>Good tests demonstrate the use cases of application, i.e. they also document the implementation </li>
+<li>Good tests demonstrate the use cases of application, i.e. they also document the implementation</li>
 </ul>
 <h4>Write high quality code</h4>
 <ul>
@@ -2623,22 +2657,77 @@ Be consistent with your naming conventions</p>
 <h4>Use continuous integration and deployment</h4>
 <ul>
 <li>Make sure the tests pass</li>
-<li>CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to skip on their local machines</li>
+<li>CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to
+  skip on their local machines</li>
 <li>Make sure there's no linting errors</li>
 <li>Ideally, the place to test against all target versions and platforms</li>
 <li>Overall, CI is the last resort for automatically ensuring the quality</li>
 <li>Manual deployments are time consuming and error-prone, CD is automated and deterministic</li>
 <li>You want to automate as much as possible, human time is expensive</li>
-<li>Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using those tools. Human time is expensive.</li>
+<li>Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using
+  those tools. Human time is expensive.</li>
 </ul>
+<h3>12 steps to readable and maintainable Python code</h3>
+<ol>
+<li>Declutter the repo with .gitignore</li>
+<li>No passwords in the code: use configuration files or environment variables</li>
+<li>Have a README.md[.rst]</li>
+<li>If you use third-party libraries, have a requirements.txt/Pipfile/pyproject.toml</li>
+<li>Format your code with black</li>
+<li>Remove unused imports</li>
+<li>Remove unused variables</li>
+<li>Follow PEP-8 naming conventions</li>
+</ol>
+<pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">DEFAULT_NAME</span> <span class="o">=</span> <span class="s2">"someone"</span>   <span class="c1"># &lt;- UPPERCASE_UNDERSCORE</span>
+
+<span class="k">class</span> <span class="nc">GreetingManager</span><span class="p">:</span>   <span class="c1"># &lt;- CamelCase</span>
+
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>  <span class="c1"># &lt;- lowercase_underscores</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">target_name</span> <span class="o">=</span> <span class="n">DEFAULT_NAME</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">target_name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># &lt;- lowercase_underscores</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hello, </span><span class="si">{</span><span class="n">target_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<span class="n">GreetingManager</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre>
+<ol>
+<li>Verify your code with a linters</li>
+<li>Remove debugging print() / breakpoint()</li>
+<li>No commented out code</li>
+<li>Wrap your script with a function</li>
+</ol>
+<h3>The 10 Most Common Mistakes That Python Developers Make</h3>
+<ol>
+<li>Misusing expressions as defaults in function parameters</li>
+<li>Using class variables incorrectly (NB: list.mro() -&gt; [list], list.<strong>mro</strong> -&gt; (tuple))</li>
+<li>Specifying parameters incorrectly for an exception block</li>
+<li>Misunderstanding Python scope rules (LEGB rule)</li>
+<li>Modifying a list while iterating over it</li>
+<li>Confusing how Python binds variables in closures</li>
+<li>Creating circular module dependencies</li>
+<li>Name clashing with Python Standard Library modules</li>
+<li>Failing to address differences between Python 2 and Python 3</li>
+<li>Misusing the <code>__del__</code> method</li>
+</ol>
 <div id="section-exercises"><a href=".">[Return Up]</a></div>
 
-<h2>...content...Exercises/idioms/snippets</h2>
-<p>dsfsdf
-sdf<br>
-sdf<br>
-sdf<br>
-sdf</p>
+<h2>Exercises/idioms/snippets/"easter eggs"</h2>
+<h5>Q: Chaining Comparison Operators</h5>
+<pre class="code literal-block"><span></span><code>num_week_days = 7
+answer = 1 &lt; i &lt; 10
+print(answer) # True
+</code></pre>
+
+<h5>Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?</h5>
+<pre class="code literal-block"><span></span><code>'some string'.capitalize()
+'ABCDE'.lower() // 'zxcvbnm'.upper()
+</code></pre>
+
 <h2>...content...Quizzes/games</h2>
 <div id="section-quizzes"><a href=".">[Return Up]</a></div>
 
