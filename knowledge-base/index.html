@@ -81,18 +81,19 @@ bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p><strong>Acquisition &amp; refreshment of knowledge based on:</strong></p>
-<details><summary id="toc">[TOC]</summary><ol>
-<li>Interview questions/answers <a href="#section-interview-questions"><em>[Qs&amp;As]</em></a>
+<ul>
+<li>A. Interview questions/answers <a href="#section-interview-questions"><em>[Qs&amp;As]</em></a>
 </li>
-        <li>Best practices <a href="#section-best-practices"><em>[Action Items]</em></a>
+<li>B. Best practices <a href="#section-best-practices"><em>[Action Items]</em></a>
 </li>
-        <li>Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a>
+<li>C. Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a>
 </li>
-        <li>Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a>
+<li>D. Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a>
 </li>
-        <li>... <a href="."><em>[...TODO...]</em></a>
+<li>E. ... <a href="."><em>[...TODO...]</em></a>
 </li>
-    </ol></details><hr>
+</ul>
+<hr>
 <h2>A. Interview questions/answers</h2>
 <div id="section-interview-questions"><a href=".">[Return Up]</a></div>
 
@@ -176,14 +177,18 @@ PVM assumes that any bytecode being executed is "well-formed" with regard to a n
 </li>
 </ul>
 <h5>Q: What is PEP8?</h5>
-<p>Style Guide for Python Code. It is the latest Python coding standard, a set of coding recommendations, coding
-conventions. (Python Enhancement Proposal)
-One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
-intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
-says, "Readability counts".
-A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
-more significant. Consistency within one module or function is the most
-important. <a href="https://www.python.org/dev/peps/pep-0008/">more details...</a></p>
+<details><summary id="toc">Style Guide for Python Code</summary>
+    It is the latest Python coding standard, a set of coding recommendations, coding
+    conventions. (Python Enhancement Proposal)
+    One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
+    intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
+    says, "Readability counts".
+    A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
+    more significant. Consistency within one module or function is the most
+    important. 
+    <a href="https://www.python.org/dev/peps/pep-0008/">more details...</a>
+</details><p></p>
+
 <h5>Q: How do I modify a string in Python?</h5>
 <p>You can’t, because strings are immutable. In most situations, you should simply construct a new string from the
 various parts you want to assemble it from.</p>
@@ -914,9 +919,11 @@ and in most cases it’s possible to get reference to them.</p>
 
 <h5>Q: How are arguments passed by value or by reference?</h5>
 <p><strong>Background knowledge</strong>:<br>
-When you pass function arguments <strong>by reference</strong>, those arguments are only references to existing values. In contrast, when
+When you pass function arguments <strong>by reference</strong>, those arguments are only references to existing values. In contrast,
+when
 you pass arguments by value, those arguments become independent copies of the original values.
-!!! Python passes arguments neither by reference nor by value, but <strong><em>by assignment</em></strong>. Python does not exactly pass by value.
+!!! Python passes arguments neither by reference nor by value, but <strong><em>by assignment</em></strong>. Python does not exactly pass by
+value.
 Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">more details...</a></p>
 <p>Using <code>id(obj)</code> (returns an integer representing the memory address), you can verify the following assertions:</p>
 <ol>
@@ -927,15 +934,18 @@ Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">mor
    address stays the same.</li>
 </ol>
 <pre class="code literal-block"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-   <span class="n">n</span> <span class="o">=</span> <span class="mi">9001</span>
-   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-   <span class="n">increment</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">9001</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">increment</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of x: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final address of x: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
 <span class="n">main</span><span class="p">()</span>
 <span class="c1"># Initial address of n: 140562586057840</span>
 <span class="c1"># Initial address of x: 140562586057840</span>
@@ -943,8 +953,10 @@ Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">mor
 <span class="c1"># Final address of n: 140562586057840</span>
 </pre>
 <h5>Q: What is <code>PYTHONPATH</code>?</h5>
-<p><code>PYTHONPATH</code> is an <em>environment variable</em> which you can set to add additional directories where Python will look for modules
-and packages. Augment the default search path for module files. The format is the same as the shell’s <code>PATH</code>: one or more
+<p><code>PYTHONPATH</code> is an <em>environment variable</em> which you can set to add additional directories where Python will look for
+modules
+and packages. Augment the default search path for module files. The format is the same as the shell’s <code>PATH</code>: one or
+more
 directory path names separated by os.pathsep (e.g. “:” on Unix or “;” on Windows). Non-existent directories are silently
 ignored.</p>
 <p>For most installations, you should not set these variables since they are not needed for Python to run. Python knows
@@ -977,460 +989,297 @@ attributes and catches exceptions if the assumption proves false. This clean and
 presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages
 such as C.</dd>
 </dl>
-<h5>Q: How to return multiple values in Python?</h5>
-<p>Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
-def func():
-return 1, 2, 3, 4, 5
-one, two, three, four, five = func()
-print(one, two, three, four, five)  # tuple unpacking</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>t = func()  # a tuple (1, 2, 3, 4, 5)</p>
-</blockquote>
-</blockquote>
-</blockquote>
 <h5>Q: Does Python have infinity?</h5>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>float('-Infinity')  # “inf”, “Inf”, “INFINITY” and “iNfINity” are all acceptable spellings
-Also:
-nan            ::=  "nan"
-numeric_value  ::= floatnumber | infinity | nan
-infinity = float('infinity')
-hash(infinity)  # 314159
-hash(float('-inf'))  # -314159</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Q: How to find the index inside a for loop?
-Wrap an iterable with ‘enumerate’ and it will yield the item along with its index.</p>
-<h2>Know the index faster</h2>
-<p>vowels = ['a', 'e', 'i', 'o', 'u']
-for i, letter in enumerate(vowels):
-print(i, letter)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>0, 'a' // 1, 'e' ...
-Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0
-and 1.
-An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
-your
-answer is correct?
-def f1(lIn):
-l1 = sorted(lIn)
-l2 = [i for i in l1 if i &lt; 0.5]
-return [i * i for i in l2]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>def f2(lIn):
-l1 = [i for i in lIn if i &lt; 0.5]
-l2 = sorted(l1)
-return [i * i for i in l2]</p>
-<p>def f3(lIn):
-l1 = [i * i for i in lIn]
-l2 = sorted(l1)
-return [i for i in l1 if i &lt; (0.5 * 0.5)]
-Most to least efficient: f2, f1, f3. To prove that this is the case, you would want to profile your code. Python has a
-lovely profiling package that should do the trick.
-import cProfile
-lIn = [random.random() for i in range(100000)]</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>cProfile.run('f1(lIn)')
-4 function calls in 0.045 seconds
-cProfile.run('f2(lIn)')
-4 function calls in 0.024 seconds
-cProfile.run('f3(lIn)')
-4 function calls in 0.055 seconds</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>Why Care?
+<pre class="code literal-block"><span></span><code><span class="nv">Yes</span><span class="p">,</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">has</span><span class="o">.</span><span class="w"></span>
+<span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="nv">Infinity</span><span class="o">'</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span>“<span class="no">inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">Inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">INFINITY</span>”<span class="w"> </span><span class="ow">and</span><span class="w"> </span>“<span class="nv">iNfINity</span>”<span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">acceptable</span><span class="w"> </span><span class="nv">spellings</span><span class="w"></span>
+<span class="o">#</span><span class="w"> </span><span class="nv">Also</span><span class="o">:</span><span class="w"></span>
+<span class="nv">nan</span><span class="w">            </span><span class="o">::=</span><span class="w">  </span><span class="s">"nan"</span><span class="w"></span>
+<span class="nv">numeric_value</span><span class="w">  </span><span class="o">::=</span><span class="w"> </span><span class="nv">floatnumber</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">infinity</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">nan</span><span class="w"></span>
+<span class="no">infinity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">float</span><span class="p">(</span><span class="o">'</span><span class="no">infinity</span><span class="o">'</span><span class="p">)</span><span class="w"></span>
+<span class="nf">hash</span><span class="p">(</span><span class="no">infinity</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="mi">314159</span><span class="w"></span>
+<span class="nf">hash</span><span class="p">(</span><span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="no">inf</span><span class="o">'</span><span class="p">))</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="o">-</span><span class="mi">314159</span><span class="w"></span>
+</code></pre>
+
+<h5>Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0 and 1.</h5>
+<p>An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
+your answer is correct?</p>
+<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">f1</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+    <span class="nv">l1</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>
+    <span class="nv">l2</span> <span class="o">=</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l1</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="mi">0</span>.<span class="mi">5</span>]
+    <span class="k">return</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l2</span>]
+
+<span class="nv">def</span> <span class="nv">f2</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+    <span class="nv">l1</span> <span class="o">=</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">lIn</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="mi">0</span>.<span class="mi">5</span>]
+    <span class="nv">l2</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
+    <span class="k">return</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l2</span>]
+
+<span class="nv">def</span> <span class="nv">f3</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+    <span class="nv">l1</span> <span class="o">=</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">lIn</span>]
+    <span class="nv">l2</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
+    <span class="k">return</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l1</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="ss">(</span><span class="mi">0</span>.<span class="mi">5</span> <span class="o">*</span> <span class="mi">0</span>.<span class="mi">5</span><span class="ss">)</span>]
+</code></pre>
+
+<p><strong>Most to least efficient</strong>: f2 -&gt; f1 -&gt; f3. To prove that this is the case, you would want to profile your code. Python
+has a lovely profiling package that should do the trick.</p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">cProfile</span>
+<span class="n">list_num</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'f1(list_num)'</span><span class="p">)</span>
+    <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.045</span> <span class="n">seconds</span>
+<span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'f2(list_num)'</span><span class="p">)</span>
+    <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.024</span> <span class="n">seconds</span>
+<span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'f3(list_num)'</span><span class="p">)</span>
+    <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.055</span> <span class="n">seconds</span>
+</code></pre>
+
+<p><strong>Why Care?</strong>
 Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding for efficiency comes down to common sense</p>
 <ul>
-<li>in the example above it's obviously quicker to sort a list if it's a smaller list, so if you have the choice of
+<li>in the example above it's obviously <em>quicker to sort a list if it's a smaller list</em>, so if you have the choice of
   filtering before a sort it's often a good idea. The less obvious stuff can still be located through use of the proper
   tools. It's good to know about these tools.</li>
 </ul>
-<p>Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting
-arrays differ and why should you use one initialization approach vs the other?</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<h2>INITIALIZING AN ARRAY -- METHOD 1</h2>
-<p>x = [[1,2,3,4]] * 3
-[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]</p>
-<h2>INITIALIZING AN ARRAY -- METHOD 2</h2>
-<p>y = [[1,2,3,4] for _ in range(3)]
-[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]</p>
-<h2>WHICH METHOD SHOULD YOU USE AND WHY?</h2>
-<p>While both methods appear to produce the same result, there is an extremely significant difference between them. Method
-2 produces, as you would expect, an array of 3 elements, each of which is itself an independent 4-element array. In
-method 1, however, the members of the array all point to the same object. This can lead to what is most likely
-unanticipated and undesired behavior as shown below.</p>
-<h2>MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:</h2>
-<p>x[0][3] = 99
-x
-[[1, 2, 3, 99], [1, 2, 3, 99], [1, 2, 3, 99]]</p>
-<h2>UH-OH, DON’T THINK YOU WANTED THAT TO HAPPEN!</h2>
-<h2>MODIFYING THE y ARRAY FROM THE PRIOR CODE SNIPPET:</h2>
-<p>y[0][3] = 99
-y
-[[1, 2, 3, 99], [1, 2, 3, 4], [1, 2, 3, 4]]</p>
-<h2>THAT’S MORE LIKE WHAT YOU EXPECTED!</h2>
-<p>Q: How to translate a string of chars into a string containing a binary code (1 and 0)?</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2>using join() + ord() + format()</h2>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>st = "hello world"
-' '.join(format(ord(x), 'b') for x in st)
-'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2>using <code>bytearray</code>
-</h2>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>' '.join(format(x, 'b') for x in bytearray(st, 'utf-8'))
-'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
-Q: How to check that tuple A contains all elements of tuple B?
-You can use set.issubset or set.issuperset to check if every element in one tuple or list is in another.
-tuple1 = (1, 2)
-tuple2 = (1, 2, 3, 4, 5)
-set(tuple1).issubset(tuple2)  # True
-set(tuple2).issuperset(tuple1)  # True
-Q: How to check if both tuples contain unique values?
-len(set(tup)) == len(tup)
-This creates a set of tup and checks if it is the same length as the original tup. The only case in which they
-would
-have the same length is if all elements in tup were unique.
-Q: Mention the use of / and // operators in Python?</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2>Python 2.7</h2>
-<h2>"/" for integers, act as floor division, for float - returns float value</h2>
-<p>print 5/2 # 2
-print -5/2 # -3
-print 5.0/2 # 2.5
-print -5.0/2 # -2.5</p>
-<h2>“//” returns floor value for both integer and floating point arguments</h2>
-<p>print 5//2 # 2
-print -5//2 # -3
-print 5.0//2 # 2.0
-print -5.0//2 # -3.0
-In Python 3, ‘/’ operator does floating point division for both int and float arguments
-print(5/2)  # 2.5
-print(-5/2)  # -2.5
-print(5.0/2)  # 2.5
-print(-5.0/2)  # -2.5
-Behavior of “//” is the same in Python 2.7 and Python 3.
-Q: Mention the use of the split function in Python?
-str splitted on whitespaces → list of str
-"words with spaces".split() → ['words','with','spaces']
-Q: What will be the output of the following code?</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def f():
-... x = 15
-... print(x)
-... x = 12
-f()  # 15
-Q: How to convert a string to a number that consists of letters ASCII code. Example: 'abcd' -&gt; 979899100.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2>Convert String list to ascii values</h2>
-<h2>Method 1: using loop + ord()</h2>
-<p>test_str = "let’s do more Python!"
-res1 = ''
-for elem in test_str:
-res1 += ‘’.join(str(ord(elem)))
-print(int(res1)) # sys.getsizeof(res1) &gt;&gt; 106 bytes</p>
-<h2>Method 2: list comprehension</h2>
-<p>test_str2 = “let’s do more Python!”
-res2 = ''.join([str(ord(elem)) for elem in test_str2])
-print(res2) # sys.getsizeof(res2) &gt;&gt; 106 bytes
-print(res1 == res2) # True
-Q: How to remove empty lines from a list of lines (with a length of 0)?
-empty_lines_list = [‘abc’, ‘’, ‘’, ’def’, ‘’, ‘’, 3 , 4, 1, ]
-def check_is_empty(line):
-return bool(line)
-filtered_list = [line for line in empty_lines_list if check_is_empty(line)]
-print(filtered_list)
-Q: Build a string with the numbers from 0 to 100, "0123456789101112..."
-list_of_numbers = ''
-for el in range(101):
-list_of_numbers += str(el)
-print(list_of_numbers)
-Q: Making a list with the unique element from a list with duplicate elements
-unique_list = set(list_with_dublicates)
-Q: How can you randomize the items of a list in Python?
-from random import shuffle
-x = ['Keep', 'The', 'Blue', 'Flag', 'Flying', 'High']
-shuffle(x)
-Q: Write a program in Python to produce stars triangle
-def star_triangle(r):
-for x in range(r):
-print(' ' * (r - x - 1) + '*' * (2 * x + 1))  <br>
-star_triangle(9)
-Q: Write a program in Python to check if a sequence is a Palindrome
-entered_sequence = input("enter sequence")
-reversed_copy = entered_sequence[::-1]
-if entered_sequence == reversed_copy:
-print("palindrome")
-else:
-print("Not a palindrome")
-Q: Write a one-liner that will count the number of capital letters in a file. Your code should work even if the file is
-too big to fit in memory
-with open('very_big_text.txt') as f:</p>
-<h2>multiline solution</h2>
-<p>count = 0
-text = f.read()
-for character in text:
-if character.isupper():
-count += 1</p>
-<h2>one-liner</h2>
-<p>count = sum(1 for line in f for character in line if character.isupper())
-print(count)
-Q: Write a sorting algorithm for a numerical dataset in Python
-list_of_str_numbers = ["1", "4", "0", "6", "9"]
-list_of_integers = [int(i) for i in list_of_str_numbers]
-list_of_integers.sort()</p>
-<h2>or with sorted() which doesn’t change original list in contrast to sort()</h2>
-<p>new_sorted_list_of_integers = sorted(list_of_integers)
-print(list_of_integers, new_sorted_list_of_integers)
-Standard Library
-Built-in functions / modules
-Q: How to display a list of all available modules?</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>help('modules')
-The Python Standard Library
-Q: 30 built-in Python modules you should be using
-30 built-in Python modules you better be using
-Q: Fill in the missing code:
-def print_directory_contents(sPath):
-"""
-This function takes the name of a directory
-and prints out the paths files within that
-directory as well as any files contained in
-contained directories.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre class="code literal-block"><span></span><code>This function is similar to os.walk. Please don't
-use os.walk in your answer. We are interested in your 
-ability to work with nested structures. 
-"""
-...fill_this_in...
+<h4>A.1.2 Standard Library</h4>
+<p><strong>Built-in functions / modules</strong></p>
+<h5>Q: How to display a list of all available modules?</h5>
+<p><code>&gt;&gt;&gt; help('modules')</code><br><a href="https://docs.python.org/3.8/library/index.html">The Python Standard Library</a></p>
+<h5>Q: 30 built-in Python modules you should be using</h5>
+<p><a href="https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/">30 built-in Python modules you better be using</a></p>
+<h5>Q: Print directory content</h5>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">print_directory_contents</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>
+    <span class="sd">""" </span>
+<span class="sd">    This function takes the name of a directory</span>
+<span class="sd">    and prints out the paths files within that</span>
+<span class="sd">    directory as well as any files contained in</span>
+<span class="sd">    contained directories.</span>
+
+<span class="sd">    This function is similar to os.walk. Please don't</span>
+<span class="sd">    use os.walk in your answer. We are interested in your </span>
+<span class="sd">    ability to work with nested structures. </span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">sChild</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>                
+        <span class="n">sChildPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sPath</span><span class="p">,</span> <span class="n">sChild</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">):</span>
+        <span class="n">print_directory_contents</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">)</span>
 </code></pre>
 
-<p>def print_directory_contents(sPath):
-import os                                     <br>
-for sChild in os.listdir(sPath):              <br>
-sChildPath = os.path.join(sPath, sChild)
-if os.path.isdir(sChildPath):
-print_directory_contents(sChildPath)
-else:
-print(sChildPath)
-Q: Explain how to delete a file in Python?
-By using a command os.remove(filename, *, dir_fd=None) or os.unlink(filename). They are equivalent to each other.
-Q:  Explain how you can generate random numbers in Python?
-import random
-random.random()
-This returns a random floating point number in the range [0, 1)
-Q: Explain how you can access a module written in Python from C?
-Module = =PyImport_ImportModule("<modulename>");
-Built-in constants
-A small number of constants live in the built-in namespace. They are: True, False, None, NotImplemented, Ellipsis, <strong>
-debug</strong>.
-Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
-programs: copyright, credits, license official docs
-Built-in exceptions
-A Python program terminates as soon as it encounters an error. An error can be:</modulename></p>
+<h5>Q: Explain how to delete a file in Python?</h5>
+<p>By using a command <code>os.remove(filename, *, dir_fd=None)</code> or <code>os.unlink(filename)</code>. They are equivalent to each other.</p>
+<h5>Q: Explain how you can generate random numbers in Python?</h5>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="c1"># This returns a random floating point number in the range [0, 1)</span>
+</code></pre>
+
+<h5>Q: Explain how you can access a module written in Python from C?</h5>
+<p><code>Module = =PyImport_ImportModule("&lt;modulename&gt;");</code></p>
+<p><strong>Built-in constants</strong><br>
+A small number of constants live in the built-in namespace: <strong>True</strong>, <strong>False</strong>, <strong>None</strong>, <strong>NotImplemented</strong>, <strong>
+Ellipsis</strong>, <strong><strong>debug</strong></strong>.</p>
+<p>Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
+programs: copyright, credits, license  <a href="https://docs.python.org/3/library/constants.html">docs.python.org</a></p>
+<p><strong>Built-in exceptions</strong><br>
+A Python program terminates as soon as it encounters an error. An error can be:</p>
 <ul>
-<li>a syntax error: raised when the parser detects an incorrect statement, print(0/0))</li>
-<li>an exception: raised when code with correct syntax results in an error, print(0/0)
-  BaseException base class for all built-in exceptions. It is not meant to be directly inherited by user-defined
-  classes (for that, use Exception).
-  Q: Exceptions and How to Raise Them
-  x = 10
-  if x &gt; 5:
-  raise Exception(f’x needs to be under 5’)
-  print(‘the end’)  # raise allows you to throw an exception at any time
-  Q: Assertions and Try/Except</li>
+<li>a <em>syntax error</em>: raised when the parser detects an incorrect statement, print(0/0))</li>
+<li>an <em>exception</em>: raised when code with correct syntax results in an error, print(0/0)</li>
 </ul>
-<h2>assert (condition), f”optional message if condition is not met”</h2>
-<p>name = ‘snake’
-assert (name == ‘snake’)
-print(f”name is really {name}”)</p>
-<p>assert checks if the condition inside the brackets is True. If it isn’t, then an AssertionError will be raised, and the
-program will stop.</p>
-<p>try:</p>
-<h2>code to attempt running</h2>
-<p>if '1' != 1:</p>
-<h2>raise ‘some error’ will be wrong ‘cause new exception class must inherit from a BaseException.</h2>
-<h2>raise Exception</h2>
-<p>except ZeroDivisionError:</p>
-<h2>execute this code if there is an exception generated</h2>
-<p>print("someError has occurred")
-except TypeError:<br>
-...
-except <specify type of exception>:
-pass # avoid this silent handling as it is an anti-pattern</specify></p>
-<p>Alternatives for handling wide Exceptions: use modules logging, traceback more advanced details</p>
-<p>Q: Else, Finally &amp; Exceptions</p>
-<p>try:
-linux_interaction()
-except AssertionError as error:
-print(error)
-else:
-try:
-with open('file.log') as file:
-read_data = file.read()
-except FileNotFoundError as fnf_error:
-print(fnf_error)
-finally:
-print('Cleaning up, irrespective of any exceptions.')</p>
-<p>In the previous code, everything in the finally clause will be executed. It does not matter if you encounter an
-exception somewhere in the try or else clauses. more details
-Frameworks
-Django
-Q: Project initialization
-$ python -m django --version
-$ django-admin startproject <mysite_name>
-$ python manage.py runserver 8080
+<p><code>BaseException</code> base class for all built-in exceptions. It is not meant to be directly inherited by user-defined
+classes (for that, use Exception).</p>
+<h5>Q: Exceptions and how to raise them</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="nv">x</span> <span class="o">&gt;</span> <span class="mi">5</span>:
+    <span class="nv">raise</span> <span class="nv">Exception</span><span class="ss">(</span><span class="nv">f</span>’<span class="nv">x</span> <span class="nv">needs</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">under</span> <span class="mi">5</span>’<span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span>‘<span class="nv">the</span> <span class="k">end</span>’<span class="ss">)</span>  # <span class="nv">raise</span> <span class="nv">allows</span> <span class="nv">you</span> <span class="nv">to</span> <span class="nv">throw</span> <span class="nv">an</span> <span class="nv">exception</span> <span class="nv">at</span> <span class="nv">any</span> <span class="nv">time</span>
+</code></pre>
+
+<h5>Q: Assertions and <code>try/except</code>
+</h5>
+<pre class="code literal-block"><span></span><code># <span class="nv">assert</span> <span class="ss">(</span><span class="nv">condition</span><span class="ss">)</span>, <span class="nv">f</span>”<span class="nv">optional</span> <span class="nv">message</span> <span class="k">if</span> <span class="nv">condition</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">met</span>”
+<span class="nv">name</span> <span class="o">=</span> <span class="s1">'</span><span class="s">snake</span><span class="s1">'</span>
+<span class="nv">assert</span> <span class="ss">(</span><span class="nv">name</span> <span class="o">==</span> <span class="s1">'</span><span class="s">snake</span><span class="s1">'</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">f</span><span class="s2">"</span><span class="s">name is really {name}</span><span class="s2">"</span><span class="ss">)</span>
+</code></pre>
+
+<p><code>assert</code> checks if the condition inside the brackets is True. If it isn’t, then an <code>AssertionError</code> will be raised, and
+the program will stop.</p>
+<pre class="code literal-block"><span></span><code><span class="nv">try</span>:
+    # <span class="nv">code</span> <span class="nv">to</span> <span class="nv">attempt</span> <span class="nv">running</span>
+    <span class="k">if</span> <span class="s1">'</span><span class="s">1</span><span class="s1">'</span> <span class="o">!=</span> <span class="mi">1</span>:
+    # <span class="nv">raise</span> ‘<span class="nv">some</span> <span class="nv">error</span>’ <span class="nv">will</span> <span class="nv">be</span> <span class="nv">wrong</span> ‘<span class="nv">cause</span> <span class="nv">new</span> <span class="nv">exception</span> <span class="nv">class</span> <span class="nv">must</span> <span class="nv">inherit</span> <span class="nv">from</span> <span class="nv">a</span> <span class="nv">BaseException</span>.
+        <span class="nv">raise</span> <span class="nv">Exception</span>
+<span class="nv">except</span> <span class="nv">ZeroDivisionError</span>:
+    # <span class="nv">execute</span> <span class="nv">this</span> <span class="nv">code</span> <span class="k">if</span> <span class="nv">there</span> <span class="nv">is</span> <span class="nv">an</span> <span class="nv">exception</span> <span class="nv">generated</span>
+    <span class="nv">print</span><span class="ss">(</span><span class="s2">"</span><span class="s">someError has occurred</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">except</span> <span class="nv">TypeError</span>:  
+    ...
+<span class="nv">except</span> <span class="o">&lt;</span><span class="nv">specify</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">exception</span><span class="o">&gt;</span>:
+    <span class="nv">pass</span> # <span class="nv">avoid</span> <span class="nv">this</span> <span class="nv">silent</span> <span class="nv">handling</span> <span class="nv">as</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">an</span> <span class="nv">anti</span><span class="o">-</span><span class="nv">pattern</span>
+</code></pre>
+
+<p>Alternatives for handling wide Exceptions: use modules <code>logging</code>
+, <code>traceback</code> <a href="https://realpython.com/the-most-diabolical-python-antipattern/">more details...</a></p>
+<h5>Q: <code>else</code>, <code>finally</code> &amp; other Exceptions</h5>
+<pre class="code literal-block"><span></span><code><span class="k">try</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">linux_interaction</span><span class="o">()</span><span class="w"></span>
+<span class="n">except</span><span class="w"> </span><span class="n">AssertionError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">error</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">)</span><span class="w"></span>
+<span class="k">else</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">try</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="n">open</span><span class="o">(</span><span class="s1">'file.log'</span><span class="o">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">read_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="na">read</span><span class="o">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">except</span><span class="w"> </span><span class="n">FileNotFoundError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">fnf_error</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">print</span><span class="o">(</span><span class="n">fnf_error</span><span class="o">)</span><span class="w"></span>
+<span class="n">finally</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="s1">'Cleaning up, irrespective of any exceptions.'</span><span class="o">)</span><span class="w"></span>
+</code></pre>
+
+<p>In the previous code, everything in the <code>finally</code> clause will be executed. It does not matter if you encounter an
+exception somewhere in the <code>try</code> or <code>else</code> clauses. <a href="https://realpython.com/python-exceptions/">more details...</a></p>
+<h3>A.2 Frameworks</h3>
+<h4>A.2.1 Django</h4>
+<h5>Q: Project initialization</h5>
+<pre class="code literal-block"><span></span><code>$ python -m django --version
+$ django-admin startproject &lt;mysite_name&gt;
+$ python manage.py runserver <span class="m">8080</span>
 mysite/
-manage.py
-mysite/
-<strong>init</strong>.py
-settings.py
-urls.py
-asgi.py
-wsgi.py
-Q: Project configuration</mysite_name></p>
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+</code></pre>
+
+<h5>Q: Project configuration</h5>
 <ul>
-<li>mysite/settings.py: A settings file is just a module with module-level variables.
-  Because a settings file is a Python module, the following apply:</li>
-<li>It doesn’t allow for Python syntax errors.</li>
-<li>It can assign settings dynamically using normal Python syntax. For example:
-  MY_SETTING = [str(i) for i in range(30)]</li>
-<li>It can import values from other settings files.
-  Q: Apps
-  $ python manage.py startapp <app_name>
-  Q: Urls</app_name>
+<li>
+<p>mysite/<a href="https://docs.djangoproject.com/en/dev/topics/settings/">settings.py</a>: A settings file is just a module with
+  module-level variables.
+  Because a settings file is a Python module, the following apply:</p>
+<ul>
+<li>
+<p>It doesn’t allow for Python syntax errors.</p>
 </li>
-<li>mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered site.
-  More &gt;&gt; URL dispatcher.
-  Q: Models
-  A model is the single, definitive source of information about your data. It contains the essential fields and
-  behaviors of the data you’re storing. Generally, each model maps to a single database table.</li>
+<li>
+<p>It can assign settings dynamically using normal Python syntax. For example:
+  MY_SETTINGS = [str(i) for i in range(30)]</p>
+</li>
+<li>It can import values from other settings files.</li>
+</ul>
+</li>
+</ul>
+<h5>Q: Apps</h5>
+<pre class="code literal-block">$ python manage.py startapp &lt;app_name&gt;
+</pre>
+<h5>Q: Urls</h5>
+<p>mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered
+site. <a href="https://docs.djangoproject.com/en/3.1/topics/http/urls/">more details...</a></p>
+<h5>Q: <a href="https://docs.djangoproject.com/en/3.1/topics/db/models/">Models</a>
+</h5>
+<p>A model is the single, definitive source of information about your data. It contains the essential fields and
+behaviors of the data you’re storing. Generally, each model maps to a single database table.</p>
+<ul>
 <li>Each model is a Python class that subclasses django.db.models.Model.</li>
 <li>Each attribute of the model represents a database field.</li>
 <li>With all of this, Django gives you an automatically-generated database-access API;</li>
 </ul>
 <p>from django.db import models</p>
 <p>class Person(models.Model):
-first_name = models.CharField(max_length=30)
-last_name = models.CharField(max_length=30)
-first_name and last_name are fields of the model. Each field is specified as a class attribute, and each attribute maps
-to a database column.
-The above Person model would create a database table like this:
-CREATE TABLE myapp_person (
-"id" serial NOT NULL PRIMARY KEY,
-"first_name" varchar(30) NOT NULL,
-"last_name" varchar(30) NOT NULL
-);
-Q: Templates
-A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic
+  first_name = models.CharField(max_length=30)
+  last_name = models.CharField(max_length=30)</p>
+<p><code>first_name</code> and <code>last_name</code> are fields of the model. Each field is specified as a class attribute, and each attribute
+maps to a database column.</p>
+<p>The above Person model would create a database table like this:</p>
+<pre class="code literal-block"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">myapp_person</span><span class="w"></span>
+<span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="ss">"id"</span><span class="w">         </span><span class="nb">serial</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="ss">"first_name"</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="ss">"last_name"</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre>
+<h5>Q: Templates</h5>
+<p>A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic
 content will be inserted. A Django project can be configured with one or several template engines (or even zero if you
 don’t use templates). Django ships built-in backends for its own template system, creatively called the Django template
 language (DTL), and for the popular alternative Jinja2. Backends for other template languages may be available from
-third-parties.
-A Django template is a text document or a Python string marked-up using the Django template language. Some constructs
-are recognized and interpreted by the template engine. The main ones are variables and tags.
-A template is rendered with a context. Rendering replaces variables with their values, which are looked up in the
-context, and executes tags. Everything else is output as is.
-The syntax of the Django template language involves four constructs.</p>
+third-parties.</p>
+<p>A Django template is a text document or a Python string marked-up using the Django template language. Some constructs
+are recognized and interpreted by the template engine. The main ones are variables and tags.</p>
+<p>A <strong>template is rendered with a context</strong>. Rendering replaces variables with their values, which are looked up in the
+context, and executes tags. Everything else is output as is.</p>
+<p>The syntax of the Django template language involves four constructs.</p>
 <ol>
-<li>A {{ variable }} outputs a value from the context, which is a dict-like object mapping keys to values.
-   My first name is {{ first_name }}. My last name is {{ last_name }}.
-   With a context of {'first_name': 'John', 'last_name': 'Doe'} &gt;&gt; My first name is John. My last name is Doe.</li>
+<li>A <strong>{{ variable }}</strong> outputs a value from the context, which is a dict-like object mapping keys to values.
+   <code>My first name is {{ first_name }}. My last name is {{ last_name }}.</code>
+   With a context of <code>{'first_name': 'John', 'last_name': 'Doe'}</code> &gt;&gt; My first name is John. My last name is Doe.</li>
 <li>
-<p>{% Tags %} provide arbitrary logic in the rendering process.</p>
-</li>
-<li>
-<p>{% csrf_token %}; or with arguments: {% cycle 'odd' 'even' %}</p>
-</li>
-<li>
-<p>Some tags require beginning and ending tags: {% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}</p>
-</li>
-<li>
-<p>Filters transform the values of variables and tag arguments.</p>
+<p><strong>{% Tags %}</strong> provide arbitrary logic in the rendering process.</p>
 <ul>
-<li>{{ django|title }}; or with an argument: {{ my_date|date:"Y-m-d" }}</li>
+<li>
+<code>{% csrf_token %}</code> or with arguments: <code>{% cycle 'odd' 'even' %}</code>
+</li>
+<li>Some tags require beginning and ending
+  tags: <code>{% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}</code>
+</li>
 </ul>
 </li>
 <li>
-<p>Comments look like this: {# this won't be rendered #}. A {% comment %} tag provides multi-line comments.
-   Q: Forms
-   In HTML, a form is a collection of elements inside </p>
-<form>...</form> that allow a visitor to do things like enter
-   text, select options, manipulate objects or controls, and so on, and then send that information back to the server.
-   As well as its <input> elements, a form must specify two things:
+<p><strong>Filters</strong> transform the values of variables and tag arguments.</p>
+<ul>
+<li>
+<code>{{ django|title }}</code> or with an argument: <code>{{ my_date|date:"Y-m-d" }}</code>
+</li>
+</ul>
 </li>
 <li>
-<p>where: the URL to which the data corresponding to the user’s input should be returned</p>
-</li>
-<li>how: the HTTP method the data should be returned by
-  GET and POST are typically used for different purposes.
-  Any request that could be used to change the state of the system - for example, a request that makes changes in the
-  database - should use POST. GET should be used only for requests that do not affect the state of the system.
-  Django handles three distinct parts of the work involved in forms:</li>
+<strong>Comments</strong> look like this: <code>{# this won't be rendered #}</code>. A <code>{% comment %}</code> tag provides multi-line comments.</li>
+</ol>
+<h5>Q: Forms</h5>
+<p>In HTML, a form is a collection of elements inside <strong><code>&lt;form&gt;...&lt;/form&gt;</code></strong> that allow a visitor to do things like enter
+text, select options, manipulate objects or controls, and so on, and then send that information back to the server.</p>
+<p>As well as its <code>&lt;input&gt;</code> elements, a form must specify two things:</p>
+<ul>
+<li>where: the URL to which the data corresponding to the user’s input should be returned</li>
+<li>how: the HTTP method the data should be returned by</li>
+</ul>
+<p>GET and POST are typically used for different purposes.</p>
+<p>Any request that could be used to change the state of the system - for example, a request that makes changes in the
+database - should use POST. GET should be used only for requests that do not affect the state of the system.</p>
+<p>Django handles three distinct parts of the work involved in forms:</p>
+<ul>
 <li>preparing and restructuring data to make it ready for rendering</li>
 <li>creating HTML forms for the data</li>
-<li>receiving and processing submitted forms and data from the client
-  In the context of a Web application, ‘form’ might refer to that HTML <form>, or to the Django Form that produces it,
-  or to the structured data returned when it is submitted, or to the end-to-end working collection of these parts.
-  At the heart of this system of components is Django’s Form class. In much the same way that a Django model describes
-  the logical structure of an object, its behavior, and the way its parts are represented to us, a Form class describes
-  a form and determines how it works and appears.
-  In a similar way that a model class’s fields map to database fields, a form class’s fields map to HTML form <input>
-  elements. (A ModelForm maps a model class’s fields to HTML form <input> elements via a Form; this is what the Django
-  admin is based upon.)
-  Q: django-admin
-  django-admin is Django’s command-line utility for administrative tasks.
-  In addition, manage.py is automatically created in each Django project. It does the same thing as django-admin but
-  also sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project’s settings.py file.
-  The django-admin script should be on your system path if you installed Django via pip. If it’s not in your path,
-  ensure you have your virtual environment activated.
-  Generally, when working on a single Django project, it’s easier to use manage.py than django-admin. If you need to
-  switch between multiple Django settings files, use django-admin with DJANGO_SETTINGS_MODULE or the --settings command
-  line option.
-  CLI examples can use django-admin/manage.py or python -m django just as well.
-  $ django-admin <command> [options]
-  $ manage.py <command> [options]
-  $ python -m django <command> [options]</command></command></command>
-</form>
-</li>
-</ol>
-<p>Tools
-Package Managers
-Q: Application dependency management / virtualenv isolation</p>
+<li>receiving and processing submitted forms and data from the client</li>
+</ul>
+<p>In the context of a Web application, ‘form’ might refer to that HTML <code>&lt;form&gt;</code>, or to the Django Form that produces it,
+or to the structured data returned when it is submitted, or to the end-to-end working collection of these parts.</p>
+<p>At the heart of this system of components is Django’s Form class. In much the same way that a Django model describes
+the logical structure of an object, its behavior, and the way its parts are represented to us, a Form class describes
+a form and determines how it works and appears.</p>
+<p>In a similar way that a model class’s fields map to database fields, a form class’s fields map to HTML form <code>&lt;input&gt;</code>
+elements. (A ModelForm maps a model class’s fields to HTML form <code>&lt;input&gt;</code> elements via a Form; this is what the Django
+admin is based upon)</p>
+<h5>Q: django-admin</h5>
+<p><strong>django-admin</strong> is Django’s command-line utility for administrative tasks.</p>
+<p>In addition, <code>manage.py</code> is automatically created in each Django project. It does the same thing as <code>django-admin</code> but
+also sets the <code>DJANGO_SETTINGS_MODULE</code> environment variable so that it points to your project’s settings.py file.</p>
+<p>The <strong>django-admin</strong> script should be on your system path if you installed Django via <code>pip</code>. If it’s not in your path,
+ensure you have your virtual environment activated.</p>
+<p>Generally, when working on a single Django project, it’s easier to use <code>manage.py</code> than <code>django-admin</code>. If you need to
+switch between multiple Django settings files, use <code>django-admin</code> with <code>DJANGO_SETTINGS_MODULE</code> or the <code>--settings</code>
+command line option.</p>
+<p>CLI examples can use django-admin/manage.py or python -m django just as well.</p>
+<pre class="code literal-block">$ django-admin &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
+$ manage.py &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
+$ python -m django &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
+</pre>
+<h3>A.3 Tools</h3>
+<h4>Package Managers</h4>
+<h5>Q: Application dependency management / virtualenv isolation</h5>
 <ul>
 <li>pipenv (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
   packages/dependencies): Pipfile+pip+virtualenv</li>
@@ -1456,20 +1305,20 @@ Q: Application dependency management / virtualenv isolation</p>
   many of their combined features in terms of package management, virtual environment management and deployment of
   binary extensions. Conda does not install packages from PyPI and can install only from the official Anaconda
   repositories, or anaconda.org (a place for user-contributed conda packages), or a local (e.g. intranet) package
-  server.
-  Quality Tools
-  Q: How to perform code analysis for Python?
-  Python Code Quality Authority references
-  pycodestyle: identifies pep8 style violations
-  autopep8: automatically fixes most violations identified by pycodestyle
-  pylint: throws warnings or errors for a combination of programming and style issues; checks compliance with the latter
-  standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
-  CI integration etc.
-  pylintrc/.pylintrc in target directory for module-by-module basis
-  pyflakes: similar to pylint, except never complains about style, faster that pylint/pychecker
-  flake8: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files with
-  # flake8: noqa or lines with # noqa</li>
+  server.</li>
 </ul>
+<h4>Quality Tools</h4>
+<h5>Q: How to perform code analysis for Python?</h5>
+<p>Python Code Quality Authority references
+pycodestyle: identifies pep8 style violations
+autopep8: automatically fixes most violations identified by pycodestyle
+pylint: throws warnings or errors for a combination of programming and style issues; checks compliance with the latter
+standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
+CI integration etc.
+pylintrc/.pylintrc in target directory for module-by-module basis
+pyflakes: similar to pylint, except never complains about style, faster that pylint/pychecker
+flake8: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files with</p>
+<h2>flake8: noqa or lines with # noqa</h2>
 <p>setup.cfg - configuration file by projects (also: tox.ini, .flake8)
 [flake8]
 ignore = D203
@@ -1479,8 +1328,10 @@ max-complexity = 10</p>
 black: The uncompromising code auto-formatter, sometimes will make a change that just looks really bad; it’s good (if
 you really want) to use it as a pre-commit hook with default config alongside flake8 for non-style linting.
 isort: utility/library to sort imports alphabetically, and automatically separated into sections and by type
-Good combo: autopep8/flake8, black
-VCS
+Good combo: autopep8/flake8, black</p>
+<h4>VCS</h4>
+<p><a href="https://adriaanrol.com/images/GitFlowchart.png"><img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""></a></p>
+<p>VCS
 Q: Types of Version Control Systems (VCS)
 VCSs are broken down into two main categories, (1) centralized and (2) decentralized (also known as distributed).
 Background knowledge:</p>
@@ -2584,13 +2435,6 @@ The reasons for this are many. No two ever projects have:</p>
 <li>The same priorities &amp; constraints.</li>
 </ol>
 <p>“Count, compute, judge“ principle images source</p>
-<h4>A.1.2 Standard Library</h4>
-<h3>A.2.1 Frameworks</h3>
-<h3>ATools</h3>
-<h4>Package Managers</h4>
-<h4>Quality Tools</h4>
-<h4>VCS</h4>
-<p><a href="https://adriaanrol.com/images/GitFlowchart.png"><img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""></a></p>
 <h3>Software Design and Development Process</h3>
 <h4>Networking</h4>
 <p>Additional areas
@@ -2681,19 +2525,21 @@ Be consistent with your naming conventions
 <pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">DEFAULT_NAME</span> <span class="o">=</span> <span class="s2">"someone"</span>   <span class="c1"># &lt;- UPPERCASE_UNDERSCORE</span>
+<span class="n">DEFAULT_NAME</span> <span class="o">=</span> <span class="s2">"someone"</span>  <span class="c1"># &lt;- UPPERCASE_UNDERSCORE</span>
 
-<span class="k">class</span> <span class="nc">GreetingManager</span><span class="p">:</span>   <span class="c1"># &lt;- CamelCase</span>
+
+<span class="k">class</span> <span class="nc">GreetingManager</span><span class="p">:</span>  <span class="c1"># &lt;- CamelCase</span>
 
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>  <span class="c1"># &lt;- lowercase_underscores</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
             <span class="n">target_name</span> <span class="o">=</span> <span class="n">DEFAULT_NAME</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">target_name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># &lt;- lowercase_underscores</span>
+            <span class="n">target_name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># &lt;- lowercase_underscores</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hello, </span><span class="si">{</span><span class="n">target_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
+
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<span class="n">GreetingManager</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">GreetingManager</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
 </pre>
 <ol>
 <li>Verify your code with a linters</li>
@@ -2726,6 +2572,188 @@ print(answer) # True
 <h5>Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?</h5>
 <pre class="code literal-block"><span></span><code>'some string'.capitalize()
 'ABCDE'.lower() // 'zxcvbnm'.upper()
+</code></pre>
+
+<h5>Q: How to find the index inside a <code>for</code> loop?</h5>
+<p>Wrap an iterable with ‘enumerate’ and it will yield the item along with its index.</p>
+<pre class="code literal-block"><span></span><code><span class="c1"># Know the index faster</span><span class="w"></span>
+<span class="n">vowels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">,</span><span class="w"> </span><span class="s1">'i'</span><span class="p">,</span><span class="w"> </span><span class="s1">'o'</span><span class="p">,</span><span class="w"> </span><span class="s1">'u'</span><span class="p">]</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="p">)</span><span class="w"></span>
+</code></pre>
+
+<h5>Q: How to return multiple values in Python?</h5>
+<p>Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:</p>
+<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">func</span><span class="ss">()</span>:
+    <span class="k">return</span> <span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">5</span>
+<span class="nv">one</span>, <span class="nv">two</span>, <span class="nv">three</span>, <span class="nv">four</span>, <span class="nv">five</span> <span class="o">=</span> <span class="nv">func</span><span class="ss">()</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">one</span>, <span class="nv">two</span>, <span class="nv">three</span>, <span class="nv">four</span>, <span class="nv">five</span><span class="ss">)</span>  # <span class="nv">tuple</span> <span class="nv">unpacking</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">t</span> <span class="o">=</span> <span class="nv">func</span><span class="ss">()</span>  # <span class="nv">a</span> <span class="nv">tuple</span> <span class="ss">(</span><span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">5</span><span class="ss">)</span>
+</code></pre>
+
+<h5>Q: How to translate a string of chars into a string containing a binary code (1 and 0)?</h5>
+<pre class="code literal-block"><span></span><code><span class="c1"># using join() + ord() + format()</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"hello world"</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">some_string</span><span class="p">)</span><span class="w"></span>
+<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span><span class="w"></span>
+
+<span class="c1"># using `bytearray`</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">bytearray</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="s1">'utf-8'</span><span class="p">))</span><span class="w"></span>
+<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span><span class="w"></span>
+</code></pre>
+
+<h5>Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting arrays differ and why should you use one initialization approach vs the other?</h5>
+<pre class="code literal-block"><span></span><code><span class="o">&gt;&gt;&gt;</span> # <span class="nv">INITIALIZING</span> <span class="nv">AN</span> <span class="nv">ARRAY</span> <span class="o">--</span> <span class="nv">METHOD</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span> <span class="o">=</span> [[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>]] <span class="o">*</span> <span class="mi">3</span>
+[[<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>]]
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">INITIALIZING</span> <span class="nv">AN</span> <span class="nv">ARRAY</span> <span class="o">--</span> <span class="nv">METHOD</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">y</span> <span class="o">=</span> [[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>] <span class="k">for</span> <span class="nv">_</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>]
+[[<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>]]
+<span class="o">&gt;&gt;&gt;</span> # <span class="nv">WHICH</span> <span class="nv">METHOD</span> <span class="nv">SHOULD</span> <span class="nv">YOU</span> <span class="nv">USE</span> <span class="nv">AND</span> <span class="nv">WHY</span>?
+</code></pre>
+
+<p>While both methods appear to produce the same result, there is an extremely significant difference between them. Method
+2 produces, as you would expect, an array of 3 elements, each of which is itself <em>an independent 4-element array</em>(2). In
+method 1, however, the members of the array <em>all point to the same object</em>(1). This can lead to what is most likely
+unanticipated and undesired behavior as shown below.</p>
+<pre class="code literal-block"><span></span><code># MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:
+&gt;&gt;&gt; x[0][3] = 99
+[[1, 2, 3, 99], [1, 2, 3, 99], [1, 2, 3, 99]]
+&gt;&gt;&gt; # UH-OH, DON’T THINK YOU WANTED THAT TO HAPPEN!
+&gt;&gt;&gt; # MODIFYING THE y ARRAY FROM THE PRIOR CODE SNIPPET:
+&gt;&gt;&gt; y[0][3] = 99
+[[1, 2, 3, 99], [1, 2, 3, 4], [1, 2, 3, 4]]
+&gt;&gt;&gt; # THAT’S MORE LIKE WHAT YOU EXPECTED!
+</code></pre>
+
+<h5>Q: Mention the use of / and // operators in Python?</h5>
+<pre class="code literal-block"><span></span><code># <span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span>
+# <span class="s2">"</span><span class="s">/</span><span class="s2">"</span> <span class="k">for</span> <span class="nv">integers</span>, <span class="nv">act</span> <span class="nv">as</span> <span class="nv">floor</span> <span class="nv">division</span>, <span class="k">for</span> <span class="nv">float</span> <span class="o">-</span> <span class="nv">returns</span> <span class="nv">float</span> <span class="nv">value</span>
+
+<span class="nv">print</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span> # <span class="mi">2</span>
+<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>
+<span class="nv">print</span> <span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span> # <span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+
+# “<span class="o">//</span>” <span class="nv">returns</span> <span class="nv">floor</span> <span class="nv">value</span> <span class="k">for</span> <span class="nv">both</span> <span class="nv">integer</span> <span class="nv">and</span> <span class="nv">floating</span> <span class="nv">point</span> <span class="nv">arguments</span>
+
+<span class="nv">print</span> <span class="mi">5</span><span class="o">//</span><span class="mi">2</span> # <span class="mi">2</span>
+<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>
+<span class="nv">print</span> <span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span> # <span class="mi">2</span>.<span class="mi">0</span>
+<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>.<span class="mi">0</span>
+
+# <span class="nv">In</span> <span class="nv">Python</span> <span class="mi">3</span>, ‘<span class="o">/</span>’ <span class="nv">operator</span> <span class="nv">does</span> <span class="nv">floating</span> <span class="nv">point</span> <span class="nv">division</span> <span class="k">for</span> <span class="nv">both</span> <span class="nv">int</span> <span class="nv">and</span> <span class="nv">float</span> <span class="nv">arguments</span>
+<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+
+<span class="nv">Behavior</span> <span class="nv">of</span> “<span class="o">//</span>” <span class="nv">is</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">in</span> <span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span> <span class="nv">and</span> <span class="nv">Python</span> <span class="mi">3</span>.
+</code></pre>
+
+<h5>Q: How to check that tuple A contains all elements of tuple B?</h5>
+<p>You can use <code>set.issubset()</code> or <code>set.issuperset()</code> to check if every element in one tuple or list is in another.</p>
+<pre class="code literal-block"><span></span><code>tuple1 = (1, 2)
+tuple2 = (1, 2, 3, 4, 5)
+set(tuple1).issubset(tuple2)  # True
+set(tuple2).issuperset(tuple1)  # True
+</code></pre>
+
+<h5>Q: How to check if both tuples contain unique values?</h5>
+<p>len(set(tup)) == len(some_tuple)
+This creates a set of some_tuple and checks if it is the same length as the original some_tuple. The only case in which
+they would have the same length is if all elements in tup were unique.</p>
+<h5>Q: Mention the use of the <code>split()</code> function in Python?</h5>
+<pre class="code literal-block"><span></span><code>str splitted on whitespaces → list of str
+"words with spaces".split() → ['words','with','spaces']
+</code></pre>
+
+<h5>Q: What will be the output of the following code?</h5>
+<pre class="code literal-block"><span></span><code>def f():
+... x = 15
+... print(x)
+... x = 12
+f()  # 15
+</code></pre>
+
+<h5>Q: How to convert a string to a number that consists of letters ASCII code. Example: 'abcd' -&gt; 979899100.</h5>
+<pre class="code literal-block"><span></span><code># <span class="nv">Convert</span> <span class="nv">string</span> <span class="nv">to</span> <span class="nv">ASCII</span> <span class="nv">values</span>
+# <span class="nv">Method</span> <span class="mi">1</span>: <span class="nv">using</span> <span class="k">loop</span> <span class="o">+</span> <span class="nv">ord</span><span class="ss">()</span>
+
+<span class="nv">test_str</span> <span class="o">=</span> <span class="s2">"</span><span class="s">let’s do more Python!</span><span class="s2">"</span>
+<span class="nv">res1</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="k">for</span> <span class="nv">elem</span> <span class="nv">in</span> <span class="nv">test_str</span>:
+<span class="nv">res1</span> <span class="o">+=</span> ‘’.<span class="nv">join</span><span class="ss">(</span><span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">)))</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">int</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">))</span> # <span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">)</span> <span class="o">&gt;&gt;</span> <span class="mi">106</span> <span class="nv">bytes</span>
+
+# <span class="nv">Method</span> <span class="mi">2</span>: <span class="nv">list</span> <span class="nv">comprehension</span>
+<span class="nv">test_str2</span> <span class="o">=</span> “<span class="nv">let</span>’<span class="nv">s</span> <span class="k">do</span> <span class="nv">more</span> <span class="nv">Python</span><span class="o">!</span>”
+<span class="nv">res2</span> <span class="o">=</span> <span class="s1">''</span>.<span class="nv">join</span><span class="ss">(</span>[<span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">))</span> <span class="k">for</span> <span class="nv">elem</span> <span class="nv">in</span> <span class="nv">test_str2</span>]<span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span> # <span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span> <span class="o">&gt;&gt;</span> <span class="mi">106</span> <span class="nv">bytes</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">res1</span> <span class="o">==</span> <span class="nv">res2</span><span class="ss">)</span> # <span class="nv">True</span>
+</code></pre>
+
+<h5>Q: How to remove empty lines from a list of lines (with a length of 0)?</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">empty_lines_list</span> <span class="o">=</span> [‘<span class="nv">abc</span>’, ‘’, ‘’, ’<span class="nv">def</span>’, ‘’, ‘’, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">1</span>]
+<span class="nv">def</span> <span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>:
+    <span class="k">return</span> <span class="nv">bool</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>
+<span class="nv">filtered_list</span> <span class="o">=</span> [<span class="nv">line</span> <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">empty_lines_list</span> <span class="k">if</span> <span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>]
+<span class="nv">print</span><span class="ss">(</span><span class="nv">filtered_list</span><span class="ss">)</span>  # [<span class="s2">"</span><span class="s">abc</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">def</span><span class="s2">"</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">1</span>]
+</code></pre>
+
+<h5>Q: Build a string with the numbers from 0 to 100, "0123456789101112..."</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">list_of_numbers</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="k">for</span> <span class="nv">el</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">101</span><span class="ss">)</span>:
+    <span class="nv">list_of_numbers</span> <span class="o">+=</span> <span class="nv">str</span><span class="ss">(</span><span class="nv">el</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_numbers</span><span class="ss">)</span>
+</code></pre>
+
+<h5>Q: Making a list with the unique element from a list with duplicate elements</h5>
+<p>unique_list = set(list_with_duplicates)</p>
+<h5>Q: How can you randomize the items of a list in Python?</h5>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Keep'</span><span class="p">,</span> <span class="s1">'The'</span><span class="p">,</span> <span class="s1">'Blue'</span><span class="p">,</span> <span class="s1">'Flag'</span><span class="p">,</span> <span class="s1">'Flying'</span><span class="p">,</span> <span class="s1">'High'</span><span class="p">]</span>
+<span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre>
+
+<h5>Q: Write a program in Python to produce stars triangle</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">star_triangle</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
+    <span class="k">for</span> <span class="nv">x</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
+        <span class="nv">print</span><span class="ss">(</span><span class="s1">'</span><span class="s"> </span><span class="s1">'</span> <span class="o">*</span> <span class="ss">(</span><span class="nv">r</span> <span class="o">-</span> <span class="nv">x</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span> <span class="o">+</span> <span class="s1">'</span><span class="s">*</span><span class="s1">'</span> <span class="o">*</span> <span class="ss">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nv">x</span> <span class="o">+</span> <span class="mi">1</span><span class="ss">))</span>    
+<span class="nv">star_triangle</span><span class="ss">(</span><span class="mi">9</span><span class="ss">)</span>
+</code></pre>
+
+<h5>Q: Write a program in Python to check if a sequence is a palindrome</h5>
+<pre class="code literal-block"><span></span><code><span class="s s-Atom">entered_sequence</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="s2">"enter sequence"</span><span class="p">)</span>
+<span class="s s-Atom">reversed_copy</span> <span class="o">=</span> <span class="s s-Atom">entered_sequence</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s s-Atom">if</span> <span class="s s-Atom">entered_sequence</span> <span class="o">==</span> <span class="s s-Atom">reversed_copy:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s2">"palindrome"</span><span class="p">)</span>
+<span class="nn">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s2">"Not a palindrome"</span><span class="p">)</span>
+</code></pre>
+
+<h5>Q: Write a one-liner that will count the number of capital letters in a file. Your code should work even if the file is too big to fit in memory</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">with</span> <span class="nv">open</span><span class="ss">(</span><span class="s1">'</span><span class="s">very_big_text.txt</span><span class="s1">'</span><span class="ss">)</span> <span class="nv">as</span> <span class="nv">f</span>:
+    # <span class="nv">multiline</span> <span class="nv">solution</span>
+    <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nv">text</span> <span class="o">=</span> <span class="nv">f</span>.<span class="nv">read</span><span class="ss">()</span>
+    <span class="k">for</span> <span class="nv">character</span> <span class="nv">in</span> <span class="nv">text</span>:
+    <span class="k">if</span> <span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">()</span>:
+    <span class="nv">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    # <span class="nv">one</span><span class="o">-</span><span class="nv">liner</span>
+    <span class="nv">count</span> <span class="o">=</span> <span class="nv">sum</span><span class="ss">(</span><span class="mi">1</span> <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">f</span> <span class="k">for</span> <span class="nv">character</span> <span class="nv">in</span> <span class="nv">line</span> <span class="k">if</span> <span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">())</span>
+    <span class="nv">print</span><span class="ss">(</span><span class="nv">count</span><span class="ss">)</span>
+</code></pre>
+
+<h5>Q: Write a sorting algorithm for a numerical dataset in Python</h5>
+<pre class="code literal-block"><span></span><code><span class="nv">list_of_str_numbers</span> <span class="o">=</span> [<span class="s2">"</span><span class="s">1</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">4</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">0</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">6</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">9</span><span class="s2">"</span>]
+<span class="nv">list_of_integers</span> <span class="o">=</span> [<span class="nv">int</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">list_of_str_numbers</span>]
+<span class="nv">list_of_integers</span>.<span class="nv">sort</span><span class="ss">()</span>
+
+# <span class="nv">or</span> <span class="nv">with</span> <span class="nv">sorted</span><span class="ss">()</span> <span class="nv">which</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">change</span> <span class="nv">original</span> <span class="nv">list</span> <span class="nv">in</span> <span class="nv">contrast</span> <span class="nv">to</span> <span class="nv">sort</span><span class="ss">()</span>
+<span class="nv">new_sorted_list_of_integers</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">list_of_integers</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_integers</span>, <span class="nv">new_sorted_list_of_integers</span><span class="ss">)</span>
 </code></pre>
 
 <h2>...content...Quizzes/games</h2>
