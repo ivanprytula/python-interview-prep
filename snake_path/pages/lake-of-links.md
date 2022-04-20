@@ -8,6 +8,8 @@
 
 # Python Core & cheatsheets
 1. [Jupyter notebooks for teaching/learning Python 3](https://jerry-git.github.io/learn-python3/)
+2. [30 built-in Python modules you better be using](https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/)
+3.
 
 # Clean code
 1. [Python libraries to make your code readable, reliable and maintainable ](https://isaak.dev/2020/08/python-libraries-to-make-your-code-readable-and-maintainable)

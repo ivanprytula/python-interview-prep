@@ -8,16 +8,11 @@
 
 **Acquisition & refreshment of knowledge based on:**
 
-<details>
-    <summary id="toc">[TOC]</summary>
-    <ol>
-        <li>Interview questions/answers <a href="#section-interview-questions"><em>[Qs&As]</em></a></li>
-        <li>Best practices <a href="#section-best-practices"><em>[Action Items]</em></a></li>
-        <li>Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a></li>
-        <li>Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a></li>
-        <li>... <a href="#"><em>[...TODO...]</em></a></li>
-    </ol>
-</details>
+- A. Interview questions/answers <a href="#section-interview-questions"><em>[Qs&As]</em></a>
+- B. Best practices <a href="#section-best-practices"><em>[Action Items]</em></a>
+- C. Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a>
+- D. Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a>
+- E. ... <a href="#"><em>[...TODO...]</em></a>
 
 ---
 
@@ -106,14 +101,19 @@ _Mutable_ built-in datatypes/structures
 
 #### Q: What is PEP8?
 
-Style Guide for Python Code. It is the latest Python coding standard, a set of coding recommendations, coding
-conventions. (Python Enhancement Proposal)
-One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
-intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
-says, "Readability counts".
-A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
-more significant. Consistency within one module or function is the most
-important. [more details...](https://www.python.org/dev/peps/pep-0008/)
+<details>
+    <summary id="toc">Style Guide for Python Code</summary>
+    It is the latest Python coding standard, a set of coding recommendations, coding
+    conventions. (Python Enhancement Proposal)
+    One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
+    intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
+    says, "Readability counts".
+    A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
+    more significant. Consistency within one module or function is the most
+    important. 
+    <a href="https://www.python.org/dev/peps/pep-0008/">more details...</a>
+</details>
+<p></p>
 
 #### Q: How do I modify a string in Python?
 
@@ -901,10 +901,13 @@ and in most cases it’s possible to get reference to them.
     obj_gor.func()  # monkey_f() is being called
 
 #### Q: How are arguments passed by value or by reference?
+
 **Background knowledge**:  
-When you pass function arguments **by reference**, those arguments are only references to existing values. In contrast, when
+When you pass function arguments **by reference**, those arguments are only references to existing values. In contrast,
+when
 you pass arguments by value, those arguments become independent copies of the original values.
-!!! Python passes arguments neither by reference nor by value, but ***by assignment***. Python does not exactly pass by value.
+!!! Python passes arguments neither by reference nor by value, but ***by assignment***. Python does not exactly pass by
+value.
 Let’s prove it. [more details...](https://realpython.com/python-pass-by-reference/)
 
 Using `id(obj)` (returns an integer representing the memory address), you can verify the following assertions:
@@ -917,15 +920,18 @@ Using `id(obj)` (returns an integer representing the memory address), you can ve
 
 ```python
 def main():
-   n = 9001
-   print(f"Initial address of n: {id(n)}")
-   increment(n)
-   print(f"Final address of n: {id(n)}")
+    n = 9001
+    print(f"Initial address of n: {id(n)}")
+    increment(n)
+    print(f"Final address of n: {id(n)}")
+
 
 def increment(x):
     print(f"Initial address of x: {id(x)}")
     x += 1
     print(f"Final address of x: {id(x)}")
+
+
 main()
 # Initial address of n: 140562586057840
 # Initial address of x: 140562586057840
@@ -934,8 +940,11 @@ main()
 ```
 
 #### Q: What is `PYTHONPATH`?
-`PYTHONPATH` is an _environment variable_ which you can set to add additional directories where Python will look for modules
-and packages. Augment the default search path for module files. The format is the same as the shell’s `PATH`: one or more
+
+`PYTHONPATH` is an _environment variable_ which you can set to add additional directories where Python will look for
+modules
+and packages. Augment the default search path for module files. The format is the same as the shell’s `PATH`: one or
+more
 directory path names separated by os.pathsep (e.g. “:” on Unix or “;” on Windows). Non-existent directories are silently
 ignored.
 
@@ -944,6 +953,7 @@ where to find its standard library. The only reason to set `PYTHONPATH` is to ma
 libraries that you do not want to install in the global default location (i.e., the site-packages directory).
 
 #### Q: Duck typing, EAFP and LBYL. How are they connected?
+
 Python follows the _duck typing_ style of coding.
 
 ```python
@@ -973,441 +983,328 @@ attributes and catches exceptions if the assumption proves false. This clean and
 presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages
 such as C.
 
-
-
-
-
-
-#### Q: How to return multiple values in Python?
-Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
-def func():
-return 1, 2, 3, 4, 5
-one, two, three, four, five = func()
-print(one, two, three, four, five)  # tuple unpacking
-> > > t = func()  # a tuple (1, 2, 3, 4, 5)
-
-
 #### Q: Does Python have infinity?
-> > > float('-Infinity')  # “inf”, “Inf”, “INFINITY” and “iNfINity” are all acceptable spellings
-> > > Also:
-> > > nan            ::=  "nan"
-> > > numeric_value  ::= floatnumber | infinity | nan
-> > > infinity = float('infinity')
-> > > hash(infinity)  # 314159
-> > > hash(float('-inf'))  # -314159
 
+    Yes, it has.
+    float('-Infinity')  # “inf”, “Inf”, “INFINITY” and “iNfINity” are all acceptable spellings
+    # Also:
+    nan            ::=  "nan"
+    numeric_value  ::= floatnumber | infinity | nan
+    infinity = float('infinity')
+    hash(infinity)  # 314159
+    hash(float('-inf'))  # -314159
 
-Q: How to find the index inside a for loop?
-Wrap an iterable with ‘enumerate’ and it will yield the item along with its index.
+#### Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0 and 1.
 
-# Know the index faster
+An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
+your answer is correct?
 
-vowels = ['a', 'e', 'i', 'o', 'u']
-for i, letter in enumerate(vowels):
-print(i, letter)
-> > > 0, 'a' // 1, 'e' ...
-> > > Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0
-> > > and 1.
-> > > An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
-> > > your
-> > > answer is correct?
-> > > def f1(lIn):
-> > > l1 = sorted(lIn)
-> > > l2 = [i for i in l1 if i < 0.5]
-> > > return [i * i for i in l2]
+    def f1(lIn):
+        l1 = sorted(lIn)
+        l2 = [i for i in l1 if i < 0.5]
+        return [i * i for i in l2]
+    
+    def f2(lIn):
+        l1 = [i for i in lIn if i < 0.5]
+        l2 = sorted(l1)
+        return [i * i for i in l2]
+    
+    def f3(lIn):
+        l1 = [i * i for i in lIn]
+        l2 = sorted(l1)
+        return [i for i in l1 if i < (0.5 * 0.5)]
 
+**Most to least efficient**: f2 -> f1 -> f3. To prove that this is the case, you would want to profile your code. Python
+has a lovely profiling package that should do the trick.
 
-def f2(lIn):
-l1 = [i for i in lIn if i < 0.5]
-l2 = sorted(l1)
-return [i * i for i in l2]
+    import cProfile
+    list_num = [random.random() for i in range(100)]
+    cProfile.run('f1(list_num)')
+        4 function calls in 0.045 seconds
+    cProfile.run('f2(list_num)')
+        4 function calls in 0.024 seconds
+    cProfile.run('f3(list_num)')
+        4 function calls in 0.055 seconds
 
-def f3(lIn):
-l1 = [i * i for i in lIn]
-l2 = sorted(l1)
-return [i for i in l1 if i < (0.5 * 0.5)]
-Most to least efficient: f2, f1, f3. To prove that this is the case, you would want to profile your code. Python has a
-lovely profiling package that should do the trick.
-import cProfile
-lIn = [random.random() for i in range(100000)]
-> > > cProfile.run('f1(lIn)')
-> > > 4 function calls in 0.045 seconds
-> > > cProfile.run('f2(lIn)')
-> > > 4 function calls in 0.024 seconds
-> > > cProfile.run('f3(lIn)')
-> > > 4 function calls in 0.055 seconds
-
-
-Why Care?
+**Why Care?**
 Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding for efficiency comes down to common sense
 
-- in the example above it's obviously quicker to sort a list if it's a smaller list, so if you have the choice of
+- in the example above it's obviously _quicker to sort a list if it's a smaller list_, so if you have the choice of
   filtering before a sort it's often a good idea. The less obvious stuff can still be located through use of the proper
   tools. It's good to know about these tools.
 
-Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting
-arrays differ and why should you use one initialization approach vs the other?
-> > > # INITIALIZING AN ARRAY -- METHOD 1
->>> x = [[1,2,3,4]] * 3
-[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
->>> # INITIALIZING AN ARRAY -- METHOD 2
->>> y = [[1,2,3,4] for _ in range(3)]
-[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
->>> # WHICH METHOD SHOULD YOU USE AND WHY?
-While both methods appear to produce the same result, there is an extremely significant difference between them. Method
-2 produces, as you would expect, an array of 3 elements, each of which is itself an independent 4-element array. In
-method 1, however, the members of the array all point to the same object. This can lead to what is most likely
-unanticipated and undesired behavior as shown below.
-> > > # MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:
->>> x[0][3] = 99
-> > > x
-[[1, 2, 3, 99], [1, 2, 3, 99], [1, 2, 3, 99]]
->>> # UH-OH, DON’T THINK YOU WANTED THAT TO HAPPEN!
->>> # MODIFYING THE y ARRAY FROM THE PRIOR CODE SNIPPET:
->>> y[0][3] = 99
-> > > y
-[[1, 2, 3, 99], [1, 2, 3, 4], [1, 2, 3, 4]]
->>> # THAT’S MORE LIKE WHAT YOU EXPECTED!
-Q: How to translate a string of chars into a string containing a binary code (1 and 0)?
+### A.1.2 Standard Library
 
-# using join() + ord() + format()
+**Built-in functions / modules**
 
-> > > st = "hello world"
-> > > ' '.join(format(ord(x), 'b') for x in st)
-'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
+#### Q: How to display a list of all available modules?
 
-# using `bytearray`
+`>>> help('modules')`  
+[The Python Standard Library](https://docs.python.org/3.8/library/index.html)
 
-> > > ' '.join(format(x, 'b') for x in bytearray(st, 'utf-8'))
-'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
-> > > Q: How to check that tuple A contains all elements of tuple B?
-> > > You can use set.issubset or set.issuperset to check if every element in one tuple or list is in another.
-> > > tuple1 = (1, 2)
-> > > tuple2 = (1, 2, 3, 4, 5)
-> > > set(tuple1).issubset(tuple2)  # True
-> > > set(tuple2).issuperset(tuple1)  # True
-> > > Q: How to check if both tuples contain unique values?
-> > > len(set(tup)) == len(tup)
-> > > This creates a set of tup and checks if it is the same length as the original tup. The only case in which they
-> > > would
-> > > have the same length is if all elements in tup were unique.
-> > > Q: Mention the use of / and // operators in Python?
+#### Q: 30 built-in Python modules you should be using
 
-# Python 2.7
+[30 built-in Python modules you better be using](https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/)
 
-# "/" for integers, act as floor division, for float - returns float value
+#### Q: Print directory content
 
-print 5/2 # 2
-print -5/2 # -3
-print 5.0/2 # 2.5
-print -5.0/2 # -2.5
+    import os
+    def print_directory_contents(sPath):
+        """ 
+        This function takes the name of a directory
+        and prints out the paths files within that
+        directory as well as any files contained in
+        contained directories.
 
-# “//” returns floor value for both integer and floating point arguments
+        This function is similar to os.walk. Please don't
+        use os.walk in your answer. We are interested in your 
+        ability to work with nested structures. 
+        """
+        for sChild in os.listdir(sPath):                
+            sChildPath = os.path.join(sPath, sChild)
+        if os.path.isdir(sChildPath):
+            print_directory_contents(sChildPath)
+        else:
+            print(sChildPath)
 
-print 5//2 # 2
-print -5//2 # -3
-print 5.0//2 # 2.0
-print -5.0//2 # -3.0
-In Python 3, ‘/’ operator does floating point division for both int and float arguments
-print(5/2)  # 2.5
-print(-5/2)  # -2.5
-print(5.0/2)  # 2.5
-print(-5.0/2)  # -2.5
-Behavior of “//” is the same in Python 2.7 and Python 3.
-Q: Mention the use of the split function in Python?
-str splitted on whitespaces → list of str
-"words with spaces".split() → ['words','with','spaces']
-Q: What will be the output of the following code?
-> > > def f():
-> > > ... x = 15
-> > > ... print(x)
-> > > ... x = 12
-> > > f()  # 15
-> > > Q: How to convert a string to a number that consists of letters ASCII code. Example: 'abcd' -> 979899100.
+#### Q: Explain how to delete a file in Python?
 
-# Convert String list to ascii values
+By using a command `os.remove(filename, *, dir_fd=None)` or `os.unlink(filename)`. They are equivalent to each other.
 
-# Method 1: using loop + ord()
+#### Q: Explain how you can generate random numbers in Python?
 
-test_str = "let’s do more Python!"
-res1 = ''
-for elem in test_str:
-res1 += ‘’.join(str(ord(elem)))
-print(int(res1)) # sys.getsizeof(res1) >> 106 bytes
+    import random
+    random.random()
+    # This returns a random floating point number in the range [0, 1)
 
-# Method 2: list comprehension
+#### Q: Explain how you can access a module written in Python from C?
 
-test_str2 = “let’s do more Python!”
-res2 = ''.join([str(ord(elem)) for elem in test_str2])
-print(res2) # sys.getsizeof(res2) >> 106 bytes
-print(res1 == res2) # True
-Q: How to remove empty lines from a list of lines (with a length of 0)?
-empty_lines_list = [‘abc’, ‘’, ‘’, ’def’, ‘’, ‘’, 3 , 4, 1, ]
-def check_is_empty(line):
-return bool(line)
-filtered_list = [line for line in empty_lines_list if check_is_empty(line)]
-print(filtered_list)
-Q: Build a string with the numbers from 0 to 100, "0123456789101112..."
-list_of_numbers = ''
-for el in range(101):
-list_of_numbers += str(el)
-print(list_of_numbers)
-Q: Making a list with the unique element from a list with duplicate elements
-unique_list = set(list_with_dublicates)
-Q: How can you randomize the items of a list in Python?
-from random import shuffle
-x = ['Keep', 'The', 'Blue', 'Flag', 'Flying', 'High']
-shuffle(x)
-Q: Write a program in Python to produce stars triangle
-def star_triangle(r):
-for x in range(r):
-print(' ' * (r - x - 1) + '*' * (2 * x + 1))    
-star_triangle(9)
-Q: Write a program in Python to check if a sequence is a Palindrome
-entered_sequence = input("enter sequence")
-reversed_copy = entered_sequence[::-1]
-if entered_sequence == reversed_copy:
-print("palindrome")
-else:
-print("Not a palindrome")
-Q: Write a one-liner that will count the number of capital letters in a file. Your code should work even if the file is
-too big to fit in memory
-with open('very_big_text.txt') as f:
+`Module = =PyImport_ImportModule("<modulename>");`
 
-# multiline solution
+**Built-in constants**  
+A small number of constants live in the built-in namespace: **True**, **False**, **None**, **NotImplemented**, **
+Ellipsis**, **__debug__**.
 
-count = 0
-text = f.read()
-for character in text:
-if character.isupper():
-count += 1
-
-# one-liner
-
-count = sum(1 for line in f for character in line if character.isupper())
-print(count)
-Q: Write a sorting algorithm for a numerical dataset in Python
-list_of_str_numbers = ["1", "4", "0", "6", "9"]
-list_of_integers = [int(i) for i in list_of_str_numbers]
-list_of_integers.sort()
-
-# or with sorted() which doesn’t change original list in contrast to sort()
-
-new_sorted_list_of_integers = sorted(list_of_integers)
-print(list_of_integers, new_sorted_list_of_integers)
-Standard Library
-Built-in functions / modules
-Q: How to display a list of all available modules?
-> > > help('modules')
-> > > The Python Standard Library
-> > > Q: 30 built-in Python modules you should be using
-> > > 30 built-in Python modules you better be using
-> > > Q: Fill in the missing code:
-> > > def print_directory_contents(sPath):
-"""
-> > > This function takes the name of a directory
-> > > and prints out the paths files within that
-> > > directory as well as any files contained in
-> > > contained directories.
-
-    This function is similar to os.walk. Please don't
-    use os.walk in your answer. We are interested in your 
-    ability to work with nested structures. 
-    """
-    ...fill_this_in...
-
-def print_directory_contents(sPath):
-import os                                       
-for sChild in os.listdir(sPath):                
-sChildPath = os.path.join(sPath, sChild)
-if os.path.isdir(sChildPath):
-print_directory_contents(sChildPath)
-else:
-print(sChildPath)
-Q: Explain how to delete a file in Python?
-By using a command os.remove(filename, *, dir_fd=None) or os.unlink(filename). They are equivalent to each other.
-Q:  Explain how you can generate random numbers in Python?
-import random
-random.random()
-This returns a random floating point number in the range [0, 1)
-Q: Explain how you can access a module written in Python from C?
-Module = =PyImport_ImportModule("<modulename>");
-Built-in constants
-A small number of constants live in the built-in namespace. They are: True, False, None, NotImplemented, Ellipsis, __
-debug__.
 Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
-programs: copyright, credits, license official docs
-Built-in exceptions
+programs: copyright, credits, license  [docs.python.org](https://docs.python.org/3/library/constants.html)
+
+**Built-in exceptions**  
 A Python program terminates as soon as it encounters an error. An error can be:
 
-* a syntax error: raised when the parser detects an incorrect statement, print(0/0))
-* an exception: raised when code with correct syntax results in an error, print(0/0)
-  BaseException base class for all built-in exceptions. It is not meant to be directly inherited by user-defined
-  classes (for that, use Exception).
-  Q: Exceptions and How to Raise Them
-  x = 10
-  if x > 5:
-  raise Exception(f’x needs to be under 5’)
-  print(‘the end’)  # raise allows you to throw an exception at any time
-  Q: Assertions and Try/Except
+* a _syntax error_: raised when the parser detects an incorrect statement, print(0/0))
+* an _exception_: raised when code with correct syntax results in an error, print(0/0)
 
-# assert (condition), f”optional message if condition is not met”
+`BaseException` base class for all built-in exceptions. It is not meant to be directly inherited by user-defined
+classes (for that, use Exception).
 
-name = ‘snake’
-assert (name == ‘snake’)
-print(f”name is really {name}”)
+#### Q: Exceptions and how to raise them
 
-assert checks if the condition inside the brackets is True. If it isn’t, then an AssertionError will be raised, and the
-program will stop.
+    x = 10
+    if x > 5:
+        raise Exception(f’x needs to be under 5’)
+    print(‘the end’)  # raise allows you to throw an exception at any time
 
-try:
+#### Q: Assertions and `try/except`
 
-# code to attempt running
+    # assert (condition), f”optional message if condition is not met”
+    name = 'snake'
+    assert (name == 'snake')
+    print(f"name is really {name}")
 
-if '1' != 1:
+`assert` checks if the condition inside the brackets is True. If it isn’t, then an `AssertionError` will be raised, and
+the program will stop.
 
-# raise ‘some error’ will be wrong ‘cause new exception class must inherit from a BaseException.
+    try:
+        # code to attempt running
+        if '1' != 1:
+        # raise ‘some error’ will be wrong ‘cause new exception class must inherit from a BaseException.
+            raise Exception
+    except ZeroDivisionError:
+        # execute this code if there is an exception generated
+        print("someError has occurred")
+    except TypeError:  
+        ...
+    except <specify type of exception>:
+        pass # avoid this silent handling as this is an anti-pattern
 
-# raise Exception
+Alternatives for handling wide Exceptions: use modules `logging`
+, `traceback` [more details...](https://realpython.com/the-most-diabolical-python-antipattern/)
 
-except ZeroDivisionError:
+#### Q: `else`, `finally` & other Exceptions
 
-# execute this code if there is an exception generated
+    try:
+        linux_interaction()
+    except AssertionError as error:
+        print(error)
+    else:
+        try:
+            with open('file.log') as file:
+                read_data = file.read()
+        except FileNotFoundError as fnf_error:
+            print(fnf_error)
+    finally:
+        print('Cleaning up, irrespective of any exceptions.')
 
-print("someError has occurred")
-except TypeError:  
-...
-except <specify type of exception>:
-pass # avoid this silent handling as it is an anti-pattern
+In the previous code, everything in the `finally` clause will be executed. It does not matter if you encounter an
+exception somewhere in the `try` or `else` clauses. [more details...](https://realpython.com/python-exceptions/)
 
-Alternatives for handling wide Exceptions: use modules logging, traceback more advanced details
+## A.2 Frameworks
 
-Q: Else, Finally & Exceptions
+### A.2.1 Django
 
-try:
-linux_interaction()
-except AssertionError as error:
-print(error)
-else:
-try:
-with open('file.log') as file:
-read_data = file.read()
-except FileNotFoundError as fnf_error:
-print(fnf_error)
-finally:
-print('Cleaning up, irrespective of any exceptions.')
+#### Q: Project initialization
 
-In the previous code, everything in the finally clause will be executed. It does not matter if you encounter an
-exception somewhere in the try or else clauses. more details
-Frameworks
-Django
-Q: Project initialization
-$ python -m django --version
-$ django-admin startproject <mysite_name>
-$ python manage.py runserver 8080
-mysite/
-manage.py
-mysite/
-__init__.py
-settings.py
-urls.py
-asgi.py
-wsgi.py
-Q: Project configuration
+    $ python -m django --version
+    $ django-admin startproject <mysite_name>
+    $ python manage.py runserver 8080
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+            settings.py
+            urls.py
+            asgi.py
+            wsgi.py
 
-* mysite/settings.py: A settings file is just a module with module-level variables.
+#### Q: Project configuration
+
+- mysite/[settings.py](https://docs.djangoproject.com/en/dev/topics/settings/): A settings file is just a module with
+  module-level variables.
   Because a settings file is a Python module, the following apply:
-* It doesn’t allow for Python syntax errors.
-* It can assign settings dynamically using normal Python syntax. For example:
-  MY_SETTING = [str(i) for i in range(30)]
-* It can import values from other settings files.
-  Q: Apps
-  $ python manage.py startapp <app_name>
-  Q: Urls
-* mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered site.
-  More >> URL dispatcher.
-  Q: Models
-  A model is the single, definitive source of information about your data. It contains the essential fields and
-  behaviors of the data you’re storing. Generally, each model maps to a single database table.
+    - It doesn’t allow for Python syntax errors.
+
+    * It can assign settings dynamically using normal Python syntax. For example:
+      MY_SETTINGS = [str(i) for i in range(30)]
+    * It can import values from other settings files.
+
+#### Q: Apps
+
+```shell
+$ python manage.py startapp <app_name>
+```
+
+#### Q: Urls
+
+mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered
+site. [more details...](https://docs.djangoproject.com/en/3.1/topics/http/urls/)
+
+#### Q: [Models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
+
+A model is the single, definitive source of information about your data. It contains the essential fields and
+behaviors of the data you’re storing. Generally, each model maps to a single database table.
+
 * Each model is a Python class that subclasses django.db.models.Model.
 * Each attribute of the model represents a database field.
 * With all of this, Django gives you an automatically-generated database-access API;
 
-from django.db import models
+  from django.db import models
 
-class Person(models.Model):
-first_name = models.CharField(max_length=30)
-last_name = models.CharField(max_length=30)
-first_name and last_name are fields of the model. Each field is specified as a class attribute, and each attribute maps
-to a database column.
+  class Person(models.Model):
+  first_name = models.CharField(max_length=30)
+  last_name = models.CharField(max_length=30)
+
+`first_name` and `last_name` are fields of the model. Each field is specified as a class attribute, and each attribute
+maps to a database column.
+
 The above Person model would create a database table like this:
-CREATE TABLE myapp_person (
-"id" serial NOT NULL PRIMARY KEY,
-"first_name" varchar(30) NOT NULL,
-"last_name" varchar(30) NOT NULL
+
+```sql
+CREATE TABLE myapp_person
+(
+    "id"         serial      NOT NULL PRIMARY KEY,
+    "first_name" varchar(30) NOT NULL,
+    "last_name"  varchar(30) NOT NULL
 );
-Q: Templates
+```
+
+#### Q: Templates
+
 A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic
 content will be inserted. A Django project can be configured with one or several template engines (or even zero if you
 don’t use templates). Django ships built-in backends for its own template system, creatively called the Django template
 language (DTL), and for the popular alternative Jinja2. Backends for other template languages may be available from
 third-parties.
+
 A Django template is a text document or a Python string marked-up using the Django template language. Some constructs
 are recognized and interpreted by the template engine. The main ones are variables and tags.
-A template is rendered with a context. Rendering replaces variables with their values, which are looked up in the
+
+A **template is rendered with a context**. Rendering replaces variables with their values, which are looked up in the
 context, and executes tags. Everything else is output as is.
+
 The syntax of the Django template language involves four constructs.
 
-1. A {{ variable }} outputs a value from the context, which is a dict-like object mapping keys to values.
-   My first name is {{ first_name }}. My last name is {{ last_name }}.
-   With a context of {'first_name': 'John', 'last_name': 'Doe'} >> My first name is John. My last name is Doe.
-2. {% Tags %} provide arbitrary logic in the rendering process.
+1. A **{{ variable }}** outputs a value from the context, which is a dict-like object mapping keys to values.
+   `My first name is {{ first_name }}. My last name is {{ last_name }}.`
+   With a context of `{'first_name': 'John', 'last_name': 'Doe'}` >> My first name is John. My last name is Doe.
+2. **{% Tags %}** provide arbitrary logic in the rendering process.
 
-* {% csrf_token %}; or with arguments: {% cycle 'odd' 'even' %}
-* Some tags require beginning and ending tags: {% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}
+    * `{% csrf_token %}` or with arguments: `{% cycle 'odd' 'even' %}`
+    * Some tags require beginning and ending
+      tags: `{% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}`
 
-3. Filters transform the values of variables and tag arguments.
-    * {{ django|title }}; or with an argument: {{ my_date|date:"Y-m-d" }}
-4. Comments look like this: {# this won't be rendered #}. A {% comment %} tag provides multi-line comments.
-   Q: Forms
-   In HTML, a form is a collection of elements inside <form>...</form> that allow a visitor to do things like enter
-   text, select options, manipulate objects or controls, and so on, and then send that information back to the server.
-   As well as its <input> elements, a form must specify two things:
+3. **Filters** transform the values of variables and tag arguments.
+    * `{{ django|title }}` or with an argument: `{{ my_date|date:"Y-m-d" }}`
+4. **Comments** look like this: `{# this won't be rendered #}`. A `{% comment %}` tag provides multi-line comments.
+
+#### Q: Forms
+
+In HTML, a form is a collection of elements inside **`<form>...</form>`** that allow a visitor to do things like enter
+text, select options, manipulate objects or controls, and so on, and then send that information back to the server.
+
+As well as its `<input>` elements, a form must specify two things:
 
 * where: the URL to which the data corresponding to the user’s input should be returned
 * how: the HTTP method the data should be returned by
-  GET and POST are typically used for different purposes.
-  Any request that could be used to change the state of the system - for example, a request that makes changes in the
-  database - should use POST. GET should be used only for requests that do not affect the state of the system.
-  Django handles three distinct parts of the work involved in forms:
+
+GET and POST are typically used for different purposes.
+
+Any request that could be used to change the state of the system - for example, a request that makes changes in the
+database - should use POST. GET should be used only for requests that do not affect the state of the system.
+
+Django handles three distinct parts of the work involved in forms:
+
 * preparing and restructuring data to make it ready for rendering
 * creating HTML forms for the data
 * receiving and processing submitted forms and data from the client
-  In the context of a Web application, ‘form’ might refer to that HTML <form>, or to the Django Form that produces it,
-  or to the structured data returned when it is submitted, or to the end-to-end working collection of these parts.
-  At the heart of this system of components is Django’s Form class. In much the same way that a Django model describes
-  the logical structure of an object, its behavior, and the way its parts are represented to us, a Form class describes
-  a form and determines how it works and appears.
-  In a similar way that a model class’s fields map to database fields, a form class’s fields map to HTML form <input>
-  elements. (A ModelForm maps a model class’s fields to HTML form <input> elements via a Form; this is what the Django
-  admin is based upon.)
-  Q: django-admin
-  django-admin is Django’s command-line utility for administrative tasks.
-  In addition, manage.py is automatically created in each Django project. It does the same thing as django-admin but
-  also sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project’s settings.py file.
-  The django-admin script should be on your system path if you installed Django via pip. If it’s not in your path,
-  ensure you have your virtual environment activated.
-  Generally, when working on a single Django project, it’s easier to use manage.py than django-admin. If you need to
-  switch between multiple Django settings files, use django-admin with DJANGO_SETTINGS_MODULE or the --settings command
-  line option.
-  CLI examples can use django-admin/manage.py or python -m django just as well.
-  $ django-admin <command> [options]
-  $ manage.py <command> [options]
-  $ python -m django <command> [options]
 
-Tools
-Package Managers
-Q: Application dependency management / virtualenv isolation
+In the context of a Web application, ‘form’ might refer to that HTML `<form>`, or to the Django Form that produces it,
+or to the structured data returned when it is submitted, or to the end-to-end working collection of these parts.
+
+At the heart of this system of components is Django’s Form class. In much the same way that a Django model describes
+the logical structure of an object, its behavior, and the way its parts are represented to us, a Form class describes
+a form and determines how it works and appears.
+
+In a similar way that a model class’s fields map to database fields, a form class’s fields map to HTML form `<input>`
+elements. (A ModelForm maps a model class’s fields to HTML form `<input>` elements via a Form; this is what the Django
+admin is based upon)
+
+#### Q: django-admin
+
+**django-admin** is Django’s command-line utility for administrative tasks.
+
+In addition, `manage.py` is automatically created in each Django project. It does the same thing as `django-admin` but
+also sets the `DJANGO_SETTINGS_MODULE` environment variable so that it points to your project’s settings.py file.
+
+The **django-admin** script should be on your system path if you installed Django via `pip`. If it’s not in your path,
+ensure you have your virtual environment activated.
+
+Generally, when working on a single Django project, it’s easier to use `manage.py` than `django-admin`. If you need to
+switch between multiple Django settings files, use `django-admin` with `DJANGO_SETTINGS_MODULE` or the `--settings`
+command line option.
+
+CLI examples can use django-admin/manage.py or python -m django just as well.
+
+```shell
+$ django-admin <command> [options]
+$ manage.py <command> [options]
+$ python -m django <command> [options]
+```
+
+## A.3 Tools
+
+### Package Managers
+
+#### Q: Application dependency management / virtualenv isolation
 
 * pipenv (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
   packages/dependencies): Pipfile+pip+virtualenv
@@ -1430,18 +1327,22 @@ Q: Application dependency management / virtualenv isolation
   binary extensions. Conda does not install packages from PyPI and can install only from the official Anaconda
   repositories, or anaconda.org (a place for user-contributed conda packages), or a local (e.g. intranet) package
   server.
-  Quality Tools
-  Q: How to perform code analysis for Python?
-  Python Code Quality Authority references
-  pycodestyle: identifies pep8 style violations
-  autopep8: automatically fixes most violations identified by pycodestyle
-  pylint: throws warnings or errors for a combination of programming and style issues; checks compliance with the latter
-  standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
-  CI integration etc.
-  pylintrc/.pylintrc in target directory for module-by-module basis
-  pyflakes: similar to pylint, except never complains about style, faster that pylint/pychecker
-  flake8: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files with
-  # flake8: noqa or lines with # noqa
+
+### Quality Tools
+
+#### Q: How to perform code analysis for Python?
+
+Python Code Quality Authority references
+pycodestyle: identifies pep8 style violations
+autopep8: automatically fixes most violations identified by pycodestyle
+pylint: throws warnings or errors for a combination of programming and style issues; checks compliance with the latter
+standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
+CI integration etc.
+pylintrc/.pylintrc in target directory for module-by-module basis
+pyflakes: similar to pylint, except never complains about style, faster that pylint/pychecker
+flake8: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files with
+
+# flake8: noqa or lines with # noqa
 
 setup.cfg - configuration file by projects (also: tox.ini, .flake8)
 [flake8]
@@ -1454,6 +1355,11 @@ black: The uncompromising code auto-formatter, sometimes will make a change that
 you really want) to use it as a pre-commit hook with default config alongside flake8 for non-style linting.
 isort: utility/library to sort imports alphabetically, and automatically separated into sections and by type
 Good combo: autopep8/flake8, black
+
+### VCS
+
+[<img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""/>](https://adriaanrol.com/images/GitFlowchart.png)
+
 VCS
 Q: Types of Version Control Systems (VCS)
 VCSs are broken down into two main categories, (1) centralized and (2) decentralized (also known as distributed).
@@ -2659,20 +2565,6 @@ The reasons for this are many. No two ever projects have:
 
 “Count, compute, judge“ principle images source
 
-### A.1.2 Standard Library
-
-## A.2.1 Frameworks
-
-## ATools
-
-### Package Managers
-
-### Quality Tools
-
-### VCS
-
-[<img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""/>](https://adriaanrol.com/images/GitFlowchart.png)
-
 ## Software Design and Development Process
 
 ### Networking
@@ -2771,25 +2663,28 @@ Be consistent with your naming conventions
 #!/usr/bin/env python
 import sys
 
-DEFAULT_NAME = "someone"   # <- UPPERCASE_UNDERSCORE
+DEFAULT_NAME = "someone"  # <- UPPERCASE_UNDERSCORE
 
-class GreetingManager:   # <- CamelCase
+
+class GreetingManager:  # <- CamelCase
 
     def say_hello(self, arguments):  # <- lowercase_underscores
         if len(arguments) < 2:
             target_name = DEFAULT_NAME
         else:
-            target_name = arguments[1]   # <- lowercase_underscores
+            target_name = arguments[1]  # <- lowercase_underscores
         print(f"Hello, {target_name}")
 
+
 if __name__ == "__main__":
-GreetingManager().say_hello(sys.argv)
+    GreetingManager().say_hello(sys.argv)
 ```
+
 9. Verify your code with a linters
 10. Remove debugging print() / breakpoint()
 11. No commented out code
 12. Wrap your script with a function
-  
+
 ## The 10 Most Common Mistakes That Python Developers Make
 
 1. Misusing expressions as defaults in function parameters
@@ -2802,7 +2697,6 @@ GreetingManager().say_hello(sys.argv)
 8. Name clashing with Python Standard Library modules
 9. Failing to address differences between Python 2 and Python 3
 10. Misusing the `__del__` method
-
 
 <div id="section-exercises"><a href="#">[Return Up]</a></div>
 
@@ -2818,6 +2712,195 @@ GreetingManager().say_hello(sys.argv)
 
     'some string'.capitalize()
     'ABCDE'.lower() // 'zxcvbnm'.upper()
+
+#### Q: How to find the index inside a `for` loop?
+
+Wrap an iterable with ‘enumerate’ and it will yield the item along with its index.
+
+    # Know the index faster
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    for index, letter in enumerate(vowels):
+        print(index, letter)
+
+#### Q: How to return multiple values in Python?
+
+Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:
+
+    def func():
+        return 1, 2, 3, 4, 5
+    one, two, three, four, five = func()
+    print(one, two, three, four, five)  # tuple unpacking
+    >>> t = func()  # a tuple (1, 2, 3, 4, 5)
+
+#### Q: How to translate a string of chars into a string containing a binary code (1 and 0)?
+
+    # using join() + ord() + format()
+    >>> some_string = "hello world"
+    >>> ' '.join(format(ord(x), 'b') for x in some_string)
+    '1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
+    
+    # using `bytearray`
+    >>> ' '.join(format(x, 'b') for x in bytearray(st, 'utf-8'))
+    '1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
+
+#### Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting arrays differ and why should you use one initialization approach vs the other?
+
+    >>> # INITIALIZING AN ARRAY -- METHOD 1
+    >>> x = [[1,2,3,4]] * 3
+    [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+    >>> # INITIALIZING AN ARRAY -- METHOD 2
+    >>> y = [[1,2,3,4] for _ in range(3)]
+    [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+    >>> # WHICH METHOD SHOULD YOU USE AND WHY?
+
+While both methods appear to produce the same result, there is an extremely significant difference between them. Method
+2 produces, as you would expect, an array of 3 elements, each of which is itself _an independent 4-element array_(2). In
+method 1, however, the members of the array _all point to the same object_(1). This can lead to what is most likely
+unanticipated and undesired behavior as shown below.
+
+    # MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:
+    >>> x[0][3] = 99
+    [[1, 2, 3, 99], [1, 2, 3, 99], [1, 2, 3, 99]]
+    >>> # UH-OH, DON’T THINK YOU WANTED THAT TO HAPPEN!
+    >>> # MODIFYING THE y ARRAY FROM THE PRIOR CODE SNIPPET:
+    >>> y[0][3] = 99
+    [[1, 2, 3, 99], [1, 2, 3, 4], [1, 2, 3, 4]]
+    >>> # THAT’S MORE LIKE WHAT YOU EXPECTED!
+
+#### Q: Mention the use of / and // operators in Python?
+
+    # Python 2.7
+    # "/" for integers, act as floor division, for float - returns float value
+    
+    print 5/2 # 2
+    print -5/2 # -3
+    print 5.0/2 # 2.5
+    print -5.0/2 # -2.5
+    
+    # “//” returns floor value for both integer and floating point arguments
+    
+    print 5//2 # 2
+    print -5//2 # -3
+    print 5.0//2 # 2.0
+    print -5.0//2 # -3.0
+    
+    # In Python 3, ‘/’ operator does floating point division for both int and float arguments
+    print(5/2)  # 2.5
+    print(-5/2)  # -2.5
+    print(5.0/2)  # 2.5
+    print(-5.0/2)  # -2.5
+    
+    Behavior of “//” is the same in Python 2.7 and Python 3.
+
+#### Q: How to check that tuple A contains all elements of tuple B?
+
+You can use `set.issubset()` or `set.issuperset()` to check if every element in one tuple or list is in another.
+
+    tuple1 = (1, 2)
+    tuple2 = (1, 2, 3, 4, 5)
+    set(tuple1).issubset(tuple2)  # True
+    set(tuple2).issuperset(tuple1)  # True
+
+#### Q: How to check if both tuples contain unique values?
+
+len(set(tup)) == len(some_tuple)
+This creates a set of some_tuple and checks if it is the same length as the original some_tuple. The only case in which
+they would have the same length is if all elements in tup were unique.
+
+#### Q: Mention the use of the `split()` function in Python?
+
+    str splitted on whitespaces → list of str
+    "words with spaces".split() → ['words','with','spaces']
+
+#### Q: What will be the output of the following code?
+
+    def f():
+    ... x = 15
+    ... print(x)
+    ... x = 12
+    f()  # 15
+
+#### Q: How to convert a string to a number that consists of letters ASCII code. Example: 'abcd' -> 979899100.
+
+    # Convert string to ASCII values
+    # Method 1: using loop + ord()
+    
+    test_str = "let’s do more Python!"
+    res1 = ''
+    for elem in test_str:
+    res1 += ‘’.join(str(ord(elem)))
+    print(int(res1)) # sys.getsizeof(res1) >> 106 bytes
+    
+    # Method 2: list comprehension
+    test_str2 = “let’s do more Python!”
+    res2 = ''.join([str(ord(elem)) for elem in test_str2])
+    print(res2) # sys.getsizeof(res2) >> 106 bytes
+    print(res1 == res2) # True
+
+#### Q: How to remove empty lines from a list of lines (with a length of 0)?
+
+    empty_lines_list = [‘abc’, ‘’, ‘’, ’def’, ‘’, ‘’, 3, 4, 1]
+    def check_is_empty(line):
+        return bool(line)
+    filtered_list = [line for line in empty_lines_list if check_is_empty(line)]
+    print(filtered_list)  # ["abc", "def", 3, 4, 1]
+
+#### Q: Build a string with the numbers from 0 to 100, "0123456789101112..."
+
+    list_of_numbers = ''
+    for el in range(101):
+        list_of_numbers += str(el)
+    print(list_of_numbers)
+
+#### Q: Making a list with the unique element from a list with duplicate elements
+
+unique_list = set(list_with_duplicates)
+
+#### Q: How can you randomize the items of a list in Python?
+
+    from random import shuffle
+    x = ['Keep', 'The', 'Blue', 'Flag', 'Flying', 'High']
+    shuffle(x)
+
+#### Q: Write a program in Python to produce stars triangle
+
+    def star_triangle(r):
+        for x in range(r):
+            print(' ' * (r - x - 1) + '*' * (2 * x + 1))    
+    star_triangle(9)
+
+#### Q: Write a program in Python to check if a sequence is a palindrome
+
+    entered_sequence = input("enter sequence")
+    reversed_copy = entered_sequence[::-1]
+    if entered_sequence == reversed_copy:
+        print("palindrome")
+    else:
+        print("Not a palindrome")
+
+#### Q: Write a one-liner that will count the number of capital letters in a file. Your code should work even if the file is too big to fit in memory
+
+    with open('very_big_text.txt') as f:
+        # multiline solution
+        count = 0
+        text = f.read()
+        for character in text:
+        if character.isupper():
+        count += 1
+        
+        # one-liner
+        count = sum(1 for line in f for character in line if character.isupper())
+        print(count)
+
+#### Q: Write a sorting algorithm for a numerical dataset in Python
+
+    list_of_str_numbers = ["1", "4", "0", "6", "9"]
+    list_of_integers = [int(i) for i in list_of_str_numbers]
+    list_of_integers.sort()
+    
+    # or with sorted() which does not change original list in contrast to sort()
+    new_sorted_list_of_integers = sorted(list_of_integers)
+    print(list_of_integers, new_sorted_list_of_integers)
 
 # ...content...Quizzes/games
 
