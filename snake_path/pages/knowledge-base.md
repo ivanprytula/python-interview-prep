@@ -89,6 +89,51 @@ PVM assumes that any bytecode being executed is "well-formed" with regard to a n
 
 ![Compiler_vs_Interpreter_comparison](/images/Compiler_vs_Interpreter_comparison.png)
 
+#### Q: What are some alternative implementations to CPython? When and why might you use them?
+
+One of the more prominent alternative implementations is [Jython](http://www.jython.org/), a Python implementation
+written in Java that utilizes the Java Virtual Machine (JVM). While CPython produces bytecode to run on the CPython VM,
+Jython produces Java bytecode to run on the JVM.
+
+Another is [IronPython](http://ironpython.net/), written in C# and targeting the .NET stack. IronPython runs on
+Microsoft’s Common Language Runtime (CLR).
+
+As also pointed out in [Why Are There So Many Pythons?](https://www.toptal.com/python/why-are-there-so-many-pythons), it
+is entirely possible to survive without ever touching a non-CPython implementation of Python, but there are advantages
+to be had from switching, most of which are dependent on your technology stack.
+
+Another noteworthy alternative implementation is [PyPy](http://pypy.org/) whose key features include:
+
+* Speed. Thanks to its Just-in-Time (JIT) compiler, Python programs often run faster on PyPy.
+* Memory usage. Large, memory-hungry Python programs might end up taking less space with PyPy than they do in CPython.
+* Compatibility. PyPy is highly compatible with existing python code. It supports cffi and can run popular Python
+  libraries like Twisted and Django.
+* Sandbox. PyPy provides the ability to run untrusted code in a fully secure way.
+* Stackless mode. PyPy comes by default with support for stackless mode, providing micro-threads for massive
+  concurrency.
+
+#### Q: How memory is managed in Python?
+
+* Python memory is managed by Python **private heap space**. All Python objects and data structures are located in a
+  private heap. The programmer does not have access to this private heap and the interpreter takes care of this Python
+  private heap.
+* The allocation of Python heap space for Python objects is done by the _memory manager_. The core API gives access to
+  some tools for the programmer to code.
+* Python also has an inbuilt _garbage collector_, which recycles all the unused memory and frees the memory and makes it
+  available to the heap space.
+
+#### Q: How does the garbage collector (GC) work in Python? Describe Python's garbage collection mechanism in brief
+
+* Python maintains a count of the number of references to each object in memory. If a reference count goes to zero then
+  the associated object is no longer live and the memory allocated to that object can be freed up for something else
+* occasionally things called "reference cycles" happen. The GC periodically looks for these and cleans them up. An
+  example would be if you have two objects o1 and o2 such that o1.x == o2 and o2.x == o1. If o1 and o2 are not
+  referenced by anything else then they shouldn't be live. But each of them has a reference count of 1.
+* Certain heuristics are used to speed up garbage collection. For example, recently created objects are more likely to
+  be dead. As objects are created, the GC assigns them to generations. Each object gets one generation, and younger
+  generations are dealt with first.
+  **This explanation is CPython specific.**
+
 #### Q: What are the built-in data types that Python provides? Which of them are immutable/mutable?
 
 _Immutable_ built-in datatypes/structures
@@ -371,6 +416,11 @@ The `import` statement uses the following convention: if a package’s `__init__
 it is
 taken to be the list of module names that should be imported when `from <package_name> import *` is encountered.
 
+#### Q: What is the attribute __slots__?
+
+[__slots__](https://docs.python.org/3/reference/datamodel.html#slots): Saves memory consumptions of a class and also
+results in faster attribute access. Of course, it does impose limitations.
+
 #### Q: How do I see the object methods? How do you list the functions in a module?
 
     >>> dir(demo_obj)
@@ -537,6 +587,31 @@ classes. [Detailed example](https://www.codementor.io/@sheena/essential-python-i
 parameter.
 The `self` in the `__init__` method refers to the newly created object while in other methods, it refers to the object
 whose method was called.
+
+#### Q: Dunder or magic methods in Python
+
+Method names that have `__leading` and `trailing__` double underscores are reserved for special use like the `__init__`
+for object constructors, or `__call__` to make object callable.
+
+1. We **don't have to invoke them directly**: e.g. instance creation >> `__new__()` > `__init__()` are called behind the
+   scene.
+2. **Implement dunders as desired** — It’s a core Python feature and should be used as
+   needed. [more examples...](https://medium.com/python-features/magic-methods-demystified-3c9e93144bf7)
+    1. We can write classes where the instances behave like functions with `__call__()`. Both functions and the
+       instances of such classes are called callables.
+    2. We can do `operator overloading` (binary/unary, extended assignments, comparison) for the purpose of our class:
+       imitation of numeric types
+        1. If we have an expression `x + y` and `x` is an instance of `class K`, then Python will check the class
+           definition
+           of `K`. If `K` has a method `__add__` it will be called with `x.__add__(y)`, otherwise we will get an error.
+    3. Dunder methods can be used to **emulate behavior of built-in types** to user defined objects: container
+       imitation (`__len__`); make object as collection (`__getitem__` realization of obj[key] syntax);
+    4. Object Representation: `__str__` , `__repr__` (is invoked, when object is inspected in interpreter session). On a
+       high level, `__str__` is used for creating output for the end user while `__repr__` is mainly used for debugging
+       and
+       development. repr’s goal is to be unambiguous (‘’official”) and str’s is to be readable (“informal”).
+3. **Inventing our own dunders is highly discouraged** — It’s best to stay away from using names that start and end with
+   double underscores in our programs to avoid collisions with our own methods and attributes.
 
 #### Q: What is `__init__()` in class?
 
@@ -844,6 +919,26 @@ original `open()` example did:
   `with` statement and released automatically when execution leaves the with context.
 * Using `with` effectively can help you avoid resource leaks and make your code easier to read.
 
+#### Q:  What are descriptors?
+
+They provide the developer with the ability to add managed attributes to object. The methods needed to create a
+descriptor are __get__, __set__ and __delete__. If you define any of these methods, then you have created a descriptor.
+
+In general, a descriptor (it’s a mechanism) is an object attribute with “binding behavior”, one whose attribute access
+has been overridden by methods in the descriptor protocol. Those methods are __get__(), __set__(), and __delete__(). If
+any of those methods are defined for an object, it is said to be a descriptor.
+
+The default behavior for attribute access is to get, set, or delete the attribute from an object’s dictionary. For
+instance, a.x has a lookup chain starting with a.__dict__['x'], then type(a).__dict__['x'], and continuing through the
+base classes of type(a) excluding metaclasses. If the looked-up value is an object defining one of the descriptor
+methods, then Python may override the default behavior and invoke the descriptor method instead. Where this occurs in
+the precedence chain depends on which descriptor methods were defined.
+
+Descriptors are a powerful, general purpose protocol. They are the mechanism behind properties, methods, static methods,
+class methods, and super(). They are used throughout Python itself to implement the new style classes introduced in
+version 2.2. Descriptors simplify the underlying C-code and offer a flexible set of new tools for everyday Python
+programs.
+
 #### Q: What is `lambda` function in Python?
 
 An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
@@ -1143,6 +1238,36 @@ Alternatives for handling wide Exceptions: use modules `logging`
 
 In the previous code, everything in the `finally` clause will be executed. It does not matter if you encounter an
 exception somewhere in the `try` or `else` clauses. [more details...](https://realpython.com/python-exceptions/)
+
+#### Q: What are metaclasses in Python?
+
+Metaclasses are classes whose instances are also classes.
+
+    class MetaClass(type):
+         # allocate memory for the class
+         def __new__(cls, name, bases, dict):
+             print("Create a new class {}".format(name))
+             return type.__new__(cls, name, bases, dict)
+    
+    
+         # class initialization
+         def __init__ (cls, name, bases, dict):
+             print("Initializing a new class {}".format(name))
+             return super().__init__(name, bases, dict)
+    
+    
+    # spawning a class based on a metaclass
+    SomeClass = MetaClass("SomeClass", (), {})
+    
+    
+    # normal inheritance
+    class Child(SomeClass):
+         def __init__(self, param):
+             print(param)
+    
+    
+    # getting an instance of a class
+    obj = Child("Hello")
 
 ## A.2 Frameworks
 
@@ -1861,6 +1986,26 @@ extensive set of data structures in its standard library.
 </details>
 <p></p>
 
+### Patterns
+
+#### Q: Singleton
+
+class Singleton(object):
+obj = None # single instance of the class
+
+    def __new__(cls, *args, **kwargs):
+    if cls.obj is None:
+        cls.obj = object.__new__(cls, *args, **kwargs)
+    return cls.obj
+
+single = Singleton()
+single.attr = 42
+newSingle = Singleton() # second time we skip if block and just return cls.obj
+newSingle.attr # 42
+newSingle is single # true
+
+#### Good book -> [refactoring.guru](https://refactoring.guru/design-patterns)
+
 ### DataBases
 
 [Sql-interview-questions](https://www.interviewbit.com/sql-interview-questions/)
@@ -2179,7 +2324,8 @@ receive the "Yes/No" answer and finalize requirements into clear, specific and v
 
 #### Q: Estimation fundamentals: decomposition, law of large numbers, cone of uncertainty, “count, compute, judge“ principle
 
-**Estimation** determines how much money, effort, resources, and time it will take to build a specific system or product.
+**Estimation** determines how much money, effort, resources, and time it will take to build a specific system or
+product.
 
 Estimation is based on:
 
@@ -2196,11 +2342,13 @@ The 4 basic steps in Software Project Estimation are:
 * Estimate the project cost in agreed currency.
 
 ##### **Estimation methods** [full presentation](https://massmediagroup.pro/PDF/SK903V1_WP_Estimating.pdf)
+
 A. Historical data  
 B. Counting  
-C. Decomposition  
+C. Decomposition
 
-_Decomposition_: Once the user stories has been selected, each is decomposed into the set of tasks necessary to deliver the new functionality.
+_Decomposition_: Once the user stories has been selected, each is decomposed into the set of tasks necessary to deliver
+the new functionality.
 
 * Based on the division of work into “bite -size” components
 * Techniques are:
@@ -2212,12 +2360,15 @@ _Decomposition_: Once the user stories has been selected, each is decomposed int
 * Counting the functions …
 * Benefits from the law of large numbers
 
-D. Law of large numbers: Task-based estimation averages out errors, through the Law Of Large Numbers (According to the law,
+D. Law of large numbers: Task-based estimation averages out errors, through the Law Of Large Numbers (According to the
+law,
 the average of the results obtained from a large number of trials should be close to the expected value and will tend to
 become closer to the expected value as more trials are performed).
 
-E. The Cone of Uncertainty, described by Steve McConnel, shows what any experienced software professional knows. Which is
-at the beginning of any project we don’t know exactly how long a project is going to take. [detailed description](http://www.agilenutshell.com/cone_of_uncertainty)
+E. The Cone of Uncertainty, described by Steve McConnel, shows what any experienced software professional knows. Which
+is
+at the beginning of any project we don’t know exactly how long a project is going to
+take. [detailed description](http://www.agilenutshell.com/cone_of_uncertainty)
 
 The reasons for this are many. No 2 ever projects have:
 
