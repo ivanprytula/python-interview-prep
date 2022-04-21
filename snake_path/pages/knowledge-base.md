@@ -22,7 +22,7 @@
 
 ## A.1 Language Core
 
-### A.1.1 Fundamentals
+### Fundamentals
 
 [Ground rules glossary: READ IT NOW, BRO!](https://docs.python.org/3/glossary.html)
 
@@ -36,7 +36,8 @@
     - flexibility - means that you don't need to state the types of variables when you declare them. `x = 111` and
       then `x=" I'm a string"` without error;
     - avoiding pesky implicit-type-conversion - you can't perform operations inappropriate to the type of the object.
-      e.g. `>>> 'x' + 3` will raise `TypeError`. [details](https://opensource.com/article/20/5/duck-typing-python)
+      e.g. `>>> 'x' + 3` will raise `TypeError`
+      . [more details...](https://opensource.com/article/20/5/duck-typing-python)
 4. More compact code, thanks again to Python’s syntax, along with a wealth of functionally-rich Python libraries (
    distributed freely with most Python language implementations).
    Python is well suited to object orientated programming in that it allows the definition of classes along with
@@ -101,19 +102,14 @@ _Mutable_ built-in datatypes/structures
 
 #### Q: What is PEP8?
 
-<details>
-    <summary id="toc">Style Guide for Python Code</summary>
-    It is the latest Python coding standard, a set of coding recommendations, coding
-    conventions. (Python Enhancement Proposal)
-    One of Guido's key insights is that code is read much more often than it is written. The guidelines provided are
-    intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
-    says, "Readability counts".
-    A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is
-    more significant. Consistency within one module or function is the most
-    important. 
-    <a href="https://www.python.org/dev/peps/pep-0008/">more details...</a>
-</details>
-<p></p>
+Style Guide for Python Code. It is the latest Python coding standard, a set of coding recommendations, coding
+conventions. (Python Enhancement Proposal) One of Guido's key insights is that code is read much more often than it is
+written. The guidelines provided are
+intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20
+says, "Readability counts".
+A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is more
+significant. Consistency within one module or function is the most
+significant. [python.org](https://www.python.org/dev/peps/pep-0008/)
 
 #### Q: How do I modify a string in Python?
 
@@ -1150,7 +1146,7 @@ exception somewhere in the `try` or `else` clauses. [more details...](https://re
 
 ## A.2 Frameworks
 
-### A.2.1 Django
+### Django
 
 #### Q: Project initialization
 
@@ -1306,206 +1302,134 @@ $ python -m django <command> [options]
 
 #### Q: Application dependency management / virtualenv isolation
 
-* pipenv (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
+* _pipenv_ (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
   packages/dependencies): Pipfile+pip+virtualenv
-* pip + venv
-* pip-tools:  set of tools to keep your pinned Python dependencies fresh
-* Poetry (dependency resolver + isolation + build+ packaging + publish to PyPI)
-
-
-* setuptools is a collection of enhancements to the Python distutils that allows more easily build and distribute Python
+* _pip_ + _venv_
+* _pip-tools_:  set of tools to keep your pinned Python dependencies fresh
+* _Poetry_ (dependency resolver + isolation + build+ packaging + publish to PyPI)
+* _setuptools_ is a collection of enhancements to the Python distutils that allows more easily build and distribute
+  Python
   distributions, especially ones that have dependencies on other packages.
-* pyenv: simple Python version management:
+* _pyenv_: simple Python version management:
     * Let you change the global Python version on a per-user basis.
     * Provide support for per-project Python versions.
     * Allow you to override the Python version with an environment variable.
     * Search commands from multiple versions of Python at a time
-* conda is the package management tool for Anaconda Python installations. Anaconda Python is a distribution from
-  Anaconda, Inc specifically aimed at the scientific community, and in particular on Windows where the installation of
-  binary extensions is often difficult. Conda is a completely separate tool from pip, virtualenv and wheel, but provides
-  many of their combined features in terms of package management, virtual environment management and deployment of
-  binary extensions. Conda does not install packages from PyPI and can install only from the official Anaconda
-  repositories, or anaconda.org (a place for user-contributed conda packages), or a local (e.g. intranet) package
-  server.
+* _conda_ is the package management tool for Anaconda Python installations.
 
 ### Quality Tools
 
 #### Q: How to perform code analysis for Python?
 
-Python Code Quality Authority references
-pycodestyle: identifies pep8 style violations
-autopep8: automatically fixes most violations identified by pycodestyle
-pylint: throws warnings or errors for a combination of programming and style issues; checks compliance with the latter
-standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
-CI integration etc.
-pylintrc/.pylintrc in target directory for module-by-module basis
-pyflakes: similar to pylint, except never complains about style, faster that pylint/pychecker
-flake8: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files with
+[Python Code Quality Authority](https://github.com/PyCQA)
 
-# flake8: noqa or lines with # noqa
+- **pycodestyle**: identifies pep8 style violations
+- **autopep8**: automatically fixes most violations identified by pycodestyle
+- **pylint**: throws warnings or errors for a combination of programming and style issues; checks compliance with the
+  latter
+  standards, error detection, refactoring help, fully customizable, editor/IDE integration as well as CLI, UML diagrams,
+  CI integration etc.
+  `pylintrc/.pylintrc` in target directory for module-by-module basis
+- **pyflakes**: similar to pylint, except never complains about style, faster that pylint/pychecker
+- **flake8**: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files
+  with # flake8: noqa or lines with # noqa
 
+```text
 setup.cfg - configuration file by projects (also: tox.ini, .flake8)
 [flake8]
 ignore = D203
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
 max-complexity = 10
+```
 
-add-trailing-comma: a pre-commit hook that does various style enforcing (not just trailing commas)
-black: The uncompromising code auto-formatter, sometimes will make a change that just looks really bad; it’s good (if
-you really want) to use it as a pre-commit hook with default config alongside flake8 for non-style linting.
-isort: utility/library to sort imports alphabetically, and automatically separated into sections and by type
-Good combo: autopep8/flake8, black
+- **add-trailing-comma**: a pre-commit hook that does various style enforcing (not just trailing commas)
+- **black**: The uncompromising code auto-formatter, sometimes will make a change that just looks really bad; it’s
+  good (if you really want) to use it as a pre-commit hook with default config alongside flake8 for non-style linting.
+- **isort**: utility/library to sort imports alphabetically, and automatically separated into sections and by type
 
 ### VCS
 
 [<img src="https://adriaanrol.com/images/GitFlowchart.png" alt=""/>](https://adriaanrol.com/images/GitFlowchart.png)
 
-VCS
-Q: Types of Version Control Systems (VCS)
-VCSs are broken down into two main categories, (1) centralized and (2) decentralized (also known as distributed).
-Background knowledge:
+#### Q: Types of Version Control Systems (VCS)
 
-* Repository model describes the relationship between various copies of the source code repository. In a (1)
+VCSs are broken down into two main categories, **(1) centralized** and **(2) decentralized** (also known as distributed)
+.
+
+***Background knowledge***
+
+* _Repository_ model describes the relationship between various copies of the source code repository. In a (1)
   client–server model, users access a master repository via a client; typically, their local machines hold only a
   working copy of a project tree. Changes in one working copy must be committed to the master repository before they are
   propagated to other users. In a (2) distributed model, repositories act as peers, and users typically have a local
   repository with version history available, in addition to their working copies.
-* Concurrency model describes how changes to the working copy are managed to prevent simultaneous edits from causing
+* _Concurrency_ model describes how changes to the working copy are managed to prevent simultaneous edits from causing
   nonsensical data in the repository. In a lock model, changes are disallowed until the user requests and receives an
   exclusive lock on the file from the master repository. In a merge model, users may freely edit files, but are informed
   of possible conflicts upon checking their changes into the repository, whereupon the version control system may merge
   changes on both sides, or let the user decide when conflicts arise. Distributed version control systems usually use a
   merge concurrency model.
 
-Centralized Version Control
+***Centralized Version Control***
+
 At the time of this writing, the most popular version control system is known as Apache® Subversion® (trunk). Other:
 CVS, IBM ClearCase etc. The main concept of a centralized system is that it works in a client and server relationship.
 The repository is located in one place and provides access to many clients. It’s very similar to FTP in that you have an
 FTP client which connects to an FTP server. All changes, users, commits and information must be sent and received from
 this central repository.
-The primary benefits of Subversion are:
 
-* It is easy to understand.
-* You have more control over users and access (since it is served from one place).
-* More GUI & IDE clients (Subversion has been around longer).
-* Simple to get started.
-  At the same time, Subversion has some drawbacks:
-* Dependent on access to the server.
-* Hard to manage a server and backups
-* It can be slower because every command connects to the server.
-* Branching and merging tools are difficult to use.
-
-Distributed Version Control
+***Distributed Version Control***
 Distributed systems are a newer option. In distributed version control, each user has their own copy of the entire
 repository, not just the files but the history as well. Think of it as a network of individual repositories. The two
 most popular distributed version control systems are Git and Mercurial, also BitKeeper, Fossil etc.
 
-The primary benefits of Git and Mercurial are:
+#### Q: Explain GitFlow
 
-* More powerful and detailed change tracking, which means less conflicts.
-* No server necessary – all actions except sharing repositories are local (commit offline).
-* Branching and merging is more reliable, and therefore used more often.
-* It’s fast.
-
-At the same time, Git and Mercurial do have some drawbacks:
-
-* The distributed model is harder to understand.
-* It’s new, so not as many GUI clients.
-* The revisions are not incremental numbers, which make them harder to reference.
-* It can be easier to make mistakes until you are familiar with the model.
-
-Q: Explain GitFlow
 Background knowledge:
 When evaluating a workflow for your team, it's most important that you consider your team’s culture. You want the
-workflow to enhance the effectiveness of your team and not be a burden that limits productivity. Some things to consider
-when evaluating a Git workflow are:
+workflow to enhance the effectiveness of your team and not be a burden that limits productivity.
+[more details...](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
 
-* Does this workflow scale with team size?
-* Is it easy to undo mistakes and errors with this workflow?
-* Does this workflow impose any new unnecessary cognitive overhead to the team?
+#### Q: Terminology
 
-Other common workflows: more details
+[official docs...](https://git-scm.com/docs/gitglossary) [more details...](https://opensource.com/article/19/2/git-terminology)
 
-* Centralized Workflow (for a small team or one developer): All changes are committed into trunk/master branch. This
-  workflow doesn’t require any other branches besides master.
-* Feature branching: branching model focused
-* Forking Workflow (e.g. PR to open-source projects)
+## A.4 Software Design and Development Process
 
-Gitflow more details
+### Networking
 
-Q: Terminology
-official docs, more details
-branch
-A "branch" is an active line of development.
-commit
-As a noun: A single point in the Git history; the entire history of a project is represented as a set of interrelated
-commits. The word "commit" is often used by Git in the same places other revision control systems use the words "
-revision" or "version". Also used as a shorthand for commit object.
-As a verb: The action of storing a new snapshot of the project’s state in the Git history, by creating a new commit
-representing the current state of the index and advancing HEAD to point at the new commit.
-commit object
-An object which contains the information about a particular revision, such as parents, committer, author, date and the
-tree object which corresponds to the top directory of the stored revision.
-hash
-In Git context, synonym for object name.
-head
-A named reference to the commit at the tip of a branch. Heads are stored in a file in $GIT_DIR/refs/heads/ directory,
-except when using packed refs. (See git-pack-refs[1].)
-HEAD
-The current branch. In more detail: Your working tree is normally derived from the state of the tree referred to by
-HEAD. HEAD is a reference to one of the heads in your repository, except when using a detached HEAD, in which case it
-directly references an arbitrary commit.
-master
-The default development branch. Whenever you create a Git repository, a branch named "master" is created, and becomes
-the active branch. In most cases, this contains the local development, though that is purely by convention and is not
-required.
-origin
-The default upstream repository. Most projects have at least one upstream project which they track. By default origin is
-used for that purpose. New upstream updates will be fetched into remote-tracking branches named
-origin/name-of-upstream-branch, which you can see using git branch -r.
-There may also be an upstream repository where a third copy of the project is hosted and maintained by a different set
-of contributors.
-rebase
-To reapply a series of changes from a branch to a different base, and reset the head of that branch to the result.
-repository
-A collection of commits, and branches and tags to identify commits.
-SCM
-Source code management (tool).
-SHA-1
-"Secure Hash Algorithm 1"; a cryptographic hash function. In the context of Git used as a synonym for object name.
-stash entry
-An object used to temporarily store the contents of a dirty working directory and the index for future reuse.
-tag
-A ref under refs/tags namespace that points to an object of an arbitrary type. A tag is most typically used to mark a
-particular point in the commit ancestry chain.
-working tree
-The tree of actual checked out files. The working tree normally contains the contents of the HEAD commit’s tree, plus
-any local changes that you have made but not yet committed.
+##### Q: Fundamentals of HTTP/HTTPS
 
-Software Design and Development Process
-Networking
-Q: Fundamentals of HTTP/HTTPS
 They are application layer protocols designed to transfer information between networked devices and run on top of other
 layers of the network protocol stack. A typical flow over HTTP involves a client machine making a request to a server,
 which then sends a response message.
+
 As a request-response protocol, HTTP gives users a way to interact with web resources such as HTML files by transmitting
 hypertext messages between clients and servers, sometimes via proxies. HTTP clients generally use Transmission Control
 Protocol (TCP) connections to communicate with servers.
-Can DDoS Attacks Be Launched Over HTTP?
+
+**Can DDoS Attacks Be Launched Over HTTP?**
+
 Keep in mind that HTTP is a “stateless” protocol, which means that each command runs independent of any other command.
 In the original spec, HTTP requests each created and closed a TCP connection. In newer versions of the HTTP protocol (
 HTTP 1.1 and above), persistent connection allows for multiple HTTP requests to pass over a persistent TCP connection,
 improving resource consumption. In the context of DoS or DDoS attacks, HTTP requests in large quantities can be used to
-mount an attack on a target device. more details, more details2, more on HTTP/2
-Q: What is DNS?
+mount an attack on a target device.  
+[more details...](https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/)  
+[more details2...](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)  
+[more on HTTP/2](https://cascadingmedia.com/insites/2015/03/http-2.html)
+
+#### Q: What is DNS?
+
 The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names,
 like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain
 names to IP addresses so browsers can load Internet resources.
+
 Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers
 eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric
 IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
 
-The 8 steps in a DNS lookup:
+**The 8 steps in a DNS lookup:**
 
 1. A user types ‘example.com’ into a web browser and the query travels into the Internet and is received by a DNS
    recursive resolver.
@@ -1521,47 +1445,57 @@ The 8 steps in a DNS lookup:
    Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser is able to make the
    request for the web page
 9. The browser makes a HTTP request to the IP address.
-10. The server at that IP returns the webpage to be rendered in the browser (step 10). more details
+10. The server at that IP returns the webpage to be rendered in the browser (step 10).  
+    [more details...](https://www.cloudflare.com/learning/dns/what-is-dns/)
 
-Q: Explain how request / response work
-What’s in an HTTP request?
+#### Q: Explain how request / response work
+
+_What’s in an HTTP request?_
 Each HTTP request made across the Internet carries with it a series of encoded data that carries different types of
-information. A typical HTTP request contains:
+information.
+
+A typical HTTP request contains:
 
 1. HTTP version type
 2. a URL
 3. an HTTP method
 4. HTTP request headers
 5. Optional HTTP body
-   What’s in an HTTP response?
-   An HTTP response is what web clients (often browsers) receive from an Internet server in answer to an HTTP request.
-   These responses communicate valuable information based on what was asked for in the HTTP request.
-   A typical HTTP response contains:
-1. an HTTP status code
-2. HTTP response headers
-3. optional HTTP body
 
-Q: Describe the client / server model
+_What’s in an HTTP response?_
+An HTTP response is what web clients (often browsers) receive from an Internet server in answer to an HTTP request.
+These responses communicate valuable information based on what was asked for in the HTTP request.
+
+A typical HTTP response contains:
+
+6. an HTTP status code
+7. HTTP response headers
+8. optional HTTP body
+
+#### Q: Describe the client / server model
+
 The Client-server model is a distributed application structure that partitions tasks or workload between the providers
 of a resource or service, called servers, and service requesters called clients. In the client-server architecture, when
 the client computer sends a request for data to the server through the internet, the server accepts the requested
 process and delivers the data packets requested back to the client. Clients do not share any of their resources.
 Examples of Client-Server Model are Email, World Wide Web, etc.
-How does the Client-Server Model work ?
-In this article we are going to take a dive into the Client-Server model and have a look at how the Internet works via
+
+**How does the Client-Server Model work?**
+
+In this article we are going to take a dive into the _Client-Server_ model and have a look at how the Internet works via
 web browsers. This article will help us in having a solid foundation of the WEB and help in working with WEB
 technologies with ease.
 
-* Client: When we talk about the word Client, it means to talk of a person or an organization using a particular
+* _Client_: When we talk about the word Client, it means to talk of a person or an organization using a particular
   service. Similarly in the digital world a Client is a computer (Host) i.e. capable of receiving information or using a
   particular service from the service providers (Servers).
-* Servers: Similarly, when we talk about the word Servers, It means a person or medium that serves something. Similarly
+* _Server_: Similarly, when we talk about the word Servers, It means a person or medium that serves something. Similarly
   in this digital world a Server is a remote computer which provides information (data) or access to particular
   services.
 
 So, it's basically the Client requesting something and the Server serving it as long as its present in the database.
 
-How does the browser interact with the servers ?
+**How does the browser interact with the servers?**
 
 1. User enters the URL(Uniform Resource Locator) of the website or file. The Browser then requests the DNS(DOMAIN NAME
    SYSTEM) Server.
@@ -1572,13 +1506,13 @@ How does the browser interact with the servers ?
 6. Browser then renders the files and the website is displayed. This rendering is done with the help of DOM (Document
    Object Model) interpreter, CSS interpreter and JS Engine collectively known as the JIT or (Just in Time) Compilers.
 
-Advantages of Client-Server model:
+**Advantages of Client-Server model:**
 
 * Centralized system with all data in a single place.
 * Cost efficiency requires less maintenance cost and Data recovery is possible.
 * The capacity of the Client and Servers can be changed separately.
 
-Disadvantages of Client-Server model:
+**Disadvantages of Client-Server model:**
 
 * Clients are prone to viruses, Trojans and worms if present in the Server or uploaded into the Server.
 * Servers are prone to Denial of Service (DOS) attacks.
@@ -1586,45 +1520,57 @@ Disadvantages of Client-Server model:
 * Phishing or capturing login credentials or other useful information of the user are common and MITM(Man in the Middle)
   attacks are common.
 
-Multithreaded Programming
-Q: Can you write multithreading applications in Python? What is the difference between multithreading, multiprocessing?
+### Multithreading Programming
+
+#### Q: Can you write multithreading applications in Python? What is the difference between multithreading, multiprocessing?
+
 There are two types of multitasking in OS:
 
 * Thread-based parallelism (Multithreading)
 * Process-based parallelism (Multiprocessing)
-  Multithreading in Python is sort of a myth.
-  There's technically nothing forbidding multiple threads from trying to access the same resource at the same time. The
-  result is usually not desirable, so things like locks, mutexes, and resource managers were developed. They're all
-  different ways to ensure that only one thread can access a given CPU resource at a time (aka GIL). In essence, they
-  make threads play nice together. However, if a lot of the threads' time is spent waiting for resources, you're not
-  getting any benefits from multithreading, and you'd be better off writing a single-threaded program instead (or
-  restructuring your program to avoid the waiting). “True” multithreading can be used only when the dependency between
-  individual threads does not exist.
-  That being said, in CPython (the most prevalent Python implementation), there's this evil necessity called the Global
-  Interpreter Lock (GIL). In order to make the dynamic memory management in CPython work correctly, the GIL prevents
-  multiple threads from running Python code at the same time. This is because CPython's dynamic memory management is not
-  thread-safe - it can have those same problems of multiple threads accessing (or worse, disposing) the same resource at
-  the same time. Python threads still work for I/O bound tasks as opposed to CPU bound tasks which may cause deadlocks
-  and race conditions.
-  The GIL was a compromise between the 2 extremes of not allowing multi-threaded code, and having the dynamic memory
-  management be very bulky and slow.
-  Jython, IronPython (but not PyPy) don't have a GIL, because the platforms they are built on (Java, .NET) handle
-  dynamic memory management differently, and so can safely run the Python code in multiple threads at the same time.
-  There are reasons to use the threading package. If you want to run some things simultaneously, and efficiency is not a
-  concern, then it's totally fine and convenient. Or if you are running code that needs to wait for something (like some
-  IO) then it could make a lot of sense. But the threading library won't let you use extra CPU cores.
-  Multi-threading can be outsourced to the OS (by doing multi-processing), some external application that calls your
-  Python code (eg, Spark or Hadoop), or some code that your Python code calls (eg, you could have your Python code call
-  a C function that does the expensive multi-threaded stuff).
-  If you're using CPython, it's highly recommended to use the multiprocessing module instead. Rather than running
-  multiple threads, it runs multiple processes (each with their own GIL, so they can all run at the same time). It's
-  much more effective than multithreading. The alternative is to write your multithreaded code in C/C++ as an extension,
-  because native code is not subject to the GIL. However, that's usually a lot more work, and the payoff is usually not
-  worth the effort.
-  Q: Explain the basic primitives and multithreading concept of Python
-  What Is a Thread?
-  A thread is a separate flow of execution. This means that your program will have two things happening at once. But for
-  most Python 3 implementations the different threads do not actually execute at the same time: they merely appear to.
+
+Multithreading in Python is sort of a myth.
+
+There's technically nothing forbidding multiple threads from trying to access the same resource at the same time. The
+result is usually not desirable, so things like locks, mutexes, and resource managers were developed. They're all
+different ways to ensure **that only one thread can access a given CPU resource at a time** (aka GIL). In essence, they
+make threads play nice together. However, if a lot of the threads' time is spent waiting for resources, you're not
+getting any benefits from multithreading, and you'd be better off writing a single-threaded program instead (or
+restructuring your program to avoid the waiting). “True” multithreading can be used only when the dependency between
+individual threads does not exist.
+
+That being said, in CPython (the most prevalent Python implementation), there's this evil necessity called the Global
+Interpreter Lock (GIL). In order to make the dynamic memory management in CPython work correctly, the GIL prevents
+multiple threads from running Python code at the same time. This is because CPython's dynamic memory management is not
+thread-safe - it can have those same problems of multiple threads accessing (or worse, disposing) the same resource at
+the same time. Python threads still work for I/O bound tasks as opposed to CPU bound tasks which may cause deadlocks
+and race conditions.
+
+The GIL was a compromise between the 2 extremes of not allowing multi-threaded code, and having the dynamic memory
+management be very bulky and slow.
+
+Jython, IronPython (but not PyPy) don't have a GIL, because the platforms they are built on (Java, .NET) handle
+dynamic memory management differently, and so can safely run the Python code in multiple threads at the same time.
+
+There are reasons to use the threading package. If you want to run some things simultaneously, and efficiency is not a
+concern, then it's totally fine and convenient. Or if you are running code that needs to wait for something (like some
+IO) then it could make a lot of sense. But the threading library won't let you use extra CPU cores.
+
+Multi-threading can be outsourced to the OS (by doing multi-processing), some external application that calls your
+Python code (eg, Spark or Hadoop), or some code that your Python code calls (eg, you could have your Python code call
+a C function that does the expensive multi-threaded stuff).
+
+If you're using CPython, it's highly recommended to use the multiprocessing module instead. Rather than running
+multiple threads, it runs multiple processes (each with their own GIL, so they can all run at the same time). It's
+much more effective than multithreading. The alternative is to write your multithreaded code in C/C++ as an extension,
+because native code is not subject to the GIL. However, that's usually a lot more work, and the payoff is usually not
+worth the effort.
+
+#### Q: Explain the basic primitives and multithreading concept of Python
+
+thread
+: A thread is a separate flow of execution. This means that your program will have two things happening at once. But for
+most Python 3 implementations the different threads do not actually execute at the same time: they merely appear to.
 
 It’s tempting to think of threading as having two (or more) different processors running on your program, each one doing
 an independent task at the same time. That’s almost right. The threads may be running on different processors, but they
@@ -1648,33 +1594,38 @@ check out the multiprocessing module instead.
 Architecting your program to use threading can also provide gains in design clarity. Using threading in them helps to
 make the design cleaner and easier to reason about.
 
-To start a separate thread, you create a Thread instance and then tell it to .start():
-x = threading.Thread(target=thread_function, args=(1,))
-x.start()
+To start a separate thread, you create a Thread instance and then tell it to start:
+
+    x = threading.Thread(target=thread_function, args=(1,))
+    x.start()
+
 When you create a Thread, you pass it a function and a list containing the arguments to that function. In this case,
 you’re telling the Thread to run thread_function() and to pass it 1 as an argument.
 
 #### Q: Explain the concept of the general synchronization blocks (like mutex, semaphore)
 
-Proper synchronization between multiple threads.
-Using Locks
-threading module provides a Lock class to deal with the race conditions. Lock is implemented using a Semaphore object
+Proper synchronization between multiple threads using `Locks`
+`threading` module provides a `Lock` class to deal with the race conditions. Lock is implemented using a `Semaphore`
+object
 provided by the Operating System.
-A semaphore is a synchronization object that controls access by multiple processes/threads to a common resource in a
+
+_A semaphore is a synchronization object that controls access by multiple processes/threads to a common resource in a
 parallel programming environment. It is simply a value in a designated place in operating system (or kernel) storage
 that each process/thread can check and then change. Depending on the value that is found, the process/thread can use the
 resource or will find that it is already in use and must wait for some period before trying again. Semaphores can be
 binary (0 or 1) or can have additional values. Typically, a process/thread using semaphores checks the value and then,
-if it is using the resource, changes the value to reflect this so that subsequent semaphore users will know to wait.
-A semaphore manages an internal counter which is decremented by each acquire() call and incremented by each release()
-call. The counter can never go below zero; when acquire() finds that it is zero, it blocks, waiting until some other
-thread calls release().
-Deprecated since version 2.6: The mutex module has been removed in Python 3. Theory
-Python-concurrency
-advanced things about threading
+if it is using the resource, changes the value to reflect this so that subsequent semaphore users will know to wait._
 
-Object-Oriented Design/Architecture Approaches
-Summary:
+A semaphore manages an internal counter which is decremented by each `acquire()` call and incremented by
+each `release()`
+call. The counter can never go below zero; when `acquire()` finds that it is zero, it blocks, waiting until some other
+thread calls `release()`.
+Deprecated since version 2.6: The mutex module has been removed in Python 3.  
+[Theory](https://www.8bitavenue.com/python-mutex-example/)  
+[Python-concurrency](https://realpython.com/python-concurrency/)  
+[advanced things about threading](https://realpython.com/intro-to-python-threading/)
+
+### Object-Oriented Design/Architecture Approaches
 
 * Classes in Python are objects too
 * Dynamically changing and adding class attributes is allowed
@@ -1688,53 +1639,63 @@ Summary:
 
 #### Q: Does Python fully support OOP?
 
-Yes. Python supports all the concepts of "object oriented programming" (Classes, Encapsulation, Polymorphism,
+Yes. Python supports all the concepts of "object-oriented programming" (Classes, Encapsulation, Polymorphism,
 Inheritance) but it is NOT fully object-oriented because the code in Python can also be written without creating
 classes.
 
 #### Q: Tell a brief overview of the 4 Python coding styles
 
-1. Functional: Every statement is treated as a mathematical equation and any forms of state or mutable data are avoided.
+1. **Functional**: Every statement is treated as a mathematical equation and any forms of state or mutable data are
+   avoided.
    The main advantage of this approach is that it lends itself well to parallel processing because there is no state to
    consider. Many developers prefer this coding style for recursion and for lambda calculus. (Note that Python’s
    implementation of functional programming deviates from the standard—read, is impure— because it’s possible to
    maintain state and create side effects if you’re not careful. If you need a pure functional programming
    implementation, Haskell may be a better choice.)
-2. Imperative: Computation is performed as a direct change to program state. This style is especially useful when
+2. **Imperative**: Computation is performed as a direct change to program state. This style is especially useful when
    manipulating data structures and produces elegant yet simple code. Python fully implements this paradigm.
-3. Object-oriented: Relies on data fields that are treated as objects and manipulated only through prescribed methods.
+3. **Object-oriented**: Relies on data fields that are treated as objects and manipulated only through prescribed
+   methods.
    Python doesn’t fully support this paradigm (debatable) because it can’t implement features such as data hiding (
    encapsulation), which many believe is a primary requirement of the object-oriented programming paradigm. This coding
    style also favors code reuse.
-4. Procedural: Tasks are treated as step-by-step iterations where common tasks are placed in functions that are called
+4. **Procedural**: Tasks are treated as step-by-step iterations where common tasks are placed in functions that are
+   called
    as needed. This coding style favors iteration, sequencing, selection, and modularization. Python excels in
-   implementing this particular paradigm. more details
-   Q: Explain Encapsulation in Python
-   The idea that data inside the object should only be accessed through a public interface – that is, the object’s
-   methods, public getter and setter. Encapsulation is a process of wrapping methods and data together into a single
-   unit.
-   In Python, encapsulation is not enforced by the language, but there is a convention that we can use to indicate that
-   a property is intended to be private and is not part of the object’s public interface: we begin its name with an _
-   underscore/__dunder.
+   implementing this particular
+   paradigm. [more details...](https://blog.newrelic.com/engineering/python-programming-styles/)
 
-_spam >> “private”, just a convention
+#### Q: Explain Encapsulation in Python
+
+The idea that data inside the object should only be accessed through a **public interface** – that is, the object’s
+methods, public getter and setter. Encapsulation is a process of wrapping methods and data together into a single unit.
+
+In Python, encapsulation is not enforced by the language, but there is a convention that we can use to indicate that
+a property is intended to be private and is not part of the object’s public interface: we begin its name with an _
+underscore/__dunder.
+
+**_spam** >> “private”, just a convention
 “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. A name prefixed
 with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or
 a data member).
 
-__spam >> half-protected with AttributeError if try direct access and full access via <object_name>._className__attrName
+**__spam** >> half-protected with `AttributeError` if try direct access and full access
+via `<object_name>._className__attrName`
+
 Since there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by
-subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at
+subclasses), there is limited support for such a mechanism, called `name mangling`. Any identifier of the form __spam (
+at
 least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where
 classname is the current class name with leading underscore(s) stripped.
-Instead of manually creating getters and setters for each attribute, you can overload the built-in __getattr__, __
-setattr__, and __delattr__ methods.
+Instead of manually creating getters and setters for each attribute, you can overload the built-in `__getattr__`
+, `__setattr__`, and `__delattr__` methods.
 
 #### Q: Explain Inheritance in Python with an example
 
 Inheritance is a way of creating a new class and gaining all the attributes/methods of another class without modifying
-it. The class from which we are inheriting is called super class and the class that is inherited is called a derived /
-child class.
+it. The class from which we are inheriting is called **super class** and the class that is inherited is called a **
+derived / child class**.
+
 Inheritance provides the following properties:
 
 * It represents real-world relationships well (with composition concept)
@@ -1742,47 +1703,16 @@ Inheritance provides the following properties:
   features to a class without modifying it
 * It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses of B
   would automatically inherit from class A
-  They are different types of inheritance supported by Python:
-* Single Inheritance – where a derived class acquires the members of a single super class (aka child/one parent)
-* Multiple Inheritance – a derived class is inherited from more than one base class (aka child/parents)
-* Multilevel Inheritance – a derived class d1 is inherited from base class b1, and b1 is inherited from b0 (aka child
+
+They are different types of inheritance supported by Python:
+
+* _Single Inheritance_ – where a derived class acquires the members of a single super class (aka child/one parent)
+* _Multiple Inheritance_ – a derived class is inherited from more than one base class (aka child/parents)
+* _Multilevel Inheritance_ – a derived class d1 is inherited from base class b1, and b1 is inherited from b0 (aka child
   and grandfather)
-* Hierarchical inheritance – from one base class you can inherit any number of child classes (aka many childs/parent)
-* Hybrid Inheritance – consisting of multiple types of inheritance
-  more details
-
-class A(object):
-def go(self):
-print("go A go!")
-def stop(self):
-print("stop A stop!")
-def pause(self):
-raise Exception("Not Implemented")
-
-class B(A):
-def go(self):
-super(B, self).go()
-print("go B go!")
-
-class C(A):
-def go(self):
-super(C, self).go()
-print("go C go!")
-def stop(self):
-super(C, self).stop()
-print("stop C stop!")
-
-class D(B,C):
-def go(self):
-super(D, self).go()
-print("golD go!")
-def stop(self):
-super(D, self).stop()
-print("stop D stop!")
-def pause(self):
-print("wait D wait!")
-
-class E(B,C): pass
+* _Hierarchical inheritance_ – from one base class you can inherit any number of child classes (aka many childs/parent)
+* _Hybrid Inheritance_ – consisting of multiple types of
+  inheritance  [more details...](https://realpython.com/inheritance-composition-python/#what-are-inheritance-and-composition)
 
 #### Q: Explain Abstraction in Python
 
@@ -1795,473 +1725,182 @@ Using the same interface for multiple forms (data types).
 
 1. Child class redefines the parent method (which is called in this case “virtual”), has the same name and does the same
    thing in different ways.
-   class Mammal:
-   def move(self):
-   print(‘move’)
+
+```python
+class Mammal:
+    def move(self):
+        print('move')
+
 
 class Hare(Mammal):
-def move(self):
-print(‘jump’)
+    def move(self):
+        print('jump')
+
 
 animal = Mammal()
-animal.move() # ‘move’
+animal.move()  # ‘move’
 hare = Hare()
-hare.move() # ‘jump’
-However, we can also access the methods of the ancestor either by direct call or using the super():
+hare.move()  # ‘jump’
+```
+
+```python
+# However, we can also access the methods of the ancestor either by 1) direct call or using the 2) super():
+
 class Parent():
-def __init__(self):
-print('Parent init')
+    def __init__(self):
+        print('Parent init')
 
     def method(self):
         print('Parent method')
 
+
 class Child(Parent):
-def __init__(self):
-Parent.__init__(self)
+    def __init__(self):
+        Parent.__init__(self)  # 1)
 
     def method(self):
-        super().method()
+        super().method()  # 2)
 
-child = Child() # Parent init
+
+child = Child()  # Parent init
 child.method()  # Parent method
+```
 
 2. Classes that are not related by kinship can have the same interface with different implementations.
 
+```python
 class English:
-def greeting(self):
-print("Hello")
+    def greeting(self):
+        print("Hello")
+
 
 class French:
-def greeting(self):
-print("Bonjour")
+    def greeting(self):
+        print("Bonjour")
+
+
 def intro(language):
-language.greeting()
+    language.greeting()
+
 
 john = English()
 gerard = French()
-intro(john)   # Hello
-intro(gerard) # Bonjour
+intro(john)  # Hello
+intro(gerard)  # Bonjour
+```
 
 #### Q: Composition and object construction
 
-Composition is an OOD concept that models a relationship. In composition, a class known as composite contains an object
-of another class known as component. In other words, a composite class has-a component of another class.
+Composition is an OOD concept that models a relationship. In composition, a class known as `composite` contains an
+object
+of another class known as `component`. In other words, a composite class **has-a** component of another class.
+
 Composition allows composite classes to reuse the implementation of the components it contains. The composite class
-doesn’t inherit the component class interface, but it can leverage its implementation.
-The composition relation between two classes is considered loosely coupled. That means that changes to the component
+does not inherit the component class interface, but it can leverage its implementation.
+
+The composition relation between two classes is considered **loosely coupled**. That means that changes to the component
 class rarely affect the composite class, and changes to the composite class never affect the component class.
+
 This provides better adaptability to change and allows applications to introduce new requirements without affecting
 existing code.
+
 When looking at 2 competing software designs, based on inheritance vs based on composition, the composition solution
-usually is the most flexible. more details
+usually is the most
+flexible. [more details...](https://realpython.com/inheritance-composition-python/#what-are-inheritance-and-composition)
+
 Relationships like this can be one-to-one, one-to-many or many-to-many, and they can be unidirectional or bidirectional,
-depending on the specifics of the roles which the objects fulfil. According to some formal definitions the term
+depending on the specifics of the roles which the objects fulfill. According to some formal definitions the term
 composition implies that the two objects are quite strongly linked – one object can be thought of as belonging
 exclusively to the other object. If the owner object ceases to exist, the owned object will probably cease to exist as
 well.
-Aggregation - if the link between two objects is weaker, and neither object has exclusive ownership of the other. more
-details
+**Aggregation** - if the link between two objects is weaker, and neither object has exclusive ownership of the other.
+[more details...](https://python-textbok.readthedocs.io/en/1.0/Object_Oriented_Programming.html)
 
-Refactoring
+### Refactoring
 
 #### Q: Explain most common “Bad smells in code”
 
-* Correctness: Anti-patterns that will literally break your code or make it do the wrong things.
-* Maintainability: Anti-patterns that will make your code hard to maintain or extend.
-* Readability: Anti-patterns that will make your code hard to read or understand.
-* Performance: Anti-patterns that will unnecessarily slow your code down.
-* Security: Anti-patterns that will pose a security risk to your program.
+* **Correctness**: Anti-patterns that will literally break your code or make it do the wrong things.
+* **Maintainability**: Anti-patterns that will make your code hard to maintain or extend.
+* **Readability**: Anti-patterns that will make your code hard to read or understand.
+* **Performance**: Anti-patterns that will unnecessarily slow your code down.
+* **Security**: Anti-patterns that will pose a security risk to your program.
 * E.g. Mutable default arguments, Broad exceptions, Suppressed inspections, Variables named the same as built-ins,
   Complex comprehensions, especially if nested, Comments like, “I'm not sure how this works.”
-  more 'code smells' examples, Python-anti-patterns book, Transforming Code into Beautiful, Idiomatic Python
-  Other classification:Bloaters, Object-Orientation Abusers, Change Preventers, Dispensables, Couplers
+  [more 'code smells' examples](https://blog.codinghorror.com/code-smells/)
+  , [Python-anti-patterns book](https://docs.quantifiedcode.com/https://docs.quantifiedcode.com/python-anti-patterns//)
+  , [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
+* Other classification:Bloaters, Object-Orientation Abusers, Change Preventers, Dispensables, Couplers
 
-#### Q: Explain the most common “Composing Methods” strategies
+#### Good book -> [refactoring.guru](https://refactoring.guru/refactoring)
 
-Much of refactoring is devoted to correctly composing methods. In most cases, excessively long methods are the root of
-all evil. The vagaries of code inside these methods conceal the execution logic and make the method extremely hard to
-understand—and even harder to change.
-The refactoring techniques in this group streamline methods, remove code duplication, and pave the way for future
-improvements. more details
-$ Extract Method
-Problem: You have a code fragment that can be grouped together.
-Solution: Move this code to a separate new method (or function) and replace the old code with a call to the method.
+### Data Types and Algorithms
 
-$ Inline Method
-Problem: When a method body is more obvious than the method itself, use this technique.
-Solution: Replace calls to the method with the method’s content and delete the method itself.
+#### Q: What are arrays, linked lists, sets, dicts (hash maps)?
 
-$ Extract Variable
-Problem: You have an expression that’s hard to understand.
-Solution: Place the result of the expression or its parts in separate variables that are self-explanatory.
-
-$ Inline Temp
-Problem: You have a temporary variable that’s assigned the result of a simple expression and nothing more.
-Solution: Replace the references to the variable with the expression itself.
-
-$ Replace Temp with Query
-Problem: You place the result of an expression in a local variable for later use in your code.
-Solution: Move the entire expression to a separate method and return the result from it. Query the method instead of
-using a variable. Incorporate the new method in other methods, if necessary.
-
-$ Split Temporary Variable
-Problem: You have a local variable that’s used to store various intermediate values inside a method (except for cycle
-variables).
-Solution: Use different variables for different values. Each variable should be responsible for only one particular
-thing.
-
-$ Remove Assignments to Parameters
-Problem: Some value is assigned to a parameter inside method’s body.
-Solution: Use a local variable instead of a parameter.
-
-$ Replace Method with Method Object
-Problem: You have a long method in which the local variables are so intertwined that you can’t apply Extract Method.
-Solution: Transform the method into a separate class so that the local variables become fields of the class. Then you
-can split the method into several methods within the same class.
-
-$ Substitute Algorithm
-Problem: So you want to replace an existing algorithm with a new one?
-Solution: Replace the body of the method that implements the algorithm with a new algorithm.
-Q: Explain the most common “Moving Features Between Objects” strategies
-Even if you have distributed functionality among different classes in a less-than-perfect way, there’s still hope.
-These refactoring techniques show how to safely move functionality between classes, create new classes, and hide
-implementation details from public access.
-
-$ Move Method
-Problem: A method is used more in another class than in its own class.
-Solution: Create a new method in the class that uses the method the most, then move code from the old method to there.
-Turn the code of the original method into a reference to the new method in the other class or else remove it entirely.
-
-$ Move Field
-Problem: A field is used more in another class than in its own class.
-Solution: Create a field in a new class and redirect all users of the old field to it.
-
-$ Extract Class
-Problem: When one class does the work of two, awkwardness results.
-Solution: Instead, create a new class and place the fields and methods responsible for the relevant functionality in it.
-
-$ Inline Class
-Problem: A class does almost nothing and isn’t responsible for anything, and no additional responsibilities are planned
-for it.
-Solution: Move all features from the class to another one.
-
-$ Hide Delegate
-Problem: The client gets object B from a field or method of object А. Then the client calls a method of object B.
-Solution: Create a new method in class A that delegates the call to object B. Now the client doesn’t know about, or
-depend on, class B.
-
-$ Remove Middle Man
-Problem: A class has too many methods that simply delegate to other objects.
-Solution: Delete these methods and force the client to call the end methods directly.
-
-$ Introduce Foreign Method
-Problem: A utility class doesn’t contain the method that you need and you can’t add the method to the class.
-Solution: Add the method to a client class and pass an object of the utility class to it as an argument.
-
-$ Introduce Local Extension
-Problem: A utility class doesn’t contain some methods that you need. But you can’t add these methods to the class.
-Solution: Create a new class containing the methods and make it either the child or wrapper of the utility class.
-
-#### Q: Explain the most common “Organizing Data” strategies
-
-These refactoring techniques help with data handling, replacing primitives with rich class functionality.
-Another important result is untangling of class associations, which makes classes more portable and reusable.
-$ Self Encapsulate Field
-Problem: You use direct access to private fields inside a class.
-Solution: Create a getter and setter for the field, and use only them for accessing the field.
-
-$ Replace Data Value with Object
-Problem: A class (or group of classes) contains a data field. The field has its own behavior and associated data.
-Solution: Create a new class, place the old field and its behavior in the class, and store the object of the class in
-the original class.
-
-$ Change Value to Reference
-Problem: So you have many identical instances of a single class that you need to replace with a single object.
-Solution: Convert the identical objects to a single reference object.
-
-$ Change Reference to Value
-Problem: You have a reference object that’s too small and infrequently changed to justify managing its life cycle.
-Solution: Turn it into a value object.
-
-$ Replace Array with Object
-Problem: You have an array that contains various types of data.
-Solution: Replace the array with an object that will have separate fields for each element.
-
-$ Duplicate Observed Data
-Problem: Is domain data stored in classes responsible for the GUI?
-Solution: Then it’s a good idea to separate the data into separate classes, ensuring connection and synchronization
-between the domain class and the GUI.
-
-$ Change Unidirectional Association to Bidirectional
-Problem: You have two classes that each need to use the features of the other, but the association between them is only
-unidirectional.
-Solution: Add the missing association to the class that needs it.
-
-$ Change Bidirectional Association to Unidirectional
-Problem: You have a bidirectional association between classes, but one of the classes doesn’t use the other’s features.
-Solution: Remove the unused association.
-
-$ Replace Magic Number with Symbolic Constant
-Problem: Your code uses a number that has a certain meaning to it.
-Solution: Replace this number with a constant that has a human-readable name explaining the meaning of the number.
-
-$ Encapsulate Field
-Problem: You have a public field.
-Solution: Make the field private and create access methods for it.
-
-$ Encapsulate Collection
-Problem: A class contains a collection field and a simple getter and setter for working with the collection.
-Solution: Make the getter-returned value read-only and create methods for adding/deleting elements of the collection.
-
-$ Replace Type Code with Class
-Problem: A class has a field that contains type code. The values of this type aren’t used in operator conditions and
-don’t affect the behavior of the program.
-Solution: Create a new class and use its objects instead of the type code values.
-
-$ Replace Type Code with Subclasses
-Problem: You have a coded type that directly affects program behavior (values of this field trigger various code in
-conditionals).
-Solution: Create subclasses for each value of the coded type. Then extract the relevant behaviors from the original
-class to these subclasses. Replace the control flow code with polymorphism.
-
-$ Replace Type Code with State/Strategy
-Problem: You have a coded type that affects behavior but you can’t use subclasses to get rid of it.
-Solution: Replace type code with a state object. If it’s necessary to replace a field value with type code, another
-state object is “plugged in”.
-
-$ Replace Subclass with Fields
-Problem: You have subclasses differing only in their (constant-returning) methods.
-Solution: Replace the methods with fields in the parent class and delete the subclasses.
-
-Q: Explain the most common “Simplifying Conditional Expressions” strategies
-Conditionals tend to get more and more complicated in their logic over time, and there are yet more techniques to combat
-this as well.
-$ Decompose Conditional
-Problem: You have a complex conditional (if-then/else or switch).
-Solution: Decompose the complicated parts of the conditional into separate methods: the condition, then and else.
-
-$ Consolidate Conditional Expression
-Problem: You have multiple conditionals that lead to the same result or action.
-Solution: Consolidate all these conditionals in a single expression.
-
-$ Consolidate Duplicate Conditional Fragments
-Problem: Identical code can be found in all branches of a conditional.
-Solution: Move the code outside of the conditional.
-
-$ Remove Control Flag
-Problem: You have a boolean variable that acts as a control flag for multiple boolean expressions.
-Solution: Instead of the variable, use break, continue and return.
-
-$ Replace Nested Conditional with Guard Clauses
-Problem: You have a group of nested conditionals and it’s hard to determine the normal flow of code execution.
-Solution: Isolate all special checks and edge cases into separate clauses and place them before the main checks.
-Ideally, you should have a “flat” list of conditionals, one after the other.
-
-$ Replace Conditional with Polymorphism
-Problem: You have a conditional that performs various actions depending on object type or properties.
-Solution: Create subclasses matching the branches of the conditional. In them, create a shared method and move code from
-the corresponding branch of the conditional to it. Then replace the conditional with the relevant method call. The
-result is that the proper implementation will be attained via polymorphism depending on the object class.
-
-$ Introduce Null Object
-Problem: Since some methods return null instead of real objects, you have many checks for null in your code.
-Solution: Instead of null, return a null object that exhibits the default behavior.
-
-$ Introduce Assertion
-Problem: For a portion of code to work correctly, certain conditions or values must be true.
-Solution: Replace these assumptions with specific assertion checks.
-Q: Explain the most common “Simplifying Method Calls” strategies
-These techniques make method calls simpler and easier to understand. This, in turn, simplifies the interfaces for
-interaction between classes.
-$ Rename Method
-Problem: The name of a method doesn’t explain what the method does.
-Solution: Rename the method.
-
-$ Add Parameter
-Problem: A method doesn’t have enough data to perform certain actions.
-Solution: Create a new parameter to pass the necessary data.
-
-$ Remove Parameter
-Problem: A parameter isn’t used in the body of a method.
-Solution: Remove the unused parameter.
-
-$ Separate Query from Modifier
-Problem: Do you have a method that returns a value but also changes something inside an object?
-Solution: Split the method into two separate methods. As you would expect, one of them should return the value and the
-other one modifies the object.
-
-$ Parameterize Method
-Problem: Multiple methods perform similar actions that are different only in their internal values, numbers or
-operations.
-Solution: Combine these methods by using a parameter that will pass the necessary special value.
-
-$ Replace Parameter with Explicit Methods
-Problem: A method is split into parts, each of which is run depending on the value of a parameter.
-Solution: Extract the individual parts of the method into their own methods and call them instead of the original
-method.
-
-$ Preserve Whole Object
-Problem: You get several values from an object and then pass them as parameters to a method.
-Solution: Instead, try passing the whole object.
-
-$ Replace Parameter with Method Call
-Problem: Calling a query method and passing its results as the parameters of another method, while that method could
-call the query directly.
-Solution: Instead of passing the value through a parameter, try placing a query call inside the method body.
-
-$ Introduce Parameter Object
-Problem: Your methods contain a repeating group of parameters.
-Solution: Replace these parameters with an object.
-
-$ Remove Setting Method
-Problem: The value of a field should be set only when it’s created, and not change at any time after that.
-Solution: So remove methods that set the field’s value.
-
-$ Hide Method
-Problem: A method isn’t used by other classes or is used only inside its own class hierarchy.
-Solution: Make the method private or protected.
-
-$ Replace Constructor with Factory Method
-Problem: You have a complex constructor that does something more than just setting parameter values in object fields.
-Solution: Create a factory method and use it to replace constructor calls.
-
-$ Replace Error Code with Exception
-Problem: A method returns a special value that indicates an error?
-Solution: Throw an exception instead.
-
-$ Replace Exception with Test
-Problem: You throw an exception in a place where a simple test would do the job?
-Solution: Replace the exception with a condition test.
-
-Q: Explain the most common “Dealing with Generalization” strategies
-Abstraction has its own group of refactoring techniques, primarily associated with moving functionality along the class
-inheritance hierarchy, creating new classes and interfaces, and replacing inheritance with delegation and vice versa.
-$ Pull Up Field
-Problem: Two classes have the same field.
-Solution: Remove the field from subclasses and move it to the superclass.
-
-$ Pull Up Method
-Problem: Your subclasses have methods that perform similar work.
-Solution: Make the methods identical and then move them to the relevant superclass.
-
-$ Pull Up Constructor Body
-Problem: Your subclasses have constructors with code that’s mostly identical.
-Solution: Create a superclass constructor and move the code that’s the same in the subclasses to it. Call the superclass
-constructor in the subclass constructors.
-
-$ Push Down Method
-Problem: Is behavior implemented in a superclass used by only one (or a few) subclasses?
-Solution: Move this behavior to the subclasses.
-
-$ Push Down Field
-Problem: Is a field used only in a few subclasses?
-Solution: Move the field to these subclasses.
-
-$ Extract Subclass
-Problem: A class has features that are used only in certain cases.
-Solution: Create a subclass and use it in these cases.
-
-$ Extract Superclass
-Problem: You have two classes with common fields and methods.
-Solution: Create a shared superclass for them and move all the identical fields and methods to it.
-
-$ Extract Interface
-Problem: Multiple clients are using the same part of a class interface. Another case: part of the interface in two
-classes is the same.
-Solution: Move this identical portion to its own interface.
-
-$ Collapse Hierarchy
-Problem: You have a class hierarchy in which a subclass is practically the same as its superclass.
-Solution: Merge the subclass and superclass.
-
-$ Form Template Method
-Problem: Your subclasses implement algorithms that contain similar steps in the same order.
-Solution: Move the algorithm structure and identical steps to a superclass, and leave implementation of the different
-steps in the subclasses.
-
-$ Replace Inheritance with Delegation
-Problem: You have a subclass that uses only a portion of the methods of its superclass (or it’s not possible to inherit
-superclass data).
-Solution: Create a field and put a superclass object in it, delegate methods to the superclass object, and get rid of
-inheritance.
-
-$ Replace Delegation with Inheritance
-Problem: A class contains many simple methods that delegate to all methods of another class.
-Solution: Make the class a delegate inheritor, which makes the delegating methods unnecessary.
-Data Types and Algorithms
-Q: What are arrays, linked lists, sets, dicts (hash maps)?
 Data structures are the fundamental constructs around which you build your programs. Each data structure provides a
-particular way of organizing data so it can be accessed efficiently, depending on your use case. Python ships with an
+particular way of organizing data, so it can be accessed efficiently, depending on your use case. Python ships with an
 extensive set of data structures in its standard library.
 
-Full article on described TOC below
+##### Good article
 
-* Dictionaries, Maps, and Hash Tables
-    * dict: Your Go-To Dictionary
-    * collections.OrderedDict: Remember the Insertion Order of Keys
-    * collections.defaultdict: Return Default Values for Missing Keys
-    * collections.ChainMap: Search Multiple Dictionaries as a Single Mapping
-    * types.MappingProxyType: A Wrapper for Making Read-Only Dictionaries
-* Array Data Structures
-    * list: Mutable Dynamic Arrays
-    * tuple: Immutable Containers
-    * array.array: Basic Typed Arrays
-    * str: Immutable Arrays of Unicode Characters
-    * bytes: Immutable Arrays of Single Bytes
-    * bytearray: Mutable Arrays of Single Bytes
-* Records, Structs, and Data Transfer Objects
-    * dict: Simple Data Objects
-    * tuple: Immutable Groups of Objects
-    * Write a Custom Class: More Work, More Control
-    * dataclasses.dataclass: Python 3.7+ Data Classes
-    * collections.namedtuple: Convenient Data Objects
-    * typing.NamedTuple: Improved Namedtuples
-    * struct.Struct: Serialized C Structs
-    * types.SimpleNamespace: Fancy Attribute Access
-* Sets and Multisets
-    * set: Your Go-To Set
-    * frozenset: Immutable Sets
-    * collections.Counter: Multisets
-* Stacks (LIFOs)
-    * list: Simple, Built-In Stacks
-    * collections.deque: Fast and Robust Stacks
-    * queue.LifoQueue: Locking Semantics for Parallel Computing
-* Queues (FIFOs)
-    * list: Terribly Sloooow Queues
-    * collections.deque: Fast and Robust Queues
-    * queue.Queue: Locking Semantics for Parallel Computing
-    * multiprocessing.Queue: Shared Job Queues
-* Priority Queues
-    * list: Manually Sorted Queues
-    * heapq: List-Based Binary Heaps
-    * queue.PriorityQueue: Beautiful Priority Queues
-      DataBases
-      Sql-interview-questions, sql-commands
-      Q: Explain most used SQL queries commands
-* SELECT operator in SQL is used to select data from a database. The data returned is stored in a result table, called
+-> [Common Python Data Structures (Guide)](https://realpython.com/python-data-structures/#dictionaries-maps-and-hash-tables)
+
+<details>
+    <summary>short article TOC below</summary>
+    <ul>
+        <li>Dictionaries, Maps, and Hash Tables</li>
+        <li>Array Data Structures</li>
+        <li>Records, Structs, and Data Transfer Objects</li>
+        <li>Sets and Multisets</li>
+        <li>Stacks (LIFOs)</li>
+        <li>Queues (FIFOs)</li>
+        <li>Priority Queues</li>
+    </ul>
+
+</details>
+<p></p>
+
+### DataBases
+
+[Sql-interview-questions](https://www.interviewbit.com/sql-interview-questions/)
+, [sql-commands](https://hackr.io/blog/sql-commands)
+
+#### Q: Explain most used SQL queries commands
+
+* `SELECT` operator in SQL is used to select data from a database. The data returned is stored in a result table, called
   the result-set. SELECT * FROM myDB.students;
   Some common SQL clauses used in conjunction with a SELECT query are as follows:
-* WHERE clause is used to filter records that are necessary, based on specific conditions.
-* ORDER BY clause is used to sort the records based on some field(s) in ascending (ASC) or descending order (DESC).
-  SELECT *
-  FROM myDB.students
-  WHERE graduation_year = 2019
-  ORDER BY studentID DESC;
-* GROUP BY clause is used to group records with identical data and can be used in conjunction with some aggregation
+* `WHERE` clause is used to filter records that are necessary, based on specific conditions.
+* `ORDER BY` clause is used to sort the records based on some field(s) in ascending (`ASC`) or descending order (`DESC`)
+  .
+
+```sql
+SELECT *
+    FROM myDB.students
+    WHERE graduation_year = 2019
+    ORDER BY studentID DESC;
+```
+
+* `GROUP BY` clause is used to group records with identical data and can be used in conjunction with some aggregation
   functions to produce summarized results from the database.
-* HAVING clause is used to filter records in combination with the GROUP BY clause. It is different from WHERE, since
+* `HAVING` clause is used to filter records in combination with the GROUP BY clause. It is different from WHERE, since
   WHERE clause cannot filter aggregated records.
-  SELECT COUNT(studentId), country
-  FROM myDB.students
-  WHERE country != "INDIA"
-  GROUP BY country
-  HAVING COUNT(studentID) > 5;
+
+```sql
+SELECT COUNT(studentId), country
+    FROM myDB.students
+    WHERE country != "INDIA"
+    GROUP BY country
+    HAVING COUNT (studentID) > 5;
+```
 
 #### Q: Explain the basics of Key-value, document, column-family databases and form of aggregate-oriented databases
 
-more details, more details1, more details2(rus)
+[more details...](https://www.guru99.com/nosql-tutorial.html)
+, [more details1...](https://www.mongodb.com/scale/types-of-nosql-databases#key-value-stores)
 
-Key Value Pair Based
+**Key Value Pair Based**
 
 Data is stored in key/value pairs. It is designed in such a way to handle lots of data and heavy load.
 Key-value pair storage databases store data as a hash table where each key is unique, and the value can be a JSON, BLOB(
@@ -2270,7 +1909,7 @@ used as a collection, dictionaries, associative arrays, etc. Key value stores he
 data. Use cases include shopping carts, user preferences, and user profiles.
 Redis, Dynamo, Riak are some examples of key-value store DataBases. They are all based on Amazon's Dynamo paper.
 
-Column-based
+**Column-based**
 
 Column-oriented databases work on columns and are based on BigTable paper by Google. Every column is treated separately.
 Values of single column databases are stored contiguously.
@@ -2279,7 +1918,7 @@ a column.
 Column-based NoSQL databases are widely used to manage data warehouses, business intelligence, CRM, Library card
 catalogs. HBase, Cassandra, HBase, Hypertable are examples of column based databases.
 
-Document-Oriented
+**Document-Oriented**
 Document-Oriented NoSQL DB stores and retrieves data as a key value pair but the value part is stored as a document. The
 document is stored in JSON or XML formats. The value is understood by the DB and can be queried.
 
@@ -2292,7 +1931,7 @@ should not be used for complex transactions which require multiple operations or
 structures.
 Amazon SimpleDB, CouchDB, MongoDB, Riak, Lotus Notes, MongoDB, are popular Document originated DBMS systems.
 
-Graph-Based
+**Graph-Based**
 A graph type database stores entities as well the relations amongst those entities. The entity is stored as a node with
 the relationship as edges. An edge gives a relationship between nodes. Every node and edge has a unique identifier.
 
@@ -2301,28 +1940,28 @@ Traversing relationship is fast as they are already captured into the DB, and th
 Graph based database mostly used for social networks, logistics, spatial data.
 Neo4J, Infinite Graph, OrientDB, FlockDB are some popular graph-based databases.
 
-Q: How to make optimization of the existing SQL queries and approaches of data storing/managing?
-more details, more details2
+#### Q: How to make optimization of the existing SQL queries and approaches of data storing/managing?
 
-1. Proper indexing
+[more details...](https://jaxenter.com/6-ways-optimize-sql-database-136448.html)
+, [more details1...](https://www.toptal.com/sql-server/sql-database-tuning-for-developers)
+
+1. **Proper indexing**
    Index is basically a data structure that helps speed up the data retrieval process overall. Unique index is a kind of
    indexing that creates separate data columns without overlapping each other. Proper indexing ensures quicker access to
    the database. Excessive indexing or no indexing at all are both wrong. Without any indexing at all, the processing
    will be very slow, whereas indexing everything will render the insert and update triggers ineffective.
 
-
-2. Retrieve the relevant data only
+2. **Retrieve the relevant data only**
    Specifying the data one requires enables precision in retrieval. Using the commands * and LIMIT, instead of SELECT *
    as and when required is a great way of tuning the database, while avoiding retrieving the whole set of data when the
    user wants only a certain part of it. Of course, it will not be necessary when the amount of data overall is less.
    But when accessing data from a large source, specifying the portions required would save a lot of essential time.
+   The `*` command is for use in specifying data from columns, and the LIMIT command is when the user requires data from
+   a certain number of rows from among the lot. Selecting sparingly is not exactly a necessary rule. However, it does
+   help in avoiding system errors in the future. Also, limiting and specifying the data reduces the further necessity of
+   optimizing the database to a great deal.
 
-The * command is for use in specifying data from columns, and the LIMIT command is when the user requires data from a
-certain number of rows from among the lot. Selecting sparingly is not exactly a necessary rule. However, it does help in
-avoiding system errors in the future. Also, limiting and specifying the data reduces the further necessity of optimizing
-the database to a great deal.
-
-3. Getting rid of correlated subqueries
+3. **Getting rid of correlated sub queries**
    A correlated sub-query basically depends on the parent or outer query. This kind of search is done row by row. That
    means it decreases the overall speed of the process. This problem usually lies in the command of WHERE from the outer
    query, applying which, the subquery runs for each row, returned by the parent query, consequently slowing the whole
@@ -2330,21 +1969,18 @@ the database to a great deal.
    INNER JOIN command, instead of the correlated sub-query. But in certain cases, using correlated sub-query is
    essential.
 
-
-4. Using or avoiding temporary tables according to requirement
+4. **Using or avoiding temporary tables according to requirement**
    If any code can be well written in a simple way, there is absolutely no need to make it complex with temporary
    tables. Of course, if a data has a specific procedure to be set up which requires multiple queries, the use of
    temporary tables in such cases are, in fact, recommended. Temporary tables are often alternated by sub-queries, but
    one has to keep in mind the specific efficiency that each of these would provide in separate cases.
 
-
-5. Avoid coding loops
+5. **Avoid coding loops**
    Avoiding coding loops is very much needed in order to avoid slowing down of the whole sequence. This can be achieved
    by using the unique UPDATE or INSERT commands with individual rows, and by ensuring that the command WHERE does not
    update the stored data in case it finds a matching pre existing data.
 
-
-6. Execution plans
+6. **Execution plans**
    The execution plan tool created by the optimizer plays a major role in tuning SQL databases. They help in creating
    proper indexes too. Although, its main function is to display graphically the various methods to retrieve data. This,
    in turn, helps in creating the needed indexes and doing the other required steps to optimize the database.
@@ -2353,70 +1989,86 @@ Of course, there are tons of other ways one can tune their SQL database in the m
 big chance that the steps mentioned above might not be the right choice for all databases. Each database will require
 optimization techniques uniquely specific to its needs.
 
-Unit Testing
+### Unit Testing
 
 #### Q: What’s your approach to unit testing in Python?
 
-The most fundamental answer to this ? centers around unittest testing framework.
-unittest supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections,
+The most fundamental answer to this ? centers around `unittest` testing framework.
+**unittest** supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into
+collections,
 and independence of the tests from the reporting framework. The unittest module provides classes that make it easy to
 support these qualities for a set of tests; key elements of the unittest framework - test fixtures, test cases, test
 suites and test runners.
-A more recent addition to the unittest framework is mock. It allows you to replace parts of your system under test with
-mock objects and make assertions about how they are to be used. Now available as unittest.mock in Python 3.3+.
-The value and power of mock are well explained in An Introduction to Mocking in Python. As noted, system calls are prime
-candidates for mocking: whether writing a script to eject a CD drive, a web server which removes antiquated cache files
-from /tmp, or a socket server which binds to a TCP port, these calls all feature undesired side-effects in the context
-of unit tests. Similarly, keeping your unit-tests efficient and performant means keeping as much “slow code” as possible
-out of the automated test runs, namely file system and network access. other test libraries
+
+[mock](https://pypi.org/project/mock/)
+: The value and power of mock are well explained in An Introduction to Mocking in Python. As noted, system calls are
+prime candidates for mocking: whether writing a script to eject a CD drive, a web server which removes antiquated cache
+files from /tmp, or a socket server which binds to a TCP port, these calls all feature undesired side-effects in the
+context of unit tests. Similarly, keeping your unit-tests efficient and performant means keeping as much “slow code” as
+possible out of the automated test runs, namely file system and network access. other test libraries
 
 #### Q: What are the key elements of the unittest framework?
 
-unittest contains both a testing framework and a test runner. It has some important requirements for writing and
+[`unittest`](https://docs.python.org/3/library/unittest.html) contains both a **testing framework** and a **test
+runner**. It has some important requirements for writing and
 executing tests:
 
 * You put your tests into classes as methods
-* You use a series of special assertion methods in the unittest.TestCase class instead of the built-in assert statement
-  unittest supports some important concepts in an object-oriented way:
-  test fixture
-  A test fixture represents the preparation needed to perform one or more tests, and any associated cleanup actions.
-  This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
-  test case
-  A test case is the individual unit of testing. It checks for a specific response to a particular set of inputs.
-  unittest provides a base class, TestCase, which may be used to create new test cases.
-  test suite
-  A test suite is a collection of test cases, test suites, or both. It is used to aggregate tests that should be
-  executed together.
-  test runner
-  A test runner is a component which orchestrates the execution of tests and provides the outcome to the user. The
-  runner may use a graphical interface, a textual interface, or return a special value to indicate the results of
-  executing the tests.
-  official docs
+* You use a series of special assertion methods in the `unittest.TestCase` class instead of the built-in `assert`
+  statement
 
-Q: Writes simple unit tests
+`unittest` supports some important concepts in an object-oriented way:
+test fixture
+: A test fixture represents the preparation needed to perform one or more tests, and any associated cleanup actions.
+This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
+
+test case
+: A test case is the individual unit of testing. It checks for a specific response to a particular set of inputs.
+unittest provides a base class, TestCase, which may be used to create new test cases.
+
+test suite
+: A test suite is a collection of test cases, test suites, or both. It is used to aggregate tests that should be
+executed together.
+
+test runner
+: A test runner is a component which orchestrates the execution of tests and provides the outcome to the user. The
+runner may use a graphical interface, a textual interface, or return a special value to indicate the results of
+executing the tests.
+official docs
+
+#### Q: Writes simple unit tests
+
+```python
 import unittest
+
+
 class TestSum(unittest.TestCase):
 
     def test_sum(self):
         self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
 
-
     def test_sum_tuple(self):
         self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
 
+
 if __name__ == '__main__':
-unittest.main()
-You have just executed two tests using the unittest test runner.
-Requirements
-Q: What levels of requirements exist?
+    unittest.main()
+```
+
+### Requirements
+
+#### Q: What levels of requirements exist?
+
 Requirement analysis starts with:
 
-1. Requirement gathering which is also called elicitation.
-2. This is followed by analyzing the collected requirements to understand the correctness and feasibility of converting
+1. **Requirement gathering** which is also called _elicitation_.
+2. This is followed by **analyzing** the collected requirements to understand the correctness and feasibility of
+   converting
    these requirements into a possible product.
-3. And finally, documenting the requirements collected.
+3. And finally, **documenting** the requirements collected.
 
-Requirement Gathering
+##### Requirement Gathering
+
 To make sure that all the steps mentioned above are appropriately executed, clear, concise, and correct requirements
 must be gathered from the customer. The customer should be able to define their requirements properly and the business
 analyst should be able to collect it the same way the customer is intending it to convey.
@@ -2427,15 +2079,17 @@ The possible stakeholder’s group could be Software Quality engineers (both QC 
 provide support in the project, end-user for whom the product is intended for, software programmers, another team within
 the organization who might provide a module or software platform, software libraries, etc. for product development.
 
-What is a Functional Requirement?
-In software engineering, a functional requirement defines a system or its component. It describes the functions a
+##### What is a Functional Requirements?
+
+In software engineering, a functional requirement defines a system or its components. It describes the functions a
 software must perform. A function is nothing but inputs, its behavior, and outputs. It can be a calculation, data
 manipulation, business process, user interaction, or any other specific functionality which defines what function a
 system is likely to perform.
 Functional software requirements help you to capture the intended behavior of the system. This behavior may be expressed
 as functions, services or tasks or which system is required to perform.
 
-What is a Non-Functional Requirement?
+##### What is a Non-Functional Requirements?
+
 A non-functional requirement defines the quality attribute of a software system. They represent a set of standards used
 to judge the specific operation of a system. Example, how fast does the website load?
 A non-functional requirement is essential to ensure the usability and effectiveness of the entire software system.
@@ -2444,7 +2098,7 @@ Non-functional Requirements allows you to impose constraints or restrictions on 
 various agile backlogs. Example, the site should load in 3 seconds when the number of simultaneous users is > 10000.
 Description of non-functional requirements is just as critical as a functional requirement.
 
-KEY DIFFERENCE
+**KEY DIFFERENCE**
 
 * A functional requirement defines a system or its component whereas a non-functional requirement defines the
   performance attribute of a software system.
@@ -2456,7 +2110,7 @@ KEY DIFFERENCE
   Requirements, Reporting Requirements, Administrative functions, Authorization levels, Audit Tracking, External
   Interfaces, Historical Data management, Legal or Regulatory Requirements are various types of functional requirements.
 
-Example of Functional Requirements
+###### **Examples of Functional Requirements**
 
 * The software automatically validates customers against the ABC Contact Management System
 * The Sales system should allow users to record customers sales
@@ -2466,7 +2120,7 @@ Example of Functional Requirements
 * The software system should be integrated with banking API
 * The software system should pass Section 508 accessibility requirement.
 
-Examples of Non-functional requirements
+###### **Examples of Non-functional requirements**
 
 * Users must change the initially assigned login password immediately after the first successful login. Moreover, the
   initial should never be reused.
@@ -2477,7 +2131,7 @@ Examples of Non-functional requirements
 * The software should be portable. So moving from one OS to another OS does not create any problem.
 * Privacy of information, the export of restricted technologies, intellectual property rights, etc. should be audited.
 
-Advantages of Functional Requirement
+**Advantages of Functional Requirements**
 
 * Helps you to check whether the application is providing all the functionalities that were mentioned in the functional
   requirement of that application
@@ -2489,15 +2143,18 @@ Advantages of Functional Requirement
 * Functional requirement can be expressed in Use Case form or user story as they exhibit externally visible functional
   behavior.
 
-Advantages of Non-Functional Requirement
+**Advantages of Non-Functional Requirements**
 
 * The nonfunctional requirements ensure the software system follows legal and compliance rules.
 * They ensure the reliability, availability, and performance of the software system
 * They ensure good user experience and ease of operating the software.
 * They help in formulating security policy of the software system.
-  Q: What are Excellent Requirements? What characteristics do they have?
-  A requirement needs to meet several criteria to be considered a “good requirement”. Good requirements should have the
-  following characteristics: more details
+
+#### Q: What are Excellent Requirements? What characteristics do they have?
+
+A requirement needs to meet several criteria to be considered a “good requirement”. Good requirements should have the
+following characteristics: [more details...](https://www.informit.com/articles/article.aspx?p=1152528&seqNum=4)
+
 * Unambiguous (Однозначні)
 * Testable (verifiable)
 * Clear (concise, terse, simple, precise)
@@ -2509,53 +2166,60 @@ Advantages of Non-Functional Requirement
 * Necessary
 * Implementation-free (abstract)
 
-Besides these criteria for individual requirements, three criteria apply to the set of requirements. The set should be
+Beside these criteria for individual requirements, 3 criteria apply to the set of requirements. The set should be
 
 * Consistent (Послідовний)
-* Nonredundant (Не надлишковий)
+* Non redundant (Не надлишковий)
 * Complete
 
-Usage: Creates the list of effective and forward-looking questions to clarify inaccurate requirements, in order to
+**Usage**: Creates the list of effective and forward-looking questions to clarify inaccurate requirements, in order to
 receive the "Yes/No" answer and finalize requirements into clear, specific and verifiable items.
-Estimation & Time management
-Q: Estimation fundamentals: decomposition, law of large numbers, cone of uncertainty, “count, compute, judge“ principle
-Estimation determines how much money, effort, resources, and time it will take to build a specific system or product.
-Estimation is based on −
 
-* Past Data/Past Experience
+### Estimation & Time management
+
+#### Q: Estimation fundamentals: decomposition, law of large numbers, cone of uncertainty, “count, compute, judge“ principle
+
+**Estimation** determines how much money, effort, resources, and time it will take to build a specific system or product.
+
+Estimation is based on:
+
+* Past Data/Experience
 * Available Documents/Knowledge
 * Assumptions
 * Identified Risks
-  The four basic steps in Software Project Estimation are −
+
+The 4 basic steps in Software Project Estimation are:
+
 * Estimate the size of the development product.
 * Estimate the effort in person-months or person-hours.
 * Estimate the schedule in calendar months.
 * Estimate the project cost in agreed currency.
-  Estimation methods: full presentation
-* Historical data
-* Counting
-* Decomposition
 
-Decomposition: Once the user stories has been selected, each is decomposed
-into the set of tasks necessary to deliver the new functionality.
+##### **Estimation methods** [full presentation](https://massmediagroup.pro/PDF/SK903V1_WP_Estimating.pdf)
+A. Historical data  
+B. Counting  
+C. Decomposition  
+
+_Decomposition_: Once the user stories has been selected, each is decomposed into the set of tasks necessary to deliver the new functionality.
 
 * Based on the division of work into “bite -size” components
 * Techniques are:
     * Decomposition into WBS (Methodology Work Breakdown Structure)
     * Decomposition of functions (The individual elements of the process and their hierarchical relationship to each
-      other are commonly displayed in a diagram called a functional decomposition diagram)
+      other are commonly displayed in a diagram called _a functional decomposition diagram_)
 * Still requires historical data and counts:
 * List of tasks
 * Counting the functions …
 * Benefits from the law of large numbers
 
-Law of large numbers: Task-based estimation averages out errors, through the Law Of Large Numbers (According to the law,
+D. Law of large numbers: Task-based estimation averages out errors, through the Law Of Large Numbers (According to the law,
 the average of the results obtained from a large number of trials should be close to the expected value and will tend to
 become closer to the expected value as more trials are performed).
 
-The Cone of Uncertainty, described by Steve McConnel, shows what any experienced software professional knows. Which is
-at the beginning of any project we don’t know exactly how long a project is going to take. detailed description
-The reasons for this are many. No two ever projects have:
+E. The Cone of Uncertainty, described by Steve McConnel, shows what any experienced software professional knows. Which is
+at the beginning of any project we don’t know exactly how long a project is going to take. [detailed description](http://www.agilenutshell.com/cone_of_uncertainty)
+
+The reasons for this are many. No 2 ever projects have:
 
 1. The same requirements.
 2. The same people.
@@ -2563,18 +2227,7 @@ The reasons for this are many. No two ever projects have:
 4. The same technology.
 5. The same priorities & constraints.
 
-“Count, compute, judge“ principle images source
-
-## Software Design and Development Process
-
-### Networking
-
-Additional areas
-Cloud
-Q: Explain the basic concepts of MapReduce, key-value / NoSQL stores
-Q: What cloud middleware technologies that are fundamental to cloud based applications?
-Q: What are key cloud resources as WebApp, Databases, Virtual Machines?
-
+F. “Count, compute, judge“ principle [presentation](https://www.slideshare.net/esofthead/estimation-1157053)
 
 ---
 
