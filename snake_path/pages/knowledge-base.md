@@ -87,7 +87,7 @@ The PVM executes Python programs that have been compiled from the Python languag
 PVM assumes that any bytecode being executed is "well-formed" with regard to a number of implicit constraints.
 [official docs](https://www.python.org/dev/peps/pep-0330/)
 
-![Compiler_vs_Interpreter_comparison](/images/Compiler_vs_Interpreter_comparison.png)
+![Compiler_vs_Interpreter_comparison](/images/knowledge-base/Compiler_vs_Interpreter_comparison.png)
 
 #### Q: What are some alternative implementations to CPython? When and why might you use them?
 

@@ -8,7 +8,7 @@
 
     .. class:: col-md-6
 
-    .. image:: /images/Python_logo_01.png
+    .. image:: /images/index/Python_logo_01.png
         :class: rounded mx-auto d-block
         :alt: Alternative text
         :align: center
