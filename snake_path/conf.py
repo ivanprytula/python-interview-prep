@@ -146,7 +146,7 @@ NAVIGATION_LINKS = {
         ("/knowledge-scope", "Knowledge Scope"),
         ("/knowledge-base", "Knowledge Base"),
         ("/lake-of-links", "Lake of Links"),
-        ("/cloud-of-abbreviations", "Cloud of Abbreviations"),
+        ("/cloud-of-terms", "Cloud of Terms"),
         ((('/foo', 'FOO'),
           ('/bar', 'BAR')), 'Listings'),
         ("/about", "About"),

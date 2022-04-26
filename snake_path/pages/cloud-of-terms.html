@@ -1,0 +1,90 @@
+<!--
+.. title: Cloud of Terms
+.. slug: cloud-of-terms
+.. date: 2022-04-21 19:18:42 UTC+03:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+
+
+    </style>
+    <!-- custom style -->
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .content .tagcloud {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        ul {
+            display: inline-block;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .tagcloud {
+            font-size: 16px;
+        }
+
+        .tagcloud--item {
+            padding: 2px 4px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .tagcloud--item:hover {
+            background-color: rgba(0, 0, 0, .1);
+            border: 1px solid #333;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            opacity: 1 !important;
+            z-index: 100 !important;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="../assets/js/TagCloud.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="content">
+    <!-- content -->
+</div>
+
+<script>
+    const texts = [
+        'Python', 'Django', 'DRF', 'Flask',
+    ];
+    const tc = TagCloud('.content', texts, );
+</script>
+
+</body>
+
+</html>
