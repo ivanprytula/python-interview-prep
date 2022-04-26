@@ -7,42 +7,46 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://localhost.com/</loc>
-  <lastmod>2022-04-19T17:05:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/about/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/archive.html</loc>
-  <lastmod>2022-04-19T11:23:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/categories/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://localhost.com/cloud-of-terms/</loc>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/galleries/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/knowledge-base/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/knowledge-scope/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/lake-of-links/</loc>
-  <lastmod>2022-04-19T10:00:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/listings/</loc>
-  <lastmod>2022-04-19T11:44:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://localhost.com/listings/args_passing.py.html</loc>
-  <lastmod>2022-04-19T11:44:00Z</lastmod>
+  <lastmod>2022-04-26T11:23:00Z</lastmod>
  </url>
 </urlset>
