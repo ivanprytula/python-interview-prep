@@ -31,7 +31,7 @@
 5. [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)
 6. [Common anti-patterns in Python](https://deepsource.io/blog/8-new-python-antipatterns/)
 7. [Idiomatic Python. Coding the smart way](https://medium.com/the-andela-way/idiomatic-python-coding-the-smart-way-cc560fa5f1d6)
-8. ...
+8. (https://deepsource.io/blog/category/python)
 
 
 # VCS
@@ -73,3 +73,6 @@
 2. [Python Tricks, the Book](https://realpython.com/products/python-tricks-book/)
 3. ...
 
+# Static analysis
+1. [DeepSource](https://deepsource.io/)
+2. ...
