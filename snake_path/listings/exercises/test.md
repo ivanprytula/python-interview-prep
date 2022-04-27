@@ -1,0 +1,1 @@
+10 Python Tips and Tricks For Writing Better Code. The text have some very nice yellow flowers and red flowers.

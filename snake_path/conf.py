@@ -148,7 +148,12 @@ NAVIGATION_LINKS = {
         ("/lake-of-links", "Lake of Links"),
         ("/cloud-of-terms", "Cloud of Terms"),
         ("/show-me-the-code", "Listings"),
-        ("/about", "About"),
+        (
+            (
+                ("/naming-convention", "Naming Convention"),
+                ("/foo", "Foo Spam")
+            ), "Extras"
+        ),
     ),
 }
 

@@ -13,7 +13,7 @@
         """
         print('Hello world!')
 
-.. listing:: snake_walk_the_big_story.py python
+.. listing:: snake_walks_the_big_story.py python
 
 ..
   comment goes here
