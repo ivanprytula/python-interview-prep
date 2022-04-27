@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="classplay.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>classplay.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/classplay.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">classplay.py</li>
+</ul></nav><h1>classplay.py
+        <small><a href="classplay.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-1" name="listingsexercisesclassplaypy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-2" name="listingsexercisesclassplaypy-2"></a><span class="sd">Scipt for playing with classes - Object Oriented Programming</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-3" name="listingsexercisesclassplaypy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-4" name="listingsexercisesclassplaypy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-5" name="listingsexercisesclassplaypy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-6" name="listingsexercisesclassplaypy-6"></a><span class="k">class</span> <span class="nc">Aircraft</span><span class="p">:</span>  <span class="c1"># because planes and helicopters are awesome</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-7" name="listingsexercisesclassplaypy-7"></a>    <span class="n">airspace</span> <span class="o">=</span> <span class="s2">"troposphere"</span>  <span class="c1"># class variable shared in all instances</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-8" name="listingsexercisesclassplaypy-8"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-9" name="listingsexercisesclassplaypy-9"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wingType</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">vne</span><span class="p">,</span> <span class="n">passengers</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-10" name="listingsexercisesclassplaypy-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wingType</span> <span class="o">=</span> <span class="n">wingType</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-11" name="listingsexercisesclassplaypy-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">hours</span> <span class="o">=</span> <span class="n">hours</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-12" name="listingsexercisesclassplaypy-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vne</span> <span class="o">=</span> <span class="n">vne</span>  <span class="c1"># Vne is the never exceed velocity - don't fly your plane faster than this!</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-13" name="listingsexercisesclassplaypy-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">passengers</span> <span class="o">=</span> <span class="n">passengers</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-14" name="listingsexercisesclassplaypy-14"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-15" name="listingsexercisesclassplaypy-15"></a>    <span class="k">def</span> <span class="nf">aircraftType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-16" name="listingsexercisesclassplaypy-16"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wingType</span> <span class="o">==</span> <span class="s2">"rotary"</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-17" name="listingsexercisesclassplaypy-17"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"The aircraft is a helicopter"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-18" name="listingsexercisesclassplaypy-18"></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">wingType</span> <span class="o">==</span> <span class="s2">"fixed"</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-19" name="listingsexercisesclassplaypy-19"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"The aircraft is an aeroplane"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-20" name="listingsexercisesclassplaypy-20"></a>        <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-21" name="listingsexercisesclassplaypy-21"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"The aircraft type is unknown"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-22" name="listingsexercisesclassplaypy-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-23" name="listingsexercisesclassplaypy-23"></a>    <span class="k">def</span> <span class="nf">maintenance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-24" name="listingsexercisesclassplaypy-24"></a>        <span class="n">strHours</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-25" name="listingsexercisesclassplaypy-25"></a>        <span class="n">digits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">strHours</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-26" name="listingsexercisesclassplaypy-26"></a>        <span class="n">tens</span> <span class="o">=</span> <span class="n">strHours</span><span class="p">[</span><span class="n">digits</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">:]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-27" name="listingsexercisesclassplaypy-27"></a>        <span class="n">hrsRemain</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">tens</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-28" name="listingsexercisesclassplaypy-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hours until 100 hourly maintenance interval: "</span><span class="p">,</span> <span class="n">hrsRemain</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-29" name="listingsexercisesclassplaypy-29"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-30" name="listingsexercisesclassplaypy-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-31" name="listingsexercisesclassplaypy-31"></a><span class="c1"># aeroplane Foxtrot X-ray Kilo</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-32" name="listingsexercisesclassplaypy-32"></a><span class="n">planeFXK</span> <span class="o">=</span> <span class="n">Aircraft</span><span class="p">(</span><span class="s2">"fixed"</span><span class="p">,</span> <span class="mi">2113</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># class instance = object</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-33" name="listingsexercisesclassplaypy-33"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Airpsace: "</span><span class="p">,</span> <span class="n">planeFXK</span><span class="o">.</span><span class="n">airspace</span><span class="p">)</span>  <span class="c1"># calling class variable</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-34" name="listingsexercisesclassplaypy-34"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Wing: "</span><span class="p">,</span> <span class="n">planeFXK</span><span class="o">.</span><span class="n">wingType</span><span class="p">)</span>  <span class="c1"># calling object attributes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-35" name="listingsexercisesclassplaypy-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Total Time in Service: "</span><span class="p">,</span> <span class="n">planeFXK</span><span class="o">.</span><span class="n">hours</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-36" name="listingsexercisesclassplaypy-36"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Passengers: "</span><span class="p">,</span> <span class="n">planeFXK</span><span class="o">.</span><span class="n">passengers</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-37" name="listingsexercisesclassplaypy-37"></a><span class="n">planeFXK</span><span class="o">.</span><span class="n">aircraftType</span><span class="p">()</span>  <span class="c1"># calling object method</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-38" name="listingsexercisesclassplaypy-38"></a><span class="n">planeFXK</span><span class="o">.</span><span class="n">maintenance</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-39" name="listingsexercisesclassplaypy-39"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-40" name="listingsexercisesclassplaypy-40"></a><span class="c1"># helicopter Hotel Yankee Charlie:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-41" name="listingsexercisesclassplaypy-41"></a><span class="n">heliHYC</span> <span class="o">=</span> <span class="n">Aircraft</span><span class="p">(</span><span class="s2">"rotary"</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># class instance = object</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-42" name="listingsexercisesclassplaypy-42"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Airpspace: "</span><span class="p">,</span> <span class="n">heliHYC</span><span class="o">.</span><span class="n">airspace</span><span class="p">)</span>  <span class="c1"># calling class variable</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-43" name="listingsexercisesclassplaypy-43"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Wing: "</span><span class="p">,</span> <span class="n">heliHYC</span><span class="o">.</span><span class="n">wingType</span><span class="p">)</span>  <span class="c1"># calling object attributes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-44" name="listingsexercisesclassplaypy-44"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Total Time In Service: "</span><span class="p">,</span> <span class="n">heliHYC</span><span class="o">.</span><span class="n">hours</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-45" name="listingsexercisesclassplaypy-45"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Max passengers: "</span><span class="p">,</span> <span class="n">heliHYC</span><span class="o">.</span><span class="n">passengers</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-46"><code data-line-number="46"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-46" name="listingsexercisesclassplaypy-46"></a><span class="n">heliHYC</span><span class="o">.</span><span class="n">aircraftType</span><span class="p">()</span>  <span class="c1"># calling object method</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesclassplaypy-47"><code data-line-number="47"></code></a></td>
+<td class="code"><code><a id="listingsexercisesclassplaypy-47" name="listingsexercisesclassplaypy-47"></a><span class="n">heliHYC</span><span class="o">.</span><span class="n">maintenance</span><span class="p">()</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

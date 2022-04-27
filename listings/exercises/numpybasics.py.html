@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="numpybasics.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>numpybasics.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/numpybasics.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">numpybasics.py</li>
+</ul></nav><h1>numpybasics.py
+        <small><a href="numpybasics.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-1" name="listingsexercisesnumpybasicspy-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-2" name="listingsexercisesnumpybasicspy-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-3" name="listingsexercisesnumpybasicspy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-4" name="listingsexercisesnumpybasicspy-4"></a><span class="sd">Numpy basics</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-5" name="listingsexercisesnumpybasicspy-5"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-6" name="listingsexercisesnumpybasicspy-6"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-7" name="listingsexercisesnumpybasicspy-7"></a><span class="c1"># basic arrays - think matrices</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-8" name="listingsexercisesnumpybasicspy-8"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-9" name="listingsexercisesnumpybasicspy-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># (3, 2)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-10" name="listingsexercisesnumpybasicspy-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># 2</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-11" name="listingsexercisesnumpybasicspy-11"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-12" name="listingsexercisesnumpybasicspy-12"></a><span class="c1"># operators and methods</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-13" name="listingsexercisesnumpybasicspy-13"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-14" name="listingsexercisesnumpybasicspy-14"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-15" name="listingsexercisesnumpybasicspy-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># element-wise multiplication of equal shape arrays</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-16" name="listingsexercisesnumpybasicspy-16"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-17" name="listingsexercisesnumpybasicspy-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># matrix multiplication</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-18" name="listingsexercisesnumpybasicspy-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">@</span> <span class="n">y</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-19" name="listingsexercisesnumpybasicspy-19"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-20" name="listingsexercisesnumpybasicspy-20"></a><span class="n">newArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># creates 1D array with constant spacing</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-21" name="listingsexercisesnumpybasicspy-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">newArray</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-22" name="listingsexercisesnumpybasicspy-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-23" name="listingsexercisesnumpybasicspy-23"></a><span class="n">newArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-24" name="listingsexercisesnumpybasicspy-24"></a>    <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-25" name="listingsexercisesnumpybasicspy-25"></a><span class="p">)</span>  <span class="c1"># creates 1D array with constant spread (note the difference)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-26" name="listingsexercisesnumpybasicspy-26"></a><span class="nb">print</span><span class="p">(</span><span class="n">newArray</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-27" name="listingsexercisesnumpybasicspy-27"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-28" name="listingsexercisesnumpybasicspy-28"></a><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">newArray</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-29" name="listingsexercisesnumpybasicspy-29"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-30" name="listingsexercisesnumpybasicspy-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-31" name="listingsexercisesnumpybasicspy-31"></a><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-32" name="listingsexercisesnumpybasicspy-32"></a><span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># array slicing: it's in form of [start:stop:step]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-33" name="listingsexercisesnumpybasicspy-33"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-34" name="listingsexercisesnumpybasicspy-34"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-35" name="listingsexercisesnumpybasicspy-35"></a><span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">newArray</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-36" name="listingsexercisesnumpybasicspy-36"></a><span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">newArray</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-37" name="listingsexercisesnumpybasicspy-37"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"variance: "</span><span class="p">,</span> <span class="n">variance</span><span class="p">,</span> <span class="s2">"std dev: "</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-38" name="listingsexercisesnumpybasicspy-38"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-39" name="listingsexercisesnumpybasicspy-39"></a><span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-40" name="listingsexercisesnumpybasicspy-40"></a>    <span class="n">newArray</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-41" name="listingsexercisesnumpybasicspy-41"></a><span class="p">)</span>  <span class="c1"># calculates the difference between subsequent values in an array</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-42" name="listingsexercisesnumpybasicspy-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-43" name="listingsexercisesnumpybasicspy-43"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-44" name="listingsexercisesnumpybasicspy-44"></a><span class="n">cummsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-45" name="listingsexercisesnumpybasicspy-45"></a>    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-46"><code data-line-number="46"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-46" name="listingsexercisesnumpybasicspy-46"></a><span class="p">)</span>  <span class="c1"># cummulative sum of array elements [0,1,2,3,4,5] - note new array shape</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-47"><code data-line-number="47"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-47" name="listingsexercisesnumpybasicspy-47"></a><span class="nb">print</span><span class="p">(</span><span class="n">cummsum</span><span class="p">,</span> <span class="n">cummsum</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-48"><code data-line-number="48"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-48" name="listingsexercisesnumpybasicspy-48"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-49"><code data-line-number="49"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-49" name="listingsexercisesnumpybasicspy-49"></a><span class="n">rando</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-50"><code data-line-number="50"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-50" name="listingsexercisesnumpybasicspy-50"></a><span class="n">sorto</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rando</span><span class="p">)</span>  <span class="c1"># sorted ascending order</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-51"><code data-line-number="51"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-51" name="listingsexercisesnumpybasicspy-51"></a><span class="nb">print</span><span class="p">(</span><span class="n">sorto</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-52"><code data-line-number="52"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-52" name="listingsexercisesnumpybasicspy-52"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-53"><code data-line-number="53"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-53" name="listingsexercisesnumpybasicspy-53"></a><span class="n">argsorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-54"><code data-line-number="54"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-54" name="listingsexercisesnumpybasicspy-54"></a>    <span class="n">rando</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-55"><code data-line-number="55"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-55" name="listingsexercisesnumpybasicspy-55"></a><span class="p">)</span>  <span class="c1"># returns the index of the values if they were sorted in ascending order... cool!</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-56"><code data-line-number="56"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-56" name="listingsexercisesnumpybasicspy-56"></a><span class="nb">print</span><span class="p">(</span><span class="n">argsorted</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-57"><code data-line-number="57"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-57" name="listingsexercisesnumpybasicspy-57"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-58"><code data-line-number="58"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-58" name="listingsexercisesnumpybasicspy-58"></a><span class="n">maxval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rando</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-59"><code data-line-number="59"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-59" name="listingsexercisesnumpybasicspy-59"></a><span class="n">maxarg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">rando</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-60"><code data-line-number="60"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-60" name="listingsexercisesnumpybasicspy-60"></a><span class="nb">print</span><span class="p">(</span><span class="n">maxval</span><span class="p">,</span> <span class="n">maxarg</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-61"><code data-line-number="61"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-61" name="listingsexercisesnumpybasicspy-61"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-62"><code data-line-number="62"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-62" name="listingsexercisesnumpybasicspy-62"></a><span class="nb">print</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-63"><code data-line-number="63"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-63" name="listingsexercisesnumpybasicspy-63"></a>    <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">sorto</span><span class="p">),</span> <span class="n">sorto</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">sorto</span><span class="p">)]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesnumpybasicspy-64"><code data-line-number="64"></code></a></td>
+<td class="code"><code><a id="listingsexercisesnumpybasicspy-64" name="listingsexercisesnumpybasicspy-64"></a><span class="p">)</span>  <span class="c1"># will return the non-zero indices, values</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

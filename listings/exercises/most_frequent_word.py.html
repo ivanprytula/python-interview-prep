@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="most_frequent_word.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>most_frequent_word.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/most_frequent_word.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">most_frequent_word.py</li>
+</ul></nav><h1>most_frequent_word.py
+        <small><a href="most_frequent_word.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-1" name="listingsexercisesmost_frequent_wordpy-1"></a><span class="kn">import</span> <span class="nn">re</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-2" name="listingsexercisesmost_frequent_wordpy-2"></a><span class="n">file_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter file: '</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-3" name="listingsexercisesmost_frequent_wordpy-3"></a><span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-4" name="listingsexercisesmost_frequent_wordpy-4"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-5" name="listingsexercisesmost_frequent_wordpy-5"></a>        <span class="n">file_name</span> <span class="o">=</span> <span class="s1">'test.md'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-6" name="listingsexercisesmost_frequent_wordpy-6"></a>    <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-7" name="listingsexercisesmost_frequent_wordpy-7"></a><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-8" name="listingsexercisesmost_frequent_wordpy-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'File cannot be opened:'</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-9" name="listingsexercisesmost_frequent_wordpy-9"></a>    <span class="n">quit</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-10" name="listingsexercisesmost_frequent_wordpy-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-11" name="listingsexercisesmost_frequent_wordpy-11"></a><span class="n">counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-12" name="listingsexercisesmost_frequent_wordpy-12"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">handle</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-13" name="listingsexercisesmost_frequent_wordpy-13"></a>    <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-14" name="listingsexercisesmost_frequent_wordpy-14"></a>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-15" name="listingsexercisesmost_frequent_wordpy-15"></a>        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'.,'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-16" name="listingsexercisesmost_frequent_wordpy-16"></a>        <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-17" name="listingsexercisesmost_frequent_wordpy-17"></a><span class="n">handle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-18" name="listingsexercisesmost_frequent_wordpy-18"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-19" name="listingsexercisesmost_frequent_wordpy-19"></a><span class="c1"># Option 1</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-20" name="listingsexercisesmost_frequent_wordpy-20"></a><span class="n">big_count</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-21" name="listingsexercisesmost_frequent_wordpy-21"></a><span class="n">big_word</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-22" name="listingsexercisesmost_frequent_wordpy-22"></a><span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-23" name="listingsexercisesmost_frequent_wordpy-23"></a>    <span class="k">if</span> <span class="n">big_count</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">big_count</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-24" name="listingsexercisesmost_frequent_wordpy-24"></a>        <span class="n">big_word</span> <span class="o">=</span> <span class="n">word</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-25" name="listingsexercisesmost_frequent_wordpy-25"></a>        <span class="n">big_count</span> <span class="o">=</span> <span class="n">count</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-26" name="listingsexercisesmost_frequent_wordpy-26"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-27" name="listingsexercisesmost_frequent_wordpy-27"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Word "</span><span class="si">{</span><span class="n">big_word</span><span class="si">}</span><span class="s1">" has </span><span class="si">{</span><span class="n">big_count</span><span class="si">}</span><span class="s1"> count.'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-28" name="listingsexercisesmost_frequent_wordpy-28"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-29" name="listingsexercisesmost_frequent_wordpy-29"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-30" name="listingsexercisesmost_frequent_wordpy-30"></a><span class="c1"># Option 2: one-liner</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-31" name="listingsexercisesmost_frequent_wordpy-31"></a><span class="c1"># words_with_max_counts = {k: v for k, v in counts.items() if v == max(counts.values())}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-32" name="listingsexercisesmost_frequent_wordpy-32"></a><span class="c1"># print('words_with_max_counts:', words_with_max_counts)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-33" name="listingsexercisesmost_frequent_wordpy-33"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-34" name="listingsexercisesmost_frequent_wordpy-34"></a><span class="c1"># Playground cases</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-35" name="listingsexercisesmost_frequent_wordpy-35"></a><span class="c1"># sorted_counts = {k: v for k, v in sorted(counts.items(), key=lambda item: item[1])}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-36" name="listingsexercisesmost_frequent_wordpy-36"></a><span class="c1"># sorted_counts = collections.OrderedDict(counts)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-37" name="listingsexercisesmost_frequent_wordpy-37"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-38" name="listingsexercisesmost_frequent_wordpy-38"></a><span class="c1"># Any number of spaces is valid. But convention/PEP 8 says that the indentation needs to be multiple of four</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-39" name="listingsexercisesmost_frequent_wordpy-39"></a><span class="c1"># for _ in range(5):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesmost_frequent_wordpy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesmost_frequent_wordpy-40" name="listingsexercisesmost_frequent_wordpy-40"></a><span class="c1">#  print('spam eggs')</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

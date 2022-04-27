@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="operator_overloading.md">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>operator_overloading.md | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/operator_overloading.md.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">operator_overloading.md</li>
+</ul></nav><h1>operator_overloading.md
+        <small><a href="operator_overloading.md">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-1" name="listingsexercisesoperator_overloadingmd-1"></a><span class="sb">```python</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-2" name="listingsexercisesoperator_overloadingmd-2"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-3" name="listingsexercisesoperator_overloadingmd-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cart</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-4" name="listingsexercisesoperator_overloadingmd-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-5" name="listingsexercisesoperator_overloadingmd-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-6" name="listingsexercisesoperator_overloadingmd-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-7" name="listingsexercisesoperator_overloadingmd-7"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-8" name="listingsexercisesoperator_overloadingmd-8"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-9" name="listingsexercisesoperator_overloadingmd-9"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s1">'(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-10" name="listingsexercisesoperator_overloadingmd-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-11" name="listingsexercisesoperator_overloadingmd-11"></a>    <span class="c1"># adding overloading</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-12" name="listingsexercisesoperator_overloadingmd-12"></a>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-13" name="listingsexercisesoperator_overloadingmd-13"></a>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-14" name="listingsexercisesoperator_overloadingmd-14"></a>        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-15" name="listingsexercisesoperator_overloadingmd-15"></a>        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-16" name="listingsexercisesoperator_overloadingmd-16"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-17" name="listingsexercisesoperator_overloadingmd-17"></a>    <span class="c1"># 'less than' overloading</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-18" name="listingsexercisesoperator_overloadingmd-18"></a>    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-19" name="listingsexercisesoperator_overloadingmd-19"></a>        <span class="n">self_mag</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-20" name="listingsexercisesoperator_overloadingmd-20"></a>        <span class="n">other_mag</span> <span class="o">=</span> <span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-21" name="listingsexercisesoperator_overloadingmd-21"></a>        <span class="k">return</span> <span class="n">self_mag</span> <span class="o">&lt;</span> <span class="n">other_mag</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-22" name="listingsexercisesoperator_overloadingmd-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-23" name="listingsexercisesoperator_overloadingmd-23"></a>    <span class="c1"># Giving a Length to Your Objects Using len()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-24" name="listingsexercisesoperator_overloadingmd-24"></a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-25" name="listingsexercisesoperator_overloadingmd-25"></a>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-26" name="listingsexercisesoperator_overloadingmd-26"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-27" name="listingsexercisesoperator_overloadingmd-27"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-28" name="listingsexercisesoperator_overloadingmd-28"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-29" name="listingsexercisesoperator_overloadingmd-29"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-30" name="listingsexercisesoperator_overloadingmd-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-31" name="listingsexercisesoperator_overloadingmd-31"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-32" name="listingsexercisesoperator_overloadingmd-32"></a><span class="sb">```</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-33" name="listingsexercisesoperator_overloadingmd-33"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-34" name="listingsexercisesoperator_overloadingmd-34"></a>| Operator             | Expression   | Internally              |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-35" name="listingsexercisesoperator_overloadingmd-35"></a>|----------------------|--------------|-------------------------|
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-36" name="listingsexercisesoperator_overloadingmd-36"></a>|Addition              | <span class="sb">`p1 + p2`</span>    | <span class="sb">`p1.__add__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-37" name="listingsexercisesoperator_overloadingmd-37"></a>|Subtraction           | <span class="sb">`p1 - p2`</span>    | <span class="sb">`p1.__sub__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-38" name="listingsexercisesoperator_overloadingmd-38"></a>|Multiplication        | <span class="sb">`p1 * p2`</span>    | <span class="sb">`p1.__mul__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-39" name="listingsexercisesoperator_overloadingmd-39"></a>|Power                 | <span class="sb">`p1 ** p2`</span>   | <span class="sb">`p1.__pow__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-40" name="listingsexercisesoperator_overloadingmd-40"></a>|Division              | <span class="sb">`p1 / p2`</span>    | <span class="sb">`p1.__truediv__(p2)`</span>    |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-41" name="listingsexercisesoperator_overloadingmd-41"></a>|Floor Division        | <span class="sb">`p1 // p2`</span>   | <span class="sb">`p1.__floordiv__(p2)`</span>   |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-42" name="listingsexercisesoperator_overloadingmd-42"></a>|Remainder (modulo)    | <span class="sb">`p1 % p2`</span>    | <span class="sb">`p1.__mod__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-43" name="listingsexercisesoperator_overloadingmd-43"></a>|Bitwise Left Shift    | <span class="sb">`p1 &lt;&lt; p2`</span>   | <span class="sb">`p1.__lshift__(p2)`</span>     |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-44" name="listingsexercisesoperator_overloadingmd-44"></a>|Bitwise Right Shift   | <span class="sb">`p1 &gt;&gt; p2`</span>   | <span class="sb">`p1.__rshift__(p2)`</span>     |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-45" name="listingsexercisesoperator_overloadingmd-45"></a>|Bitwise AND           | <span class="sb">`p1 &amp; p2`</span>    | <span class="sb">`p1.__and__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-46"><code data-line-number="46"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-46" name="listingsexercisesoperator_overloadingmd-46"></a>|Bitwise OR            | p1 &amp;#124; p2 | <span class="sb">`p1.__or__(p2)`</span>         |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-47"><code data-line-number="47"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-47" name="listingsexercisesoperator_overloadingmd-47"></a>|Bitwise XOR           | <span class="sb">`p1 ^ p2`</span>    | <span class="sb">`p1.__xor__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-48"><code data-line-number="48"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-48" name="listingsexercisesoperator_overloadingmd-48"></a>|Bitwise NOT           | <span class="sb">`~p1`</span>        | <span class="sb">`p1.__invert__(p2)`</span>     |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-49"><code data-line-number="49"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-49" name="listingsexercisesoperator_overloadingmd-49"></a>|----------------------|--------------|-------------------------|
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-50"><code data-line-number="50"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-50" name="listingsexercisesoperator_overloadingmd-50"></a>|Less than             | <span class="sb">`p1 &lt; p2`</span>    | <span class="sb">`p1.__lt__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-51"><code data-line-number="51"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-51" name="listingsexercisesoperator_overloadingmd-51"></a>|Less than or equal to | <span class="sb">`p1 &lt;= p2`</span>    | <span class="sb">`p1.__le__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-52"><code data-line-number="52"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-52" name="listingsexercisesoperator_overloadingmd-52"></a>|Equal to              | <span class="sb">`p1 == p2`</span>    | <span class="sb">`p1.__eq__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-53"><code data-line-number="53"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-53" name="listingsexercisesoperator_overloadingmd-53"></a>|Not equal to          | <span class="sb">`p1 != p2`</span>    | <span class="sb">`p1.__ne__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-54"><code data-line-number="54"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-54" name="listingsexercisesoperator_overloadingmd-54"></a>|Greater than          | <span class="sb">`p1 &gt; p2`</span>    | <span class="sb">`p1.__gt__(p2)`</span>        |
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoperator_overloadingmd-55"><code data-line-number="55"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoperator_overloadingmd-55" name="listingsexercisesoperator_overloadingmd-55"></a>|Greater than/equal to | <span class="sb">`p1 &gt;= p2`</span>    | <span class="sb">`p1.__ge__(p2)`</span>        |
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

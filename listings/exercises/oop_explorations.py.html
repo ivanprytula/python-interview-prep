@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="oop_explorations.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>oop_explorations.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/oop_explorations.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">oop_explorations.py</li>
+</ul></nav><h1>oop_explorations.py
+        <small><a href="oop_explorations.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-1"><code data-line-number="  1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-1" name="listingsexercisesoop_explorationspy-1"></a><span class="kn">import</span> <span class="nn">logging</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-2"><code data-line-number="  2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-2" name="listingsexercisesoop_explorationspy-2"></a><span class="kn">import</span> <span class="nn">os</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-3"><code data-line-number="  3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-3" name="listingsexercisesoop_explorationspy-3"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-4"><code data-line-number="  4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-4" name="listingsexercisesoop_explorationspy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-5"><code data-line-number="  5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-5" name="listingsexercisesoop_explorationspy-5"></a><span class="c1"># logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-6"><code data-line-number="  6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-6" name="listingsexercisesoop_explorationspy-6"></a><span class="c1"># logging.debug('This message should go to the log file')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-7"><code data-line-number="  7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-7" name="listingsexercisesoop_explorationspy-7"></a><span class="c1"># logging.warning('And this, too')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-8"><code data-line-number="  8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-8" name="listingsexercisesoop_explorationspy-8"></a><span class="c1"># logging.info('So should this')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-9"><code data-line-number="  9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-9" name="listingsexercisesoop_explorationspy-9"></a><span class="c1"># logging.error('And non-ASCII stuff, too, like Øresund and Malmö')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-10"><code data-line-number=" 10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-10" name="listingsexercisesoop_explorationspy-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-11"><code data-line-number=" 11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-11" name="listingsexercisesoop_explorationspy-11"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-12"><code data-line-number=" 12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-12" name="listingsexercisesoop_explorationspy-12"></a><span class="k">class</span> <span class="nc">DemoClassName</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-13"><code data-line-number=" 13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-13" name="listingsexercisesoop_explorationspy-13"></a>    <span class="c1"># Initializer Overloading</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-14"><code data-line-number=" 14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-14" name="listingsexercisesoop_explorationspy-14"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-15"><code data-line-number=" 15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-15" name="listingsexercisesoop_explorationspy-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-16"><code data-line-number=" 16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-16" name="listingsexercisesoop_explorationspy-16"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-17"><code data-line-number=" 17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-17" name="listingsexercisesoop_explorationspy-17"></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-18"><code data-line-number=" 18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-18" name="listingsexercisesoop_explorationspy-18"></a>        <span class="n">class_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-19"><code data-line-number=" 19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-19" name="listingsexercisesoop_explorationspy-19"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">!r}</span><span class="s1">)'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-20"><code data-line-number=" 20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-20" name="listingsexercisesoop_explorationspy-20"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-21"><code data-line-number=" 21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-21" name="listingsexercisesoop_explorationspy-21"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-22"><code data-line-number=" 22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-22" name="listingsexercisesoop_explorationspy-22"></a>        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-23"><code data-line-number=" 23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-23" name="listingsexercisesoop_explorationspy-23"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-24"><code data-line-number=" 24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-24" name="listingsexercisesoop_explorationspy-24"></a>    <span class="nd">@classmethod</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-25"><code data-line-number=" 25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-25" name="listingsexercisesoop_explorationspy-25"></a>    <span class="k">def</span> <span class="nf">get_class_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-26"><code data-line-number=" 26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-26" name="listingsexercisesoop_explorationspy-26"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-27"><code data-line-number=" 27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-27" name="listingsexercisesoop_explorationspy-27"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-28"><code data-line-number=" 28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-28" name="listingsexercisesoop_explorationspy-28"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-29"><code data-line-number=" 29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-29" name="listingsexercisesoop_explorationspy-29"></a><span class="n">demo_obj</span> <span class="o">=</span> <span class="n">DemoClassName</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-30"><code data-line-number=" 30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-30" name="listingsexercisesoop_explorationspy-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-31"><code data-line-number=" 31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-31" name="listingsexercisesoop_explorationspy-31"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-32"><code data-line-number=" 32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-32" name="listingsexercisesoop_explorationspy-32"></a><span class="c1"># print(DemoClassName.get_class_name())  # DemoClassName</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-33"><code data-line-number=" 33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-33" name="listingsexercisesoop_explorationspy-33"></a><span class="c1"># print(demo_obj)  # 10</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-34"><code data-line-number=" 34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-34" name="listingsexercisesoop_explorationspy-34"></a><span class="c1"># print(demo_obj.__repr__())  # DemoClassName(10)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-35"><code data-line-number=" 35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-35" name="listingsexercisesoop_explorationspy-35"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-36"><code data-line-number=" 36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-36" name="listingsexercisesoop_explorationspy-36"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-37"><code data-line-number=" 37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-37" name="listingsexercisesoop_explorationspy-37"></a><span class="c1"># NB: Custom context manager</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-38"><code data-line-number=" 38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-38" name="listingsexercisesoop_explorationspy-38"></a><span class="k">class</span> <span class="nc">ManagedWriteFile</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-39"><code data-line-number=" 39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-39" name="listingsexercisesoop_explorationspy-39"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-40"><code data-line-number=" 40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-40" name="listingsexercisesoop_explorationspy-40"></a><span class="sd">    - Enter() should lock the resources and optionally return an object.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-41"><code data-line-number=" 41"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-41" name="listingsexercisesoop_explorationspy-41"></a><span class="sd">    - Exit() should release the resources.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-42"><code data-line-number=" 42"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-42" name="listingsexercisesoop_explorationspy-42"></a><span class="sd">    - Any exception that happens inside the with block is passed to the exit() method.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-43"><code data-line-number=" 43"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-43" name="listingsexercisesoop_explorationspy-43"></a><span class="sd">    - If it wishes to suppress the exception it must return a true value.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-44"><code data-line-number=" 44"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-44" name="listingsexercisesoop_explorationspy-44"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-45"><code data-line-number=" 45"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-45" name="listingsexercisesoop_explorationspy-45"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-46"><code data-line-number=" 46"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-46" name="listingsexercisesoop_explorationspy-46"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'r'</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-47"><code data-line-number=" 47"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-47" name="listingsexercisesoop_explorationspy-47"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-48"><code data-line-number=" 48"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-48" name="listingsexercisesoop_explorationspy-48"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="n">file_name</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-49"><code data-line-number=" 49"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-49" name="listingsexercisesoop_explorationspy-49"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-50"><code data-line-number=" 50"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-50" name="listingsexercisesoop_explorationspy-50"></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-51"><code data-line-number=" 51"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-51" name="listingsexercisesoop_explorationspy-51"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-52"><code data-line-number=" 52"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-52" name="listingsexercisesoop_explorationspy-52"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-53"><code data-line-number=" 53"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-53" name="listingsexercisesoop_explorationspy-53"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-54"><code data-line-number=" 54"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-54" name="listingsexercisesoop_explorationspy-54"></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception</span><span class="p">,</span> <span class="n">exception_tb</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-55"><code data-line-number=" 55"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-55" name="listingsexercisesoop_explorationspy-55"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-56"><code data-line-number=" 56"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-56" name="listingsexercisesoop_explorationspy-56"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-57"><code data-line-number=" 57"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-57" name="listingsexercisesoop_explorationspy-57"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-58"><code data-line-number=" 58"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-58" name="listingsexercisesoop_explorationspy-58"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-59"><code data-line-number=" 59"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-59" name="listingsexercisesoop_explorationspy-59"></a><span class="c1"># with ManagedWriteFile('hello.md', 'w') as f:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-60"><code data-line-number=" 60"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-60" name="listingsexercisesoop_explorationspy-60"></a><span class="c1">#     f.write('requests==2.26.0')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-61"><code data-line-number=" 61"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-61" name="listingsexercisesoop_explorationspy-61"></a><span class="c1">#     f.write('\n')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-62"><code data-line-number=" 62"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-62" name="listingsexercisesoop_explorationspy-62"></a><span class="c1">#     f.write('Django&gt;=3.2.7')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-63"><code data-line-number=" 63"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-63" name="listingsexercisesoop_explorationspy-63"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-64"><code data-line-number=" 64"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-64" name="listingsexercisesoop_explorationspy-64"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-65"><code data-line-number=" 65"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-65" name="listingsexercisesoop_explorationspy-65"></a>    <span class="k">pass</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-66"><code data-line-number=" 66"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-66" name="listingsexercisesoop_explorationspy-66"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-67"><code data-line-number=" 67"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-67" name="listingsexercisesoop_explorationspy-67"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-68"><code data-line-number=" 68"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-68" name="listingsexercisesoop_explorationspy-68"></a><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-69"><code data-line-number=" 69"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-69" name="listingsexercisesoop_explorationspy-69"></a>    <span class="k">pass</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-70"><code data-line-number=" 70"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-70" name="listingsexercisesoop_explorationspy-70"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-71"><code data-line-number=" 71"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-71" name="listingsexercisesoop_explorationspy-71"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-72"><code data-line-number=" 72"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-72" name="listingsexercisesoop_explorationspy-72"></a><span class="c1"># Multiple Inheritance</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-73"><code data-line-number=" 73"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-73" name="listingsexercisesoop_explorationspy-73"></a><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-74"><code data-line-number=" 74"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-74" name="listingsexercisesoop_explorationspy-74"></a>    <span class="k">pass</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-75"><code data-line-number=" 75"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-75" name="listingsexercisesoop_explorationspy-75"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-76"><code data-line-number=" 76"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-76" name="listingsexercisesoop_explorationspy-76"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-77"><code data-line-number=" 77"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-77" name="listingsexercisesoop_explorationspy-77"></a><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-78"><code data-line-number=" 78"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-78" name="listingsexercisesoop_explorationspy-78"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-79"><code data-line-number=" 79"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-79" name="listingsexercisesoop_explorationspy-79"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-80"><code data-line-number=" 80"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-80" name="listingsexercisesoop_explorationspy-80"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-81"><code data-line-number=" 81"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-81" name="listingsexercisesoop_explorationspy-81"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-82"><code data-line-number=" 82"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-82" name="listingsexercisesoop_explorationspy-82"></a>    <span class="k">def</span> <span class="nf">show_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-83"><code data-line-number=" 83"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-83" name="listingsexercisesoop_explorationspy-83"></a>        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-84"><code data-line-number=" 84"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-84" name="listingsexercisesoop_explorationspy-84"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-85"><code data-line-number=" 85"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-85" name="listingsexercisesoop_explorationspy-85"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-86"><code data-line-number=" 86"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-86" name="listingsexercisesoop_explorationspy-86"></a><span class="c1"># Hybrid Inheritance</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-87"><code data-line-number=" 87"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-87" name="listingsexercisesoop_explorationspy-87"></a><span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-88"><code data-line-number=" 88"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-88" name="listingsexercisesoop_explorationspy-88"></a>    <span class="sd">"""Mechanism that restricts objects to attributes listed in 'slots' and significantly reduces their memory</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-89"><code data-line-number=" 89"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-89" name="listingsexercisesoop_explorationspy-89"></a><span class="sd">    footprint."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-90"><code data-line-number=" 90"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-90" name="listingsexercisesoop_explorationspy-90"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-91"><code data-line-number=" 91"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-91" name="listingsexercisesoop_explorationspy-91"></a>    <span class="c1"># Class variable shared by all instances, instance variable unique to each instance.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-92"><code data-line-number=" 92"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-92" name="listingsexercisesoop_explorationspy-92"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-93"><code data-line-number=" 93"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-93" name="listingsexercisesoop_explorationspy-93"></a>    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'staff_num'</span><span class="p">,</span> <span class="s1">'__a'</span><span class="p">,</span> <span class="s1">'extra'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-94"><code data-line-number=" 94"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-94" name="listingsexercisesoop_explorationspy-94"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-95"><code data-line-number=" 95"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-95" name="listingsexercisesoop_explorationspy-95"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">staff_num</span><span class="p">,</span> <span class="n">__a</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-96"><code data-line-number=" 96"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-96" name="listingsexercisesoop_explorationspy-96"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-97"><code data-line-number=" 97"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-97" name="listingsexercisesoop_explorationspy-97"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_extra</span> <span class="o">=</span> <span class="s2">"extra eggs"</span>  <span class="c1"># Protected variable</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-98"><code data-line-number=" 98"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-98" name="listingsexercisesoop_explorationspy-98"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">staff_num</span> <span class="o">=</span> <span class="n">staff_num</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-99"><code data-line-number=" 99"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-99" name="listingsexercisesoop_explorationspy-99"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__a</span> <span class="o">=</span> <span class="n">__a</span>  <span class="c1"># semi-Private variable</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-100"><code data-line-number="100"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-100" name="listingsexercisesoop_explorationspy-100"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-101"><code data-line-number="101"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-101" name="listingsexercisesoop_explorationspy-101"></a>    <span class="c1"># Polymorphism</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-102"><code data-line-number="102"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-102" name="listingsexercisesoop_explorationspy-102"></a>    <span class="k">def</span> <span class="nf">show_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-103"><code data-line-number="103"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-103" name="listingsexercisesoop_explorationspy-103"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mi">10</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-104"><code data-line-number="104"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-104" name="listingsexercisesoop_explorationspy-104"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-105"><code data-line-number="105"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-105" name="listingsexercisesoop_explorationspy-105"></a>    <span class="c1"># Pythonic way of implementing getters and setters.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-106"><code data-line-number="106"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-106" name="listingsexercisesoop_explorationspy-106"></a>    <span class="nd">@property</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-107"><code data-line-number="107"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-107" name="listingsexercisesoop_explorationspy-107"></a>    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-108"><code data-line-number="108"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-108" name="listingsexercisesoop_explorationspy-108"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-109"><code data-line-number="109"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-109" name="listingsexercisesoop_explorationspy-109"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-110"><code data-line-number="110"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-110" name="listingsexercisesoop_explorationspy-110"></a>    <span class="nd">@a</span><span class="o">.</span><span class="n">setter</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-111"><code data-line-number="111"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-111" name="listingsexercisesoop_explorationspy-111"></a>    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-112"><code data-line-number="112"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-112" name="listingsexercisesoop_explorationspy-112"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__a</span> <span class="o">=</span> <span class="n">value</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-113"><code data-line-number="113"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-113" name="listingsexercisesoop_explorationspy-113"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-114"><code data-line-number="114"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-114" name="listingsexercisesoop_explorationspy-114"></a>    <span class="nd">@a</span><span class="o">.</span><span class="n">deleter</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-115"><code data-line-number="115"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-115" name="listingsexercisesoop_explorationspy-115"></a>    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-116"><code data-line-number="116"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-116" name="listingsexercisesoop_explorationspy-116"></a>        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">__a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-117"><code data-line-number="117"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-117" name="listingsexercisesoop_explorationspy-117"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'oh, no!!'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-118"><code data-line-number="118"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-118" name="listingsexercisesoop_explorationspy-118"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-119"><code data-line-number="119"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-119" name="listingsexercisesoop_explorationspy-119"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-120"><code data-line-number="120"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-120" name="listingsexercisesoop_explorationspy-120"></a><span class="n">employee_one</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-121"><code data-line-number="121"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-121" name="listingsexercisesoop_explorationspy-121"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-122"><code data-line-number="122"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-122" name="listingsexercisesoop_explorationspy-122"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-123"><code data-line-number="123"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-123" name="listingsexercisesoop_explorationspy-123"></a><span class="c1"># print('employee_one.a:', employee_one.a)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-124"><code data-line-number="124"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-124" name="listingsexercisesoop_explorationspy-124"></a><span class="c1"># print(employee_one.__a)  # AttributeError: 'Employee' object has no attribute '__a'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-125"><code data-line-number="125"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-125" name="listingsexercisesoop_explorationspy-125"></a><span class="c1"># print(employee_one.a)  # foo</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-126"><code data-line-number="126"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-126" name="listingsexercisesoop_explorationspy-126"></a><span class="c1"># del employee_one.a  # oh, no!!</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-127"><code data-line-number="127"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-127" name="listingsexercisesoop_explorationspy-127"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-128"><code data-line-number="128"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-128" name="listingsexercisesoop_explorationspy-128"></a><span class="c1"># print(Employee.mro())</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-129"><code data-line-number="129"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-129" name="listingsexercisesoop_explorationspy-129"></a><span class="c1"># [&lt;class '__main__.Employee'&gt;, &lt;class '__main__.Person'&gt;, &lt;class '__main__.C'&gt;, &lt;class '__main__.A'&gt;,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-130"><code data-line-number="130"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-130" name="listingsexercisesoop_explorationspy-130"></a><span class="c1"># &lt;class '__main__.B'&gt;, &lt;class 'object'&gt;]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-131"><code data-line-number="131"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-131" name="listingsexercisesoop_explorationspy-131"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-132"><code data-line-number="132"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-132" name="listingsexercisesoop_explorationspy-132"></a><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-133"><code data-line-number="133"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-133" name="listingsexercisesoop_explorationspy-133"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-134"><code data-line-number="134"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-134" name="listingsexercisesoop_explorationspy-134"></a><span class="sd">    - Any object that has methods next() and iter() is an iterator.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-135"><code data-line-number="135"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-135" name="listingsexercisesoop_explorationspy-135"></a><span class="sd">    - Next() should return next item or raise StopIteration.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-136"><code data-line-number="136"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-136" name="listingsexercisesoop_explorationspy-136"></a><span class="sd">    - Iter() should return 'self'.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-137"><code data-line-number="137"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-137" name="listingsexercisesoop_explorationspy-137"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-138"><code data-line-number="138"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-138" name="listingsexercisesoop_explorationspy-138"></a><span class="sd">    Python has many iterator objects:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-139"><code data-line-number="139"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-139" name="listingsexercisesoop_explorationspy-139"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-140"><code data-line-number="140"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-140" name="listingsexercisesoop_explorationspy-140"></a><span class="sd">    Sequence iterators returned by the iter() function, such as list_iterator and set_iterator.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-141"><code data-line-number="141"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-141" name="listingsexercisesoop_explorationspy-141"></a><span class="sd">    Objects returned by the itertools module, such as count, repeat and cycle.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-142"><code data-line-number="142"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-142" name="listingsexercisesoop_explorationspy-142"></a><span class="sd">    Generators returned by the generator functions and generator expressions.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-143"><code data-line-number="143"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-143" name="listingsexercisesoop_explorationspy-143"></a><span class="sd">    File objects returned by the open() function, etc.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-144"><code data-line-number="144"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-144" name="listingsexercisesoop_explorationspy-144"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-145"><code data-line-number="145"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-145" name="listingsexercisesoop_explorationspy-145"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-146"><code data-line-number="146"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-146" name="listingsexercisesoop_explorationspy-146"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-147"><code data-line-number="147"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-147" name="listingsexercisesoop_explorationspy-147"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-148"><code data-line-number="148"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-148" name="listingsexercisesoop_explorationspy-148"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-149"><code data-line-number="149"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-149" name="listingsexercisesoop_explorationspy-149"></a>    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-150"><code data-line-number="150"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-150" name="listingsexercisesoop_explorationspy-150"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-151"><code data-line-number="151"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-151" name="listingsexercisesoop_explorationspy-151"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-152"><code data-line-number="152"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-152" name="listingsexercisesoop_explorationspy-152"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-153"><code data-line-number="153"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-153" name="listingsexercisesoop_explorationspy-153"></a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-154"><code data-line-number="154"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-154" name="listingsexercisesoop_explorationspy-154"></a>        <span class="k">return</span> <span class="bp">self</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-155"><code data-line-number="155"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-155" name="listingsexercisesoop_explorationspy-155"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-156"><code data-line-number="156"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-156" name="listingsexercisesoop_explorationspy-156"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-157"><code data-line-number="157"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-157" name="listingsexercisesoop_explorationspy-157"></a><span class="c1"># counter = Counter()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-158"><code data-line-number="158"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-158" name="listingsexercisesoop_explorationspy-158"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-159"><code data-line-number="159"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-159" name="listingsexercisesoop_explorationspy-159"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-160"><code data-line-number="160"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-160" name="listingsexercisesoop_explorationspy-160"></a><span class="c1"># print(next(counter), next(counter))  # 1 2</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-161"><code data-line-number="161"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-161" name="listingsexercisesoop_explorationspy-161"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-162"><code data-line-number="162"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-162" name="listingsexercisesoop_explorationspy-162"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-163"><code data-line-number="163"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-163" name="listingsexercisesoop_explorationspy-163"></a><span class="k">class</span> <span class="nc">CallableCounter</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-164"><code data-line-number="164"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-164" name="listingsexercisesoop_explorationspy-164"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-165"><code data-line-number="165"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-165" name="listingsexercisesoop_explorationspy-165"></a><span class="sd">    All functions and classes have a call() method, hence are callable.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-166"><code data-line-number="166"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-166" name="listingsexercisesoop_explorationspy-166"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-167"><code data-line-number="167"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-167" name="listingsexercisesoop_explorationspy-167"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-168"><code data-line-number="168"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-168" name="listingsexercisesoop_explorationspy-168"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-169"><code data-line-number="169"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-169" name="listingsexercisesoop_explorationspy-169"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-170"><code data-line-number="170"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-170" name="listingsexercisesoop_explorationspy-170"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-171"><code data-line-number="171"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-171" name="listingsexercisesoop_explorationspy-171"></a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-172"><code data-line-number="172"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-172" name="listingsexercisesoop_explorationspy-172"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-173"><code data-line-number="173"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-173" name="listingsexercisesoop_explorationspy-173"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-174"><code data-line-number="174"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-174" name="listingsexercisesoop_explorationspy-174"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-175"><code data-line-number="175"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-175" name="listingsexercisesoop_explorationspy-175"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-176"><code data-line-number="176"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-176" name="listingsexercisesoop_explorationspy-176"></a><span class="c1"># call_counter = CallableCounter()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-177"><code data-line-number="177"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-177" name="listingsexercisesoop_explorationspy-177"></a><span class="c1"># print(call_counter(), call_counter(), call_counter())</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-178"><code data-line-number="178"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-178" name="listingsexercisesoop_explorationspy-178"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-179"><code data-line-number="179"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-179" name="listingsexercisesoop_explorationspy-179"></a><span class="c1"># Metaprogramming</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-180"><code data-line-number="180"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-180" name="listingsexercisesoop_explorationspy-180"></a><span class="c1"># &lt;class&gt; = type('&lt;class_name&gt;', &lt;parents_tuple&gt;, &lt;attributes_dict&gt;)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-181"><code data-line-number="181"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-181" name="listingsexercisesoop_explorationspy-181"></a><span class="n">Z</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">'Z'</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span> <span class="s1">'abcde'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">12345</span><span class="p">})</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-182"><code data-line-number="182"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-182" name="listingsexercisesoop_explorationspy-182"></a><span class="n">z</span> <span class="o">=</span> <span class="n">Z</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesoop_explorationspy-183"><code data-line-number="183"></code></a></td>
+<td class="code"><code><a id="listingsexercisesoop_explorationspy-183" name="listingsexercisesoop_explorationspy-183"></a><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="c1"># &lt;__main__.Z object at 0x7f58a56bfb20&gt;</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="tricksandfuncs.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tricksandfuncs.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/tricksandfuncs.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">tricksandfuncs.py</li>
+</ul></nav><h1>tricksandfuncs.py
+        <small><a href="tricksandfuncs.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-1" name="listingsexercisestricksandfuncspy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-2" name="listingsexercisestricksandfuncspy-2"></a><span class="sd">Script for random useful functions and tricks</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-3" name="listingsexercisestricksandfuncspy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-4" name="listingsexercisestricksandfuncspy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-5" name="listingsexercisestricksandfuncspy-5"></a><span class="c1"># map - map a function to iterate on all elements</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-6" name="listingsexercisestricksandfuncspy-6"></a><span class="n">minutes</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">:],</span> <span class="p">[</span><span class="s2">"1200"</span><span class="p">,</span> <span class="s2">"1213"</span><span class="p">,</span> <span class="s2">"1247"</span><span class="p">,</span> <span class="s2">"1306"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-7" name="listingsexercisestricksandfuncspy-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">minutes</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-8" name="listingsexercisestricksandfuncspy-8"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-9" name="listingsexercisestricksandfuncspy-9"></a><span class="n">planeQuantities</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-10" name="listingsexercisestricksandfuncspy-10"></a><span class="n">planeTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"jabiru"</span><span class="p">,</span> <span class="s2">"cirrus"</span><span class="p">,</span> <span class="s2">"diamond"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-11" name="listingsexercisestricksandfuncspy-11"></a><span class="n">planes</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s2">"s"</span><span class="p">,</span> <span class="n">planeQuantities</span><span class="p">,</span> <span class="n">planeTypes</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-12" name="listingsexercisestricksandfuncspy-12"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">planes</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-13" name="listingsexercisestricksandfuncspy-13"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-14" name="listingsexercisestricksandfuncspy-14"></a><span class="c1"># sorting based on a key function</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-15" name="listingsexercisestricksandfuncspy-15"></a><span class="n">keySorting</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-16" name="listingsexercisestricksandfuncspy-16"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"key sorting "</span><span class="p">,</span> <span class="n">keySorting</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-17" name="listingsexercisestricksandfuncspy-17"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-18" name="listingsexercisestricksandfuncspy-18"></a><span class="c1"># more useful stuff for iterables</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-19" name="listingsexercisestricksandfuncspy-19"></a><span class="n">randoString</span> <span class="o">=</span> <span class="s2">" pilot "</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-20" name="listingsexercisestricksandfuncspy-20"></a><span class="n">newRandoString</span> <span class="o">=</span> <span class="n">randoString</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"commercial"</span><span class="p">,</span> <span class="s2">"license"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-21" name="listingsexercisestricksandfuncspy-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">newRandoString</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-22" name="listingsexercisestricksandfuncspy-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-23" name="listingsexercisestricksandfuncspy-23"></a><span class="n">clean</span> <span class="o">=</span> <span class="n">randoString</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># removes leading and trailing whitespace in a string</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-24" name="listingsexercisestricksandfuncspy-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-25" name="listingsexercisestricksandfuncspy-25"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-26" name="listingsexercisestricksandfuncspy-26"></a><span class="n">filtered</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-27" name="listingsexercisestricksandfuncspy-27"></a>    <span class="k">lambda</span> <span class="n">planes</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">planes</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span> <span class="n">planeQuantities</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-28" name="listingsexercisestricksandfuncspy-28"></a><span class="p">)</span>  <span class="c1"># removes false values</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-29" name="listingsexercisestricksandfuncspy-29"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">filtered</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-30" name="listingsexercisestricksandfuncspy-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-31" name="listingsexercisestricksandfuncspy-31"></a><span class="n">zipped</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-32" name="listingsexercisestricksandfuncspy-32"></a>    <span class="nb">zip</span><span class="p">(</span><span class="n">planeQuantities</span><span class="p">,</span> <span class="n">planeTypes</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-33" name="listingsexercisestricksandfuncspy-33"></a><span class="p">)</span>  <span class="c1"># combines two sequences like a zipper - (0,0), (1,1) etc</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-34" name="listingsexercisestricksandfuncspy-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">zipped</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-35" name="listingsexercisestricksandfuncspy-35"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-36" name="listingsexercisestricksandfuncspy-36"></a><span class="n">unzipped</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">zipped</span><span class="p">))</span>  <span class="c1"># unpacks, rezips</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-37" name="listingsexercisestricksandfuncspy-37"></a><span class="nb">print</span><span class="p">(</span><span class="n">unzipped</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-38" name="listingsexercisestricksandfuncspy-38"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-39" name="listingsexercisestricksandfuncspy-39"></a><span class="n">enum</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planeTypes</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-40" name="listingsexercisestricksandfuncspy-40"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">enum</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-41" name="listingsexercisestricksandfuncspy-41"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-42" name="listingsexercisestricksandfuncspy-42"></a><span class="c1"># swapping variables - python magic</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-43" name="listingsexercisestricksandfuncspy-43"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">"helicopter"</span><span class="p">,</span> <span class="s2">"aeroplane"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-44" name="listingsexercisestricksandfuncspy-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-45" name="listingsexercisestricksandfuncspy-45"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-46"><code data-line-number="46"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-46" name="listingsexercisestricksandfuncspy-46"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-47"><code data-line-number="47"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-47" name="listingsexercisestricksandfuncspy-47"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-48"><code data-line-number="48"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-48" name="listingsexercisestricksandfuncspy-48"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-49"><code data-line-number="49"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-49" name="listingsexercisestricksandfuncspy-49"></a><span class="c1"># sweet argument unpacks for functions</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-50"><code data-line-number="50"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-50" name="listingsexercisestricksandfuncspy-50"></a><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-51"><code data-line-number="51"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-51" name="listingsexercisestricksandfuncspy-51"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">z</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-52"><code data-line-number="52"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-52" name="listingsexercisestricksandfuncspy-52"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-53"><code data-line-number="53"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-53" name="listingsexercisestricksandfuncspy-53"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-54"><code data-line-number="54"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-54" name="listingsexercisestricksandfuncspy-54"></a><span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">planeQuantities</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-55"><code data-line-number="55"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-55" name="listingsexercisestricksandfuncspy-55"></a><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-56"><code data-line-number="56"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-56" name="listingsexercisestricksandfuncspy-56"></a>    <span class="s2">"y"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-57"><code data-line-number="57"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-57" name="listingsexercisestricksandfuncspy-57"></a>    <span class="s2">"x"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-58"><code data-line-number="58"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-58" name="listingsexercisestricksandfuncspy-58"></a>    <span class="s2">"z"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-59"><code data-line-number="59"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-59" name="listingsexercisestricksandfuncspy-59"></a><span class="p">}</span>  <span class="c1"># note strings need to be the argument variables, but not in order</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-60"><code data-line-number="60"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-60" name="listingsexercisestricksandfuncspy-60"></a><span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-61"><code data-line-number="61"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-61" name="listingsexercisestricksandfuncspy-61"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-62"><code data-line-number="62"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-62" name="listingsexercisestricksandfuncspy-62"></a><span class="c1"># merge dictionaries</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-63"><code data-line-number="63"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-63" name="listingsexercisestricksandfuncspy-63"></a><span class="n">dictA</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-64"><code data-line-number="64"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-64" name="listingsexercisestricksandfuncspy-64"></a><span class="n">dictB</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"bird"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"horse"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-65"><code data-line-number="65"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-65" name="listingsexercisestricksandfuncspy-65"></a><span class="n">dictC</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dictB</span><span class="p">,</span> <span class="o">**</span><span class="n">dictA</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisestricksandfuncspy-66"><code data-line-number="66"></code></a></td>
+<td class="code"><code><a id="listingsexercisestricksandfuncspy-66" name="listingsexercisestricksandfuncspy-66"></a><span class="nb">print</span><span class="p">(</span><span class="n">dictC</span><span class="p">)</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

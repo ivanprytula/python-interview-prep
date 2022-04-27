@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="simple_browser_low_level_sockets.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>simple_browser_low_level_sockets.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/simple_browser_low_level_sockets.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">simple_browser_low_level_sockets.py</li>
+</ul></nav><h1>simple_browser_low_level_sockets.py
+        <small><a href="simple_browser_low_level_sockets.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-1" name="listingsexercisessimple_browser_low_level_socketspy-1"></a><span class="kn">import</span> <span class="nn">socket</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-2" name="listingsexercisessimple_browser_low_level_socketspy-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-3" name="listingsexercisessimple_browser_low_level_socketspy-3"></a><span class="c1"># prepare socket</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-4" name="listingsexercisessimple_browser_low_level_socketspy-4"></a><span class="n">my_sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-5" name="listingsexercisessimple_browser_low_level_socketspy-5"></a><span class="c1">#                   Host         Port</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-6" name="listingsexercisessimple_browser_low_level_socketspy-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_sock</span><span class="p">))</span>  <span class="c1"># &lt;class 'socket.socket'&gt;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-7" name="listingsexercisessimple_browser_low_level_socketspy-7"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-8" name="listingsexercisessimple_browser_low_level_socketspy-8"></a><span class="n">my_sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">'data.pr4e.org'</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-9" name="listingsexercisessimple_browser_low_level_socketspy-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-10" name="listingsexercisessimple_browser_low_level_socketspy-10"></a><span class="n">cmd</span> <span class="o">=</span> <span class="s1">'GET http://data.pr4e.org/romeo.txt HTTP/1.0</span><span class="se">\r\n\r\n</span><span class="s1">'</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-11" name="listingsexercisessimple_browser_low_level_socketspy-11"></a><span class="n">my_sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>  <span class="c1"># sends bytes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-12" name="listingsexercisessimple_browser_low_level_socketspy-12"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-13" name="listingsexercisessimple_browser_low_level_socketspy-13"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-14" name="listingsexercisessimple_browser_low_level_socketspy-14"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">my_sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>  <span class="c1"># receives bytes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-15" name="listingsexercisessimple_browser_low_level_socketspy-15"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-16" name="listingsexercisessimple_browser_low_level_socketspy-16"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-17" name="listingsexercisessimple_browser_low_level_socketspy-17"></a>        <span class="k">break</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-18" name="listingsexercisessimple_browser_low_level_socketspy-18"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-19" name="listingsexercisessimple_browser_low_level_socketspy-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># from bytes to utf-8</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-20" name="listingsexercisessimple_browser_low_level_socketspy-20"></a><span class="n">my_sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-21" name="listingsexercisessimple_browser_low_level_socketspy-21"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-22" name="listingsexercisessimple_browser_low_level_socketspy-22"></a><span class="sd">HTTP/1.1 200 OK</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-23" name="listingsexercisessimple_browser_low_level_socketspy-23"></a><span class="sd">Date: Mon, 30 Aug 2021 23:40:58 GMT</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-24" name="listingsexercisessimple_browser_low_level_socketspy-24"></a><span class="sd">Server: Apache/2.4.18 (Ubuntu)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-25" name="listingsexercisessimple_browser_low_level_socketspy-25"></a><span class="sd">Last-Modified: Sat, 13 May 2017 11:22:22 GMT</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-26" name="listingsexercisessimple_browser_low_level_socketspy-26"></a><span class="sd">ETag: "a7-54f6609245537"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-27" name="listingsexercisessimple_browser_low_level_socketspy-27"></a><span class="sd">Accept-Ranges: bytes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-28" name="listingsexercisessimple_browser_low_level_socketspy-28"></a><span class="sd">Content-Length: 167</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-29" name="listingsexercisessimple_browser_low_level_socketspy-29"></a><span class="sd">Cache-Control: max-age=0, no-cache, no-store, must-revalidate</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-30" name="listingsexercisessimple_browser_low_level_socketspy-30"></a><span class="sd">Pragma: no-cache</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-31" name="listingsexercisessimple_browser_low_level_socketspy-31"></a><span class="sd">Expires: Wed, 11 Jan 1984 05:00:00 GMT</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-32" name="listingsexercisessimple_browser_low_level_socketspy-32"></a><span class="sd">Connection: close</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-33" name="listingsexercisessimple_browser_low_level_socketspy-33"></a><span class="sd">Content-Type: text/plain</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-34" name="listingsexercisessimple_browser_low_level_socketspy-34"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-35" name="listingsexercisessimple_browser_low_level_socketspy-35"></a><span class="sd">But soft what light through yonder window breaks</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-36" name="listingsexercisessimple_browser_low_level_socketspy-36"></a><span class="sd">It is the east and Juliet is the sun</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-37" name="listingsexercisessimple_browser_low_level_socketspy-37"></a><span class="sd">Arise fair sun and kill the envious moon</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-38" name="listingsexercisessimple_browser_low_level_socketspy-38"></a><span class="sd">Who is already sick and pale with grief</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-39" name="listingsexercisessimple_browser_low_level_socketspy-39"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-40" name="listingsexercisessimple_browser_low_level_socketspy-40"></a><span class="sd">Process finished with exit code 0</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-41" name="listingsexercisessimple_browser_low_level_socketspy-41"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-42" name="listingsexercisessimple_browser_low_level_socketspy-42"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-43" name="listingsexercisessimple_browser_low_level_socketspy-43"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_browser_low_level_socketspy-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_browser_low_level_socketspy-44" name="listingsexercisessimple_browser_low_level_socketspy-44"></a><span class="c1"># UTF-8 -&gt; 1-4 bytes, dynamic length</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

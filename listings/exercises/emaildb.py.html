@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="emaildb.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>emaildb.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/emaildb.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">emaildb.py</li>
+</ul></nav><h1>emaildb.py
+        <small><a href="emaildb.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-1" name="listingsexercisesemaildbpy-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-2" name="listingsexercisesemaildbpy-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-3" name="listingsexercisesemaildbpy-3"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'emaildb.sqlite'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-4" name="listingsexercisesemaildbpy-4"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-5" name="listingsexercisesemaildbpy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-6" name="listingsexercisesemaildbpy-6"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'DROP TABLE IF EXISTS Counts'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-7" name="listingsexercisesemaildbpy-7"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-8" name="listingsexercisesemaildbpy-8"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-9" name="listingsexercisesemaildbpy-9"></a><span class="s1">CREATE TABLE Counts (email TEXT, count INTEGER)'''</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-10" name="listingsexercisesemaildbpy-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-11" name="listingsexercisesemaildbpy-11"></a><span class="n">file_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter file name: '</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-12" name="listingsexercisesemaildbpy-12"></a><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-13" name="listingsexercisesemaildbpy-13"></a>    <span class="n">file_name</span> <span class="o">=</span> <span class="s1">'mbox-short.txt'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-14" name="listingsexercisesemaildbpy-14"></a><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-15" name="listingsexercisesemaildbpy-15"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-16" name="listingsexercisesemaildbpy-16"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'From: '</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-17" name="listingsexercisesemaildbpy-17"></a>        <span class="k">continue</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-18" name="listingsexercisesemaildbpy-18"></a>    <span class="n">pieces</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-19" name="listingsexercisesemaildbpy-19"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">pieces</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-20" name="listingsexercisesemaildbpy-20"></a>    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'SELECT count FROM Counts WHERE email = ? '</span><span class="p">,</span> <span class="p">(</span><span class="n">email</span><span class="p">,))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-21" name="listingsexercisesemaildbpy-21"></a>    <span class="n">row</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-22" name="listingsexercisesemaildbpy-22"></a>    <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-23" name="listingsexercisesemaildbpy-23"></a>        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''INSERT INTO Counts (email, count)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-24" name="listingsexercisesemaildbpy-24"></a><span class="s1">                VALUES (?, 1)'''</span><span class="p">,</span> <span class="p">(</span><span class="n">email</span><span class="p">,))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-25" name="listingsexercisesemaildbpy-25"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-26" name="listingsexercisesemaildbpy-26"></a>        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'UPDATE Counts SET count = count + 1 WHERE email = ?'</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-27" name="listingsexercisesemaildbpy-27"></a>                    <span class="p">(</span><span class="n">email</span><span class="p">,))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-28" name="listingsexercisesemaildbpy-28"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-29" name="listingsexercisesemaildbpy-29"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-30" name="listingsexercisesemaildbpy-30"></a><span class="c1"># https://www.sqlite.org/lang_select.html</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-31" name="listingsexercisesemaildbpy-31"></a><span class="n">sqlstr</span> <span class="o">=</span> <span class="s1">'SELECT email, count FROM Counts ORDER BY count DESC LIMIT 10'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-32" name="listingsexercisesemaildbpy-32"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-33" name="listingsexercisesemaildbpy-33"></a><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sqlstr</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-34" name="listingsexercisesemaildbpy-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-35" name="listingsexercisesemaildbpy-35"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesemaildbpy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesemaildbpy-36" name="listingsexercisesemaildbpy-36"></a><span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

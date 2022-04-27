@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="structuresplay.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>structuresplay.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/structuresplay.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">structuresplay.py</li>
+</ul></nav><h1>structuresplay.py
+        <small><a href="structuresplay.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-1"><code data-line-number="  1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-1" name="listingsexercisesstructuresplaypy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-2"><code data-line-number="  2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-2" name="listingsexercisesstructuresplaypy-2"></a><span class="sd">Script for playing with basic python data structures</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-3"><code data-line-number="  3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-3" name="listingsexercisesstructuresplaypy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-4"><code data-line-number="  4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-4" name="listingsexercisesstructuresplaypy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-5"><code data-line-number="  5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-5" name="listingsexercisesstructuresplaypy-5"></a><span class="c1"># lists - square brackets - mutable (changeable)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-6"><code data-line-number="  6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-6" name="listingsexercisesstructuresplaypy-6"></a><span class="n">listA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-7"><code data-line-number="  7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-7" name="listingsexercisesstructuresplaypy-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-8"><code data-line-number="  8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-8" name="listingsexercisesstructuresplaypy-8"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-9"><code data-line-number="  9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-9" name="listingsexercisesstructuresplaypy-9"></a><span class="c1"># list methods</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-10"><code data-line-number=" 10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-10" name="listingsexercisesstructuresplaypy-10"></a><span class="n">listA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-11"><code data-line-number=" 11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-11" name="listingsexercisesstructuresplaypy-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA appended "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-12"><code data-line-number=" 12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-12" name="listingsexercisesstructuresplaypy-12"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-13"><code data-line-number=" 13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-13" name="listingsexercisesstructuresplaypy-13"></a><span class="n">listA</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-14"><code data-line-number=" 14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-14" name="listingsexercisesstructuresplaypy-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA remove "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-15"><code data-line-number=" 15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-15" name="listingsexercisesstructuresplaypy-15"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-16"><code data-line-number=" 16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-16" name="listingsexercisesstructuresplaypy-16"></a><span class="n">listA</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-17"><code data-line-number=" 17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-17" name="listingsexercisesstructuresplaypy-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA reverse "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-18"><code data-line-number=" 18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-18" name="listingsexercisesstructuresplaypy-18"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-19"><code data-line-number=" 19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-19" name="listingsexercisesstructuresplaypy-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA length"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">listA</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-20"><code data-line-number=" 20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-20" name="listingsexercisesstructuresplaypy-20"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-21"><code data-line-number=" 21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-21" name="listingsexercisesstructuresplaypy-21"></a><span class="n">listA</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># sorts in ascending order</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-22"><code data-line-number=" 22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-22" name="listingsexercisesstructuresplaypy-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA sort "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-23"><code data-line-number=" 23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-23" name="listingsexercisesstructuresplaypy-23"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-24"><code data-line-number=" 24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-24" name="listingsexercisesstructuresplaypy-24"></a><span class="n">a</span> <span class="o">=</span> <span class="n">listA</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># returns first index of value</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-25"><code data-line-number=" 25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-25" name="listingsexercisesstructuresplaypy-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-26"><code data-line-number=" 26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-26" name="listingsexercisesstructuresplaypy-26"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-27"><code data-line-number=" 27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-27" name="listingsexercisesstructuresplaypy-27"></a><span class="n">listA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-28"><code data-line-number=" 28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-28" name="listingsexercisesstructuresplaypy-28"></a><span class="nb">print</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-29"><code data-line-number=" 29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-29" name="listingsexercisesstructuresplaypy-29"></a>    <span class="s2">"index of 4 = "</span><span class="p">,</span> <span class="n">listA</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-30"><code data-line-number=" 30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-30" name="listingsexercisesstructuresplaypy-30"></a><span class="p">)</span>  <span class="c1"># returns the index of the first value 4, between indices 0 and 3</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-31"><code data-line-number=" 31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-31" name="listingsexercisesstructuresplaypy-31"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-32"><code data-line-number=" 32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-32" name="listingsexercisesstructuresplaypy-32"></a><span class="n">listA</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-33"><code data-line-number=" 33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-33" name="listingsexercisesstructuresplaypy-33"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"listA pop "</span><span class="p">,</span> <span class="n">listA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-34"><code data-line-number=" 34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-34" name="listingsexercisesstructuresplaypy-34"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-35"><code data-line-number=" 35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-35" name="listingsexercisesstructuresplaypy-35"></a><span class="c1"># sets - braces/curly brackets - unordered structure of unique elements</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-36"><code data-line-number=" 36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-36" name="listingsexercisesstructuresplaypy-36"></a><span class="n">setA</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-37"><code data-line-number=" 37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-37" name="listingsexercisesstructuresplaypy-37"></a><span class="nb">print</span><span class="p">(</span><span class="n">setA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-38"><code data-line-number=" 38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-38" name="listingsexercisesstructuresplaypy-38"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-39"><code data-line-number=" 39"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-39" name="listingsexercisesstructuresplaypy-39"></a><span class="c1"># set methods</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-40"><code data-line-number=" 40"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-40" name="listingsexercisesstructuresplaypy-40"></a><span class="n">setA</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-41"><code data-line-number=" 41"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-41" name="listingsexercisesstructuresplaypy-41"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"setA add "</span><span class="p">,</span> <span class="n">setA</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-42"><code data-line-number=" 42"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-42" name="listingsexercisesstructuresplaypy-42"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-43"><code data-line-number=" 43"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-43" name="listingsexercisesstructuresplaypy-43"></a><span class="n">setB</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-44"><code data-line-number=" 44"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-44" name="listingsexercisesstructuresplaypy-44"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"setB and setA difference "</span><span class="p">,</span> <span class="n">setA</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">setB</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-45"><code data-line-number=" 45"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-45" name="listingsexercisesstructuresplaypy-45"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-46"><code data-line-number=" 46"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-46" name="listingsexercisesstructuresplaypy-46"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"setB max "</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">setB</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-47"><code data-line-number=" 47"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-47" name="listingsexercisesstructuresplaypy-47"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-48"><code data-line-number=" 48"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-48" name="listingsexercisesstructuresplaypy-48"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"setA and setB intersection "</span><span class="p">,</span> <span class="n">setB</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">setA</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-49"><code data-line-number=" 49"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-49" name="listingsexercisesstructuresplaypy-49"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-50"><code data-line-number=" 50"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-50" name="listingsexercisesstructuresplaypy-50"></a><span class="n">setB</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-51"><code data-line-number=" 51"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-51" name="listingsexercisesstructuresplaypy-51"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"setB discarded 100 "</span><span class="p">,</span> <span class="n">setB</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-52"><code data-line-number=" 52"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-52" name="listingsexercisesstructuresplaypy-52"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-53"><code data-line-number=" 53"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-53" name="listingsexercisesstructuresplaypy-53"></a><span class="c1"># tuples - parantheses or round brackets - immutable (cannot be changed)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-54"><code data-line-number=" 54"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-54" name="listingsexercisesstructuresplaypy-54"></a><span class="n">tupleA</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"plane"</span><span class="p">,</span> <span class="s2">"car"</span><span class="p">,</span> <span class="s2">"train"</span><span class="p">,</span> <span class="s2">"ship"</span><span class="p">,</span> <span class="s2">"car"</span><span class="p">,</span> <span class="s2">"car"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-55"><code data-line-number=" 55"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-55" name="listingsexercisesstructuresplaypy-55"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-56"><code data-line-number=" 56"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-56" name="listingsexercisesstructuresplaypy-56"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"train index = "</span><span class="p">,</span> <span class="n">tupleA</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">"train"</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-57"><code data-line-number=" 57"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-57" name="listingsexercisesstructuresplaypy-57"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-58"><code data-line-number=" 58"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-58" name="listingsexercisesstructuresplaypy-58"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"car count = "</span><span class="p">,</span> <span class="n">tupleA</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"car"</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-59"><code data-line-number=" 59"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-59" name="listingsexercisesstructuresplaypy-59"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-60"><code data-line-number=" 60"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-60" name="listingsexercisesstructuresplaypy-60"></a><span class="c1"># dictionary - braces/curly brackets - key:value pairs, super useful!</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-61"><code data-line-number=" 61"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-61" name="listingsexercisesstructuresplaypy-61"></a><span class="n">hojDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"tees"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"shoes"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"jeans"</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-62"><code data-line-number=" 62"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-62" name="listingsexercisesstructuresplaypy-62"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-63"><code data-line-number=" 63"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-63" name="listingsexercisesstructuresplaypy-63"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-64"><code data-line-number=" 64"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-64" name="listingsexercisesstructuresplaypy-64"></a><span class="c1"># dictionary methods</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-65"><code data-line-number=" 65"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-65" name="listingsexercisesstructuresplaypy-65"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="p">[</span><span class="s2">"tees"</span><span class="p">],</span> <span class="n">hojDict</span><span class="p">[</span><span class="s2">"jeans"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-66"><code data-line-number=" 66"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-66" name="listingsexercisesstructuresplaypy-66"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="p">[</span><span class="s2">"jeans"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">hojDict</span><span class="p">[</span><span class="s2">"tees"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-67"><code data-line-number=" 67"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-67" name="listingsexercisesstructuresplaypy-67"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-68"><code data-line-number=" 68"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-68" name="listingsexercisesstructuresplaypy-68"></a><span class="n">hojDict</span><span class="p">[</span><span class="s2">"shoes"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-69"><code data-line-number=" 69"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-69" name="listingsexercisesstructuresplaypy-69"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-70"><code data-line-number=" 70"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-70" name="listingsexercisesstructuresplaypy-70"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-71"><code data-line-number=" 71"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-71" name="listingsexercisesstructuresplaypy-71"></a><span class="n">hojDict</span><span class="p">[</span><span class="s2">"t-shirts"</span><span class="p">]</span> <span class="o">=</span> <span class="n">hojDict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-72"><code data-line-number=" 72"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-72" name="listingsexercisesstructuresplaypy-72"></a>    <span class="s2">"tees"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-73"><code data-line-number=" 73"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-73" name="listingsexercisesstructuresplaypy-73"></a><span class="p">)</span>  <span class="c1"># using dict.pop to replace a key - pop returns the value of the popped key:value pair</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-74"><code data-line-number=" 74"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-74" name="listingsexercisesstructuresplaypy-74"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-75"><code data-line-number=" 75"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-75" name="listingsexercisesstructuresplaypy-75"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-76"><code data-line-number=" 76"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-76" name="listingsexercisesstructuresplaypy-76"></a><span class="nb">print</span><span class="p">(</span><span class="n">hojDict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">hojDict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-77"><code data-line-number=" 77"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-77" name="listingsexercisesstructuresplaypy-77"></a><span class="n">popped</span> <span class="o">=</span> <span class="n">hojDict</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-78"><code data-line-number=" 78"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-78" name="listingsexercisesstructuresplaypy-78"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-79"><code data-line-number=" 79"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-79" name="listingsexercisesstructuresplaypy-79"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"popped jeans "</span><span class="p">,</span> <span class="n">hojDict</span><span class="p">,</span> <span class="n">popped</span><span class="p">)</span>  <span class="c1"># note that popped is returned as a tuple</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-80"><code data-line-number=" 80"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-80" name="listingsexercisesstructuresplaypy-80"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-81"><code data-line-number=" 81"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-81" name="listingsexercisesstructuresplaypy-81"></a><span class="k">for</span> <span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-82"><code data-line-number=" 82"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-82" name="listingsexercisesstructuresplaypy-82"></a>    <span class="n">i</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-83"><code data-line-number=" 83"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-83" name="listingsexercisesstructuresplaypy-83"></a>    <span class="n">j</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-84"><code data-line-number=" 84"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-84" name="listingsexercisesstructuresplaypy-84"></a><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-85"><code data-line-number=" 85"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-85" name="listingsexercisesstructuresplaypy-85"></a>    <span class="n">hojDict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-86"><code data-line-number=" 86"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-86" name="listingsexercisesstructuresplaypy-86"></a><span class="p">):</span>  <span class="c1"># can use items function to return values - useful in loops. Note use of membership</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-87"><code data-line-number=" 87"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-87" name="listingsexercisesstructuresplaypy-87"></a>    <span class="c1"># keyword 'in'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-88"><code data-line-number=" 88"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-88" name="listingsexercisesstructuresplaypy-88"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-89"><code data-line-number=" 89"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-89" name="listingsexercisesstructuresplaypy-89"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"jeans"</span> <span class="ow">in</span> <span class="n">hojDict</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-90"><code data-line-number=" 90"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-90" name="listingsexercisesstructuresplaypy-90"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"t-shirts"</span> <span class="ow">in</span> <span class="n">hojDict</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-91"><code data-line-number=" 91"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-91" name="listingsexercisesstructuresplaypy-91"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-92"><code data-line-number=" 92"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-92" name="listingsexercisesstructuresplaypy-92"></a><span class="c1"># basic data structures comprehensions</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-93"><code data-line-number=" 93"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-93" name="listingsexercisesstructuresplaypy-93"></a><span class="n">listB</span> <span class="o">=</span> <span class="p">[</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-94"><code data-line-number=" 94"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-94" name="listingsexercisesstructuresplaypy-94"></a>    <span class="p">(</span><span class="s2">"brown "</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"mouse"</span><span class="p">,</span> <span class="s2">"horse"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-95"><code data-line-number=" 95"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-95" name="listingsexercisesstructuresplaypy-95"></a><span class="p">]</span>  <span class="c1"># note this is a list, since square brackets... which means?? It's mutable</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-96"><code data-line-number=" 96"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-96" name="listingsexercisesstructuresplaypy-96"></a><span class="nb">print</span><span class="p">(</span><span class="n">listB</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-97"><code data-line-number=" 97"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-97" name="listingsexercisesstructuresplaypy-97"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-98"><code data-line-number=" 98"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-98" name="listingsexercisesstructuresplaypy-98"></a><span class="n">setC</span> <span class="o">=</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-99"><code data-line-number=" 99"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-99" name="listingsexercisesstructuresplaypy-99"></a>    <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-100"><code data-line-number="100"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-100" name="listingsexercisesstructuresplaypy-100"></a><span class="p">}</span>  <span class="c1"># cray what you can get into one line in Python! This is a set - also works for list</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesstructuresplaypy-101"><code data-line-number="101"></code></a></td>
+<td class="code"><code><a id="listingsexercisesstructuresplaypy-101" name="listingsexercisesstructuresplaypy-101"></a><span class="nb">print</span><span class="p">(</span><span class="n">setC</span><span class="p">)</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

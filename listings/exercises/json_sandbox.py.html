@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="json_sandbox.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>json_sandbox.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/json_sandbox.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">json_sandbox.py</li>
+</ul></nav><h1>json_sandbox.py
+        <small><a href="json_sandbox.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-1" name="listingsexercisesjson_sandboxpy-1"></a><span class="kn">import</span> <span class="nn">json</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-2" name="listingsexercisesjson_sandboxpy-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-3" name="listingsexercisesjson_sandboxpy-3"></a><span class="c1"># https://py4e-data.dr-chuck.net/comments_42.json</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-4" name="listingsexercisesjson_sandboxpy-4"></a><span class="n">data</span> <span class="o">=</span> <span class="s1">'''</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-5" name="listingsexercisesjson_sandboxpy-5"></a><span class="s1">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-6" name="listingsexercisesjson_sandboxpy-6"></a><span class="s1">  "name" : "Chuck",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-7" name="listingsexercisesjson_sandboxpy-7"></a><span class="s1">  "phone" : {</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-8" name="listingsexercisesjson_sandboxpy-8"></a><span class="s1">    "type" : "intl",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-9" name="listingsexercisesjson_sandboxpy-9"></a><span class="s1">    "number" : "+1 734 303 4456"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-10" name="listingsexercisesjson_sandboxpy-10"></a><span class="s1">   },</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-11" name="listingsexercisesjson_sandboxpy-11"></a><span class="s1">   "email" : {</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-12" name="listingsexercisesjson_sandboxpy-12"></a><span class="s1">     "hide" : "yes"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-13" name="listingsexercisesjson_sandboxpy-13"></a><span class="s1">   }</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-14" name="listingsexercisesjson_sandboxpy-14"></a><span class="s1">}'''</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-15" name="listingsexercisesjson_sandboxpy-15"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-16" name="listingsexercisesjson_sandboxpy-16"></a><span class="n">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-17" name="listingsexercisesjson_sandboxpy-17"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Name:'</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="s2">"name"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-18" name="listingsexercisesjson_sandboxpy-18"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'Hide:'</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="s2">"email"</span><span class="p">][</span><span class="s2">"hide"</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-19" name="listingsexercisesjson_sandboxpy-19"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-20" name="listingsexercisesjson_sandboxpy-20"></a><span class="n">data_2</span> <span class="o">=</span> <span class="s1">'''</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-21" name="listingsexercisesjson_sandboxpy-21"></a><span class="s1">[</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-22" name="listingsexercisesjson_sandboxpy-22"></a><span class="s1">  { "id" : "001",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-23" name="listingsexercisesjson_sandboxpy-23"></a><span class="s1">    "x" : "2",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-24" name="listingsexercisesjson_sandboxpy-24"></a><span class="s1">    "name" : "Chuck"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-25" name="listingsexercisesjson_sandboxpy-25"></a><span class="s1">  } ,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-26" name="listingsexercisesjson_sandboxpy-26"></a><span class="s1">  { "id" : "009",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-27" name="listingsexercisesjson_sandboxpy-27"></a><span class="s1">    "x" : "7",</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-28" name="listingsexercisesjson_sandboxpy-28"></a><span class="s1">    "name" : "Brent"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-29" name="listingsexercisesjson_sandboxpy-29"></a><span class="s1">  }</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-30" name="listingsexercisesjson_sandboxpy-30"></a><span class="s1">]'''</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-31" name="listingsexercisesjson_sandboxpy-31"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-32" name="listingsexercisesjson_sandboxpy-32"></a><span class="n">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data_2</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-33" name="listingsexercisesjson_sandboxpy-33"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">User count:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-34" name="listingsexercisesjson_sandboxpy-34"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-35" name="listingsexercisesjson_sandboxpy-35"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-36" name="listingsexercisesjson_sandboxpy-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-37" name="listingsexercisesjson_sandboxpy-37"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Id'</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s1">'id'</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesjson_sandboxpy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisesjson_sandboxpy-38" name="listingsexercisesjson_sandboxpy-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Attribute'</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s1">'x'</span><span class="p">])</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

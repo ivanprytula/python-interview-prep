@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="simple_earnings_calculator.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>simple_earnings_calculator.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/simple_earnings_calculator.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">simple_earnings_calculator.py</li>
+</ul></nav><h1>simple_earnings_calculator.py
+        <small><a href="simple_earnings_calculator.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-1" name="listingsexercisessimple_earnings_calculatorpy-1"></a><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Please enter the employee's name: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-2" name="listingsexercisessimple_earnings_calculatorpy-2"></a><span class="n">hourly_wage</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is their hourly wage? "</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-3" name="listingsexercisessimple_earnings_calculatorpy-3"></a><span class="n">hours_worked</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"How many hours have they worked this week? "</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-4" name="listingsexercisessimple_earnings_calculatorpy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-5" name="listingsexercisessimple_earnings_calculatorpy-5"></a><span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-6" name="listingsexercisessimple_earnings_calculatorpy-6"></a>    <span class="n">hourly_wage</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">hourly_wage</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-7" name="listingsexercisessimple_earnings_calculatorpy-7"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-8" name="listingsexercisessimple_earnings_calculatorpy-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'You entered non-numeric value for hourly wage'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-9" name="listingsexercisessimple_earnings_calculatorpy-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-10" name="listingsexercisessimple_earnings_calculatorpy-10"></a><span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-11" name="listingsexercisessimple_earnings_calculatorpy-11"></a>    <span class="n">hours_worked</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">hours_worked</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-12" name="listingsexercisessimple_earnings_calculatorpy-12"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-13" name="listingsexercisessimple_earnings_calculatorpy-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'You entered non-numeric value for hours worked'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-14" name="listingsexercisessimple_earnings_calculatorpy-14"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-15" name="listingsexercisessimple_earnings_calculatorpy-15"></a><span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-16" name="listingsexercisessimple_earnings_calculatorpy-16"></a>    <span class="n">earnings</span> <span class="o">=</span> <span class="n">hourly_wage</span> <span class="o">*</span> <span class="n">hours_worked</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-17" name="listingsexercisessimple_earnings_calculatorpy-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> earned $</span><span class="si">{</span><span class="n">earnings</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> this week."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-18" name="listingsexercisessimple_earnings_calculatorpy-18"></a><span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-19" name="listingsexercisessimple_earnings_calculatorpy-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'You are doing wrong calculation!'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-20" name="listingsexercisessimple_earnings_calculatorpy-20"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-21" name="listingsexercisessimple_earnings_calculatorpy-21"></a><span class="c1"># NB: Precision</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-22" name="listingsexercisessimple_earnings_calculatorpy-22"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">4863.4343091</span>  <span class="c1"># example float to format</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-23" name="listingsexercisessimple_earnings_calculatorpy-23"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-24" name="listingsexercisessimple_earnings_calculatorpy-24"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># f-string version</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-25" name="listingsexercisessimple_earnings_calculatorpy-25"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{:.6f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># format method version</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-26" name="listingsexercisessimple_earnings_calculatorpy-26"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 4.86e+03</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-27" name="listingsexercisessimple_earnings_calculatorpy-27"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 4863.434</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-28" name="listingsexercisessimple_earnings_calculatorpy-28"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 4863.434309, f on its own as well, which defaults to 6 digits of precision</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-29" name="listingsexercisessimple_earnings_calculatorpy-29"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-30" name="listingsexercisessimple_earnings_calculatorpy-30"></a><span class="c1"># NB: Separators</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-31" name="listingsexercisessimple_earnings_calculatorpy-31"></a><span class="n">y</span> <span class="o">=</span> <span class="mi">1000000</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-32" name="listingsexercisessimple_earnings_calculatorpy-32"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-33" name="listingsexercisessimple_earnings_calculatorpy-33"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 1,000,000</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-34" name="listingsexercisessimple_earnings_calculatorpy-34"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">_</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 1_000_000</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-35" name="listingsexercisessimple_earnings_calculatorpy-35"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-36" name="listingsexercisessimple_earnings_calculatorpy-36"></a><span class="c1"># NB: Percentages</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-37" name="listingsexercisessimple_earnings_calculatorpy-37"></a><span class="n">questions</span> <span class="o">=</span> <span class="mi">30</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-38" name="listingsexercisessimple_earnings_calculatorpy-38"></a><span class="n">correct_answers</span> <span class="o">=</span> <span class="mi">23</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-39" name="listingsexercisessimple_earnings_calculatorpy-39"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-40" name="listingsexercisessimple_earnings_calculatorpy-40"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"You got </span><span class="si">{</span><span class="n">correct_answers</span> <span class="o">/</span> <span class="n">questions</span> <span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2"> correct!"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisessimple_earnings_calculatorpy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexercisessimple_earnings_calculatorpy-41" name="listingsexercisessimple_earnings_calculatorpy-41"></a><span class="c1"># You got 76.67% correct!</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

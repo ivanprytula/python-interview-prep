@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="age_script.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>age_script.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/age_script.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">age_script.py</li>
+</ul></nav><h1>age_script.py
+        <small><a href="age_script.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-1" name="listingsexercisesage_scriptpy-1"></a><span class="sd">"""Application that asks the user for their age in years, and prints back the number of seconds they've lived for.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-2" name="listingsexercisesage_scriptpy-2"></a><span class="sd">Try to use f-strings if possible.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-3" name="listingsexercisesage_scriptpy-3"></a><span class="sd">Optionally, extend it so it prints months, days, hours, and seconds."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-4" name="listingsexercisesage_scriptpy-4"></a><span class="kn">import</span> <span class="nn">math</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-5" name="listingsexercisesage_scriptpy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-6" name="listingsexercisesage_scriptpy-6"></a><span class="n">user_age_years</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-7" name="listingsexercisesage_scriptpy-7"></a><span class="n">user_age_months</span> <span class="o">=</span> <span class="n">user_age_years</span> <span class="o">*</span> <span class="mi">12</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-8" name="listingsexercisesage_scriptpy-8"></a><span class="n">user_age_days</span> <span class="o">=</span> <span class="n">user_age_years</span> <span class="o">*</span> <span class="mi">365</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-9" name="listingsexercisesage_scriptpy-9"></a><span class="n">user_age_hours</span> <span class="o">=</span> <span class="n">user_age_days</span> <span class="o">*</span> <span class="mi">24</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-10" name="listingsexercisesage_scriptpy-10"></a><span class="n">user_age_minutes</span> <span class="o">=</span> <span class="n">user_age_hours</span> <span class="o">*</span> <span class="mi">60</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-11" name="listingsexercisesage_scriptpy-11"></a><span class="n">user_age_seconds</span> <span class="o">=</span> <span class="n">user_age_minutes</span> <span class="o">*</span> <span class="mi">60</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-12" name="listingsexercisesage_scriptpy-12"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-13" name="listingsexercisesage_scriptpy-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"That's </span><span class="si">{</span><span class="n">user_age_months</span><span class="si">}</span><span class="s2"> months."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-14" name="listingsexercisesage_scriptpy-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Or </span><span class="si">{</span><span class="n">user_age_days</span><span class="si">}</span><span class="s2"> days."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-15" name="listingsexercisesage_scriptpy-15"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Or </span><span class="si">{</span><span class="n">user_age_hours</span><span class="si">}</span><span class="s2"> hours."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-16" name="listingsexercisesage_scriptpy-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">"Or </span><span class="si">{</span><span class="n">user_age_minutes</span><span class="si">}</span><span class="s2"> minutes."</span><span class="p">,</span> <span class="sa">F</span><span class="s2">"Or </span><span class="si">{</span><span class="n">user_age_seconds</span><span class="si">}</span><span class="s2"> seconds."</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">' - '</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-17" name="listingsexercisesage_scriptpy-17"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-18" name="listingsexercisesage_scriptpy-18"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-19" name="listingsexercisesage_scriptpy-19"></a><span class="c1"># Secondary task: Calculate and print the area of a circle with a radius of 5 units</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-20" name="listingsexercisesage_scriptpy-20"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-21" name="listingsexercisesage_scriptpy-21"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-22" name="listingsexercisesage_scriptpy-22"></a><span class="k">def</span> <span class="nf">calc_circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-23" name="listingsexercisesage_scriptpy-23"></a>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-24" name="listingsexercisesage_scriptpy-24"></a>    <span class="c1"># return math.pi * pow(radius, 2)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-25" name="listingsexercisesage_scriptpy-25"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-26" name="listingsexercisesage_scriptpy-26"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisesage_scriptpy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisesage_scriptpy-27" name="listingsexercisesage_scriptpy-27"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Circle area:'</span><span class="p">,</span> <span class="n">calc_circle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

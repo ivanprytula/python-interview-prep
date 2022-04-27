@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="keywordplay.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>keywordplay.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/keywordplay.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">keywordplay.py</li>
+</ul></nav><h1>keywordplay.py
+        <small><a href="keywordplay.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-1" name="listingsexerciseskeywordplaypy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-2" name="listingsexerciseskeywordplaypy-2"></a><span class="sd">Script for keyword and function play</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-3" name="listingsexerciseskeywordplaypy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-4" name="listingsexerciseskeywordplaypy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-5" name="listingsexerciseskeywordplaypy-5"></a><span class="c1"># bool algebra</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-6" name="listingsexerciseskeywordplaypy-6"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-7" name="listingsexerciseskeywordplaypy-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">and</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-8" name="listingsexerciseskeywordplaypy-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">or</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># true</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-9" name="listingsexerciseskeywordplaypy-9"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-10" name="listingsexerciseskeywordplaypy-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-11" name="listingsexerciseskeywordplaypy-11"></a><span class="c1"># aviation for loop</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-12" name="listingsexerciseskeywordplaypy-12"></a><span class="n">hangar</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cessna"</span><span class="p">,</span> <span class="s2">"cherokee"</span><span class="p">,</span> <span class="s2">"R44"</span><span class="p">,</span> <span class="s2">"squirrel"</span><span class="p">,</span> <span class="s2">"longranger"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-13" name="listingsexerciseskeywordplaypy-13"></a><span class="k">for</span> <span class="n">aircraft</span> <span class="ow">in</span> <span class="n">hangar</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-14" name="listingsexerciseskeywordplaypy-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-15" name="listingsexerciseskeywordplaypy-15"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-16" name="listingsexerciseskeywordplaypy-16"></a><span class="c1"># the 'aviaiton is going out of business' while loop, with if statement for a conditional break or continue</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-17" name="listingsexerciseskeywordplaypy-17"></a><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">hangar</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-18" name="listingsexerciseskeywordplaypy-18"></a>    <span class="k">if</span> <span class="n">hangar</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"cessna"</span><span class="p">]:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-19" name="listingsexerciseskeywordplaypy-19"></a>        <span class="k">break</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-20" name="listingsexerciseskeywordplaypy-20"></a>    <span class="n">hangar</span> <span class="o">=</span> <span class="n">hangar</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">hangar</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-21" name="listingsexerciseskeywordplaypy-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">hangar</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-22" name="listingsexerciseskeywordplaypy-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"While loop with break complete! You get to keep your Cessna"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-23" name="listingsexerciseskeywordplaypy-23"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-24" name="listingsexerciseskeywordplaypy-24"></a><span class="n">newHangar</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"aerostar"</span><span class="p">,</span> <span class="s2">"R22"</span><span class="p">,</span> <span class="s2">"EC130"</span><span class="p">,</span> <span class="s2">"cheiftain"</span><span class="p">,</span> <span class="s2">"H300"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-25" name="listingsexerciseskeywordplaypy-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">newHangar</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-26" name="listingsexerciseskeywordplaypy-26"></a><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">newHangar</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-27" name="listingsexerciseskeywordplaypy-27"></a>    <span class="n">newHangar</span> <span class="o">=</span> <span class="n">newHangar</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">newHangar</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-28" name="listingsexerciseskeywordplaypy-28"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">newHangar</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-29" name="listingsexerciseskeywordplaypy-29"></a>        <span class="k">continue</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-30" name="listingsexerciseskeywordplaypy-30"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">newHangar</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-31" name="listingsexerciseskeywordplaypy-31"></a><span class="nb">print</span><span class="p">(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-32" name="listingsexerciseskeywordplaypy-32"></a>    <span class="s2">"While loop with continue complete! You lost your R22 and EC130 in the same hit... dayuuuuum"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-33" name="listingsexerciseskeywordplaypy-33"></a><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-34" name="listingsexerciseskeywordplaypy-34"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-35" name="listingsexerciseskeywordplaypy-35"></a><span class="c1"># conditionals</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-36" name="listingsexerciseskeywordplaypy-36"></a><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many planes do you have? "</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-37" name="listingsexerciseskeywordplaypy-37"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-38" name="listingsexerciseskeywordplaypy-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"You must work for ANZ"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-39" name="listingsexerciseskeywordplaypy-39"></a><span class="k">elif</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-40" name="listingsexerciseskeywordplaypy-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Congratulations, you have money and a rad hobby"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-41" name="listingsexerciseskeywordplaypy-41"></a><span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-42" name="listingsexerciseskeywordplaypy-42"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"You should really buy a plane"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-43" name="listingsexerciseskeywordplaypy-43"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-44" name="listingsexerciseskeywordplaypy-44"></a><span class="c1"># in - super easy way to check element in sequence</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-45" name="listingsexerciseskeywordplaypy-45"></a><span class="n">hojTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">104</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-46"><code data-line-number="46"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-46" name="listingsexerciseskeywordplaypy-46"></a><span class="nb">print</span><span class="p">(</span><span class="mi">45</span> <span class="ow">in</span> <span class="n">hojTuple</span><span class="p">,</span> <span class="mi">67</span> <span class="ow">in</span> <span class="n">hojTuple</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-47"><code data-line-number="47"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-47" name="listingsexerciseskeywordplaypy-47"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-48"><code data-line-number="48"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-48" name="listingsexerciseskeywordplaypy-48"></a><span class="c1"># is - checks if two elements point to the same object</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-49"><code data-line-number="49"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-49" name="listingsexerciseskeywordplaypy-49"></a><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-50"><code data-line-number="50"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-50" name="listingsexerciseskeywordplaypy-50"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># true</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-51"><code data-line-number="51"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-51" name="listingsexerciseskeywordplaypy-51"></a><span class="nb">print</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># false - two separate objects defined, happen to contain same value</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-52"><code data-line-number="52"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-52" name="listingsexerciseskeywordplaypy-52"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-53"><code data-line-number="53"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-53" name="listingsexerciseskeywordplaypy-53"></a><span class="c1"># lambda - the magical anonymous function, most useful as an argument in a higher order function</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-54"><code data-line-number="54"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-54" name="listingsexerciseskeywordplaypy-54"></a><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-55"><code data-line-number="55"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-55" name="listingsexerciseskeywordplaypy-55"></a><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># OR....</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-56"><code data-line-number="56"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-56" name="listingsexerciseskeywordplaypy-56"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-57"><code data-line-number="57"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-57" name="listingsexerciseskeywordplaypy-57"></a><span class="n">altC</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># you can name the function and call it</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-58"><code data-line-number="58"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-58" name="listingsexerciseskeywordplaypy-58"></a><span class="nb">print</span><span class="p">(</span><span class="n">altC</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-59"><code data-line-number="59"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-59" name="listingsexerciseskeywordplaypy-59"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-60"><code data-line-number="60"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-60" name="listingsexerciseskeywordplaypy-60"></a><span class="n">higherOrderC</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">d</span> <span class="o">+</span> <span class="n">func</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># higher order example</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-61"><code data-line-number="61"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-61" name="listingsexerciseskeywordplaypy-61"></a><span class="nb">print</span><span class="p">(</span><span class="n">higherOrderC</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span> <span class="o">*</span> <span class="n">d</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-62"><code data-line-number="62"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-62" name="listingsexerciseskeywordplaypy-62"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-63"><code data-line-number="63"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-63" name="listingsexerciseskeywordplaypy-63"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-64"><code data-line-number="64"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-64" name="listingsexerciseskeywordplaypy-64"></a><span class="c1"># using return in a function</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-65"><code data-line-number="65"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-65" name="listingsexerciseskeywordplaypy-65"></a><span class="k">def</span> <span class="nf">beerFunction</span><span class="p">(</span><span class="n">day</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-66"><code data-line-number="66"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-66" name="listingsexerciseskeywordplaypy-66"></a>    <span class="n">beers</span> <span class="o">=</span> <span class="mi">0</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-67"><code data-line-number="67"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-67" name="listingsexerciseskeywordplaypy-67"></a>    <span class="k">if</span> <span class="n">day</span> <span class="o">==</span> <span class="s2">"Friday"</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-68"><code data-line-number="68"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-68" name="listingsexerciseskeywordplaypy-68"></a>        <span class="n">beers</span> <span class="o">=</span> <span class="mi">3</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-69"><code data-line-number="69"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-69" name="listingsexerciseskeywordplaypy-69"></a>    <span class="k">elif</span> <span class="n">day</span> <span class="o">==</span> <span class="s2">"Wednesday"</span> <span class="ow">or</span> <span class="s2">"Thursday"</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-70"><code data-line-number="70"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-70" name="listingsexerciseskeywordplaypy-70"></a>        <span class="n">beers</span> <span class="o">=</span> <span class="mi">1</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-71"><code data-line-number="71"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-71" name="listingsexerciseskeywordplaypy-71"></a>    <span class="k">return</span> <span class="n">beers</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-72"><code data-line-number="72"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-72" name="listingsexerciseskeywordplaypy-72"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-73"><code data-line-number="73"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-73" name="listingsexerciseskeywordplaypy-73"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexerciseskeywordplaypy-74"><code data-line-number="74"></code></a></td>
+<td class="code"><code><a id="listingsexerciseskeywordplaypy-74" name="listingsexerciseskeywordplaypy-74"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Tonight you can have: "</span><span class="p">,</span> <span class="n">beerFunction</span><span class="p">(</span><span class="s2">"Friday"</span><span class="p">),</span> <span class="s2">" beers"</span><span class="p">)</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

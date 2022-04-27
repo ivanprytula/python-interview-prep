@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="context_managers.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>context_managers.py | Mastering Python</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/exercises/context_managers.py.html">
+<link rel="icon" href="../../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../../foo" class="dropdown-item">Foo Spam</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">listings</a></li>
+                <li class="breadcrumb-item"><a href=".">exercises</a></li>
+                <li class="breadcrumb-item active">context_managers.py</li>
+</ul></nav><h1>context_managers.py
+        <small><a href="context_managers.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-1" name="listingsexercisescontext_managerspy-1"></a><span class="c1"># Long and un-safe way, 'code smell' detected!</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-2" name="listingsexercisescontext_managerspy-2"></a><span class="c1"># f = open('test.md', 'r')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-3" name="listingsexercisescontext_managerspy-3"></a><span class="c1"># file_contents = f.read()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-4" name="listingsexercisescontext_managerspy-4"></a><span class="c1"># f.close()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-5" name="listingsexercisescontext_managerspy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-6" name="listingsexercisescontext_managerspy-6"></a><span class="c1"># Use context manager</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-7" name="listingsexercisescontext_managerspy-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'test.md'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-8" name="listingsexercisescontext_managerspy-8"></a>    <span class="n">file_contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-9" name="listingsexercisescontext_managerspy-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-10" name="listingsexercisescontext_managerspy-10"></a><span class="n">words</span> <span class="o">=</span> <span class="n">file_contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-11" name="listingsexercisescontext_managerspy-11"></a><span class="n">word_counts</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-12" name="listingsexercisescontext_managerspy-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">word_counts</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-13" name="listingsexercisescontext_managerspy-13"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-14" name="listingsexercisescontext_managerspy-14"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-15" name="listingsexercisescontext_managerspy-15"></a><span class="c1"># NB: Custom example</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-16" name="listingsexercisescontext_managerspy-16"></a><span class="k">class</span> <span class="nc">ManagedWriteFile</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-17" name="listingsexercisescontext_managerspy-17"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-18" name="listingsexercisescontext_managerspy-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-19" name="listingsexercisescontext_managerspy-19"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-20" name="listingsexercisescontext_managerspy-20"></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-21" name="listingsexercisescontext_managerspy-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-22" name="listingsexercisescontext_managerspy-22"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-23" name="listingsexercisescontext_managerspy-23"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-24" name="listingsexercisescontext_managerspy-24"></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-25" name="listingsexercisescontext_managerspy-25"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-26" name="listingsexercisescontext_managerspy-26"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-27" name="listingsexercisescontext_managerspy-27"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-28" name="listingsexercisescontext_managerspy-28"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-29" name="listingsexercisescontext_managerspy-29"></a><span class="k">with</span> <span class="n">ManagedWriteFile</span><span class="p">(</span><span class="s1">'hello.txt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-30" name="listingsexercisescontext_managerspy-30"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'requests==2.24.0'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-31" name="listingsexercisescontext_managerspy-31"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsexercisescontext_managerspy-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="listingsexercisescontext_managerspy-32" name="listingsexercisescontext_managerspy-32"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'Django&gt;=3.1.3'</span><span class="p">)</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
