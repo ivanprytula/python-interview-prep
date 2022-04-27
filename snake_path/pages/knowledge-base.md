@@ -91,18 +91,18 @@ PVM assumes that any bytecode being executed is "well-formed" with regard to a n
 
 #### Q: What are some alternative implementations to CPython? When and why might you use them?
 
-One of the more prominent alternative implementations is [Jython](http://www.jython.org/), a Python implementation
+One of the more prominent alternative implementations is [Jython](https://www.jython.org/), a Python implementation
 written in Java that utilizes the Java Virtual Machine (JVM). While CPython produces bytecode to run on the CPython VM,
 Jython produces Java bytecode to run on the JVM.
 
-Another is [IronPython](http://ironpython.net/), written in C# and targeting the .NET stack. IronPython runs on
+Another is [IronPython](https://ironpython.net/), written in C# and targeting the .NET stack. IronPython runs on
 Microsoft’s Common Language Runtime (CLR).
 
 As also pointed out in [Why Are There So Many Pythons?](https://www.toptal.com/python/why-are-there-so-many-pythons), it
 is entirely possible to survive without ever touching a non-CPython implementation of Python, but there are advantages
 to be had from switching, most of which are dependent on your technology stack.
 
-Another noteworthy alternative implementation is [PyPy](http://pypy.org/) whose key features include:
+Another noteworthy alternative implementation is [PyPy](https://pypy.org/) whose key features include:
 
 * Speed. Thanks to its Just-in-Time (JIT) compiler, Python programs often run faster on PyPy.
 * Memory usage. Large, memory-hungry Python programs might end up taking less space with PyPy than they do in CPython.

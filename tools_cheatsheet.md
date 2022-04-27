@@ -52,3 +52,11 @@ $ python -m pytest tests/quiz/test_question_models.py
 # run 2 tests concurrently
 python -m pytest tests -n 2
 ```
+
+## Task Runners, Build tools & Pipelines
+
+- `doit`
+- `make`
+- plain `bash` script
+- `pypyr`
+- ...

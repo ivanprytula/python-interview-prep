@@ -4,6 +4,9 @@
 .. description:
 .. type: text
 
+...and some memes :=)
+---------------------
+
 .. container::
 
     .. class:: col-md-6
@@ -13,13 +16,5 @@
         :alt: Alternative text
         :align: center
 
-.. code-block:: python
-    :linenos:
-
-    def hello_world():
-        """
-        A function that prints "Hello world!"
-        """
-        print('Hello world!')
-
-.. listing:: args_passing.py python
+    .. image:: /images/index/Python_logo_01.png
+        :class: rounded mx-auto d-block

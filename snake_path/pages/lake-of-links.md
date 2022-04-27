@@ -19,6 +19,8 @@
 2. [SpeedSheet](https://speedsheet.io/)
 3. [Awesome Python](https://awesome-python.com/)
 4. [python-easter-eggs](https://github.com/OrkoHunter/python-easter-eggs)
+5. ! [kickstartcoding cheatsheets](https://github.com/kickstartcoding/cheatsheets)
+6. ...
 
 
 # Clean & idiomatic code, good patterns vs. anti-patterns
