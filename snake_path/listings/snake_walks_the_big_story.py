@@ -34,6 +34,7 @@ import requests
 # from os import *
 
 # ####### 3. my own packages
+# import <model_name> from <models_package>
 
 
 GRAVITATIONAL_CONSTANT: float = 9.81
@@ -738,6 +739,7 @@ from collections import namedtuple
 # - Coverage.py is a tool for measuring code coverage of Python programs. It monitors your program, noting which parts
 # of the code have been executed, then analyzes the source to identify code that could have been executed but was not.
 # - That exact # pragma: no cover is the hint that the part of code should be ignored by the tool.
+
 
 
 if __name__ == '__main__':  # Runs main() if file wasn't imported.
