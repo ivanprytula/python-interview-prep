@@ -8,10 +8,8 @@
     :linenos:
 
     def hello_world():
-        """
-        A function that prints "Hello world!"
-        """
-        print('Hello world!')
+        """Prints 'Hello world!'."""
+        print("Hello world!")
 
 .. listing:: snake_walks_the_big_story.py python
 

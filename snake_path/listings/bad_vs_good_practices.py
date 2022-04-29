@@ -132,7 +132,6 @@ def show_bad_ugLiesTFuncEveR_patterns(abc=42, foo=[]):
     # push to prod env
 
 
-
 def show_best_practices(pos1, pos2, /, pos_or_kwd=True, *, kwd1, kwd2=""):
     """
     Shows good and best practices for getting clean & idiomatic code.
@@ -148,7 +147,7 @@ def show_best_practices(pos1, pos2, /, pos_or_kwd=True, *, kwd1, kwd2=""):
     :return:
     """
 
-    # fyi: === Using `Context Managers` for Files ===
+    # === Using `Context Managers` for Files ===
     with open('abc.txt', 'r') as file_obj:
         """
         Context managers in Python help to facilitate proper handling of resources,
@@ -179,6 +178,7 @@ def show_best_practices(pos1, pos2, /, pos_or_kwd=True, *, kwd1, kwd2=""):
         test. Anytime the use of exec error is encountered, you should go back to the
         code and check if there is a clearer, more direct way to accomplish the task."""
         print("Hello, World!")
+
     print_word()
 
     # === Use exception type(s) specified ===
@@ -231,7 +231,8 @@ def show_best_practices(pos1, pos2, /, pos_or_kwd=True, *, kwd1, kwd2=""):
     squares = {i: i ** 2 for i in range(1, 10)}
 
     # === Using `else` where appropriate in a `for` loop ===
-    """Python provides a built-in `else` clause for `for` loops. If a `for` loop completes
+    """Python provides a built-in `else` clause for `for` loops. If a `for` loop 
+    completes
     without being prematurely interrupted by a `break` or `return` statement, then the
     `else` clause of the loop is executed."""
     numbers = [1, 2, 3]

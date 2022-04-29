@@ -19,7 +19,7 @@
 2. [SpeedSheet](https://speedsheet.io/)
 3. [Awesome Python](https://awesome-python.com/)
 4. [python-easter-eggs](https://github.com/OrkoHunter/python-easter-eggs)
-5. ! [kickstartcoding cheatsheets](https://github.com/kickstartcoding/cheatsheets)
+5. **[kickstartcoding cheatsheets](https://github.com/kickstartcoding/cheatsheets)**
 6. ...
 
 
@@ -28,7 +28,7 @@
 2. [10 must-know patterns for writing clean code with Python](https://dev.to/alexomeyer/10-must-know-patterns-for-writing-clean-code-with-python-56bf)
 3. [The 10 Most Common Mistakes That Python Developers Make](https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)
 4. [Idiomatic Python](https://intermediate-and-advanced-software-carpentry.readthedocs.io/en/latest/idiomatic-python.html)
-5. [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)
+5. **[The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)**
 6. [Common anti-patterns in Python](https://deepsource.io/blog/8-new-python-antipatterns/)
 7. [Idiomatic Python. Coding the smart way](https://medium.com/the-andela-way/idiomatic-python-coding-the-smart-way-cc560fa5f1d6)
 8. ...
