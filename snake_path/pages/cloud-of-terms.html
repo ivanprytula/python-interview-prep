@@ -8,67 +8,15 @@
 .. description: 
 .. type: text
 -->
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <style>
-
-
-    </style>
-    <!-- custom style -->
-    <style>
-
-        .content .tagcloud {
-            display: inline-block;
-            margin: 20px;
-        }
-
-        ul {
-            display: inline-block;
-        }
-
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .tagcloud {
-            font-size: 16px;
-        }
-
-        .tagcloud--item {
-            padding: 2px 4px;
-            background-color: transparent;
-            border: 1px solid transparent;
-            cursor: pointer;
-        }
-
-        .tagcloud--item:hover {
-            background-color: rgba(0, 0, 0, .1);
-            border: 1px solid #333;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            border-radius: 2px;
-            opacity: 1 !important;
-            z-index: 100 !important;
-        }
-
-    </style>
-
     <script type="text/javascript" src="../assets/js/TagCloud.min.js"></script>
-
 </head>
 
 <body>
+
+<h3>Hover on "Python" tag :)</h3>
 
 <div class="content">
     <!-- content -->
@@ -76,11 +24,28 @@
 
 <script>
     const texts = [
-        'Python', 'Django', 'DRF', 'Flask',
+        'Python', 'Django', 'DRF', 'Flask', 'POSIX'
     ];
-    const tc = TagCloud('.content', texts, );
+    options = {
+        'radius': 200,
+        'maxSpeed': 'slow',
+    }
+    const tc = TagCloud('.content', texts, options);
+
+    let rootEl = document.querySelector('.content');
+    rootEl.addEventListener('click', function clickEventHandler(e) {
+        if (e.target.className === 'tagcloud--item') {
+            window.open(`https://www.google.com/search?q=${e.target.innerText}`, '_blank');
+        }
+    });
+
+    rootEl.addEventListener('mouseover', function (e) {
+        if (e.target.className === 'tagcloud--item' && e.target.innerText === 'Python') {
+            window.alert('Well done, Pythonista!')
+        }
+    });
+
+
 </script>
 
 </body>
-
-</html>
