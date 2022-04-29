@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naming Convention | Mastering Python</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="canonical" href="https://localhost.com/naming-convention/">
@@ -14,11 +16,14 @@
 <meta property="og:site_name" content="Mastering Python">
 <meta property="og:title" content="Naming Convention">
 <meta property="og:url" content="https://localhost.com/naming-convention/">
-<meta property="og:description" content="Python Naming Conventions
-1. General
+<meta property="og:description" content="Clean code is ...?
 
-Avoid using names that are too general or too wordy. Strike a good balance between the two.
-Bad: data_structure, my_list, info_map, dictionary_for_the_purpose_of_">
+focused
+Each function, class, or module should do one thing and do it well 
+easy to read and speak about
+Clean code is read like well-written prose
+easy to debug
+The logic should b">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2022-04-17T15:42:21+03:00">
 </head>
@@ -61,7 +66,7 @@ bg-dark
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
             <div class="dropdown-menu">
                     <a href="../naming-convention" class="dropdown-item">Naming Convention</a>
-                    <a href="../foo" class="dropdown-item">Foo Spam</a>
+                    <a href="../in-progress" class="dropdown-item">TODO</a>
             </div>
 
                 
@@ -83,15 +88,62 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <h2>Python Naming Conventions</h2>
+    <h2>Clean code is ...?</h2>
+<dl>
+<dt>focused</dt>
+<dd>Each function, class, or module should do one thing and do it well </dd>
+<dt>easy to read and speak about</dt>
+<dd>Clean code is read like well-written prose</dd>
+<dt>easy to debug</dt>
+<dd>The logic should be straightforward to make it hard for bugs to hide</dd>
+<dt>easy to maintain</dt>
+<dd>That is it can easily be read and enhanced by other developers</dd>
+<dt>highly performant</dt>
+<dd>performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations</dd>
+</dl>
+<h2>Python Naming Conventions</h2>
 <h3>1. General</h3>
 <ul>
-<li>Avoid using names that are too general or too wordy. Strike a good balance between the two.</li>
-<li>Bad: data_structure, my_list, info_map, dictionary_for_the_purpose_of_storing_data_representing_word_definitions</li>
-<li>Good: user_profile, menu_options, word_definitions</li>
-<li>Don’t be a jackass and name things “O”, “l”, or “I”</li>
-<li>When using CamelCase names, capitalize all letters of an abbreviation (e.g. HTTPServer)</li>
+<li>Avoid using names that are too general or too wordy. Strike a good balance between the two. Use descriptive names that are easy to read. <ul>
+<li>Bad: <code>data_structure</code>, <code>my_list</code>, <code>info_map</code>, <code>dictionary_for_the_purpose_of_storing_data_representing_word_definitions</code>
+</li>
+<li>Good: <code>user_profile</code>, <code>menu_options</code>, <code>word_definitions</code>
+</li>
 </ul>
+</li>
+<li>Don’t be a jackass and name things "O", "l", "O1" or "I". Avoid using ambiguous shorthand.</li>
+<li>When using CamelCase names, capitalize all letters of an abbreviation (e.g. HTTPServer)</li>
+<li>Always use the same vocabulary</li>
+<li>Don’t use magic numbers</li>
+</ul>
+<pre class="code literal-block"><span></span><code><span class="c1"># Not recommended</span>
+<span class="c1"># The au variable is the number of active users</span>
+<span class="n">au</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"UK"</span><span class="p">,</span> <span class="s2">"USA"</span><span class="p">,</span> <span class="s2">"UAE"</span><span class="p">]</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">'John'</span>
+<span class="n">Ln</span> <span class="o">=</span> <span class="s1">'Doe'</span>
+<span class="n">cre_tmstp</span> <span class="o">=</span> <span class="mi">1621535852</span>
+<span class="n">client_first_name</span> <span class="o">=</span> <span class="s1">'John'</span>
+<span class="n">customer_last_name</span> <span class="o">=</span> <span class="s1">'Doe'</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="k">def</span> <span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># what is 4 supposed to represent?</span>
+
+
+<span class="c1"># Recommended </span>
+<span class="n">total_active_users</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"UK"</span><span class="p">,</span> <span class="s2">"USA"</span><span class="p">,</span> <span class="s2">"UAE"</span><span class="p">]</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">'John'</span>
+<span class="n">Las_name</span> <span class="o">=</span> <span class="s1">'Doe'</span>
+<span class="n">creation_timestamp</span> <span class="o">=</span> <span class="mi">1621535852</span>
+<span class="n">client_first_name</span> <span class="o">=</span> <span class="s1">'John'</span>
+<span class="n">client_last_name</span> <span class="o">=</span> <span class="s1">'Doe'</span>
+
+<span class="n">DICE_SIDES</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">def</span> <span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">DICE_SIDES</span><span class="p">)</span>
+</code></pre>
+
 <h3>2. Packages</h3>
 <ul>
 <li>Package names should be all lower case</li>
@@ -104,21 +156,43 @@ bg-dark
 <li>When multiple words are needed, an underscore should separate them</li>
 <li>It is usually preferable to stick to 1 word names</li>
 </ul>
-<pre class="code literal-block"><span class="c1"># pyramid.py</span>
+<pre class="code literal-block"><span></span><code><span class="c1"># pyramid.py</span>
 <span class="c1"># [or]</span>
 <span class="c1"># pyramid_giza.py</span>
-</pre>
+</code></pre>
+
 <h3>4. Classes</h3>
 <ul>
 <li>Class names should follow the UpperCaseCamelCase convention</li>
 <li>Python’s built-in classes, however are typically lowercase words</li>
-<li>Exception classes should end in “Error”</li>
+<li>Exception classes should end with “Error”</li>
+<li>Do not add redundant context</li>
 </ul>
-<pre class="code literal-block"><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">:</span>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">:</span>
     <span class="k">pass</span>
+
 <span class="k">class</span> <span class="nc">InputError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="c1"># custom exception</span>
     <span class="k">pass</span>
-</pre>
+
+<span class="c1"># Not recommended</span>
+<span class="k">class</span> <span class="nc">PersonBad</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person_username</span><span class="p">,</span> <span class="n">person_email</span><span class="p">,</span> <span class="n">person_phone</span><span class="p">,</span> <span class="n">person_address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">person_username</span> <span class="o">=</span> <span class="n">person_username</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">person_email</span> <span class="o">=</span> <span class="n">person_email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">person_phone</span> <span class="o">=</span> <span class="n">person_phone</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">person_address</span> <span class="o">=</span> <span class="n">person_address</span>
+
+<span class="c1"># Recommended</span>
+<span class="k">class</span> <span class="nc">PersonGood</span><span class="p">:</span>
+    <span class="sd">"""Since we are already inside the Person class, there's no need to add the person_ prefix to every class variable."""</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">phone</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+</code></pre>
+
 <h3>5. Global (module-level) Variables</h3>
 <ul>
 <li>Global variables should be all lowercase</li>
@@ -131,10 +205,11 @@ bg-dark
 <li>Non-public instance variables should begin with a single underscore</li>
 <li>If an instance name needs to be mangled, two underscores may begin its name</li>
 </ul>
-<pre class="code literal-block"><span class="n">pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Public</span>
+<pre class="code literal-block"><span></span><code><span class="n">pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Public</span>
 <span class="n">_pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Protected</span>
 <span class="n">__pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Private</span>
-</pre>
+</code></pre>
+
 <h3>7. Methods</h3>
 <ul>
 <li>Method names should be all lower case</li>
@@ -142,19 +217,20 @@ bg-dark
 <li>Non-public method should begin with a single underscore</li>
 <li>If a method name needs to be mangled, two underscores may begin its name</li>
 </ul>
-<pre class="code literal-block"><span class="k">def</span> <span class="nf">draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Public</span>
+<pre class="code literal-block"><span></span><code><span class="k">def</span> <span class="nf">draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Public</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">_draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Protected</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">__draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Private</span>
     <span class="k">pass</span>
-</pre>
+</code></pre>
+
 <h3>8. Method Arguments</h3>
 <ul>
 <li>Instance methods should have their first argument named ‘self’.</li>
 <li>Class methods should have their first argument named ‘cls’</li>
 </ul>
-<pre class="code literal-block"><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">instance_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hello from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
@@ -165,7 +241,8 @@ bg-dark
         <span class="nd">@staticmethod</span>
         <span class="k">def</span> <span class="nf">static_method</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hello from </span><span class="si">{</span><span class="n">PyramidGiza</span><span class="o">.</span><span class="n">static_method</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</pre>
+</code></pre>
+
 <h3>9. Functions</h3>
 <ul>
 <li>Function names should be all lower case</li>
@@ -176,10 +253,10 @@ bg-dark
 <li>Constant names must be fully capitalized</li>
 <li>Words in a constant name should be separated by an underscore</li>
 </ul>
-<pre class="code literal-block"><span class="n">TOTAL</span> <span class="o">=</span> <span class="mi">100</span>
+<pre class="code literal-block"><span></span><code><span class="n">TOTAL</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="c1"># [or]</span>
 <span class="n">MAX_CAPACITY</span> <span class="o">=</span> <span class="mi">200</span>
-</pre>
+</code></pre>
     </div>
     
 
