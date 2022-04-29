@@ -151,7 +151,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/naming-convention", "Naming Convention"),
-                ("/foo", "Foo Spam")
+                ("/in-progress", "TODO")
             ), "Extras"
         ),
     ),
