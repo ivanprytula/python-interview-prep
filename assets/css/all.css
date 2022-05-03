@@ -854,3 +854,34 @@ html[dir="rtl"] body {
   background-color: rgba(227, 86, 86, 0.89);
 }
 
+/* `Cloud of Terms` page */
+.content {
+  text-align: center;
+}
+
+.content .tagcloud {
+  display: inline-block;
+  margin: 20px;
+}
+
+.tagcloud {
+  font-size: 16px;
+}
+
+.tagcloud--item {
+  padding: 2px 4px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.tagcloud--item:hover {
+  background-color: rgba(0, 0, 0, .1);
+  border: 1px solid #333;
+  border-radius: 2px;
+  opacity: 1 !important;
+  z-index: 100 !important;
+  font-weight: bold;
+  font-size: larger;
+}
+
