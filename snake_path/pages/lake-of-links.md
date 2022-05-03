@@ -76,3 +76,8 @@
 # Static analysis
 1. [DeepSource](https://deepsource.io/)
 2. ...
+
+
+# Play & Learn
+1. [Command Line Heroes: BASH](https://www.redhat.com/en/command-line-heroes/bash/index.html?extIdCarryOver=true&sc_cid=701f2000001OH79AAG)
+2. ...
