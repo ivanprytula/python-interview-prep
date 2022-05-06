@@ -36,7 +36,7 @@ const INITIAL_SNAKE_STATE = "walking-snake ld ld-breath";
 
 const walkingSnake = document.querySelector("#walkingSnake");
 const walkingContainer = document.querySelector("#walkingContainer");
-const codeArea = document.querySelector('code.language-python');
+const codeArea = document.querySelector('.code.literal-block');
 const focusEvent = new Event('focus');
 const blurEvent = new Event('blur');
 
