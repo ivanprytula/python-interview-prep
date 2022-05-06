@@ -12,7 +12,7 @@ PEP = Python Enhancement Proposal
   Typical usage example:
 
   foo = ClassFoo()
-  bar = foo.FunctionBar()
+  bar = foo.get_bar()
 """
 
 # ####### 1. STL imports
@@ -33,8 +33,8 @@ import requests
 # fyi: Such import style will cause issues with built-in funcs - if names match, they will be overridden.
 # from os import *
 
-# ####### 3. my own packages
-# import <model_name> from <models_package>
+# ####### 3. Your own packages
+# import model_name from models_package
 
 
 GRAVITATIONAL_CONSTANT: float = 9.81
