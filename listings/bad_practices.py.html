@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="bad_practices.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bad_practices.py | Mastering Python</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/bad_practices.py.html">
+<link rel="icon" href="../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../in-progress" class="dropdown-item">TODO</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href=".">listings</a></li>
+                <li class="breadcrumb-item active">bad_practices.py</li>
+</ul></nav><h1>bad_practices.py
+        <small><a href="bad_practices.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-1"><code data-line-number="  1"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-1" name="listingsbad_practicespy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-2"><code data-line-number="  2"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-2" name="listingsbad_practicespy-2"></a><span class="sd">Common Python Anti-Patterns to watch out for</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-3"><code data-line-number="  3"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-3" name="listingsbad_practicespy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-4"><code data-line-number="  4"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-4" name="listingsbad_practicespy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-5"><code data-line-number="  5"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-5" name="listingsbad_practicespy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-6"><code data-line-number="  6"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-6" name="listingsbad_practicespy-6"></a><span class="k">def</span> <span class="nf">show_bad_ugLiesTFuncEveR_patterns</span><span class="p">(</span><span class="n">abc</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="p">[]):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-7"><code data-line-number="  7"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-7" name="listingsbad_practicespy-7"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-8"><code data-line-number="  8"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-8" name="listingsbad_practicespy-8"></a><span class="sd">    this is super cool docs for cool func.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-9"><code data-line-number="  9"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-9" name="listingsbad_practicespy-9"></a><span class="sd">    blah foo spam eggs bar buzz..........</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-10"><code data-line-number=" 10"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-10" name="listingsbad_practicespy-10"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-11"><code data-line-number=" 11"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-11" name="listingsbad_practicespy-11"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-12"><code data-line-number=" 12"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-12" name="listingsbad_practicespy-12"></a><span class="sd">    :param abc: blah blah</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-13"><code data-line-number=" 13"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-13" name="listingsbad_practicespy-13"></a><span class="sd">    :param foo: blah blah</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-14"><code data-line-number=" 14"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-14" name="listingsbad_practicespy-14"></a><span class="sd">    :param bar: blah blah</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-15"><code data-line-number=" 15"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-15" name="listingsbad_practicespy-15"></a><span class="sd">    :return: I dunno what exactly, but many things</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-16"><code data-line-number=" 16"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-16" name="listingsbad_practicespy-16"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-17"><code data-line-number=" 17"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-17" name="listingsbad_practicespy-17"></a>    <span class="c1"># === Not Using Context Managers for Files ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-18"><code data-line-number=" 18"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-18" name="listingsbad_practicespy-18"></a>    <span class="n">file_obj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'abc.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-19"><code data-line-number=" 19"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-19" name="listingsbad_practicespy-19"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-20"><code data-line-number=" 20"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-20" name="listingsbad_practicespy-20"></a>    <span class="c1"># do something exciting</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-21"><code data-line-number=" 21"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-21" name="listingsbad_practicespy-21"></a>    <span class="n">file_obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-22"><code data-line-number=" 22"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-22" name="listingsbad_practicespy-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-23"><code data-line-number=" 23"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-23" name="listingsbad_practicespy-23"></a>    <span class="c1"># === Using type() to compare types ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-24"><code data-line-number=" 24"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-24" name="listingsbad_practicespy-24"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s1">'Alex'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-25"><code data-line-number=" 25"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-25" name="listingsbad_practicespy-25"></a>    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-26"><code data-line-number=" 26"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-26" name="listingsbad_practicespy-26"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'It is a string'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-27"><code data-line-number=" 27"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-27" name="listingsbad_practicespy-27"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-28"><code data-line-number=" 28"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-28" name="listingsbad_practicespy-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'It is not a string'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-29"><code data-line-number=" 29"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-29" name="listingsbad_practicespy-29"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-30"><code data-line-number=" 30"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-30" name="listingsbad_practicespy-30"></a>    <span class="c1"># === Use of `exec()` ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-31"><code data-line-number=" 31"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-31" name="listingsbad_practicespy-31"></a>    <span class="n">s</span> <span class="o">=</span> <span class="s2">"print(</span><span class="se">\"</span><span class="s2">Hello, World!</span><span class="se">\"</span><span class="s2">)"</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-32"><code data-line-number=" 32"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-32" name="listingsbad_practicespy-32"></a>    <span class="n">exec</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-33"><code data-line-number=" 33"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-33" name="listingsbad_practicespy-33"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-34"><code data-line-number=" 34"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-34" name="listingsbad_practicespy-34"></a>    <span class="c1"># === No exception type(s) specified ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-35"><code data-line-number=" 35"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-35" name="listingsbad_practicespy-35"></a>    <span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-36"><code data-line-number=" 36"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-36" name="listingsbad_practicespy-36"></a>        <span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">0</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-37"><code data-line-number=" 37"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-37" name="listingsbad_practicespy-37"></a>    <span class="k">except</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-38"><code data-line-number=" 38"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-38" name="listingsbad_practicespy-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Exception"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-39"><code data-line-number=" 39"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-39" name="listingsbad_practicespy-39"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-40"><code data-line-number=" 40"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-40" name="listingsbad_practicespy-40"></a>    <span class="c1"># === Using map() or filter() instead of list comprehension ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-41"><code data-line-number=" 41"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-41" name="listingsbad_practicespy-41"></a>    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-42"><code data-line-number=" 42"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-42" name="listingsbad_practicespy-42"></a>    <span class="n">doubles</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">num</span><span class="p">:</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-43"><code data-line-number=" 43"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-43" name="listingsbad_practicespy-43"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-44"><code data-line-number=" 44"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-44" name="listingsbad_practicespy-44"></a>    <span class="c1"># === Using list/dict/set comprehension unnecessarily ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-45"><code data-line-number=" 45"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-45" name="listingsbad_practicespy-45"></a>    <span class="n">my_fav_superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sdf'</span><span class="p">,</span> <span class="s1">'sdfdf'</span><span class="p">,</span> <span class="s1">'dfgdfg'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-46"><code data-line-number=" 46"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-46" name="listingsbad_practicespy-46"></a>    <span class="n">comma_seperated_names</span> <span class="o">=</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">my_fav_superheroes</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-47"><code data-line-number=" 47"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-47" name="listingsbad_practicespy-47"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-48"><code data-line-number=" 48"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-48" name="listingsbad_practicespy-48"></a>    <span class="c1"># === Unnecessary use of generators ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-49"><code data-line-number=" 49"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-49" name="listingsbad_practicespy-49"></a>    <span class="n">squares</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-50"><code data-line-number=" 50"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-50" name="listingsbad_practicespy-50"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-51"><code data-line-number=" 51"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-51" name="listingsbad_practicespy-51"></a>    <span class="c1"># === Not using `else` where appropriate in a `for` loop ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-52"><code data-line-number=" 52"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-52" name="listingsbad_practicespy-52"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-53"><code data-line-number=" 53"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-53" name="listingsbad_practicespy-53"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-54"><code data-line-number=" 54"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-54" name="listingsbad_practicespy-54"></a>    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-55"><code data-line-number=" 55"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-55" name="listingsbad_practicespy-55"></a>    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-56"><code data-line-number=" 56"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-56" name="listingsbad_practicespy-56"></a>        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-57"><code data-line-number=" 57"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-57" name="listingsbad_practicespy-57"></a>            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-58"><code data-line-number=" 58"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-58" name="listingsbad_practicespy-58"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Number found"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-59"><code data-line-number=" 59"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-59" name="listingsbad_practicespy-59"></a>            <span class="k">break</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-60"><code data-line-number=" 60"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-60" name="listingsbad_practicespy-60"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-61"><code data-line-number=" 61"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-61" name="listingsbad_practicespy-61"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Number not found"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-62"><code data-line-number=" 62"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-62" name="listingsbad_practicespy-62"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-63"><code data-line-number=" 63"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-63" name="listingsbad_practicespy-63"></a>    <span class="c1"># ===  LBYL: “look before you leap” ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-64"><code data-line-number=" 64"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-64" name="listingsbad_practicespy-64"></a>    <span class="n">dict_</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-65"><code data-line-number=" 65"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-65" name="listingsbad_practicespy-65"></a>    <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-66"><code data-line-number=" 66"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-66" name="listingsbad_practicespy-66"></a>    <span class="k">if</span> <span class="s2">"key"</span> <span class="ow">in</span> <span class="n">dict_</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-67"><code data-line-number=" 67"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-67" name="listingsbad_practicespy-67"></a>        <span class="n">value</span> <span class="o">+=</span> <span class="n">dict_</span><span class="p">[</span><span class="s2">"key"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-68"><code data-line-number=" 68"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-68" name="listingsbad_practicespy-68"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-69"><code data-line-number=" 69"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-69" name="listingsbad_practicespy-69"></a>    <span class="c1"># === Comparing with None/Boolean values in the wrong way ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-70"><code data-line-number=" 70"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-70" name="listingsbad_practicespy-70"></a>    <span class="n">number</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-71"><code data-line-number=" 71"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-71" name="listingsbad_practicespy-71"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-72"><code data-line-number=" 72"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-72" name="listingsbad_practicespy-72"></a>    <span class="c1"># ... many lines after:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-73"><code data-line-number=" 73"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-73" name="listingsbad_practicespy-73"></a>    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">flag</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-74"><code data-line-number=" 74"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-74" name="listingsbad_practicespy-74"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"This works, but is not the preferred PEP 8 pattern"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-75"><code data-line-number=" 75"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-75" name="listingsbad_practicespy-75"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-76"><code data-line-number=" 76"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-76" name="listingsbad_practicespy-76"></a>    <span class="c1"># === Using wildcard imports * ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-77"><code data-line-number=" 77"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-77" name="listingsbad_practicespy-77"></a>    <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="o">*</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-78"><code data-line-number=" 78"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-78" name="listingsbad_practicespy-78"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-79"><code data-line-number=" 79"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-79" name="listingsbad_practicespy-79"></a>    <span class="c1"># === Not using zip() to iterate over a pair of lists ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-80"><code data-line-number=" 80"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-80" name="listingsbad_practicespy-80"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-81"><code data-line-number=" 81"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-81" name="listingsbad_practicespy-81"></a>    <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-82"><code data-line-number=" 82"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-82" name="listingsbad_practicespy-82"></a>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-83"><code data-line-number=" 83"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-83" name="listingsbad_practicespy-83"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">letters</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-84"><code data-line-number=" 84"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-84" name="listingsbad_practicespy-84"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-85"><code data-line-number=" 85"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-85" name="listingsbad_practicespy-85"></a>    <span class="c1"># === Using `key` in `list` to check if key is contained in list ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-86"><code data-line-number=" 86"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-86" name="listingsbad_practicespy-86"></a>    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-87"><code data-line-number=" 87"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-87" name="listingsbad_practicespy-87"></a>    <span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-88"><code data-line-number=" 88"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-88" name="listingsbad_practicespy-88"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"The number 4 is in the list."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-89"><code data-line-number=" 89"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-89" name="listingsbad_practicespy-89"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-90"><code data-line-number=" 90"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-90" name="listingsbad_practicespy-90"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"The number 4 is NOT in the list."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-91"><code data-line-number=" 91"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-91" name="listingsbad_practicespy-91"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-92"><code data-line-number=" 92"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-92" name="listingsbad_practicespy-92"></a>    <span class="c1"># === Not using `get()` to return default values from a dictionary ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-93"><code data-line-number=" 93"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-93" name="listingsbad_practicespy-93"></a>    <span class="n">stocks</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'AMZ'</span><span class="p">:</span> <span class="s1">'Amazon'</span><span class="p">,</span> <span class="s1">'AAPL'</span><span class="p">:</span> <span class="s1">'Apple'</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-94"><code data-line-number=" 94"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-94" name="listingsbad_practicespy-94"></a>    <span class="k">if</span> <span class="s1">'AMC'</span> <span class="ow">in</span> <span class="n">stocks</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-95"><code data-line-number=" 95"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-95" name="listingsbad_practicespy-95"></a>        <span class="n">stock_name</span> <span class="o">=</span> <span class="n">stocks</span><span class="p">[</span><span class="s1">'AMC'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-96"><code data-line-number=" 96"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-96" name="listingsbad_practicespy-96"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-97"><code data-line-number=" 97"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-97" name="listingsbad_practicespy-97"></a>        <span class="n">stock_name</span> <span class="o">=</span> <span class="s1">'undefined'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-98"><code data-line-number=" 98"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-98" name="listingsbad_practicespy-98"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-99"><code data-line-number=" 99"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-99" name="listingsbad_practicespy-99"></a>    <span class="c1"># === Not using items() to iterate over a dictionary ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-100"><code data-line-number="100"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-100" name="listingsbad_practicespy-100"></a>    <span class="n">country_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'us'</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span> <span class="s1">'uk'</span><span class="p">:</span> <span class="s2">"United Kingdom"</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-101"><code data-line-number="101"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-101" name="listingsbad_practicespy-101"></a>    <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">country_map</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-102"><code data-line-number="102"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-102" name="listingsbad_practicespy-102"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">country_map</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-103"><code data-line-number="103"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-103" name="listingsbad_practicespy-103"></a>        <span class="c1"># do something with name</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-104"><code data-line-number="104"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-104" name="listingsbad_practicespy-104"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-105"><code data-line-number="105"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-105" name="listingsbad_practicespy-105"></a>    <span class="c1"># === Not Using explicit unpacking ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-106"><code data-line-number="106"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-106" name="listingsbad_practicespy-106"></a>    <span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-107"><code data-line-number="107"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-107" name="listingsbad_practicespy-107"></a>    <span class="n">car_1</span> <span class="o">=</span> <span class="n">cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-108"><code data-line-number="108"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-108" name="listingsbad_practicespy-108"></a>    <span class="n">car_2</span> <span class="o">=</span> <span class="n">cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-109"><code data-line-number="109"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-109" name="listingsbad_practicespy-109"></a>    <span class="n">car_3</span> <span class="o">=</span> <span class="n">cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-110"><code data-line-number="110"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-110" name="listingsbad_practicespy-110"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-111"><code data-line-number="111"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-111" name="listingsbad_practicespy-111"></a>    <span class="c1"># === Not Using enumerate() in loops ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-112"><code data-line-number="112"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-112" name="listingsbad_practicespy-112"></a>    <span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-113"><code data-line-number="113"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-113" name="listingsbad_practicespy-113"></a>    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cars</span><span class="p">)):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-114"><code data-line-number="114"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-114" name="listingsbad_practicespy-114"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">cars</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-115"><code data-line-number="115"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-115" name="listingsbad_practicespy-115"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-116"><code data-line-number="116"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-116" name="listingsbad_practicespy-116"></a>    <span class="c1"># === Returning more than one object type in function call ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-117"><code data-line-number="117"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-117" name="listingsbad_practicespy-117"></a>    <span class="k">def</span> <span class="nf">returning_many_types_from_function_call_bad</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-118"><code data-line-number="118"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-118" name="listingsbad_practicespy-118"></a>        <span class="n">person</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_person</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-119"><code data-line-number="119"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-119" name="listingsbad_practicespy-119"></a>        <span class="k">if</span> <span class="n">person</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-120"><code data-line-number="120"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-120" name="listingsbad_practicespy-120"></a>            <span class="k">return</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span>  <span class="c1"># returns an int</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-121"><code data-line-number="121"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-121" name="listingsbad_practicespy-121"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-122"><code data-line-number="122"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-122" name="listingsbad_practicespy-122"></a>        <span class="c1"># returns None if person not found</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-123"><code data-line-number="123"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-123" name="listingsbad_practicespy-123"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-124"><code data-line-number="124"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-124" name="listingsbad_practicespy-124"></a>    <span class="c1"># === Not using literal syntax to initialize empty list/dict/tuple ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-125"><code data-line-number="125"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-125" name="listingsbad_practicespy-125"></a>    <span class="n">my_evans</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-126"><code data-line-number="126"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-126" name="listingsbad_practicespy-126"></a>    <span class="n">my_maps</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-127"><code data-line-number="127"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-127" name="listingsbad_practicespy-127"></a>    <span class="n">my_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-128"><code data-line-number="128"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-128" name="listingsbad_practicespy-128"></a>    <span class="c1"># Add something to this empty list</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-129"><code data-line-number="129"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-129" name="listingsbad_practicespy-129"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-130"><code data-line-number="130"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-130" name="listingsbad_practicespy-130"></a>    <span class="c1"># === Pushing debugger in production code ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-131"><code data-line-number="131"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-131" name="listingsbad_practicespy-131"></a>    <span class="nb">breakpoint</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsbad_practicespy-132"><code data-line-number="132"></code></a></td>
+<td class="code"><code><a id="listingsbad_practicespy-132" name="listingsbad_practicespy-132"></a>    <span class="c1"># push to prod env</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

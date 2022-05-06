@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="good_practices.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>good_practices.py | Mastering Python</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://localhost.com/listings/good_practices.py.html">
+<link rel="icon" href="../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+                </li>
+<li class="nav-item">
+<a href="../show-me-the-code" class="nav-link">Listings</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
+            <div class="dropdown-menu">
+                    <a href="../naming-convention" class="dropdown-item">Naming Convention</a>
+                    <a href="../in-progress" class="dropdown-item">TODO</a>
+            </div>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li class="breadcrumb-item"><a href=".">listings</a></li>
+                <li class="breadcrumb-item active">good_practices.py</li>
+</ul></nav><h1>good_practices.py
+        <small><a href="good_practices.py">(Source)</a></small>
+    </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-1"><code data-line-number="  1"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-1" name="listingsgood_practicespy-1"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-2"><code data-line-number="  2"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-2" name="listingsgood_practicespy-2"></a><span class="sd">Common Python Patterns to use</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-3"><code data-line-number="  3"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-3" name="listingsgood_practicespy-3"></a><span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-4"><code data-line-number="  4"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-4" name="listingsgood_practicespy-4"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-5"><code data-line-number="  5"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-5" name="listingsgood_practicespy-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-6"><code data-line-number="  6"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-6" name="listingsgood_practicespy-6"></a><span class="k">def</span> <span class="nf">show_best_practices</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">pos_or_kwd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwd1</span><span class="p">,</span> <span class="n">kwd2</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-7"><code data-line-number="  7"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-7" name="listingsgood_practicespy-7"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-8"><code data-line-number="  8"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-8" name="listingsgood_practicespy-8"></a><span class="sd">    Shows good and best practices for getting clean &amp; idiomatic code.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-9"><code data-line-number="  9"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-9" name="listingsgood_practicespy-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-10"><code data-line-number=" 10"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-10" name="listingsgood_practicespy-10"></a><span class="sd">    # https://deepsource.io/blog/python-positional-only-arguments/</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-11"><code data-line-number=" 11"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-11" name="listingsgood_practicespy-11"></a><span class="sd">    PEP 570</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-12"><code data-line-number=" 12"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-12" name="listingsgood_practicespy-12"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-13"><code data-line-number=" 13"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-13" name="listingsgood_practicespy-13"></a><span class="sd">    :param pos1: 1st positional `only` argument</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-14"><code data-line-number=" 14"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-14" name="listingsgood_practicespy-14"></a><span class="sd">    :param pos2: 2nd positional `only` argument</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-15"><code data-line-number=" 15"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-15" name="listingsgood_practicespy-15"></a><span class="sd">    :param pos_or_kwd: after '/' -&gt; positional `or` keyword args</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-16"><code data-line-number=" 16"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-16" name="listingsgood_practicespy-16"></a><span class="sd">    :param kwd1: after '*' -&gt; keyword `only` argument</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-17"><code data-line-number=" 17"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-17" name="listingsgood_practicespy-17"></a><span class="sd">    :param kwd2: 2nd keyword `only` argument</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-18"><code data-line-number=" 18"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-18" name="listingsgood_practicespy-18"></a><span class="sd">    :return:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-19"><code data-line-number=" 19"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-19" name="listingsgood_practicespy-19"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-20"><code data-line-number=" 20"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-20" name="listingsgood_practicespy-20"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-21"><code data-line-number=" 21"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-21" name="listingsgood_practicespy-21"></a>    <span class="c1"># === Using `Context Managers` for Files ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-22"><code data-line-number=" 22"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-22" name="listingsgood_practicespy-22"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'abc.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-23"><code data-line-number=" 23"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-23" name="listingsgood_practicespy-23"></a>        <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-24"><code data-line-number=" 24"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-24" name="listingsgood_practicespy-24"></a><span class="sd">        Context managers in Python help to facilitate proper handling of resources,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-25"><code data-line-number=" 25"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-25" name="listingsgood_practicespy-25"></a><span class="sd">        to control what to do when objects are created or destroyed. This removes the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-26"><code data-line-number=" 26"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-26" name="listingsgood_practicespy-26"></a><span class="sd">        overhead of handling the creation and deletion of objects.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-27"><code data-line-number=" 27"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-27" name="listingsgood_practicespy-27"></a><span class="sd">        """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-28"><code data-line-number=" 28"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-28" name="listingsgood_practicespy-28"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-29"><code data-line-number=" 29"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-29" name="listingsgood_practicespy-29"></a>        <span class="c1"># do something exciting</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-30"><code data-line-number=" 30"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-30" name="listingsgood_practicespy-30"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-31"><code data-line-number=" 31"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-31" name="listingsgood_practicespy-31"></a>    <span class="c1"># === Using isinstance() to compare types ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-32"><code data-line-number=" 32"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-32" name="listingsgood_practicespy-32"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s1">'Alex'</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-33"><code data-line-number=" 33"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-33" name="listingsgood_practicespy-33"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-34"><code data-line-number=" 34"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-34" name="listingsgood_practicespy-34"></a>        <span class="sd">"""isinstance() is usually the preferred way to compare types. It’s not only</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-35"><code data-line-number=" 35"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-35" name="listingsgood_practicespy-35"></a><span class="sd">        faster but also considers inheritance, which is often the desired behavior. In</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-36"><code data-line-number=" 36"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-36" name="listingsgood_practicespy-36"></a><span class="sd">        Python, you typically want to check if a given object behaves like a string or a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-37"><code data-line-number=" 37"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-37" name="listingsgood_practicespy-37"></a><span class="sd">        list, not necessarily if it’s exactly a string. So instead of checking for </span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-38"><code data-line-number=" 38"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-38" name="listingsgood_practicespy-38"></a><span class="sd">        string</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-39"><code data-line-number=" 39"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-39" name="listingsgood_practicespy-39"></a><span class="sd">        and all its custom subclasses, you can just use `isinstance`."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-40"><code data-line-number=" 40"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-40" name="listingsgood_practicespy-40"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'It is a string'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-41"><code data-line-number=" 41"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-41" name="listingsgood_practicespy-41"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-42"><code data-line-number=" 42"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-42" name="listingsgood_practicespy-42"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'It is not a string'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-43"><code data-line-number=" 43"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-43" name="listingsgood_practicespy-43"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-44"><code data-line-number=" 44"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-44" name="listingsgood_practicespy-44"></a>    <span class="c1"># === Use of `exec()` ONLY in very specific case ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-45"><code data-line-number=" 45"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-45" name="listingsgood_practicespy-45"></a>    <span class="k">def</span> <span class="nf">print_word</span><span class="p">():</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-46"><code data-line-number=" 46"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-46" name="listingsgood_practicespy-46"></a>        <span class="sd">"""The exec statement enables you to dynamically execute arbitrary Python code</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-47"><code data-line-number=" 47"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-47" name="listingsgood_practicespy-47"></a><span class="sd">        which is stored in literal strings. Building a complex string of Python code and</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-48"><code data-line-number=" 48"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-48" name="listingsgood_practicespy-48"></a><span class="sd">        then passing that code to exec results in code that is hard to read and hard to</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-49"><code data-line-number=" 49"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-49" name="listingsgood_practicespy-49"></a><span class="sd">        test. Anytime the use of exec error is encountered, you should go back to the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-50"><code data-line-number=" 50"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-50" name="listingsgood_practicespy-50"></a><span class="sd">        code and check if there is a clearer, more direct way to accomplish the task."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-51"><code data-line-number=" 51"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-51" name="listingsgood_practicespy-51"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-52"><code data-line-number=" 52"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-52" name="listingsgood_practicespy-52"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-53"><code data-line-number=" 53"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-53" name="listingsgood_practicespy-53"></a>    <span class="n">print_word</span><span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-54"><code data-line-number=" 54"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-54" name="listingsgood_practicespy-54"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-55"><code data-line-number=" 55"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-55" name="listingsgood_practicespy-55"></a>    <span class="c1"># === Use exception type(s) specified ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-56"><code data-line-number=" 56"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-56" name="listingsgood_practicespy-56"></a>    <span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-57"><code data-line-number=" 57"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-57" name="listingsgood_practicespy-57"></a>        <span class="sd">"""Not specifying an exception type might not only hide the error but also leads</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-58"><code data-line-number=" 58"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-58" name="listingsgood_practicespy-58"></a><span class="sd">        to losing information about the error itself. So its better to handle the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-59"><code data-line-number=" 59"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-59" name="listingsgood_practicespy-59"></a><span class="sd">        situation with the appropriate error rather than the generic exception otherwise</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-60"><code data-line-number=" 60"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-60" name="listingsgood_practicespy-60"></a><span class="sd">        as shown below.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-61"><code data-line-number=" 61"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-61" name="listingsgood_practicespy-61"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-62"><code data-line-number=" 62"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-62" name="listingsgood_practicespy-62"></a><span class="sd">        With this pattern, you are able to handle exceptions based on their actual</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-63"><code data-line-number=" 63"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-63" name="listingsgood_practicespy-63"></a><span class="sd">        exception-type. The first exception type that matches the current error is</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-64"><code data-line-number=" 64"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-64" name="listingsgood_practicespy-64"></a><span class="sd">        handled first. Thus, it is recommended to handle specific exception types </span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-65"><code data-line-number=" 65"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-65" name="listingsgood_practicespy-65"></a><span class="sd">        first (</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-66"><code data-line-number=" 66"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-66" name="listingsgood_practicespy-66"></a><span class="sd">        e.g., ZeroDivisionError) and generic error types (e.g., Exception) towards the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-67"><code data-line-number=" 67"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-67" name="listingsgood_practicespy-67"></a><span class="sd">        end of the try-except block.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-68"><code data-line-number=" 68"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-68" name="listingsgood_practicespy-68"></a><span class="sd">        """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-69"><code data-line-number=" 69"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-69" name="listingsgood_practicespy-69"></a>        <span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">0</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-70"><code data-line-number=" 70"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-70" name="listingsgood_practicespy-70"></a>    <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-71"><code data-line-number=" 71"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-71" name="listingsgood_practicespy-71"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ZeroDivisionError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-72"><code data-line-number=" 72"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-72" name="listingsgood_practicespy-72"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-73"><code data-line-number=" 73"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-73" name="listingsgood_practicespy-73"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">"Exception: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-74"><code data-line-number=" 74"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-74" name="listingsgood_practicespy-74"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-75"><code data-line-number=" 75"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-75" name="listingsgood_practicespy-75"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"No errors"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-76"><code data-line-number=" 76"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-76" name="listingsgood_practicespy-76"></a>    <span class="k">finally</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-77"><code data-line-number=" 77"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-77" name="listingsgood_practicespy-77"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Good day'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-78"><code data-line-number=" 78"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-78" name="listingsgood_practicespy-78"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-79"><code data-line-number=" 79"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-79" name="listingsgood_practicespy-79"></a>    <span class="c1"># === Using map() or filter() instead of list comprehension ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-80"><code data-line-number=" 80"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-80" name="listingsgood_practicespy-80"></a>    <span class="sd">"""For simple transformations that can be expressed as a list comprehension,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-81"><code data-line-number=" 81"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-81" name="listingsgood_practicespy-81"></a><span class="sd">    it is better to use list comprehensions over map() or filter() as map and filter</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-82"><code data-line-number=" 82"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-82" name="listingsgood_practicespy-82"></a><span class="sd">    are used for expressions that are too long or complicated to express with a list</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-83"><code data-line-number=" 83"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-83" name="listingsgood_practicespy-83"></a><span class="sd">    comprehension."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-84"><code data-line-number=" 84"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-84" name="listingsgood_practicespy-84"></a>    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-85"><code data-line-number=" 85"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-85" name="listingsgood_practicespy-85"></a>    <span class="n">doubles</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-86"><code data-line-number=" 86"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-86" name="listingsgood_practicespy-86"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-87"><code data-line-number=" 87"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-87" name="listingsgood_practicespy-87"></a>    <span class="c1"># === Use generator expression directly, w/o unnecessary comprehension ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-88"><code data-line-number=" 88"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-88" name="listingsgood_practicespy-88"></a>    <span class="sd">"""Built-in functions like `all`, `any`, `enumerate`, `iter`, `itertools.cycle`,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-89"><code data-line-number=" 89"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-89" name="listingsgood_practicespy-89"></a><span class="sd">    `itertools.accumulate`, can work directly with a generator expression. They do not</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-90"><code data-line-number=" 90"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-90" name="listingsgood_practicespy-90"></a><span class="sd">    require comprehension.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-91"><code data-line-number=" 91"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-91" name="listingsgood_practicespy-91"></a><span class="sd">    In addition to them: `all()` and `any()` in Python also support short-circuiting,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-92"><code data-line-number=" 92"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-92" name="listingsgood_practicespy-92"></a><span class="sd">    but this behavior is lost if comprehension is used. This affects performance.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-93"><code data-line-number=" 93"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-93" name="listingsgood_practicespy-93"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-94"><code data-line-number=" 94"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-94" name="listingsgood_practicespy-94"></a>    <span class="n">my_fav_superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'sdf'</span><span class="p">,</span> <span class="s1">'sdfdf'</span><span class="p">,</span> <span class="s1">'dfgdfg'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-95"><code data-line-number=" 95"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-95" name="listingsgood_practicespy-95"></a>    <span class="n">comma_seperated_names</span> <span class="o">=</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">my_fav_superheroes</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-96"><code data-line-number=" 96"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-96" name="listingsgood_practicespy-96"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-97"><code data-line-number=" 97"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-97" name="listingsgood_practicespy-97"></a>    <span class="c1"># === Use respective comprehension instead of unnecessary use of generators ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-98"><code data-line-number=" 98"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-98" name="listingsgood_practicespy-98"></a>    <span class="sd">"""It is unnecessary to use a generator expression within a call to list,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-99"><code data-line-number=" 99"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-99" name="listingsgood_practicespy-99"></a><span class="sd">    dict or set since there are comprehensions for each of these types. Instead of</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-100"><code data-line-number="100"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-100" name="listingsgood_practicespy-100"></a><span class="sd">    using list/dict/set around a generator expression, they can be written as their</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-101"><code data-line-number="101"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-101" name="listingsgood_practicespy-101"></a><span class="sd">    respective comprehension."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-102"><code data-line-number="102"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-102" name="listingsgood_practicespy-102"></a>    <span class="n">squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-103"><code data-line-number="103"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-103" name="listingsgood_practicespy-103"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-104"><code data-line-number="104"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-104" name="listingsgood_practicespy-104"></a>    <span class="c1"># === Using `else` where appropriate in a `for` loop ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-105"><code data-line-number="105"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-105" name="listingsgood_practicespy-105"></a>    <span class="sd">"""Python provides a built-in `else` clause for `for` loops. If a `for` loop </span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-106"><code data-line-number="106"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-106" name="listingsgood_practicespy-106"></a><span class="sd">    completes</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-107"><code data-line-number="107"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-107" name="listingsgood_practicespy-107"></a><span class="sd">    without being prematurely interrupted by a `break` or `return` statement, then the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-108"><code data-line-number="108"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-108" name="listingsgood_practicespy-108"></a><span class="sd">    `else` clause of the loop is executed."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-109"><code data-line-number="109"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-109" name="listingsgood_practicespy-109"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-110"><code data-line-number="110"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-110" name="listingsgood_practicespy-110"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-111"><code data-line-number="111"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-111" name="listingsgood_practicespy-111"></a>    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-112"><code data-line-number="112"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-112" name="listingsgood_practicespy-112"></a>        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-113"><code data-line-number="113"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-113" name="listingsgood_practicespy-113"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Number found"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-114"><code data-line-number="114"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-114" name="listingsgood_practicespy-114"></a>            <span class="k">break</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-115"><code data-line-number="115"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-115" name="listingsgood_practicespy-115"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-116"><code data-line-number="116"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-116" name="listingsgood_practicespy-116"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Number not found"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-117"><code data-line-number="117"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-117" name="listingsgood_practicespy-117"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-118"><code data-line-number="118"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-118" name="listingsgood_practicespy-118"></a>    <span class="c1"># === EAFP: “it’s easier to ask for forgiveness than permission”. ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-119"><code data-line-number="119"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-119" name="listingsgood_practicespy-119"></a>    <span class="sd">"""The Python community uses an EAFP (easier to ask for forgiveness than</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-120"><code data-line-number="120"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-120" name="listingsgood_practicespy-120"></a><span class="sd">    permission) coding style. This coding style assumes that needed variables, files,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-121"><code data-line-number="121"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-121" name="listingsgood_practicespy-121"></a><span class="sd">    etc. exist. Any problems are caught as exceptions. This results in a generally</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-122"><code data-line-number="122"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-122" name="listingsgood_practicespy-122"></a><span class="sd">    clean and concise style containing a lot of try and except statements."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-123"><code data-line-number="123"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-123" name="listingsgood_practicespy-123"></a>    <span class="n">dict_</span> <span class="o">=</span> <span class="p">{}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-124"><code data-line-number="124"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-124" name="listingsgood_practicespy-124"></a>    <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-125"><code data-line-number="125"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-125" name="listingsgood_practicespy-125"></a>    <span class="k">try</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-126"><code data-line-number="126"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-126" name="listingsgood_practicespy-126"></a>        <span class="n">value</span> <span class="o">+=</span> <span class="n">dict_</span><span class="p">[</span><span class="s2">"key"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-127"><code data-line-number="127"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-127" name="listingsgood_practicespy-127"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-128"><code data-line-number="128"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-128" name="listingsgood_practicespy-128"></a>    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-129"><code data-line-number="129"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-129" name="listingsgood_practicespy-129"></a>        <span class="k">pass</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-130"><code data-line-number="130"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-130" name="listingsgood_practicespy-130"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-131"><code data-line-number="131"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-131" name="listingsgood_practicespy-131"></a>    <span class="c1"># === Comparing with None/Boolean values in the Correct way ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-132"><code data-line-number="132"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-132" name="listingsgood_practicespy-132"></a>    <span class="n">number</span> <span class="o">=</span> <span class="kc">None</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-133"><code data-line-number="133"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-133" name="listingsgood_practicespy-133"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-134"><code data-line-number="134"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-134" name="listingsgood_practicespy-134"></a>    <span class="c1"># ... many lines after:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-135"><code data-line-number="135"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-135" name="listingsgood_practicespy-135"></a>    <span class="k">if</span> <span class="n">number</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">flag</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-136"><code data-line-number="136"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-136" name="listingsgood_practicespy-136"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"PEP 8 Style Guide prefers this pattern"</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-137"><code data-line-number="137"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-137" name="listingsgood_practicespy-137"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-138"><code data-line-number="138"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-138" name="listingsgood_practicespy-138"></a>    <span class="c1"># === Using wildcard imports * ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-139"><code data-line-number="139"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-139" name="listingsgood_practicespy-139"></a>    <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-140"><code data-line-number="140"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-140" name="listingsgood_practicespy-140"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-141"><code data-line-number="141"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-141" name="listingsgood_practicespy-141"></a>    <span class="c1"># === Use zip() to iterate over a pair of lists ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-142"><code data-line-number="142"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-142" name="listingsgood_practicespy-142"></a>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-143"><code data-line-number="143"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-143" name="listingsgood_practicespy-143"></a>    <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-144"><code data-line-number="144"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-144" name="listingsgood_practicespy-144"></a>    <span class="k">for</span> <span class="n">numbers_value</span><span class="p">,</span> <span class="n">letters_value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">letters</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-145"><code data-line-number="145"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-145" name="listingsgood_practicespy-145"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">numbers_value</span><span class="p">,</span> <span class="n">letters_value</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-146"><code data-line-number="146"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-146" name="listingsgood_practicespy-146"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-147"><code data-line-number="147"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-147" name="listingsgood_practicespy-147"></a>    <span class="c1"># === Using set/dict to check if key is in list (especially very long) ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-148"><code data-line-number="148"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-148" name="listingsgood_practicespy-148"></a>    <span class="sd">"""Using key in list to iterate through a list can potentially take n iterations</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-149"><code data-line-number="149"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-149" name="listingsgood_practicespy-149"></a><span class="sd">    to complete, where n is the number of items in the list.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-150"><code data-line-number="150"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-150" name="listingsgood_practicespy-150"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-151"><code data-line-number="151"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-151" name="listingsgood_practicespy-151"></a><span class="sd">    If possible, you should change the list to a set or dictionary instead, because</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-152"><code data-line-number="152"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-152" name="listingsgood_practicespy-152"></a><span class="sd">    Python can search for items in a set or dictionary by attempting to directly</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-153"><code data-line-number="153"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-153" name="listingsgood_practicespy-153"></a><span class="sd">    accessing them without iterations, which is much more efficient (Since set in</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-154"><code data-line-number="154"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-154" name="listingsgood_practicespy-154"></a><span class="sd">    Python</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-155"><code data-line-number="155"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-155" name="listingsgood_practicespy-155"></a><span class="sd">    is implemented as a hash table and time complexity of accessing an element is O(1)).</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-156"><code data-line-number="156"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-156" name="listingsgood_practicespy-156"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-157"><code data-line-number="157"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-157" name="listingsgood_practicespy-157"></a><span class="sd">    This is not applicable if your list has duplicates, and you want to find all</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-158"><code data-line-number="158"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-158" name="listingsgood_practicespy-158"></a><span class="sd">    occurrences of the element.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-159"><code data-line-number="159"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-159" name="listingsgood_practicespy-159"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-160"><code data-line-number="160"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-160" name="listingsgood_practicespy-160"></a>    <span class="n">original_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-161"><code data-line-number="161"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-161" name="listingsgood_practicespy-161"></a>    <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">original_list</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-162"><code data-line-number="162"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-162" name="listingsgood_practicespy-162"></a>    <span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-163"><code data-line-number="163"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-163" name="listingsgood_practicespy-163"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"The number 4 is in the list."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-164"><code data-line-number="164"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-164" name="listingsgood_practicespy-164"></a>    <span class="k">else</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-165"><code data-line-number="165"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-165" name="listingsgood_practicespy-165"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"The number 4 is NOT in the list."</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-166"><code data-line-number="166"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-166" name="listingsgood_practicespy-166"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-167"><code data-line-number="167"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-167" name="listingsgood_practicespy-167"></a>    <span class="c1"># === Use `get()` to return default values from a dictionary ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-168"><code data-line-number="168"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-168" name="listingsgood_practicespy-168"></a>    <span class="sd">"""Frequently you will see code create a variable, assign a default value to the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-169"><code data-line-number="169"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-169" name="listingsgood_practicespy-169"></a><span class="sd">    variable, and then check a dictionary for a certain key. If the key exists,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-170"><code data-line-number="170"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-170" name="listingsgood_practicespy-170"></a><span class="sd">    then the value of the key is copied into the value for the variable. While there</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-171"><code data-line-number="171"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-171" name="listingsgood_practicespy-171"></a><span class="sd">    is nothing wrong this, it is more concise to use the built-in method dict.get(</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-172"><code data-line-number="172"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-172" name="listingsgood_practicespy-172"></a><span class="sd">    key[, default]) from the Python Standard Library. If the key exists in the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-173"><code data-line-number="173"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-173" name="listingsgood_practicespy-173"></a><span class="sd">    dictionary, then the value for that key is returned. If it does not exist,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-174"><code data-line-number="174"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-174" name="listingsgood_practicespy-174"></a><span class="sd">    then the default value specified as the second argument to get() is returned."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-175"><code data-line-number="175"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-175" name="listingsgood_practicespy-175"></a>    <span class="n">stocks</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'AMZ'</span><span class="p">:</span> <span class="s1">'Amazon'</span><span class="p">,</span> <span class="s1">'AAPL'</span><span class="p">:</span> <span class="s1">'Apple'</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-176"><code data-line-number="176"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-176" name="listingsgood_practicespy-176"></a>    <span class="n">stock_name</span> <span class="o">=</span> <span class="n">stocks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'AMC'</span><span class="p">,</span> <span class="s1">'undefined'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-177"><code data-line-number="177"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-177" name="listingsgood_practicespy-177"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-178"><code data-line-number="178"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-178" name="listingsgood_practicespy-178"></a>    <span class="c1"># === Use items() to iterate over a dictionary ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-179"><code data-line-number="179"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-179" name="listingsgood_practicespy-179"></a>    <span class="sd">"""The `items()` method on a dictionary returns an iterable with key-value tuples</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-180"><code data-line-number="180"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-180" name="listingsgood_practicespy-180"></a><span class="sd">    which can be unpacked in a `for` loop. This approach is idiomatic, and hence</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-181"><code data-line-number="181"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-181" name="listingsgood_practicespy-181"></a><span class="sd">    recommended.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-182"><code data-line-number="182"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-182" name="listingsgood_practicespy-182"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-183"><code data-line-number="183"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-183" name="listingsgood_practicespy-183"></a>    <span class="n">country_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'us'</span><span class="p">:</span> <span class="s2">"USA"</span><span class="p">,</span> <span class="s1">'uk'</span><span class="p">:</span> <span class="s2">"United Kingdom"</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-184"><code data-line-number="184"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-184" name="listingsgood_practicespy-184"></a>    <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">country_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-185"><code data-line-number="185"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-185" name="listingsgood_practicespy-185"></a>        <span class="c1"># do something with name</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-186"><code data-line-number="186"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-186" name="listingsgood_practicespy-186"></a>        <span class="k">pass</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-187"><code data-line-number="187"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-187" name="listingsgood_practicespy-187"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-188"><code data-line-number="188"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-188" name="listingsgood_practicespy-188"></a>    <span class="c1"># === Use explicit unpacking ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-189"><code data-line-number="189"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-189" name="listingsgood_practicespy-189"></a>    <span class="sd">"""Unpacking is more concise and less error-prone as manually assigning multiple</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-190"><code data-line-number="190"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-190" name="listingsgood_practicespy-190"></a><span class="sd">    variables to the elements of a list is more verbose and tedious to write."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-191"><code data-line-number="191"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-191" name="listingsgood_practicespy-191"></a>    <span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-192"><code data-line-number="192"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-192" name="listingsgood_practicespy-192"></a>    <span class="n">cars2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-193"><code data-line-number="193"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-193" name="listingsgood_practicespy-193"></a>    <span class="n">cars3</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">,</span> <span class="s1">'Audi'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-194"><code data-line-number="194"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-194" name="listingsgood_practicespy-194"></a>    <span class="n">car_1</span><span class="p">,</span> <span class="n">car_2</span><span class="p">,</span> <span class="n">car_3</span> <span class="o">=</span> <span class="n">cars</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-195"><code data-line-number="195"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-195" name="listingsgood_practicespy-195"></a>    <span class="n">car_1</span><span class="p">,</span> <span class="n">car_2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cars2</span>  <span class="c1"># _ -&gt; if we don't need variable name for other values</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-196"><code data-line-number="196"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-196" name="listingsgood_practicespy-196"></a>    <span class="n">car_1</span><span class="p">,</span> <span class="n">car_2</span><span class="p">,</span> <span class="o">*</span><span class="n">car_3</span> <span class="o">=</span> <span class="n">cars3</span>  <span class="c1"># car_1='BMW', car_2='Mazda', car_3=('Tesla', 'Audi')</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-197"><code data-line-number="197"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-197" name="listingsgood_practicespy-197"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-198"><code data-line-number="198"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-198" name="listingsgood_practicespy-198"></a>    <span class="c1"># === Use enumerate() in loops ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-199"><code data-line-number="199"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-199" name="listingsgood_practicespy-199"></a>    <span class="sd">"""Creating a loop that uses an incrementing index to access each element of a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-200"><code data-line-number="200"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-200" name="listingsgood_practicespy-200"></a><span class="sd">    list within the loop construct is not the preferred style for accessing each</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-201"><code data-line-number="201"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-201" name="listingsgood_practicespy-201"></a><span class="sd">    element in a list. The preferred style is to use enumerate() to simultaneously</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-202"><code data-line-number="202"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-202" name="listingsgood_practicespy-202"></a><span class="sd">    retrieve the index and list element."""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-203"><code data-line-number="203"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-203" name="listingsgood_practicespy-203"></a>    <span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'BMW'</span><span class="p">,</span> <span class="s1">'Mazda'</span><span class="p">,</span> <span class="s1">'Tesla'</span><span class="p">]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-204"><code data-line-number="204"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-204" name="listingsgood_practicespy-204"></a>    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">car</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cars</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-205"><code data-line-number="205"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-205" name="listingsgood_practicespy-205"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">car</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-206"><code data-line-number="206"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-206" name="listingsgood_practicespy-206"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-207"><code data-line-number="207"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-207" name="listingsgood_practicespy-207"></a>    <span class="c1"># === Prefer returning one object type in function call ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-208"><code data-line-number="208"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-208" name="listingsgood_practicespy-208"></a>    <span class="k">def</span> <span class="nf">returning_many_types_from_function_call_good</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-209"><code data-line-number="209"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-209" name="listingsgood_practicespy-209"></a>        <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-210"><code data-line-number="210"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-210" name="listingsgood_practicespy-210"></a><span class="sd">        Having inconsistent return types in a function makes the code confusing and</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-211"><code data-line-number="211"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-211" name="listingsgood_practicespy-211"></a><span class="sd">        complex to understand, and can lead to bugs which are hard to resolve. If a</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-212"><code data-line-number="212"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-212" name="listingsgood_practicespy-212"></a><span class="sd">        function is supposed to return a given type (e.g. integer constant, list,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-213"><code data-line-number="213"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-213" name="listingsgood_practicespy-213"></a><span class="sd">        tuple) but can something else as well, the caller of that function will always</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-214"><code data-line-number="214"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-214" name="listingsgood_practicespy-214"></a><span class="sd">        need to check for the type of value being returned. It is recommended to return</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-215"><code data-line-number="215"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-215" name="listingsgood_practicespy-215"></a><span class="sd">        only one type of object from a function.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-216"><code data-line-number="216"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-216" name="listingsgood_practicespy-216"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-217"><code data-line-number="217"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-217" name="listingsgood_practicespy-217"></a><span class="sd">        If there's a need to return something empty in some failing case,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-218"><code data-line-number="218"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-218" name="listingsgood_practicespy-218"></a><span class="sd">        it is recommended to raise an exception that can be cleanly caught.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-219"><code data-line-number="219"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-219" name="listingsgood_practicespy-219"></a><span class="sd">        :return:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-220"><code data-line-number="220"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-220" name="listingsgood_practicespy-220"></a><span class="sd">        """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-221"><code data-line-number="221"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-221" name="listingsgood_practicespy-221"></a>        <span class="n">person</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_person</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-222"><code data-line-number="222"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-222" name="listingsgood_practicespy-222"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">person</span><span class="p">:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-223"><code data-line-number="223"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-223" name="listingsgood_practicespy-223"></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">'No person found with name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-224"><code data-line-number="224"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-224" name="listingsgood_practicespy-224"></a>        <span class="k">return</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span>  <span class="c1"># guaranteed to return int every time</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-225"><code data-line-number="225"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-225" name="listingsgood_practicespy-225"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-226"><code data-line-number="226"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-226" name="listingsgood_practicespy-226"></a>    <span class="c1"># === Use literal syntax to initialize empty list/dict/tuple ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-227"><code data-line-number="227"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-227" name="listingsgood_practicespy-227"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-228"><code data-line-number="228"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-228" name="listingsgood_practicespy-228"></a><span class="sd">    It is relatively slower to initialize an empty dictionary by calling dict() than</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-229"><code data-line-number="229"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-229" name="listingsgood_practicespy-229"></a><span class="sd">    using the empty literal, because the name dict must be looked up in the global</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-230"><code data-line-number="230"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-230" name="listingsgood_practicespy-230"></a><span class="sd">    scope in case it has been rebound. Same goes for the other two types — list() and</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-231"><code data-line-number="231"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-231" name="listingsgood_practicespy-231"></a><span class="sd">    tuple().</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-232"><code data-line-number="232"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-232" name="listingsgood_practicespy-232"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-233"><code data-line-number="233"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-233" name="listingsgood_practicespy-233"></a>    <span class="n">my_evans</span> <span class="o">=</span> <span class="p">[]</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-234"><code data-line-number="234"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-234" name="listingsgood_practicespy-234"></a>    <span class="n">my_maps</span> <span class="o">=</span> <span class="p">{}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-235"><code data-line-number="235"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-235" name="listingsgood_practicespy-235"></a>    <span class="n">my_tuple</span> <span class="o">=</span> <span class="p">()</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-236"><code data-line-number="236"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-236" name="listingsgood_practicespy-236"></a>    <span class="n">my_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># because there is no literal syntax for set</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-237"><code data-line-number="237"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-237" name="listingsgood_practicespy-237"></a>    <span class="c1"># Add something to this empty list</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-238"><code data-line-number="238"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-238" name="listingsgood_practicespy-238"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-239"><code data-line-number="239"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-239" name="listingsgood_practicespy-239"></a>    <span class="c1"># === Audit code thoroughly! in production code ===</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-240"><code data-line-number="240"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-240" name="listingsgood_practicespy-240"></a>    <span class="sd">"""</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-241"><code data-line-number="241"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-241" name="listingsgood_practicespy-241"></a><span class="sd">    Most of us have done this at least once — while debugging code, it may happen</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-242"><code data-line-number="242"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-242" name="listingsgood_practicespy-242"></a><span class="sd">    that you push your code after you found the bug but forgotten to remove the</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-243"><code data-line-number="243"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-243" name="listingsgood_practicespy-243"></a><span class="sd">    debugger. This is critical, and can affect the behavior of the code. It is highly</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-244"><code data-line-number="244"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-244" name="listingsgood_practicespy-244"></a><span class="sd">    recommended to audit the code to remove invocations of debuggers before checking in.</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-245"><code data-line-number="245"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-245" name="listingsgood_practicespy-245"></a><span class="sd">    :return:</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-246"><code data-line-number="246"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-246" name="listingsgood_practicespy-246"></a><span class="sd">    """</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-247"><code data-line-number="247"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-247" name="listingsgood_practicespy-247"></a>    <span class="c1"># remove all breakpoint()/print()/pdb</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listingsgood_practicespy-248"><code data-line-number="248"></code></a></td>
+<td class="code"><code><a id="listingsgood_practicespy-248" name="listingsgood_practicespy-248"></a>    <span class="c1"># ...some ready for dev/qa/stage/prod envs business logic...</span>
+</code></td>
+</tr>
+</table></div>
+
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
