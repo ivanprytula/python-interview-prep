@@ -82,3 +82,17 @@
 # Play & Learn
 1. [Command Line Heroes: BASH](https://www.redhat.com/en/command-line-heroes/bash/index.html?extIdCarryOver=true&sc_cid=701f2000001OH79AAG)
 2. ...
+
+# Misc collection
+1. [David Beazley - Python Concurrency From the Ground Up  PyCon 2015](https://youtu.be/MCs5OvhV9S4?list=WL)
+2. [Clean Code summary](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)
+3. [Comprehensive Python Cheatsheet](https://gto76.github.io/python-cheatsheet/)
+4. [Рефакторинг, патерни проектування, принципи SOLID etc.](https://refactoring.guru/uk)
+5. [Django (anti)patterns](https://www.django-antipatterns.com/)
+6. [Comprehensive Linux Cheatsheet](https://gto76.github.io/linux-cheatsheet/)
+7. [Classy Class-Based Views](http://ccbv.co.uk/)
+8. [Classy Django REST Framework](https://www.cdrf.co/)
+9. [Algorithms/Python](https://github.com/TheAlgorithms/Python)
+10. [document end-of-life dates, and support lifecycles of various products](https://endoflife.date/python)
+11. [Scalene: a high-performance, high-precision CPU, GPU, and memory profiler for Python](https://github.com/plasma-umass/scalene)
+12. [125 psql Tips](https://psql-tips.org/psql_tips_all.html)
