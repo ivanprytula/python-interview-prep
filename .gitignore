@@ -1,7 +1,7 @@
-.idea
-.vscode
+.idea/
+.vscode/
 
-__pycache__
+__pycache__/
 *.py[cod]
 
 # Nikola SSG-specific
@@ -11,3 +11,4 @@ output/
 .doit.db
 
 .env
+venv/
