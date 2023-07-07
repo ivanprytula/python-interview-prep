@@ -1,11 +1,11 @@
 <!--
 .. title: Cloud of Terms
 .. slug: cloud-of-terms
-.. date: 2022-04-21 19:18:42 UTC+03:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. date: 2023-07-07 12:00:00 UTC+02:00
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -16,36 +16,77 @@
 
 <body>
 
-<h3>Hover on "Python" tag :)</h3>
+    <p>Hover on term and read more info in tooltip.</p>
+    <p>Click on term and you'll be redirected to Google search page with results about the term.</p>
 
-<div class="content">
-    <!-- content -->
-</div>
+    <div class="content"></div>
 
-<script>
-    const texts = [
-        'Python', 'Django', 'DRF', 'Flask', 'POSIX'
-    ];
-    options = {
-        'radius': 200,
-        'maxSpeed': 'slow',
-    }
-    const tc = TagCloud('.content', texts, options);
+    <script>
 
-    let rootEl = document.querySelector('.content');
-    rootEl.addEventListener('click', function clickEventHandler(e) {
-        if (e.target.className === 'tagcloud--item') {
-            window.open(`https://www.google.com/search?q=${e.target.innerText}`, '_blank');
+        let termsPython = {
+            Python: 'Python is an interpreted, high-level and general-purpose programming language.',
+            Django: 'Django is a Python-based free and open-source web framework that follows the model-template-views architectural pattern.',
+            DRF: 'Django REST framework is a powerful and flexible toolkit for building Web APIs.',
+            Flask: 'Flask is a micro web framework written in Python.',
         }
-    });
 
-    rootEl.addEventListener('mouseover', function (e) {
-        if (e.target.className === 'tagcloud--item' && e.target.innerText === 'Python') {
-            window.alert('Well done, Pythonista!')
+        let termsOS = {
+            POSIX: 'POSIX is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems.',
+            UNIX: 'Unix is a family of multitasking, multi-user computer operating systems that derive from the original AT&T Unix.',
+            Linux: 'Linux is a family of open-source Unix-like operating systems based on the Linux kernel.',
+            Bash: 'Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell.',
         }
-    });
 
+        let termsVCS = {
+            Git: 'Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.',
+            GitHub: 'GitHub is a provider of Internet hosting for software development and version control using Git.',
+            GitLab: 'GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc.',
+        }
 
-</script>
+        let termsContainers = {
+            Docker: 'Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.',
+        }
+
+        let termsWithDefinitions = {
+            ...termsPython,
+            ...termsOS,
+            ...termsVCS,
+            ...termsContainers,
+        }
+
+        const texts = [
+            'Python', 'Django', 'DRF', 'Flask', 'POSIX', 'UNIX', 'Linux', 'Bash', 'Git', 'GitHub', 'GitLab', 'Docker',
+        ];
+        options = {
+            'radius': 300,
+            'maxSpeed': 'slow',
+        }
+        const tc = TagCloud('.content', Object.keys(termsWithDefinitions), options);
+
+        let rootEl = document.querySelector('.content');
+
+        const clickEventHandler = (e) => {
+            if (e.target.className === 'tagcloud--item') {
+                window.open(`https://www.google.com/search?q=${e.target.innerText}`, '_blank');
+            }
+        };
+
+        const pauseResume = (e, tc) => {
+            if (e.target.className === 'tagcloud--item') {
+                tc.pause();
+
+                e.target.setAttribute('title', termsWithDefinitions[e.target.innerText]);
+                // debugger;
+
+            } else {
+                tc.resume();
+            }
+        };
+
+        rootEl.addEventListener('click', (e) => clickEventHandler(e));
+        rootEl.addEventListener('mouseover', (e) => pauseResume(e, tc));
+        rootEl.addEventListener('mouseout', (e) => pauseResume(e, tc));
+
+    </script>
 
 </body>
