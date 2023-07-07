@@ -239,25 +239,26 @@ floating point numbers. Arrays are sequence types and behave very much like list
 stored in them is constrained (homogeneous). The type is specified at object creation time by using a type code, which
 is a single character. Array objects also implement the <em>buffer interface</em>, and may be used wherever bytes-like objects
 are supported. <a href="https://docs.python.org/3/library/array.html">official docs</a></p>
-<pre class="code literal-block"><span class="kn">import</span> <span class="nn">array</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">my_array</span><span class="o">=</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">'i'</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># ‘i’ signed int (C type), int (Python type)</span>
 <span class="n">my_list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">'abc'</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">]</span>  <span class="c1"># cf. with regular list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>  <span class="c1"># array(‘i’, [1, 2, 3, 4])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_array</span><span class="p">))</span>  <span class="c1"># &lt;class 'array.array'&gt;</span>
-</pre>
+</pre></div>
+
 <h5>Q: What is <code>pass</code> in Python?</h5>
 <p>Pass means, no-operation Python statement, or in other words it is a placeholder in compound statement, where there
 should be a blank left and nothing has to be written there.
 Python has the syntactical requirement that code blocks cannot be empty. Empty code blocks are however useful in a
 variety of different contexts, for example if you are designing a new class with some methods that you don't want to
 implement:</p>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">MyClass</span>(<span class="n">object</span>):  <span class="c1"># (object) is for Python 2.*</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="n">MyClass</span>(<span class="n">object</span>):  <span class="c1"># (object) is for Python 2.*</span>
     <span class="n">def</span> <span class="n">method_a</span>(<span class="nb">self</span>):
         <span class="nb">pass</span>
 
     <span class="n">def</span> <span class="n">method_b</span>(<span class="nb">self</span>):
         <span class="nb">print</span>(<span class="s">"I'm method_b"</span>)
-</code></pre>
+</pre></div>
 
 <p>If you were to leave out the <code>pass</code>, the code wouldn't run, and you'll get an error:
 IndentationError: expected an indented block</p>
@@ -276,7 +277,7 @@ a, b = b, a</p>
 list or tuple of arguments to a function. </em><em>kwargs is used when we don't know how many keyword arguments will be
 passed to a function, or it can be used to pass the values of a dictionary as keyword arguments. The identifiers args
 and kwargs are a convention, you could also use </em>bob and **billy but that would not be wise.</p>
-<pre class="code literal-block"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="code"><pre class="code literal-block"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
 
@@ -313,22 +314,23 @@ and kwargs are a convention, you could also use </em>bob and **billy but that wo
 <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span><span class="p">)</span>  <span class="c1"># 1 2 (4, 5, 6) {}</span>
 <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s2">"winning"</span><span class="p">,</span> <span class="o">**</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 1 1 () {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}</span>
 <span class="n">f2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s2">"winning"</span><span class="p">,</span> <span class="o">**</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 1 2 (4, 5, 6) {'a': 7, 'q': 'winning', 'c': 9, 'b': 8}</span>
-</pre>
+</pre></div>
+
 <h5>Q: What is docstring in Python?</h5>
 <p>Python docstrings are the string literals that appear right after the definition of a function, method, class, or
 module. We can access these docstrings using the <strong>doc</strong> attribute. <a href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a></p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">square</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>:
-“””<span class="nv">Takes</span> <span class="nv">in</span> <span class="nv">a</span> <span class="nv">number</span> <span class="nv">n</span>, <span class="nv">returns</span> <span class="nv">the</span> <span class="nv">square</span> <span class="nv">of</span> <span class="nv">n</span>””” # <span class="nv">single</span> <span class="nv">quotes</span> ‘ <span class="nv">are</span> <span class="nv">valid</span> <span class="nv">as</span> <span class="nv">well</span>
-<span class="k">return</span> <span class="nv">n</span><span class="o">**</span><span class="mi">2</span>
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">square</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>:
+“””<span class="nv">Takes</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">n</span>,<span class="w"> </span><span class="nv">returns</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">square</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">n</span>”””<span class="w"> </span>#<span class="w"> </span><span class="nv">single</span><span class="w"> </span><span class="nv">quotes</span><span class="w"> </span>‘<span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">valid</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">well</span>
+<span class="k">return</span><span class="w"> </span><span class="nv">n</span><span class="o">**</span><span class="mi">2</span>
 <span class="nv">print</span><span class="ss">(</span><span class="nv">square</span>.<span class="nv">__doc__</span><span class="ss">)</span>
 <span class="nv">print</span><span class="ss">(</span><span class="nv">print</span>.<span class="nv">__doc__</span><span class="ss">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q:  How can you copy an object in Python?</h5>
 <p>Use copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.</p>
-<pre class="code literal-block"><span></span><code>x = copy.copy(y)     # make a shallow copy of y
+<div class="code"><pre class="code literal-block">x = copy.copy(y)     # make a shallow copy of y
 x = copy.deepcopy(y) # make a deep copy of y; module specific errors &gt;copy.Error
-</code></pre>
+</pre></div>
 
 <p>The difference between shallow and deep copying is only relevant for compound objects (objects that contain other
 objects, like lists or class instances).</p>
@@ -353,8 +355,8 @@ structures) by:</p>
 <li>Use a <code>dict</code> when you want to associate pairs of two items.</li>
 </ul>
 <h5>Q: What keywords can be used in conjunction with the <code>for</code> keyword?</h5>
-<pre class="code literal-block"><span></span><code><span class="o">[</span><span class="n">not</span><span class="o">]</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="k">break</span><span class="p">,</span><span class="w"> </span><span class="k">continue</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">,</span><span class="w"> </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="o">[</span><span class="n">not</span><span class="o">]</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="k">break</span><span class="p">,</span><span class="w"> </span><span class="k">continue</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">,</span><span class="w"> </span><span class="k">else</span><span class="err">:</span>
+</pre></div>
 
 <p>The <code>else</code> keyword after <code>for</code> loop specifies a block of code to be executed when the loop is finished normally.</p>
 <dl>
@@ -407,17 +409,17 @@ all modules of your application. The module will be available as a global variab
 <h5>Q: What is slicing in Python?</h5>
 <p>Select and change (only mutable types) a specific region of the sequence. A mechanism to select a range of items from
 sequence types like list, tuple, strings etc.:</p>
-<pre class="code literal-block"><span></span><code><span class="s s-Atom">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="mi">0</span><span class="s s-Atom">:</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Choose</span> <span class="s s-Atom">elements</span> <span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="s s-Atom">upper</span><span class="o">-</span><span class="s s-Atom">bound</span> <span class="s s-Atom">non</span> <span class="s s-Atom">inclusive</span>
-<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:-</span><span class="mi">1</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Choose</span> <span class="s s-Atom">all</span> <span class="s s-Atom">but</span> <span class="s s-Atom">the</span> <span class="s s-Atom">last</span>
-<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Reverse</span> <span class="s s-Atom">the</span> <span class="s s-Atom">list</span>
-<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="s s-Atom">::</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Skip</span> <span class="s s-Atom">by</span> <span class="mi">2</span>
-<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Skip</span> <span class="s s-Atom">by</span> <span class="o">-</span><span class="mi">2</span> <span class="s s-Atom">from</span> <span class="s s-Atom">the</span> <span class="s s-Atom">end</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="s s-Atom">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Choose</span> <span class="s s-Atom">elements</span> <span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="s s-Atom">upper</span><span class="o">-</span><span class="s s-Atom">bound</span> <span class="s s-Atom">non</span> <span class="s s-Atom">inclusive</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="mi">0</span><span class="o">:-</span><span class="mi">1</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Choose</span> <span class="s s-Atom">all</span> <span class="s s-Atom">but</span> <span class="s s-Atom">the</span> <span class="s s-Atom">last</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="o">::-</span><span class="mi">1</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Reverse</span> <span class="s s-Atom">the</span> <span class="s s-Atom">list</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="o">::</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Skip</span> <span class="s s-Atom">by</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">a</span><span class="p">[</span><span class="o">::-</span><span class="mi">2</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="nv">Skip</span> <span class="s s-Atom">by</span> <span class="o">-</span><span class="mi">2</span> <span class="s s-Atom">from</span> <span class="s s-Atom">the</span> <span class="s s-Atom">end</span>
+</pre></div>
 
 <h5>Q: What are sequence comprehensions?</h5>
 <p>They are short syntax constructions to ease the creation of lists, dicts, tuples, sets based on existing iterable.</p>
-<pre class="code literal-block"><span class="c1"># Simple List Append</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># Simple List Append</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
@@ -443,15 +445,16 @@ sequence types like list, tuple, strings etc.:</p>
 <span class="n">A4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">A5</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">81</span><span class="p">}</span>
 <span class="n">A6</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">36</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">81</span><span class="p">]]</span>
-</pre>
+</pre></div>
+
 <p>In Python, list comprehensions provide an alternative to using the built-in map() and filter() functions.</p>
 <h5>Q: What is the negative index in Python?</h5>
 <p>For slicing/accessing from the end of list, types and other sequences.
 Python sequences can be indexed with positive and negative numbers. For positive index, 0 is the first index, 1 is the
 second index and so forth. For negative index, (-1) is the last index and (-2) is the second last index and so forth.</p>
-<pre class="code literal-block"><span></span><code>demo_lst = [2, 33, 222, 14, 25] 
+<div class="code"><pre class="code literal-block">demo_lst = [2, 33, 222, 14, 25] 
 demo_lst[-1] &gt;&gt; 25.
-</code></pre>
+</pre></div>
 
 <h5>Q: What is type conversion?</h5>
 <p>Way of conversion variable of one type to another. For this purpose we use built-in functions, e.g. <code>int()</code>, <code>float()</code>,
@@ -469,9 +472,9 @@ taken to be the list of module names that should be imported when <code>from &lt
 <p><a href="https://docs.python.org/3/reference/datamodel.html#slots"><strong>slots</strong></a>: Saves memory consumptions of a class and also
 results in faster attribute access. Of course, it does impose limitations.</p>
 <h5>Q: How do I see the object methods? How do you list the functions in a module?</h5>
-<pre class="code literal-block"><span></span><code>&gt;&gt;&gt; dir(demo_obj)
+<div class="code"><pre class="code literal-block">&gt;&gt;&gt; dir(demo_obj)
 &gt;&gt;&gt; dir()  # dir calls __dir__() internally
-</code></pre>
+</pre></div>
 
 <p>The built-in function <em>dir([object])</em> with an argument, attempts to return a list of valid attributes/members for
 that object. Without arguments, return the list of names in the current local scope.</p>
@@ -486,35 +489,35 @@ complete, and may be inaccurate when the object has a custom <code>__getattr__()
 . <a href="https://www.geeksforgeeks.org/difference-between-dir-and-vars-in-python/">more details...</a></p>
 <table>
 <thead><tr>
-<th align="left">vars()</th>
-<th align="left">dir()</th>
+<th style="text-align: left;">vars()</th>
+<th style="text-align: left;">dir()</th>
 </tr></thead>
 <tbody>
 <tr>
-<td align="left">Returns a dictionary of objects of single class where used</td>
-<td align="left">Returns a dictionary of objects of single class where used and its base classes</td>
+<td style="text-align: left;">Returns a dictionary of objects of single class where used</td>
+<td style="text-align: left;">Returns a dictionary of objects of single class where used and its base classes</td>
 </tr>
 <tr>
-<td align="left">It returns a dictionary corresponding to the current local symbol table when no argument is passed</td>
-<td align="left">It returns the list of names in the current local scope when passed no argument</td>
+<td style="text-align: left;">It returns a dictionary corresponding to the current local symbol table when no argument is passed</td>
+<td style="text-align: left;">It returns the list of names in the current local scope when passed no argument</td>
 </tr>
 <tr>
-<td align="left">It returns a dictionary corresponding to the object’s symbol table if a module, class or class instance object as argument (or anything else that has a <code>__dict__</code> attribute) is passed.</td>
-<td align="left">It attempt to return a list of valid attributes for that object when passed an argument</td>
+<td style="text-align: left;">It returns a dictionary corresponding to the object’s symbol table if a module, class or class instance object as argument (or anything else that has a <code>__dict__</code> attribute) is passed.</td>
+<td style="text-align: left;">It attempt to return a list of valid attributes for that object when passed an argument</td>
 </tr>
 <tr>
-<td align="left">As instances builtin types do not have <code>__dict__</code> attribute, it returns an Error when used in a built-in type instance.</td>
-<td align="left">It can be used with all built-in types without error</td>
+<td style="text-align: left;">As instances builtin types do not have <code>__dict__</code> attribute, it returns an Error when used in a built-in type instance.</td>
+<td style="text-align: left;">It can be used with all built-in types without error</td>
 </tr>
 <tr>
-<td align="left"> </td>
-<td align="left"> </td>
+<td style="text-align: left;"> </td>
+<td style="text-align: left;"> </td>
 </tr>
 </tbody>
 </table>
 <h5>Q: How do you get documentation on objects' methods in Python?</h5>
-<pre class="code literal-block"><span></span><code>&gt;&gt;&gt; help(some_obj.its_method())
-</code></pre>
+<div class="code"><pre class="code literal-block">&gt;&gt;&gt; help(some_obj.its_method())
+</pre></div>
 
 <h5>Q: What is a module in Python? What is a Python package? What is the difference between packages and modules?</h5>
 <p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix
@@ -523,11 +526,11 @@ variable <code>__name__</code>.</p>
 <p>Packages are a way of structuring Python’s module namespaces by using “dotted module names”. Packages contain
 modules (collection of modules (a “package”)).</p>
 <h5>Q: How to import modules in Python?</h5>
-<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">array</span>  <span class="c1"># importing using the original module name</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">array</span>  <span class="c1"># importing using the original module name</span>
 <span class="kn">import</span> <span class="nn">array</span> <span class="k">as</span> <span class="nn">arr</span>  <span class="c1"># importing using an alias name</span>
 <span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># imports everything present in the array module</span>
 <span class="kn">from</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">func</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">class</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">CONSTANT</span><span class="o">&gt;</span><span class="p">)</span>  <span class="c1"># selective import</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: What are decorators? How to create a custom decorator?</h5>
 <p>A decorator is essentially a <em>callable object</em> that is used to modify or extend a function/method or class
@@ -541,7 +544,7 @@ enforcement, logging, or pre- and post-conditions to a class or function.</p>
 multiple names/”references” to the same function.</p>
 <p>The next important fact is that we can delete one of the references without deleting the function itself.
 Concepts to understand: <em>Functions as Parameters, Functions returning Functions</em></p>
-<pre class="code literal-block"><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">datetime</span>
 
 
 <span class="k">def</span> <span class="nf">time_this</span><span class="p">(</span><span class="n">original_function</span><span class="p">):</span>  <span class="c1"># 1</span>
@@ -569,7 +572,8 @@ Concepts to understand: <em>Functions as Parameters, Functions returning Functio
 
 <span class="n">func_a</span> <span class="o">=</span> <span class="n">time_this</span><span class="p">(</span><span class="n">func_a</span><span class="p">)</span>
 <span class="c1"># but it has a design problem ‘cause func_a exists in the same program in 2 versions, before decoration and after decoration. It should be noted: this notation can be used only for third-party functions</span>
-</pre>
+</pre></div>
+
 <p>The decorator returns a modified object, e.g. a modified function, which is bound to the name used in the
 definition.</p>
 <ol>
@@ -586,32 +590,32 @@ definition.</p>
 <p>The only constraint upon the object returned by the decorator is that it can be used as a function – which basically
 means it <strong>must be callable</strong>. Thus, any classes we use as decorators must implement <code>__call__()</code>. This method is
 called, if the instance is called "like a function", i.e. using brackets.</p>
-<pre class="code literal-block"><span></span><code><span class="nv">@time_all_class_methods</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nl">ImportantStuff</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_1</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">        </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_2</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">        </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_3</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">        </span><span class="p">...</span><span class="w"></span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">@time_all_class_methods</span>
+<span class="k">class</span><span class="w"> </span><span class="nl">ImportantStuff</span><span class="p">:</span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_1</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_2</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">do_stuff_3</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="p">...</span>
+</pre></div>
 
 <p>Here is the general form of a decorator with arguments and an illustration of its use.</p>
-<pre class="code literal-block"><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">outer_decorator</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">decorator</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">decorated</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">            </span><span class="n">do_something</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">decorated</span><span class="w"></span>
-<span class="k">return</span><span class="w"> </span><span class="n">decorator</span><span class="w"></span>
+<div class="code"><pre class="code literal-block"><span class="n">def</span><span class="w"> </span><span class="n">outer_decorator</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">decorator</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="err">:</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">decorated</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">do_something</span><span class="p">(</span><span class="o">*</span><span class="n">outer_args</span><span class="p">,</span><span class="o">**</span><span class="n">outer_kwargs</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">decorated</span>
+<span class="k">return</span><span class="w"> </span><span class="n">decorator</span>
 
-<span class="nv">@outer_decorator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"></span>
-<span class="n">foo</span><span class="p">()</span><span class="w"></span>
-</code></pre>
+<span class="nv">@outer_decorator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="err">:</span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
 
 <p>You can find an advanced tutorials on how decorators
 work <a href="https://www.codementor.io/@sheena/advanced-use-python-decorators-class-function-du107nxsv">here1</a>
@@ -676,10 +680,10 @@ for object constructors, or <code>__call__</code> to make object callable.</p>
 </ol>
 <h5>Q: What is <code>__init__()</code> in class?</h5>
 <p>It's a method which is used for customization of the initial state of newly created objects/instances.</p>
-<pre class="code literal-block"><span></span><code>def __init__(self, arg1, *data, **kwargs):  # __&lt;&gt;__ double underscores = dunder
+<div class="code"><pre class="code literal-block">def __init__(self, arg1, *data, **kwargs):  # __&lt;&gt;__ double underscores = dunder
     self.data_name = data[0]
     self.other_value = arg1
-</code></pre>
+</pre></div>
 
 <h5>Q: How to compare values of variables and two objects?</h5>
 <ul>
@@ -706,29 +710,32 @@ is to initialize the instance.</p>
 loaded from a pickle). There is no way to create a new instance without calling <strong>new</strong> (although in some cases you can
 get away with calling a base class's <code>__new__</code>).</p>
 <p>Here is an example of a subclass that overrides <code>__new__()</code> - this is how you would normally use it.</p>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">inch</span>(<span class="n">float</span>):
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="n">inch</span>(<span class="n">float</span>):
     “”<span class="n">Convert</span> <span class="nb">from</span> <span class="n">inch</span> <span class="nb">to</span> <span class="n">meter</span>.”””
     <span class="n">def</span> <span class="n">__new__</span>(<span class="n">cls</span>, <span class="n">arg</span>=<span class="mf">0.0</span>):
         <span class="k">return</span> <span class="n">float</span>.<span class="n">__new__</span>(<span class="n">cls</span>, <span class="n">arg</span><span class="o">*</span><span class="mf">0.0254</span>)
 <span class="nb">print</span> <span class="n">inch</span>(<span class="mi">12</span>)  <span class="c1"># 0.3048</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Explain how to make a Python script executable on Unix?</h5>
 <p>You need to do 2 things:</p>
 <p>1) the script file’s mode must be executable and
 2) the first line must begin with #! followed by the path of the Python interpreter on your platform.</p>
 <p>3) The first is done by executing <code>$ chmod +x scriptfile_name</code> or perhaps <code>$ chmod 755 scriptfile_name</code>.</p>
-<pre class="code literal-block">$ chmod +x myscript.py
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>myscript.py
+</pre></div>
+
 <p>The second can be done in a number of ways. The most straightforward way is to put</p>
-<pre class="code literal-block"><span class="ch">#!/usr/local/bin/python</span>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/local/bin/python</span>
 <span class="c1"># !interpreter [arguments] #! - shebang</span>
-</pre>
+</pre></div>
+
 <p>If you would like the script to be independent of where the Python interpreter lives, you can use the “env” program.
 Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s <code>$PATH</code>:
 <a href="http://effbot.org/pyfaq/how-do-i-make-a-python-script-executable-on-unix.htm">more details...</a></p>
-<pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
-</pre>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
+</pre></div>
+
 <h5>Q: What is pickling and unpickling?</h5>
 <p>The <code>pickle</code> module implements a fundamental, but powerful algorithm (binary protocols) for serializing and
 de-serializing a Python object structure.</p>
@@ -739,7 +746,7 @@ de-serializing a Python object structure.</p>
 <li>
 <strong>Unpickling</strong> - is the inverse operation, whereby a byte stream is converted back into an object hierarchy.</li>
 </ul>
-<pre class="code literal-block"><span class="kn">import</span> <span class="nn">pickle</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">pickle</span>
 
 <span class="sd">"""</span>
 <span class="sd">The difference between dump and dumps is that dump writes the pickled object to an open file, and dumps returns the pickled object as bytes.</span>
@@ -764,7 +771,8 @@ de-serializing a Python object structure.</p>
 <span class="n">my_pickled_object</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">({})</span>
 <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">my_pickled_object</span><span class="p">)</span>  <span class="c1"># -&gt; # Unpickling the object</span>
 <span class="c1"># {}</span>
-</pre>
+</pre></div>
+
 <h5>Q: What are serialization methods in Python (write some examples)?</h5>
 <p>In the context of data storage, serialization is the process of translating data structures or object state into a
 format that can be stored (for example, in a file or memory buffer) or transmitted and reconstructed later.
@@ -773,15 +781,15 @@ JSON. <a href="https://www.tutorialspoint.com/object_oriented_python/object_orie
 <h5>Q: How can the ternary operators be used in Python?</h5>
 <p><em>Blueprint</em>: <code>value_if_true if condition/expression else value_if_false</code>
 <em>Example</em>:</p>
-<pre class="code literal-block"><span></span><code><span class="nv">is_nice</span> <span class="o">=</span> <span class="nv">True</span>
-<span class="nv">state</span> <span class="o">=</span> <span class="s2">"</span><span class="s">nice</span><span class="s2">"</span> <span class="k">if</span> <span class="nv">is_nice</span> <span class="k">else</span> <span class="s2">"</span><span class="s">not nice</span><span class="s2">"</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">is_nice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">True</span>
+<span class="nv">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"nice"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">is_nice</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">"not nice"</span>
+</pre></div>
 
 <h5>Q: Does Python have a switch-case statement?</h5>
 <p>Python doesn't have a switch-case statement until 3.10. Here, you may implement a switch function to use with a
 dictionary. Else,
 you may use a set of if-elif-else statements.</p>
-<pre class="code literal-block"><span class="k">def</span> <span class="nf">switch_demo</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
+<div class="code"><pre class="code literal-block"><span class="k">def</span> <span class="nf">switch_demo</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
     <span class="n">switcher</span> <span class="o">=</span> <span class="p">{</span>
         <span class="mi">1</span><span class="p">:</span> <span class="s2">"January"</span><span class="p">,</span>
         <span class="mi">2</span><span class="p">:</span> <span class="s2">"February"</span><span class="p">,</span>
@@ -800,7 +808,8 @@ you may use a set of if-elif-else statements.</p>
 
 
 <span class="n">switch_demo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># May</span>
-</pre>
+</pre></div>
+
 <h5>Q: What are iterators?</h5>
 <p>Iterator it’s an object (can be iterated upon) that has implemented 2 dunders, <code>__iter__()</code> and <code>__next__()</code>,
 collectively called the iterator protocol. An object is called iterable if we can get an iterator from it. Most built-in
@@ -812,7 +821,7 @@ containers in Python like: list, tuple, string etc. are iterables.</p>
 <li>Automatically by using the <code>for</code> loop (can iterate over any object that can return an iterator). Is actually
    implemented as <a href="https://docs.python.org/3/tutorial/classes.html#iterators">docs.python.org</a>:</li>
 </ol>
-<pre class="code literal-block"><span class="c1"># create an iterator object from iterable</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># create an iterator object from iterable</span>
 <span class="n">iter_obj</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># infinite loop</span>
@@ -824,38 +833,39 @@ containers in Python like: list, tuple, string etc. are iterables.</p>
     <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
         <span class="c1"># if StopIteration is raised, break from loop</span>
         <span class="k">break</span>
-</pre>
+</pre></div>
+
 <h5>Q: What are generators?</h5>
 <p>Primarily as syntactic sugar for implementing iterators (like it). Generators are regular functions but instead of using
 the return statement, they use <code>yield</code> to pass data (“lazy iterator”) back to the caller. Whereas a return statement
 disposes of a function’s local state, a <code>yield</code> statement suspends the function and retains its local state.</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">repeater</span><span class="ss">(</span><span class="nv">value</span><span class="ss">)</span>:
-    <span class="k">while</span> <span class="nv">True</span>:
-        <span class="nv">yield</span> <span class="nv">value</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nv">repeater</span><span class="ss">(</span><span class="s1">'</span><span class="s">Hey</span><span class="s1">'</span><span class="ss">)</span>
-<span class="o">&lt;</span><span class="nv">generator</span> <span class="nv">object</span> <span class="nv">repeater</span> <span class="nv">at</span> <span class="mi">0</span><span class="nv">x107bcdbf8</span><span class="o">&gt;</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">repeater</span><span class="ss">(</span><span class="nv">value</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="nv">True</span>:
+<span class="w">        </span><span class="nv">yield</span><span class="w"> </span><span class="nv">value</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">repeater</span><span class="ss">(</span><span class="s1">'Hey'</span><span class="ss">)</span>
+<span class="o">&lt;</span><span class="nv">generator</span><span class="w"> </span><span class="nv">object</span><span class="w"> </span><span class="nv">repeater</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">0</span><span class="nv">x107bcdbf8</span><span class="o">&gt;</span>
+</pre></div>
 
 <p>The code in the generator function only executes when <code>next()</code> is called on the generator object:</p>
-<pre class="code literal-block"><span></span><code><span class="nv">generator_obj</span> <span class="o">=</span> <span class="nv">repeater</span><span class="ss">(</span><span class="s1">'</span><span class="s">Hey</span><span class="s1">'</span><span class="ss">)</span>
-<span class="k">next</span><span class="ss">(</span><span class="nv">generator_obj</span><span class="ss">)</span>  # ‘<span class="nv">Hey</span>’
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">generator_obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">repeater</span><span class="ss">(</span><span class="s1">'Hey'</span><span class="ss">)</span>
+<span class="k">next</span><span class="ss">(</span><span class="nv">generator_obj</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span>‘<span class="nv">Hey</span>’
+</pre></div>
 
 <p>In practical terms, this means local variables and the execution state of the generator function are only stashed away
 temporarily and not thrown out completely. Execution can be resumed at any time by calling <code>next()</code> on the generator.
 This makes generators fully compatible with the iterator protocol.</p>
 <p>Generators stop generating values as soon as control flow returns from the generator function by any means <em>other
 than a yield statement</em>. This means you no longer have to worry about raising <code>StopIteration</code> at all.</p>
-<pre class="code literal-block"><span></span><code>def repeat_three_times(value):
+<div class="code"><pre class="code literal-block">def repeat_three_times(value):
     yield value
     yield value
-</code></pre>
+</pre></div>
 
 <p>We’ll take advantage of the fact that Python adds an implicit return None statement to the end of every function.</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">bounded_repeater</span><span class="ss">(</span><span class="nv">value</span>, <span class="nv">max_repeats</span><span class="ss">)</span>:
-    <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="nv">max_repeats</span><span class="ss">)</span>:
-        <span class="nv">yield</span> <span class="nv">value</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">bounded_repeater</span><span class="ss">(</span><span class="nv">value</span>,<span class="w"> </span><span class="nv">max_repeats</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="nv">max_repeats</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">yield</span><span class="w"> </span><span class="nv">value</span>
+</pre></div>
 
 <ul>
 <li>Generator functions are syntactic sugar for writing objects that support the iterator protocol. Generators abstract
@@ -869,7 +879,7 @@ than a yield statement</em>. This means you no longer have to worry about raisin
 <h5>Q: What is generator expressions (also called a generator comprehension)?</h5>
 <p>It has a very similar syntax to list/tuple comprehensions. In this way, we can use the generator without calling a
 function.</p>
-<pre class="code literal-block"><span class="c1"># generator as a function</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># generator as a function</span>
 <span class="k">def</span> <span class="nf">csv_reader</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">row_</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">row_</span>
@@ -883,7 +893,8 @@ function.</p>
 
 <span class="c1"># generator expression</span>
 <span class="n">csv_gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file_name.txt"</span><span class="p">))</span>
-</pre>
+</pre></div>
+
 <p>They’re also useful in the same cases where list comprehensions are used, with an added benefit: you can create them
 without building and holding the entire object in memory before iteration. In other words, you’ll have <strong>no memory
 penalty</strong>
@@ -894,13 +905,13 @@ large (and even infinite) sequences and their lazy (i.e., on demand) generation 
 performance and lower memory usage. It is worth noting, though, that the standard Python list methods can be used on the
 result of a list comprehension, but not directly on that of a generator expression.</p>
 <p><strong>Profiling Generator Performance</strong></p>
-<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">nums_squared_lc</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nums_squared_lc</span><span class="p">)</span>  <span class="c1"># 87632 bytes, x680 times bigger</span>
 
 <span class="n">nums_squared_gc</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nums_squared_gc</span><span class="p">)</span>  <span class="c1"># 128 bytes</span>
-</code></pre>
+</pre></div>
 
 <p>If <strong>speed is an issue</strong> and <strong>memory isn’t</strong>, then a list comprehension is likely a <em>better</em> tool for the job.</p>
 <p>Generators have a fixed setup time that must be amortized over how many items are called. List comprehensions are faster
@@ -917,26 +928,26 @@ Context managers are normally invoked using the with statement, but can also be 
 , <a href="https://docs.python.org/3/reference/datamodel.html#context-managers">more details2</a></p>
 <p>Typical uses of context managers include saving and restoring various kinds of global state, locking and unlocking
 resources, closing opened files, etc.</p>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">ManagedFile:</span>
-    <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="nb">name</span>):
-        <span class="nb">self</span>.<span class="nb">name</span> = <span class="nb">name</span>
+<div class="code"><pre class="code literal-block"><span class="kd">class</span><span class="w"> </span><span class="nx">ManagedFile</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">__init__</span><span class="p">(</span><span class="kp">self</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">):</span>
+<span class="w">        </span><span class="kp">self</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">name</span>
 
-    <span class="n">def</span> <span class="n">__enter__</span>(<span class="nb">self</span>):
-        <span class="nb">self</span>.<span class="nb">file</span> = <span class="nb">open</span>(<span class="nb">self</span>.<span class="nb">name</span>, <span class="s">'w'</span>)
-        <span class="k">return</span> <span class="nb">self</span>.<span class="nb">file</span>
+<span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">__enter__</span><span class="p">(</span><span class="kp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="kp">self</span><span class="p">.</span><span class="nx">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">open</span><span class="p">(</span><span class="kp">self</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="sc">'w'</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kp">self</span><span class="p">.</span><span class="nx">file</span>
 
 
-    <span class="n">def</span> <span class="n">__exit__</span>(<span class="nb">self</span>, <span class="n">exc_type</span>, <span class="n">exc_val</span>, <span class="n">exc_tb</span>):
-        <span class="k">if</span> <span class="nb">self</span>.<span class="n">file:</span>
-            <span class="nb">self</span>.<span class="nb">file</span>.<span class="nb">close</span>()
-</code></pre>
+<span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">__exit__</span><span class="p">(</span><span class="kp">self</span><span class="p">,</span><span class="w"> </span><span class="nx">exc_type</span><span class="p">,</span><span class="w"> </span><span class="nx">exc_val</span><span class="p">,</span><span class="w"> </span><span class="nx">exc_tb</span><span class="p">):</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="kp">self</span><span class="p">.</span><span class="nx">file</span><span class="p">:</span>
+<span class="w">            </span><span class="kp">self</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+</pre></div>
 
 <p>Our ManagedFile class follows the context manager protocol and now supports the <code>with</code> statement, just like the
 original <code>open()</code> example did:</p>
-<pre class="code literal-block"><span></span><code>with ManagedFile('hello.txt') as f:
+<div class="code"><pre class="code literal-block">with ManagedFile('hello.txt') as f:
     f.write('hello, world!')
     f.write('bye now')
-</code></pre>
+</pre></div>
 
 <p><strong><em>Things to Remember</em></strong></p>
 <ul>
@@ -964,18 +975,19 @@ programs.</p>
 <h5>Q: What is <code>lambda</code> function in Python?</h5>
 <p>An anonymous function is known as a lambda function. This function can have any number of parameters, but can have
 just <strong>one</strong> statement.</p>
-<pre class="code literal-block"><span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># but it's better to avoid giving name to "anonymous" func</span>
+<div class="code"><pre class="code literal-block"><span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># but it's better to avoid giving name to "anonymous" func</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-</pre>
+</pre></div>
+
 <h5>Q: What do we need <code>if __name__ == "__main__"</code>: ?</h5>
 <p>Its main purpose is to separate the code that will be executed when the code is called as a module (when imported into
 another script) - and when the module itself is launched as a separate file.</p>
-<pre class="code literal-block"><span></span><code># <span class="nv">this</span> <span class="nv">means</span> <span class="nv">that</span> <span class="k">if</span> <span class="nv">this</span> <span class="nv">script</span> <span class="nv">is</span> <span class="nv">executed</span>, <span class="k">then</span> <span class="nv">some_func</span><span class="ss">()</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">executed</span>
+<div class="code"><pre class="code literal-block">#<span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">means</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">script</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">executed</span>,<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">some_func</span><span class="ss">()</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">executed</span>
 
-<span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">'</span><span class="s">__main__</span><span class="s1">'</span>:
-    <span class="nv">some_func</span><span class="ss">()</span>
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="nv">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'__main__'</span>:
+<span class="w">    </span><span class="nv">some_func</span><span class="ss">()</span>
+</pre></div>
 
 <h5>Q: What is <em>monkey patching</em> and is it ever a good idea?</h5>
 <p>Term "monkey patch" refers to dynamic (or run-time) modifications of a class or module, changing the behavior of a
@@ -983,7 +995,7 @@ function/object after it has already been defined. Most of the time it's a prett
 things act in a well-defined way.</p>
 <p>To patch module (or class) variables or functions is easy, because Python does not create protected or private entities
 and in most cases it’s possible to get reference to them.</p>
-<pre class="code literal-block"><span></span><code><span class="c1"># third-party library, __init__.py</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># third-party library, __init__.py</span>
 <span class="c1"># gorilla_lib/</span>
 <span class="c1">#    └── __init__.py</span>
 <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
@@ -1004,7 +1016,7 @@ and in most cases it’s possible to get reference to them.</p>
 
 <span class="c1"># calling function "func" whose address got replaced with function "monkey_f()"</span>
 <span class="n">obj_gor</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>  <span class="c1"># monkey_f() is being called</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: How are arguments passed by value or by reference?</h5>
 <p><strong>Background knowledge</strong>:<br>
@@ -1022,7 +1034,7 @@ Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">mor
    immutable data types), while the address of n never changes. If we have mutable types - after modification the
    address stays the same.</li>
 </ol>
-<pre class="code literal-block"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="code"><pre class="code literal-block"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">9001</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial address of n: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">increment</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -1040,7 +1052,8 @@ Let’s prove it. <a href="https://realpython.com/python-pass-by-reference/">mor
 <span class="c1"># Initial address of x: 140562586057840</span>
 <span class="c1"># Final address of x: 140562586057968</span>
 <span class="c1"># Final address of n: 140562586057840</span>
-</pre>
+</pre></div>
+
 <h5>Q: What is <code>PYTHONPATH</code>?</h5>
 <p><code>PYTHONPATH</code> is an <em>environment variable</em> which you can set to add additional directories where Python will look for
 modules
@@ -1053,7 +1066,7 @@ where to find its standard library. The only reason to set <code>PYTHONPATH</cod
 libraries that you do not want to install in the global default location (i.e., the site-packages directory).</p>
 <h5>Q: Duck typing, EAFP and LBYL. How are they connected?</h5>
 <p>Python follows the <em>duck typing</em> style of coding.</p>
-<pre class="code literal-block"><span class="c1"># LBYL - Look Before You Leap</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># LBYL - Look Before You Leap</span>
 <span class="k">if</span> <span class="n">condition</span> <span class="o">:=</span> <span class="p">(</span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Go!'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -1064,7 +1077,8 @@ libraries that you do not want to install in the global default location (i.e., 
     <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file_name.txt'</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
     <span class="o">...</span>
-</pre>
+</pre></div>
+
 <dl>
 <dt><mark>duck-typing</mark></dt>
 <dd>A programming style which does not look at an object’s type to determine if it has the right interface; instead, the
@@ -1079,38 +1093,38 @@ presence of many try and except statements. The technique contrasts with the LBY
 such as C.</dd>
 </dl>
 <h5>Q: Does Python have infinity?</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">Yes</span><span class="p">,</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">has</span><span class="o">.</span><span class="w"></span>
-<span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="nv">Infinity</span><span class="o">'</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span>“<span class="no">inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">Inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">INFINITY</span>”<span class="w"> </span><span class="ow">and</span><span class="w"> </span>“<span class="nv">iNfINity</span>”<span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">acceptable</span><span class="w"> </span><span class="nv">spellings</span><span class="w"></span>
-<span class="o">#</span><span class="w"> </span><span class="nv">Also</span><span class="o">:</span><span class="w"></span>
-<span class="nv">nan</span><span class="w">            </span><span class="o">::=</span><span class="w">  </span><span class="s">"nan"</span><span class="w"></span>
-<span class="nv">numeric_value</span><span class="w">  </span><span class="o">::=</span><span class="w"> </span><span class="nv">floatnumber</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">infinity</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">nan</span><span class="w"></span>
-<span class="no">infinity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">float</span><span class="p">(</span><span class="o">'</span><span class="no">infinity</span><span class="o">'</span><span class="p">)</span><span class="w"></span>
-<span class="nf">hash</span><span class="p">(</span><span class="no">infinity</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="mi">314159</span><span class="w"></span>
-<span class="nf">hash</span><span class="p">(</span><span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="no">inf</span><span class="o">'</span><span class="p">))</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="o">-</span><span class="mi">314159</span><span class="w"></span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">Yes</span><span class="p">,</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">has</span><span class="o">.</span>
+<span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="nv">Infinity</span><span class="o">'</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span>“<span class="no">inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">Inf</span>”<span class="p">,</span><span class="w"> </span>“<span class="nv">INFINITY</span>”<span class="w"> </span><span class="ow">and</span><span class="w"> </span>“<span class="nv">iNfINity</span>”<span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">acceptable</span><span class="w"> </span><span class="nv">spellings</span>
+<span class="o">#</span><span class="w"> </span><span class="nv">Also</span><span class="o">:</span>
+<span class="nv">nan</span><span class="w">            </span><span class="o">::=</span><span class="w">  </span><span class="s">"nan"</span>
+<span class="nv">numeric_value</span><span class="w">  </span><span class="o">::=</span><span class="w"> </span><span class="nv">floatnumber</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">infinity</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">nan</span>
+<span class="no">infinity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">float</span><span class="p">(</span><span class="o">'</span><span class="no">infinity</span><span class="o">'</span><span class="p">)</span>
+<span class="nf">hash</span><span class="p">(</span><span class="no">infinity</span><span class="p">)</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="mi">314159</span>
+<span class="nf">hash</span><span class="p">(</span><span class="nf">float</span><span class="p">(</span><span class="o">'-</span><span class="no">inf</span><span class="o">'</span><span class="p">))</span><span class="w">  </span><span class="o">#</span><span class="w"> </span><span class="o">-</span><span class="mi">314159</span>
+</pre></div>
 
 <h5>Q: Place the following functions below in order of their efficiency. They all take in a list of numbers between 0 and 1.</h5>
 <p>An example input (quite long) list would be [random.random() for i in range(100000)]. How would you prove that
 your answer is correct?</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">f1</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
-    <span class="nv">l1</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>
-    <span class="nv">l2</span> <span class="o">=</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l1</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="mi">0</span>.<span class="mi">5</span>]
-    <span class="k">return</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l2</span>]
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">f1</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">l1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">l2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">l1</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">5</span>]
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">l2</span>]
 
-<span class="nv">def</span> <span class="nv">f2</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
-    <span class="nv">l1</span> <span class="o">=</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">lIn</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="mi">0</span>.<span class="mi">5</span>]
-    <span class="nv">l2</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
-    <span class="k">return</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l2</span>]
+<span class="nv">def</span><span class="w"> </span><span class="nv">f2</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">l1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">lIn</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">5</span>]
+<span class="w">    </span><span class="nv">l2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">l2</span>]
 
-<span class="nv">def</span> <span class="nv">f3</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
-    <span class="nv">l1</span> <span class="o">=</span> [<span class="nv">i</span> <span class="o">*</span> <span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">lIn</span>]
-    <span class="nv">l2</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
-    <span class="k">return</span> [<span class="nv">i</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">l1</span> <span class="k">if</span> <span class="nv">i</span> <span class="o">&lt;</span> <span class="ss">(</span><span class="mi">0</span>.<span class="mi">5</span> <span class="o">*</span> <span class="mi">0</span>.<span class="mi">5</span><span class="ss">)</span>]
-</code></pre>
+<span class="nv">def</span><span class="w"> </span><span class="nv">f3</span><span class="ss">(</span><span class="nv">lIn</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">l1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">lIn</span>]
+<span class="w">    </span><span class="nv">l2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">(</span><span class="nv">l1</span><span class="ss">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>[<span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">l1</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="ss">(</span><span class="mi">0</span>.<span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">5</span><span class="ss">)</span>]
+</pre></div>
 
 <p><strong>Most to least efficient</strong>: f2 -&gt; f1 -&gt; f3. To prove that this is the case, you would want to profile your code. Python
 has a lovely profiling package that should do the trick.</p>
-<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">cProfile</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">cProfile</span>
 <span class="n">list_num</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
 <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'f1(list_num)'</span><span class="p">)</span>
     <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.045</span> <span class="n">seconds</span>
@@ -1118,7 +1132,7 @@ has a lovely profiling package that should do the trick.</p>
     <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.024</span> <span class="n">seconds</span>
 <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'f3(list_num)'</span><span class="p">)</span>
     <span class="mi">4</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.055</span> <span class="n">seconds</span>
-</code></pre>
+</pre></div>
 
 <p><strong>Why Care?</strong>
 Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding for efficiency comes down to common sense</p>
@@ -1134,9 +1148,9 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
 <h5>Q: 30 built-in Python modules you should be using</h5>
 <p><a href="https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/">30 built-in Python modules you better be using</a></p>
 <h5>Q: Print directory content</h5>
-<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">def</span> <span class="nf">print_directory_contents</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>
-    <span class="sd">""" </span>
+<span class="w">    </span><span class="sd">""" </span>
 <span class="sd">    This function takes the name of a directory</span>
 <span class="sd">    and prints out the paths files within that</span>
 <span class="sd">    directory as well as any files contained in</span>
@@ -1152,21 +1166,21 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
         <span class="n">print_directory_contents</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Explain how to delete a file in Python?</h5>
 <p>By using a command <code>os.remove(filename, *, dir_fd=None)</code> or <code>os.unlink(filename)</code>. They are equivalent to each other.</p>
 <h5>Q: Explain how you can generate random numbers in Python?</h5>
-<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 <span class="c1"># This returns a random floating point number in the range [0, 1)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Explain how you can access a module written in Python from C?</h5>
 <p><code>Module = =PyImport_ImportModule("&lt;modulename&gt;");</code></p>
 <p><strong>Built-in constants</strong><br>
-A small number of constants live in the built-in namespace: <strong>True</strong>, <strong>False</strong>, <strong>None</strong>, <strong>NotImplemented</strong>, <strong>
-Ellipsis</strong>, <strong><strong>debug</strong></strong>.</p>
+A small number of constants live in the built-in namespace: <strong>True</strong>, <strong>False</strong>, <strong>None</strong>, <strong>NotImplemented</strong>, **
+Ellipsis<strong>, </strong><strong>debug</strong>**.</p>
 <p>Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
 programs: copyright, credits, license  <a href="https://docs.python.org/3/library/constants.html">docs.python.org</a></p>
 <p><strong>Built-in exceptions</strong><br>
@@ -1178,99 +1192,99 @@ A Python program terminates as soon as it encounters an error. An error can be:<
 <p><code>BaseException</code> base class for all built-in exceptions. It is not meant to be directly inherited by user-defined
 classes (for that, use Exception).</p>
 <h5>Q: Exceptions and how to raise them</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="nv">x</span> <span class="o">&gt;</span> <span class="mi">5</span>:
-    <span class="nv">raise</span> <span class="nv">Exception</span><span class="ss">(</span><span class="nv">f</span>’<span class="nv">x</span> <span class="nv">needs</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">under</span> <span class="mi">5</span>’<span class="ss">)</span>
-<span class="nv">print</span><span class="ss">(</span>‘<span class="nv">the</span> <span class="k">end</span>’<span class="ss">)</span>  # <span class="nv">raise</span> <span class="nv">allows</span> <span class="nv">you</span> <span class="nv">to</span> <span class="nv">throw</span> <span class="nv">an</span> <span class="nv">exception</span> <span class="nv">at</span> <span class="nv">any</span> <span class="nv">time</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>:
+<span class="w">    </span><span class="nv">raise</span><span class="w"> </span><span class="nv">Exception</span><span class="ss">(</span><span class="nv">f</span>’<span class="nv">x</span><span class="w"> </span><span class="nv">needs</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">under</span><span class="w"> </span><span class="mi">5</span>’<span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span>‘<span class="nv">the</span><span class="w"> </span><span class="k">end</span>’<span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="nv">raise</span><span class="w"> </span><span class="nv">allows</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">throw</span><span class="w"> </span><span class="nv">an</span><span class="w"> </span><span class="nv">exception</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="nv">any</span><span class="w"> </span><span class="nv">time</span>
+</pre></div>
 
 <h5>Q: Assertions and <code>try/except</code>
 </h5>
-<pre class="code literal-block"><span></span><code># <span class="nv">assert</span> <span class="ss">(</span><span class="nv">condition</span><span class="ss">)</span>, <span class="nv">f</span>”<span class="nv">optional</span> <span class="nv">message</span> <span class="k">if</span> <span class="nv">condition</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">met</span>”
-<span class="nv">name</span> <span class="o">=</span> <span class="s1">'</span><span class="s">snake</span><span class="s1">'</span>
-<span class="nv">assert</span> <span class="ss">(</span><span class="nv">name</span> <span class="o">==</span> <span class="s1">'</span><span class="s">snake</span><span class="s1">'</span><span class="ss">)</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">f</span><span class="s2">"</span><span class="s">name is really {name}</span><span class="s2">"</span><span class="ss">)</span>
-</code></pre>
+<div class="code"><pre class="code literal-block">#<span class="w"> </span><span class="nv">assert</span><span class="w"> </span><span class="ss">(</span><span class="nv">condition</span><span class="ss">)</span>,<span class="w"> </span><span class="nv">f</span>”<span class="nv">optional</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">condition</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">met</span>”
+<span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'snake'</span>
+<span class="nv">assert</span><span class="w"> </span><span class="ss">(</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'snake'</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">f</span><span class="s2">"name is really {name}"</span><span class="ss">)</span>
+</pre></div>
 
 <p><code>assert</code> checks if the condition inside the brackets is True. If it isn’t, then an <code>AssertionError</code> will be raised, and
 the program will stop.</p>
-<pre class="code literal-block"><span></span><code><span class="nv">try</span>:
-    # <span class="nv">code</span> <span class="nv">to</span> <span class="nv">attempt</span> <span class="nv">running</span>
-    <span class="k">if</span> <span class="s1">'</span><span class="s">1</span><span class="s1">'</span> <span class="o">!=</span> <span class="mi">1</span>:
-    # <span class="nv">raise</span> ‘<span class="nv">some</span> <span class="nv">error</span>’ <span class="nv">will</span> <span class="nv">be</span> <span class="nv">wrong</span> ‘<span class="nv">cause</span> <span class="nv">new</span> <span class="nv">exception</span> <span class="nv">class</span> <span class="nv">must</span> <span class="nv">inherit</span> <span class="nv">from</span> <span class="nv">a</span> <span class="nv">BaseException</span>.
-        <span class="nv">raise</span> <span class="nv">Exception</span>
-<span class="nv">except</span> <span class="nv">ZeroDivisionError</span>:
-    # <span class="nv">execute</span> <span class="nv">this</span> <span class="nv">code</span> <span class="k">if</span> <span class="nv">there</span> <span class="nv">is</span> <span class="nv">an</span> <span class="nv">exception</span> <span class="nv">generated</span>
-    <span class="nv">print</span><span class="ss">(</span><span class="s2">"</span><span class="s">someError has occurred</span><span class="s2">"</span><span class="ss">)</span>
-<span class="nv">except</span> <span class="nv">TypeError</span>:  
-    ...
-<span class="nv">except</span> <span class="o">&lt;</span><span class="nv">specify</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">exception</span><span class="o">&gt;</span>:
-    <span class="nv">pass</span> # <span class="nv">avoid</span> <span class="nv">this</span> <span class="nv">silent</span> <span class="nv">handling</span> <span class="nv">as</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">an</span> <span class="nv">anti</span><span class="o">-</span><span class="nv">pattern</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nx">try</span><span class="p">:</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">attempt</span><span class="w"> </span><span class="nx">running</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="sc">'1'</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">raise</span><span class="w"> </span><span class="err">‘</span><span class="nx">some</span><span class="w"> </span><span class="nx">error</span><span class="err">’</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">wrong</span><span class="w"> </span><span class="err">‘</span><span class="nx">cause</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">must</span><span class="w"> </span><span class="nx">inherit</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">BaseException</span><span class="p">.</span>
+<span class="w">        </span><span class="nx">raise</span><span class="w"> </span><span class="nx">Exception</span>
+<span class="nx">except</span><span class="w"> </span><span class="nx">ZeroDivisionError</span><span class="p">:</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">execute</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">generated</span>
+<span class="w">    </span><span class="nx">print</span><span class="p">(</span><span class="s">"someError has occurred"</span><span class="p">)</span>
+<span class="nx">except</span><span class="w"> </span><span class="nx">TypeError</span><span class="p">:</span><span class="w">  </span>
+<span class="w">    </span><span class="o">...</span>
+<span class="nx">except</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">specify</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">exception</span><span class="p">&gt;:</span>
+<span class="w">    </span><span class="nx">pass</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="nx">avoid</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">silent</span><span class="w"> </span><span class="nx">handling</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">anti</span><span class="o">-</span><span class="nx">pattern</span>
+</pre></div>
 
 <p>Alternatives for handling wide Exceptions: use modules <code>logging</code>
 , <code>traceback</code> <a href="https://realpython.com/the-most-diabolical-python-antipattern/">more details...</a></p>
 <h5>Q: <code>else</code>, <code>finally</code> &amp; other Exceptions</h5>
-<pre class="code literal-block"><span></span><code><span class="k">try</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">linux_interaction</span><span class="o">()</span><span class="w"></span>
-<span class="n">except</span><span class="w"> </span><span class="n">AssertionError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">error</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">)</span><span class="w"></span>
-<span class="k">else</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">try</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="n">open</span><span class="o">(</span><span class="s1">'file.log'</span><span class="o">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="o">:</span><span class="w"></span>
-<span class="w">            </span><span class="n">read_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="na">read</span><span class="o">()</span><span class="w"></span>
-<span class="w">    </span><span class="n">except</span><span class="w"> </span><span class="n">FileNotFoundError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">fnf_error</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">print</span><span class="o">(</span><span class="n">fnf_error</span><span class="o">)</span><span class="w"></span>
-<span class="n">finally</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="s1">'Cleaning up, irrespective of any exceptions.'</span><span class="o">)</span><span class="w"></span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="k">try</span><span class="o">:</span>
+<span class="w">    </span><span class="n">linux_interaction</span><span class="o">()</span>
+<span class="n">except</span><span class="w"> </span><span class="n">AssertionError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">error</span><span class="o">:</span>
+<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+<span class="k">else</span><span class="o">:</span>
+<span class="w">    </span><span class="k">try</span><span class="o">:</span>
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="n">open</span><span class="o">(</span><span class="s1">'file.log'</span><span class="o">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">file</span><span class="o">:</span>
+<span class="w">            </span><span class="n">read_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="na">read</span><span class="o">()</span>
+<span class="w">    </span><span class="n">except</span><span class="w"> </span><span class="n">FileNotFoundError</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">fnf_error</span><span class="o">:</span>
+<span class="w">        </span><span class="n">print</span><span class="o">(</span><span class="n">fnf_error</span><span class="o">)</span>
+<span class="n">finally</span><span class="o">:</span>
+<span class="w">    </span><span class="n">print</span><span class="o">(</span><span class="s1">'Cleaning up, irrespective of any exceptions.'</span><span class="o">)</span>
+</pre></div>
 
 <p>In the previous code, everything in the <code>finally</code> clause will be executed. It does not matter if you encounter an
 exception somewhere in the <code>try</code> or <code>else</code> clauses. <a href="https://realpython.com/python-exceptions/">more details...</a></p>
 <h5>Q: What are metaclasses in Python?</h5>
 <p>Metaclasses are classes whose instances are also classes.</p>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="n">MetaClass</span>(<span class="nb">type</span>):
-     <span class="c1"># allocate memory for the class</span>
-     <span class="n">def</span> <span class="n">__new__</span>(<span class="n">cls</span>, <span class="nb">name</span>, <span class="n">bases</span>, <span class="n">dict</span>):
-         <span class="nb">print</span>(<span class="s">"Create a new class {}"</span>.<span class="nb">format</span>(<span class="nb">name</span>))
-         <span class="k">return</span> <span class="nb">type</span>.<span class="n">__new__</span>(<span class="n">cls</span>, <span class="nb">name</span>, <span class="n">bases</span>, <span class="n">dict</span>)
+<div class="code"><pre class="code literal-block"><span class="kd">class</span><span class="w"> </span><span class="nx">MetaClass</span><span class="p">(</span><span class="k">type</span><span class="p">):</span>
+<span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="nx">allocate</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="kd">class</span>
+<span class="w">     </span><span class="nx">def</span><span class="w"> </span><span class="nx">__new__</span><span class="p">(</span><span class="nx">cls</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">bases</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">):</span>
+<span class="w">         </span><span class="nx">print</span><span class="p">(</span><span class="s">"Create a new class {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">name</span><span class="p">))</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="k">type</span><span class="p">.</span><span class="nx">__new__</span><span class="p">(</span><span class="nx">cls</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">bases</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">)</span>
 
 
-     <span class="c1"># class initialization</span>
-     <span class="n">def</span> <span class="n">__init__</span> (<span class="n">cls</span>, <span class="nb">name</span>, <span class="n">bases</span>, <span class="n">dict</span>):
-         <span class="nb">print</span>(<span class="s">"Initializing a new class {}"</span>.<span class="nb">format</span>(<span class="nb">name</span>))
-         <span class="k">return</span> <span class="n">super</span>().<span class="n">__init__</span>(<span class="nb">name</span>, <span class="n">bases</span>, <span class="n">dict</span>)
+<span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">initialization</span>
+<span class="w">     </span><span class="nx">def</span><span class="w"> </span><span class="nx">__init__</span><span class="w"> </span><span class="p">(</span><span class="nx">cls</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">bases</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">):</span>
+<span class="w">         </span><span class="nx">print</span><span class="p">(</span><span class="s">"Initializing a new class {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">name</span><span class="p">))</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="nx">super</span><span class="p">().</span><span class="nx">__init__</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">bases</span><span class="p">,</span><span class="w"> </span><span class="nx">dict</span><span class="p">)</span>
 
 
-<span class="c1"># spawning a class based on a metaclass</span>
-<span class="n">SomeClass</span> = <span class="n">MetaClass</span>(<span class="s">"SomeClass"</span>, (), {})
+<span class="err">#</span><span class="w"> </span><span class="nx">spawning</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">based</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">metaclass</span>
+<span class="nx">SomeClass</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MetaClass</span><span class="p">(</span><span class="s">"SomeClass"</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">{})</span>
 
 
-<span class="c1"># normal inheritance</span>
-<span class="k">class</span> <span class="n">Child</span>(<span class="n">SomeClass</span>):
-     <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="n">param</span>):
-         <span class="nb">print</span>(<span class="n">param</span>)
+<span class="err">#</span><span class="w"> </span><span class="nx">normal</span><span class="w"> </span><span class="nx">inheritance</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Child</span><span class="p">(</span><span class="nx">SomeClass</span><span class="p">):</span>
+<span class="w">     </span><span class="nx">def</span><span class="w"> </span><span class="nx">__init__</span><span class="p">(</span><span class="kp">self</span><span class="p">,</span><span class="w"> </span><span class="nx">param</span><span class="p">):</span>
+<span class="w">         </span><span class="nx">print</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span>
 
 
-<span class="c1"># getting an instance of a class</span>
-<span class="n">obj</span> = <span class="n">Child</span>(<span class="s">"Hello"</span>)
-</code></pre>
+<span class="err">#</span><span class="w"> </span><span class="nx">getting</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">class</span>
+<span class="nx">obj</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Child</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+</pre></div>
 
 <h3>A.2 Frameworks</h3>
 <h4>Django</h4>
 <h5>Q: Project initialization</h5>
-<pre class="code literal-block"><span></span><code>$ python -m django --version
-$ django-admin startproject &lt;mysite_name&gt;
-$ python manage.py runserver <span class="m">8080</span>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>django<span class="w"> </span>--version
+$<span class="w"> </span>django-admin<span class="w"> </span>startproject<span class="w"> </span>&lt;mysite_name&gt;
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">8080</span>
 mysite/
-    manage.py
-    mysite/
-        __init__.py
-        settings.py
-        urls.py
-        asgi.py
-        wsgi.py
-</code></pre>
+<span class="w">    </span>manage.py
+<span class="w">    </span>mysite/
+<span class="w">        </span>__init__.py
+<span class="w">        </span>settings.py
+<span class="w">        </span>urls.py
+<span class="w">        </span>asgi.py
+<span class="w">        </span>wsgi.py
+</pre></div>
 
 <h5>Q: Project configuration</h5>
 <ul>
@@ -1291,8 +1305,9 @@ mysite/
 </li>
 </ul>
 <h5>Q: Apps</h5>
-<pre class="code literal-block">$ python manage.py startapp &lt;app_name&gt;
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>&lt;app_name&gt;
+</pre></div>
+
 <h5>Q: Urls</h5>
 <p>mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered
 site. <a href="https://docs.djangoproject.com/en/3.1/topics/http/urls/">more details...</a></p>
@@ -1312,13 +1327,14 @@ behaviors of the data you’re storing. Generally, each model maps to a single d
 <p><code>first_name</code> and <code>last_name</code> are fields of the model. Each field is specified as a class attribute, and each attribute
 maps to a database column.</p>
 <p>The above Person model would create a database table like this:</p>
-<pre class="code literal-block"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">myapp_person</span><span class="w"></span>
-<span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="ss">"id"</span><span class="w">         </span><span class="nb">serial</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">"first_name"</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="ss">"last_name"</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
-</pre>
+<div class="code"><pre class="code literal-block"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">myapp_person</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="ss">"id"</span><span class="w">         </span><span class="nb">serial</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">"first_name"</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">"last_name"</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">);</span>
+</pre></div>
+
 <h5>Q: Templates</h5>
 <p>A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic
 content will be inserted. A Django project can be configured with one or several template engines (or even zero if you
@@ -1391,10 +1407,11 @@ ensure you have your virtual environment activated.</p>
 switch between multiple Django settings files, use <code>django-admin</code> with <code>DJANGO_SETTINGS_MODULE</code> or the <code>--settings</code>
 command line option.</p>
 <p>CLI examples can use django-admin/manage.py or python -m django just as well.</p>
-<pre class="code literal-block">$ django-admin &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
-$ manage.py &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
-$ python -m django &lt;command&gt; <span class="o">[</span>options<span class="o">]</span>
-</pre>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>django-admin<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+$<span class="w"> </span>manage.py<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>django<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+
 <h3>A.3 Tools</h3>
 <h4>Package Managers</h4>
 <h5>Q: Application dependency management / virtualenv isolation</h5>
@@ -1444,12 +1461,13 @@ $ python -m django &lt;command&gt; <span class="o">[</span>options<span class="o
 <strong>flake8</strong>: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files
   with # flake8: noqa or lines with # noqa</li>
 </ul>
-<pre class="code literal-block">setup.cfg - configuration file by projects (also: tox.ini, .flake8)
+<div class="code"><pre class="code literal-block">setup.cfg - configuration file by projects (also: tox.ini, .flake8)
 [flake8]
 ignore = D203
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
 max-complexity = 10
-</pre>
+</pre></div>
+
 <ul>
 <li>
 <strong>add-trailing-comma</strong>: a pre-commit hook that does various style enforcing (not just trailing commas)</li>
@@ -1664,9 +1682,9 @@ check out the multiprocessing module instead.</p>
 <p>Architecting your program to use threading can also provide gains in design clarity. Using threading in them helps to
 make the design cleaner and easier to reason about.</p>
 <p>To start a separate thread, you create a Thread instance and then tell it to start:</p>
-<pre class="code literal-block"><span></span><code>x = threading.Thread(target=thread_function, args=(1,))
+<div class="code"><pre class="code literal-block">x = threading.Thread(target=thread_function, args=(1,))
 x.start()
-</code></pre>
+</pre></div>
 
 <p>When you create a Thread, you pass it a function and a list containing the arguments to that function. In this case,
 you’re telling the Thread to run thread_function() and to pass it 1 as an argument.</p>
@@ -1750,8 +1768,8 @@ Instead of manually creating getters and setters for each attribute, you can ove
 , <code>__setattr__</code>, and <code>__delattr__</code> methods.</p>
 <h5>Q: Explain Inheritance in Python with an example</h5>
 <p>Inheritance is a way of creating a new class and gaining all the attributes/methods of another class without modifying
-it. The class from which we are inheriting is called <strong>super class</strong> and the class that is inherited is called a <strong>
-derived / child class</strong>.</p>
+it. The class from which we are inheriting is called <strong>super class</strong> and the class that is inherited is called a **
+derived / child class**.</p>
 <p>Inheritance provides the following properties:</p>
 <ul>
 <li>It represents real-world relationships well (with composition concept)</li>
@@ -1785,7 +1803,7 @@ interfaces and abstract classes.</p>
 <li>Child class redefines the parent method (which is called in this case “virtual”), has the same name and does the same
    thing in different ways.</li>
 </ol>
-<pre class="code literal-block"><span class="k">class</span> <span class="nc">Mammal</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">Mammal</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">'move'</span><span class="p">)</span>
 
@@ -1799,8 +1817,9 @@ interfaces and abstract classes.</p>
 <span class="n">animal</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>  <span class="c1"># ‘move’</span>
 <span class="n">hare</span> <span class="o">=</span> <span class="n">Hare</span><span class="p">()</span>
 <span class="n">hare</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>  <span class="c1"># ‘jump’</span>
-</pre>
-<pre class="code literal-block"><span class="c1"># However, we can also access the methods of the ancestor either by 1) direct call or using the 2) super():</span>
+</pre></div>
+
+<div class="code"><pre class="code literal-block"><span class="c1"># However, we can also access the methods of the ancestor either by 1) direct call or using the 2) super():</span>
 
 <span class="k">class</span> <span class="nc">Parent</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1820,11 +1839,12 @@ interfaces and abstract classes.</p>
 
 <span class="n">child</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>  <span class="c1"># Parent init</span>
 <span class="n">child</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>  <span class="c1"># Parent method</span>
-</pre>
+</pre></div>
+
 <ol>
 <li>Classes that are not related by kinship can have the same interface with different implementations.</li>
 </ol>
-<pre class="code literal-block"><span class="k">class</span> <span class="nc">English</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">English</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">greeting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
 
@@ -1842,7 +1862,8 @@ interfaces and abstract classes.</p>
 <span class="n">gerard</span> <span class="o">=</span> <span class="n">French</span><span class="p">()</span>
 <span class="n">intro</span><span class="p">(</span><span class="n">john</span><span class="p">)</span>  <span class="c1"># Hello</span>
 <span class="n">intro</span><span class="p">(</span><span class="n">gerard</span><span class="p">)</span>  <span class="c1"># Bonjour</span>
-</pre>
+</pre></div>
+
 <h5>Q: Composition and object construction</h5>
 <p>Composition is an OOD concept that models a relationship. In composition, a class known as <code>composite</code> contains an
 object
@@ -1907,11 +1928,11 @@ extensive set of data structures in its standard library.</p>
 <h5>Q: Singleton</h5>
 <p>class Singleton(object):
 obj = None # single instance of the class</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">__new__</span><span class="ss">(</span><span class="nv">cls</span>, <span class="o">*</span><span class="nv">args</span>, <span class="o">**</span><span class="nv">kwargs</span><span class="ss">)</span>:
-<span class="k">if</span> <span class="nv">cls</span>.<span class="nv">obj</span> <span class="nv">is</span> <span class="nv">None</span>:
-    <span class="nv">cls</span>.<span class="nv">obj</span> <span class="o">=</span> <span class="nv">object</span>.<span class="nv">__new__</span><span class="ss">(</span><span class="nv">cls</span>, <span class="o">*</span><span class="nv">args</span>, <span class="o">**</span><span class="nv">kwargs</span><span class="ss">)</span>
-<span class="k">return</span> <span class="nv">cls</span>.<span class="nv">obj</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">__new__</span><span class="ss">(</span><span class="nv">cls</span>,<span class="w"> </span><span class="o">*</span><span class="nv">args</span>,<span class="w"> </span><span class="o">**</span><span class="nv">kwargs</span><span class="ss">)</span>:
+<span class="k">if</span><span class="w"> </span><span class="nv">cls</span>.<span class="nv">obj</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">None</span>:
+<span class="w">    </span><span class="nv">cls</span>.<span class="nv">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">object</span>.<span class="nv">__new__</span><span class="ss">(</span><span class="nv">cls</span>,<span class="w"> </span><span class="o">*</span><span class="nv">args</span>,<span class="w"> </span><span class="o">**</span><span class="nv">kwargs</span><span class="ss">)</span>
+<span class="k">return</span><span class="w"> </span><span class="nv">cls</span>.<span class="nv">obj</span>
+</pre></div>
 
 <p>single = Singleton()
 single.attr = 42
@@ -1935,11 +1956,12 @@ newSingle is single # true</p>
 <code>ORDER BY</code> clause is used to sort the records based on some field(s) in ascending (<code>ASC</code>) or descending order (<code>DESC</code>)
   .</li>
 </ul>
-<pre class="code literal-block"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">myDB</span><span class="p">.</span><span class="n">students</span><span class="w"></span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">graduation_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2019</span><span class="w"></span>
-<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">studentID</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span><span class="w"></span>
-</pre>
+<div class="code"><pre class="code literal-block"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">myDB</span><span class="p">.</span><span class="n">students</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">graduation_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2019</span>
+<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">studentID</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+
 <ul>
 <li>
 <code>GROUP BY</code> clause is used to group records with identical data and can be used in conjunction with some aggregation
@@ -1948,12 +1970,13 @@ newSingle is single # true</p>
 <code>HAVING</code> clause is used to filter records in combination with the GROUP BY clause. It is different from WHERE, since
   WHERE clause cannot filter aggregated records.</li>
 </ul>
-<pre class="code literal-block"><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">studentId</span><span class="p">),</span><span class="w"> </span><span class="n">country</span><span class="w"></span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">myDB</span><span class="p">.</span><span class="n">students</span><span class="w"></span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="ss">"INDIA"</span><span class="w"></span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">country</span><span class="w"></span>
-<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">studentID</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
-</pre>
+<div class="code"><pre class="code literal-block"><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">studentId</span><span class="p">),</span><span class="w"> </span><span class="n">country</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">myDB</span><span class="p">.</span><span class="n">students</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="ss">"INDIA"</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">country</span>
+<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="n">studentID</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+
 <h5>Q: Explain the basics of Key-value, document, column-family databases and form of aggregate-oriented databases</h5>
 <p><a href="https://www.guru99.com/nosql-tutorial.html">more details...</a>
 , <a href="https://www.mongodb.com/scale/types-of-nosql-databases#key-value-stores">more details1...</a></p>
@@ -2087,7 +2110,7 @@ executing the tests.
 official docs</dd>
 </dl>
 <h5>Q: Writes simple unit tests</h5>
-<pre class="code literal-block"><span class="kn">import</span> <span class="nn">unittest</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">unittest</span>
 
 
 <span class="k">class</span> <span class="nc">TestSum</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -2101,7 +2124,8 @@ official docs</dd>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre>
+</pre></div>
+
 <h4>Requirements</h4>
 <h5>Q: What levels of requirements exist?</h5>
 <p>Requirement analysis starts with:</p>
@@ -2290,10 +2314,11 @@ take. <a href="http://www.agilenutshell.com/cone_of_uncertainty">detailed descri
 <li>Package and module structure gives an overview about the project</li>
 <li>Modular design == better re-usability</li>
 </ul>
-<pre class="code literal-block">Don't put too much stuff into one module  
+<div class="code"><pre class="code literal-block">Don't put too much stuff into one module  
 Split the project into packages  
 Be consistent with your naming conventions  
-</pre>
+</pre></div>
+
 <h4>Utilize the capabilities of your editor</h4>
 <ul>
 <li>Efficient and fluent development</li>
@@ -2349,7 +2374,7 @@ Be consistent with your naming conventions
 <li>Remove unused variables</li>
 <li>Follow PEP-8 naming conventions</li>
 </ol>
-<pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="n">DEFAULT_NAME</span> <span class="o">=</span> <span class="s2">"someone"</span>  <span class="c1"># &lt;- UPPERCASE_UNDERSCORE</span>
@@ -2367,7 +2392,8 @@ Be consistent with your naming conventions
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">GreetingManager</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-</pre>
+</pre></div>
+
 <ol>
 <li>Verify your code with a linters</li>
 <li>Remove debugging print() / breakpoint()</li>
@@ -2391,59 +2417,59 @@ Be consistent with your naming conventions
 
 <h2>Exercises/idioms/snippets/"easter eggs"</h2>
 <h5>Q: Chaining Comparison Operators</h5>
-<pre class="code literal-block"><span></span><code>num_week_days = 7
+<div class="code"><pre class="code literal-block">num_week_days = 7
 answer = 1 &lt; i &lt; 10
 print(answer) # True
-</code></pre>
+</pre></div>
 
 <h5>Q: How to capitalize the first letter of a string? How to convert a string to all lowercase/uppercase?</h5>
-<pre class="code literal-block"><span></span><code>'some string'.capitalize()
+<div class="code"><pre class="code literal-block">'some string'.capitalize()
 'ABCDE'.lower() // 'zxcvbnm'.upper()
-</code></pre>
+</pre></div>
 
 <h5>Q: How to find the index inside a <code>for</code> loop?</h5>
 <p>Wrap an iterable with ‘enumerate’ and it will yield the item along with its index.</p>
-<pre class="code literal-block"><span></span><code><span class="c1"># Know the index faster</span><span class="w"></span>
-<span class="n">vowels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">,</span><span class="w"> </span><span class="s1">'i'</span><span class="p">,</span><span class="w"> </span><span class="s1">'o'</span><span class="p">,</span><span class="w"> </span><span class="s1">'u'</span><span class="p">]</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span><span class="w"></span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="p">)</span><span class="w"></span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="c1"># Know the index faster</span>
+<span class="n">vowels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">,</span><span class="w"> </span><span class="s1">'i'</span><span class="p">,</span><span class="w"> </span><span class="s1">'o'</span><span class="p">,</span><span class="w"> </span><span class="s1">'u'</span><span class="p">]</span>
+<span class="k">for</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">vowels</span><span class="p">):</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
 
 <h5>Q: How to return multiple values in Python?</h5>
 <p>Strictly speaking, a Python function that returns multiple values actually returns a tuple containing each value:</p>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">func</span><span class="ss">()</span>:
-    <span class="k">return</span> <span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">5</span>
-<span class="nv">one</span>, <span class="nv">two</span>, <span class="nv">three</span>, <span class="nv">four</span>, <span class="nv">five</span> <span class="o">=</span> <span class="nv">func</span><span class="ss">()</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">one</span>, <span class="nv">two</span>, <span class="nv">three</span>, <span class="nv">four</span>, <span class="nv">five</span><span class="ss">)</span>  # <span class="nv">tuple</span> <span class="nv">unpacking</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nv">t</span> <span class="o">=</span> <span class="nv">func</span><span class="ss">()</span>  # <span class="nv">a</span> <span class="nv">tuple</span> <span class="ss">(</span><span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">5</span><span class="ss">)</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">func</span><span class="ss">()</span>:
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span>
+<span class="nv">one</span>,<span class="w"> </span><span class="nv">two</span>,<span class="w"> </span><span class="nv">three</span>,<span class="w"> </span><span class="nv">four</span>,<span class="w"> </span><span class="nv">five</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">func</span><span class="ss">()</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">one</span>,<span class="w"> </span><span class="nv">two</span>,<span class="w"> </span><span class="nv">three</span>,<span class="w"> </span><span class="nv">four</span>,<span class="w"> </span><span class="nv">five</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="nv">tuple</span><span class="w"> </span><span class="nv">unpacking</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">func</span><span class="ss">()</span><span class="w">  </span>#<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">tuple</span><span class="w"> </span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span><span class="ss">)</span>
+</pre></div>
 
 <h5>Q: How to translate a string of chars into a string containing a binary code (1 and 0)?</h5>
-<pre class="code literal-block"><span></span><code><span class="c1"># using join() + ord() + format()</span><span class="w"></span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"hello world"</span><span class="w"></span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">some_string</span><span class="p">)</span><span class="w"></span>
-<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span><span class="w"></span>
+<div class="code"><pre class="code literal-block"><span class="c1"># using join() + ord() + format()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"hello world"</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">some_string</span><span class="p">)</span>
+<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span>
 
-<span class="c1"># using `bytearray`</span><span class="w"></span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">bytearray</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="s1">'utf-8'</span><span class="p">))</span><span class="w"></span>
-<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span><span class="w"></span>
-</code></pre>
+<span class="c1"># using `bytearray`</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="s1">' '</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="k">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">bytearray</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="s1">'utf-8'</span><span class="p">))</span>
+<span class="s1">'1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'</span>
+</pre></div>
 
 <h5>Q: Consider the two approaches below for initializing an array and the arrays that will result. How will the resulting arrays differ and why should you use one initialization approach vs the other?</h5>
-<pre class="code literal-block"><span></span><code><span class="o">&gt;&gt;&gt;</span> # <span class="nv">INITIALIZING</span> <span class="nv">AN</span> <span class="nv">ARRAY</span> <span class="o">--</span> <span class="nv">METHOD</span> <span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nv">x</span> <span class="o">=</span> [[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>]] <span class="o">*</span> <span class="mi">3</span>
-[[<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>]]
-<span class="o">&gt;&gt;&gt;</span> # <span class="nv">INITIALIZING</span> <span class="nv">AN</span> <span class="nv">ARRAY</span> <span class="o">--</span> <span class="nv">METHOD</span> <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nv">y</span> <span class="o">=</span> [[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>] <span class="k">for</span> <span class="nv">_</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>]
-[[<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>], [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">4</span>]]
-<span class="o">&gt;&gt;&gt;</span> # <span class="nv">WHICH</span> <span class="nv">METHOD</span> <span class="nv">SHOULD</span> <span class="nv">YOU</span> <span class="nv">USE</span> <span class="nv">AND</span> <span class="nv">WHY</span>?
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="o">&gt;&gt;&gt;</span><span class="w"> </span>#<span class="w"> </span><span class="nv">INITIALIZING</span><span class="w"> </span><span class="nv">AN</span><span class="w"> </span><span class="nv">ARRAY</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="nv">METHOD</span><span class="w"> </span><span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>]]<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span>
+[[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>],<span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>],<span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>]]
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span>#<span class="w"> </span><span class="nv">INITIALIZING</span><span class="w"> </span><span class="nv">AN</span><span class="w"> </span><span class="nv">ARRAY</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="nv">METHOD</span><span class="w"> </span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>]<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">_</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>]
+[[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>],<span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>],<span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>]]
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span>#<span class="w"> </span><span class="nv">WHICH</span><span class="w"> </span><span class="nv">METHOD</span><span class="w"> </span><span class="nv">SHOULD</span><span class="w"> </span><span class="nv">YOU</span><span class="w"> </span><span class="nv">USE</span><span class="w"> </span><span class="nv">AND</span><span class="w"> </span><span class="nv">WHY</span>?
+</pre></div>
 
 <p>While both methods appear to produce the same result, there is an extremely significant difference between them. Method
 2 produces, as you would expect, an array of 3 elements, each of which is itself <em>an independent 4-element array</em>(2). In
 method 1, however, the members of the array <em>all point to the same object</em>(1). This can lead to what is most likely
 unanticipated and undesired behavior as shown below.</p>
-<pre class="code literal-block"><span></span><code># MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:
+<div class="code"><pre class="code literal-block"># MODIFYING THE x ARRAY FROM THE PRIOR CODE SNIPPET:
 &gt;&gt;&gt; x[0][3] = 99
 [[1, 2, 3, 99], [1, 2, 3, 99], [1, 2, 3, 99]]
 &gt;&gt;&gt; # UH-OH, DON’T THINK YOU WANTED THAT TO HAPPEN!
@@ -2451,137 +2477,137 @@ unanticipated and undesired behavior as shown below.</p>
 &gt;&gt;&gt; y[0][3] = 99
 [[1, 2, 3, 99], [1, 2, 3, 4], [1, 2, 3, 4]]
 &gt;&gt;&gt; # THAT’S MORE LIKE WHAT YOU EXPECTED!
-</code></pre>
+</pre></div>
 
 <h5>Q: Mention the use of / and // operators in Python?</h5>
-<pre class="code literal-block"><span></span><code># <span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span>
-# <span class="s2">"</span><span class="s">/</span><span class="s2">"</span> <span class="k">for</span> <span class="nv">integers</span>, <span class="nv">act</span> <span class="nv">as</span> <span class="nv">floor</span> <span class="nv">division</span>, <span class="k">for</span> <span class="nv">float</span> <span class="o">-</span> <span class="nv">returns</span> <span class="nv">float</span> <span class="nv">value</span>
+<div class="code"><pre class="code literal-block">#<span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="mi">2</span>.<span class="mi">7</span>
+#<span class="w"> </span><span class="s2">"/"</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">integers</span>,<span class="w"> </span><span class="nv">act</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">floor</span><span class="w"> </span><span class="nv">division</span>,<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">float</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">returns</span><span class="w"> </span><span class="nv">float</span><span class="w"> </span><span class="nv">value</span>
 
-<span class="nv">print</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span> # <span class="mi">2</span>
-<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>
-<span class="nv">print</span> <span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span> # <span class="mi">2</span>.<span class="mi">5</span>
-<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="mi">2</span>
+<span class="nv">print</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="o">-</span><span class="mi">3</span>
+<span class="nv">print</span><span class="w"> </span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
 
-# “<span class="o">//</span>” <span class="nv">returns</span> <span class="nv">floor</span> <span class="nv">value</span> <span class="k">for</span> <span class="nv">both</span> <span class="nv">integer</span> <span class="nv">and</span> <span class="nv">floating</span> <span class="nv">point</span> <span class="nv">arguments</span>
+#<span class="w"> </span>“<span class="o">//</span>”<span class="w"> </span><span class="nv">returns</span><span class="w"> </span><span class="nv">floor</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">both</span><span class="w"> </span><span class="nv">integer</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">floating</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="nv">arguments</span>
 
-<span class="nv">print</span> <span class="mi">5</span><span class="o">//</span><span class="mi">2</span> # <span class="mi">2</span>
-<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>
-<span class="nv">print</span> <span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span> # <span class="mi">2</span>.<span class="mi">0</span>
-<span class="nv">print</span> <span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span> # <span class="o">-</span><span class="mi">3</span>.<span class="mi">0</span>
+<span class="nv">print</span><span class="w"> </span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="mi">2</span>
+<span class="nv">print</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="o">-</span><span class="mi">3</span>
+<span class="nv">print</span><span class="w"> </span><span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="mi">2</span>.<span class="mi">0</span>
+<span class="nv">print</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">//</span><span class="mi">2</span><span class="w"> </span>#<span class="w"> </span><span class="o">-</span><span class="mi">3</span>.<span class="mi">0</span>
 
-# <span class="nv">In</span> <span class="nv">Python</span> <span class="mi">3</span>, ‘<span class="o">/</span>’ <span class="nv">operator</span> <span class="nv">does</span> <span class="nv">floating</span> <span class="nv">point</span> <span class="nv">division</span> <span class="k">for</span> <span class="nv">both</span> <span class="nv">int</span> <span class="nv">and</span> <span class="nv">float</span> <span class="nv">arguments</span>
-<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="mi">2</span>.<span class="mi">5</span>
-<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
-<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="mi">2</span>.<span class="mi">5</span>
-<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span>  # <span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+#<span class="w"> </span><span class="nv">In</span><span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="mi">3</span>,<span class="w"> </span>‘<span class="o">/</span>’<span class="w"> </span><span class="nv">operator</span><span class="w"> </span><span class="nv">does</span><span class="w"> </span><span class="nv">floating</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="nv">division</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">both</span><span class="w"> </span><span class="nv">int</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">float</span><span class="w"> </span><span class="nv">arguments</span>
+<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="mi">2</span>.<span class="mi">5</span>
+<span class="nv">print</span><span class="ss">(</span><span class="o">-</span><span class="mi">5</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="o">-</span><span class="mi">2</span>.<span class="mi">5</span>
 
-<span class="nv">Behavior</span> <span class="nv">of</span> “<span class="o">//</span>” <span class="nv">is</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">in</span> <span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span> <span class="nv">and</span> <span class="nv">Python</span> <span class="mi">3</span>.
-</code></pre>
+<span class="nv">Behavior</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span>“<span class="o">//</span>”<span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="mi">2</span>.<span class="mi">7</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="mi">3</span>.
+</pre></div>
 
 <h5>Q: How to check that tuple A contains all elements of tuple B?</h5>
 <p>You can use <code>set.issubset()</code> or <code>set.issuperset()</code> to check if every element in one tuple or list is in another.</p>
-<pre class="code literal-block"><span></span><code>tuple1 = (1, 2)
+<div class="code"><pre class="code literal-block">tuple1 = (1, 2)
 tuple2 = (1, 2, 3, 4, 5)
 set(tuple1).issubset(tuple2)  # True
 set(tuple2).issuperset(tuple1)  # True
-</code></pre>
+</pre></div>
 
 <h5>Q: How to check if both tuples contain unique values?</h5>
 <p>len(set(tup)) == len(some_tuple)
 This creates a set of some_tuple and checks if it is the same length as the original some_tuple. The only case in which
 they would have the same length is if all elements in tup were unique.</p>
 <h5>Q: Mention the use of the <code>split()</code> function in Python?</h5>
-<pre class="code literal-block"><span></span><code>str splitted on whitespaces → list of str
+<div class="code"><pre class="code literal-block">str splitted on whitespaces → list of str
 "words with spaces".split() → ['words','with','spaces']
-</code></pre>
+</pre></div>
 
 <h5>Q: What will be the output of the following code?</h5>
-<pre class="code literal-block"><span></span><code>def f():
+<div class="code"><pre class="code literal-block">def f():
 ... x = 15
 ... print(x)
 ... x = 12
 f()  # 15
-</code></pre>
+</pre></div>
 
 <h5>Q: How to convert a string to a number that consists of letters ASCII code. Example: 'abcd' -&gt; 979899100.</h5>
-<pre class="code literal-block"><span></span><code># <span class="nv">Convert</span> <span class="nv">string</span> <span class="nv">to</span> <span class="nv">ASCII</span> <span class="nv">values</span>
-# <span class="nv">Method</span> <span class="mi">1</span>: <span class="nv">using</span> <span class="k">loop</span> <span class="o">+</span> <span class="nv">ord</span><span class="ss">()</span>
+<div class="code"><pre class="code literal-block">#<span class="w"> </span><span class="nv">Convert</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">ASCII</span><span class="w"> </span><span class="nv">values</span>
+#<span class="w"> </span><span class="nv">Method</span><span class="w"> </span><span class="mi">1</span>:<span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="k">loop</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">ord</span><span class="ss">()</span>
 
-<span class="nv">test_str</span> <span class="o">=</span> <span class="s2">"</span><span class="s">let’s do more Python!</span><span class="s2">"</span>
-<span class="nv">res1</span> <span class="o">=</span> <span class="s1">''</span>
-<span class="k">for</span> <span class="nv">elem</span> <span class="nv">in</span> <span class="nv">test_str</span>:
-<span class="nv">res1</span> <span class="o">+=</span> ‘’.<span class="nv">join</span><span class="ss">(</span><span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">)))</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">int</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">))</span> # <span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">)</span> <span class="o">&gt;&gt;</span> <span class="mi">106</span> <span class="nv">bytes</span>
+<span class="nv">test_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"let’s do more Python!"</span>
+<span class="nv">res1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">elem</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">test_str</span>:
+<span class="nv">res1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>‘’.<span class="nv">join</span><span class="ss">(</span><span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">)))</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">int</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">))</span><span class="w"> </span>#<span class="w"> </span><span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res1</span><span class="ss">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">106</span><span class="w"> </span><span class="nv">bytes</span>
 
-# <span class="nv">Method</span> <span class="mi">2</span>: <span class="nv">list</span> <span class="nv">comprehension</span>
-<span class="nv">test_str2</span> <span class="o">=</span> “<span class="nv">let</span>’<span class="nv">s</span> <span class="k">do</span> <span class="nv">more</span> <span class="nv">Python</span><span class="o">!</span>”
-<span class="nv">res2</span> <span class="o">=</span> <span class="s1">''</span>.<span class="nv">join</span><span class="ss">(</span>[<span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">))</span> <span class="k">for</span> <span class="nv">elem</span> <span class="nv">in</span> <span class="nv">test_str2</span>]<span class="ss">)</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span> # <span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span> <span class="o">&gt;&gt;</span> <span class="mi">106</span> <span class="nv">bytes</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">res1</span> <span class="o">==</span> <span class="nv">res2</span><span class="ss">)</span> # <span class="nv">True</span>
-</code></pre>
+#<span class="w"> </span><span class="nv">Method</span><span class="w"> </span><span class="mi">2</span>:<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="nv">comprehension</span>
+<span class="nv">test_str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>“<span class="nv">let</span>’<span class="nv">s</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">more</span><span class="w"> </span><span class="nv">Python</span><span class="o">!</span>”
+<span class="nv">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span>.<span class="nv">join</span><span class="ss">(</span>[<span class="nv">str</span><span class="ss">(</span><span class="nv">ord</span><span class="ss">(</span><span class="nv">elem</span><span class="ss">))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">elem</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">test_str2</span>]<span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span><span class="w"> </span>#<span class="w"> </span><span class="nv">sys</span>.<span class="nv">getsizeof</span><span class="ss">(</span><span class="nv">res2</span><span class="ss">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">106</span><span class="w"> </span><span class="nv">bytes</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">res1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">res2</span><span class="ss">)</span><span class="w"> </span>#<span class="w"> </span><span class="nv">True</span>
+</pre></div>
 
 <h5>Q: How to remove empty lines from a list of lines (with a length of 0)?</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">empty_lines_list</span> <span class="o">=</span> [‘<span class="nv">abc</span>’, ‘’, ‘’, ’<span class="nv">def</span>’, ‘’, ‘’, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">1</span>]
-<span class="nv">def</span> <span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>:
-    <span class="k">return</span> <span class="nv">bool</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>
-<span class="nv">filtered_list</span> <span class="o">=</span> [<span class="nv">line</span> <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">empty_lines_list</span> <span class="k">if</span> <span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>]
-<span class="nv">print</span><span class="ss">(</span><span class="nv">filtered_list</span><span class="ss">)</span>  # [<span class="s2">"</span><span class="s">abc</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">def</span><span class="s2">"</span>, <span class="mi">3</span>, <span class="mi">4</span>, <span class="mi">1</span>]
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nv">empty_lines_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[‘<span class="nv">abc</span>’,<span class="w"> </span>‘’,<span class="w"> </span>‘’,<span class="w"> </span>’<span class="nv">def</span>’,<span class="w"> </span>‘’,<span class="w"> </span>‘’,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">1</span>]
+<span class="nv">def</span><span class="w"> </span><span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">bool</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>
+<span class="nv">filtered_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">line</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">empty_lines_list</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">check_is_empty</span><span class="ss">(</span><span class="nv">line</span><span class="ss">)</span>]
+<span class="nv">print</span><span class="ss">(</span><span class="nv">filtered_list</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span>[<span class="s2">"abc"</span>,<span class="w"> </span><span class="s2">"def"</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">1</span>]
+</pre></div>
 
 <h5>Q: Build a string with the numbers from 0 to 100, "0123456789101112..."</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">list_of_numbers</span> <span class="o">=</span> <span class="s1">''</span>
-<span class="k">for</span> <span class="nv">el</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">101</span><span class="ss">)</span>:
-    <span class="nv">list_of_numbers</span> <span class="o">+=</span> <span class="nv">str</span><span class="ss">(</span><span class="nv">el</span><span class="ss">)</span>
+<div class="code"><pre class="code literal-block"><span class="nv">list_of_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">el</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">101</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">list_of_numbers</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nv">str</span><span class="ss">(</span><span class="nv">el</span><span class="ss">)</span>
 <span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_numbers</span><span class="ss">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Making a list with the unique element from a list with duplicate elements</h5>
 <p>unique_list = set(list_with_duplicates)</p>
 <h5>Q: How can you randomize the items of a list in Python?</h5>
-<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Keep'</span><span class="p">,</span> <span class="s1">'The'</span><span class="p">,</span> <span class="s1">'Blue'</span><span class="p">,</span> <span class="s1">'Flag'</span><span class="p">,</span> <span class="s1">'Flying'</span><span class="p">,</span> <span class="s1">'High'</span><span class="p">]</span>
 <span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Write a program in Python to produce stars triangle</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">def</span> <span class="nv">star_triangle</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
-    <span class="k">for</span> <span class="nv">x</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
-        <span class="nv">print</span><span class="ss">(</span><span class="s1">'</span><span class="s"> </span><span class="s1">'</span> <span class="o">*</span> <span class="ss">(</span><span class="nv">r</span> <span class="o">-</span> <span class="nv">x</span> <span class="o">-</span> <span class="mi">1</span><span class="ss">)</span> <span class="o">+</span> <span class="s1">'</span><span class="s">*</span><span class="s1">'</span> <span class="o">*</span> <span class="ss">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nv">x</span> <span class="o">+</span> <span class="mi">1</span><span class="ss">))</span>    
+<div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">star_triangle</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="s1">' '</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="nv">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="ss">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'*'</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="ss">))</span><span class="w">    </span>
 <span class="nv">star_triangle</span><span class="ss">(</span><span class="mi">9</span><span class="ss">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Write a program in Python to check if a sequence is a palindrome</h5>
-<pre class="code literal-block"><span></span><code><span class="s s-Atom">entered_sequence</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="s2">"enter sequence"</span><span class="p">)</span>
-<span class="s s-Atom">reversed_copy</span> <span class="o">=</span> <span class="s s-Atom">entered_sequence</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
-<span class="s s-Atom">if</span> <span class="s s-Atom">entered_sequence</span> <span class="o">==</span> <span class="s s-Atom">reversed_copy:</span>
+<div class="code"><pre class="code literal-block"><span class="s s-Atom">entered_sequence</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="s2">"enter sequence"</span><span class="p">)</span>
+<span class="s s-Atom">reversed_copy</span> <span class="o">=</span> <span class="s s-Atom">entered_sequence</span><span class="p">[</span><span class="o">::-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s s-Atom">if</span> <span class="s s-Atom">entered_sequence</span> <span class="o">==</span> <span class="s s-Atom">reversed_copy</span><span class="o">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="s2">"palindrome"</span><span class="p">)</span>
-<span class="nn">else</span><span class="p">:</span>
+<span class="s s-Atom">else</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="s2">"Not a palindrome"</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <h5>Q: Write a one-liner that will count the number of capital letters in a file. Your code should work even if the file is too big to fit in memory</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">with</span> <span class="nv">open</span><span class="ss">(</span><span class="s1">'</span><span class="s">very_big_text.txt</span><span class="s1">'</span><span class="ss">)</span> <span class="nv">as</span> <span class="nv">f</span>:
-    # <span class="nv">multiline</span> <span class="nv">solution</span>
-    <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nv">text</span> <span class="o">=</span> <span class="nv">f</span>.<span class="nv">read</span><span class="ss">()</span>
-    <span class="k">for</span> <span class="nv">character</span> <span class="nv">in</span> <span class="nv">text</span>:
-    <span class="k">if</span> <span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">()</span>:
-    <span class="nv">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class="code"><pre class="code literal-block"><span class="nv">with</span><span class="w"> </span><span class="nv">open</span><span class="ss">(</span><span class="s1">'very_big_text.txt'</span><span class="ss">)</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">f</span>:
+<span class="w">    </span>#<span class="w"> </span><span class="nv">multiline</span><span class="w"> </span><span class="nv">solution</span>
+<span class="w">    </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nv">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">f</span>.<span class="nv">read</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">character</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">text</span>:
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">()</span>:
+<span class="w">    </span><span class="nv">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
 
-    # <span class="nv">one</span><span class="o">-</span><span class="nv">liner</span>
-    <span class="nv">count</span> <span class="o">=</span> <span class="nv">sum</span><span class="ss">(</span><span class="mi">1</span> <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">f</span> <span class="k">for</span> <span class="nv">character</span> <span class="nv">in</span> <span class="nv">line</span> <span class="k">if</span> <span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">())</span>
-    <span class="nv">print</span><span class="ss">(</span><span class="nv">count</span><span class="ss">)</span>
-</code></pre>
+<span class="w">    </span>#<span class="w"> </span><span class="nv">one</span><span class="o">-</span><span class="nv">liner</span>
+<span class="w">    </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sum</span><span class="ss">(</span><span class="mi">1</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">f</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">character</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">character</span>.<span class="nv">isupper</span><span class="ss">())</span>
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">count</span><span class="ss">)</span>
+</pre></div>
 
 <h5>Q: Write a sorting algorithm for a numerical dataset in Python</h5>
-<pre class="code literal-block"><span></span><code><span class="nv">list_of_str_numbers</span> <span class="o">=</span> [<span class="s2">"</span><span class="s">1</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">4</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">0</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">6</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">9</span><span class="s2">"</span>]
-<span class="nv">list_of_integers</span> <span class="o">=</span> [<span class="nv">int</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">list_of_str_numbers</span>]
+<div class="code"><pre class="code literal-block"><span class="nv">list_of_str_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s2">"1"</span>,<span class="w"> </span><span class="s2">"4"</span>,<span class="w"> </span><span class="s2">"0"</span>,<span class="w"> </span><span class="s2">"6"</span>,<span class="w"> </span><span class="s2">"9"</span>]
+<span class="nv">list_of_integers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">int</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">list_of_str_numbers</span>]
 <span class="nv">list_of_integers</span>.<span class="nv">sort</span><span class="ss">()</span>
 
-# <span class="nv">or</span> <span class="nv">with</span> <span class="nv">sorted</span><span class="ss">()</span> <span class="nv">which</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">change</span> <span class="nv">original</span> <span class="nv">list</span> <span class="nv">in</span> <span class="nv">contrast</span> <span class="nv">to</span> <span class="nv">sort</span><span class="ss">()</span>
-<span class="nv">new_sorted_list_of_integers</span> <span class="o">=</span> <span class="nv">sorted</span><span class="ss">(</span><span class="nv">list_of_integers</span><span class="ss">)</span>
-<span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_integers</span>, <span class="nv">new_sorted_list_of_integers</span><span class="ss">)</span>
-</code></pre>
+#<span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">()</span><span class="w"> </span><span class="nv">which</span><span class="w"> </span><span class="nv">does</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">change</span><span class="w"> </span><span class="nv">original</span><span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">contrast</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">sort</span><span class="ss">()</span>
+<span class="nv">new_sorted_list_of_integers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">(</span><span class="nv">list_of_integers</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_integers</span>,<span class="w"> </span><span class="nv">new_sorted_list_of_integers</span><span class="ss">)</span>
+</pre></div>
 
 <h2>...content...Quizzes/games</h2>
 <div id="section-quizzes"><a href=".">[Return Up]</a></div>
@@ -2596,7 +2622,7 @@ sdf</p>
     
 
 </article><!--End of body content--><footer id="footer">
-            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2023         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
             

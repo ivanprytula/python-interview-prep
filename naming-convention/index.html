@@ -116,7 +116,7 @@ bg-dark
 <li>Always use the same vocabulary</li>
 <li>Don’t use magic numbers</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="c1"># Not recommended</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># Not recommended</span>
 <span class="c1"># The au variable is the number of active users</span>
 <span class="n">au</span> <span class="o">=</span> <span class="mi">105</span>
 <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"UK"</span><span class="p">,</span> <span class="s2">"USA"</span><span class="p">,</span> <span class="s2">"UAE"</span><span class="p">]</span>
@@ -142,7 +142,7 @@ bg-dark
 <span class="n">DICE_SIDES</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="k">def</span> <span class="nf">roll_dice</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">DICE_SIDES</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <h3>2. Packages</h3>
 <ul>
@@ -156,10 +156,10 @@ bg-dark
 <li>When multiple words are needed, an underscore should separate them</li>
 <li>It is usually preferable to stick to 1 word names</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="c1"># pyramid.py</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># pyramid.py</span>
 <span class="c1"># [or]</span>
 <span class="c1"># pyramid_giza.py</span>
-</code></pre>
+</pre></div>
 
 <h3>4. Classes</h3>
 <ul>
@@ -168,7 +168,7 @@ bg-dark
 <li>Exception classes should end with “Error”</li>
 <li>Do not add redundant context</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">class</span> <span class="nc">InputError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="c1"># custom exception</span>
@@ -184,14 +184,14 @@ bg-dark
 
 <span class="c1"># Recommended</span>
 <span class="k">class</span> <span class="nc">PersonGood</span><span class="p">:</span>
-    <span class="sd">"""Since we are already inside the Person class, there's no need to add the person_ prefix to every class variable."""</span>
+<span class="w">    </span><span class="sd">"""Since we are already inside the Person class, there's no need to add the person_ prefix to every class variable."""</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">phone</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
-</code></pre>
+</pre></div>
 
 <h3>5. Global (module-level) Variables</h3>
 <ul>
@@ -205,10 +205,10 @@ bg-dark
 <li>Non-public instance variables should begin with a single underscore</li>
 <li>If an instance name needs to be mangled, two underscores may begin its name</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="n">pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Public</span>
+<div class="code"><pre class="code literal-block"><span class="n">pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Public</span>
 <span class="n">_pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Protected</span>
 <span class="n">__pyramid_giza</span> <span class="o">=</span> <span class="s2">"pyramid of giza"</span> <span class="c1"># Private</span>
-</code></pre>
+</pre></div>
 
 <h3>7. Methods</h3>
 <ul>
@@ -217,20 +217,20 @@ bg-dark
 <li>Non-public method should begin with a single underscore</li>
 <li>If a method name needs to be mangled, two underscores may begin its name</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="k">def</span> <span class="nf">draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Public</span>
+<div class="code"><pre class="code literal-block"><span class="k">def</span> <span class="nf">draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Public</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">_draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Protected</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">__draw_pyramid_giza</span><span class="p">():</span> <span class="c1"># Private</span>
     <span class="k">pass</span>
-</code></pre>
+</pre></div>
 
 <h3>8. Method Arguments</h3>
 <ul>
 <li>Instance methods should have their first argument named ‘self’.</li>
 <li>Class methods should have their first argument named ‘cls’</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">PyramidGiza</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">instance_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hello from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
@@ -241,7 +241,7 @@ bg-dark
         <span class="nd">@staticmethod</span>
         <span class="k">def</span> <span class="nf">static_method</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hello from </span><span class="si">{</span><span class="n">PyramidGiza</span><span class="o">.</span><span class="n">static_method</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <h3>9. Functions</h3>
 <ul>
@@ -253,15 +253,15 @@ bg-dark
 <li>Constant names must be fully capitalized</li>
 <li>Words in a constant name should be separated by an underscore</li>
 </ul>
-<pre class="code literal-block"><span></span><code><span class="n">TOTAL</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="code"><pre class="code literal-block"><span class="n">TOTAL</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="c1"># [or]</span>
 <span class="n">MAX_CAPACITY</span> <span class="o">=</span> <span class="mi">200</span>
-</code></pre>
+</pre></div>
     </div>
     
 
 </article><!--End of body content--><footer id="footer">
-            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2023         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
             

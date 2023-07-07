@@ -16,23 +16,17 @@
 <meta property="og:site_name" content="Mastering Python">
 <meta property="og:title" content="Cloud of Terms">
 <meta property="og:url" content="https://localhost.com/cloud-of-terms/">
-<meta property="og:description" content="Hover on &quot;Python&quot; tag :)
-
+<meta property="og:description" content="Hover on term and read more info in tooltip.
+    Click on term and you'll be redirected to Google search page with results about the term.
 
     
 
+    
 
-
-    const texts = [
-        'Python', 'Django', 'DRF', 'Flask', 'POSIX'
-    ];
-    options = {
-        'radius': 200,
-        'maxSpeed': 'slow',
-    }
-    const tc ">
+        let termsPython = {
+            Python: ">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2022-04-21T19:18:42+03:00">
+<meta property="article:published_time" content="2023-07-07T12:00:00+02:00">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -95,42 +89,83 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <script type="text/javascript" src="../assets/js/TagCloud.min.js"></script><h3>Hover on "Python" tag :)</h3>
+    <script type="text/javascript" src="../assets/js/TagCloud.min.js"></script><p>Hover on term and read more info in tooltip.</p>
+    <p>Click on term and you'll be redirected to Google search page with results about the term.</p>
 
-<div class="content">
-    <!-- content -->
-</div>
+    <div class="content"></div>
 
-<script>
-    const texts = [
-        'Python', 'Django', 'DRF', 'Flask', 'POSIX'
-    ];
-    options = {
-        'radius': 200,
-        'maxSpeed': 'slow',
-    }
-    const tc = TagCloud('.content', texts, options);
+    <script>
 
-    let rootEl = document.querySelector('.content');
-    rootEl.addEventListener('click', function clickEventHandler(e) {
-        if (e.target.className === 'tagcloud--item') {
-            window.open(`https://www.google.com/search?q=${e.target.innerText}`, '_blank');
+        let termsPython = {
+            Python: 'Python is an interpreted, high-level and general-purpose programming language.',
+            Django: 'Django is a Python-based free and open-source web framework that follows the model-template-views architectural pattern.',
+            DRF: 'Django REST framework is a powerful and flexible toolkit for building Web APIs.',
+            Flask: 'Flask is a micro web framework written in Python.',
         }
-    });
 
-    rootEl.addEventListener('mouseover', function (e) {
-        if (e.target.className === 'tagcloud--item' && e.target.innerText === 'Python') {
-            window.alert('Well done, Pythonista!')
+        let termsOS = {
+            POSIX: 'POSIX is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems.',
+            UNIX: 'Unix is a family of multitasking, multi-user computer operating systems that derive from the original AT&T Unix.',
+            Linux: 'Linux is a family of open-source Unix-like operating systems based on the Linux kernel.',
+            Bash: 'Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell.',
         }
-    });
 
+        let termsVCS = {
+            Git: 'Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.',
+            GitHub: 'GitHub is a provider of Internet hosting for software development and version control using Git.',
+            GitLab: 'GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc.',
+        }
 
-</script>
+        let termsContainers = {
+            Docker: 'Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.',
+        }
+
+        let termsWithDefinitions = {
+            ...termsPython,
+            ...termsOS,
+            ...termsVCS,
+            ...termsContainers,
+        }
+
+        const texts = [
+            'Python', 'Django', 'DRF', 'Flask', 'POSIX', 'UNIX', 'Linux', 'Bash', 'Git', 'GitHub', 'GitLab', 'Docker',
+        ];
+        options = {
+            'radius': 300,
+            'maxSpeed': 'slow',
+        }
+        const tc = TagCloud('.content', Object.keys(termsWithDefinitions), options);
+
+        let rootEl = document.querySelector('.content');
+
+        const clickEventHandler = (e) => {
+            if (e.target.className === 'tagcloud--item') {
+                window.open(`https://www.google.com/search?q=${e.target.innerText}`, '_blank');
+            }
+        };
+
+        const pauseResume = (e, tc) => {
+            if (e.target.className === 'tagcloud--item') {
+                tc.pause();
+
+                e.target.setAttribute('title', termsWithDefinitions[e.target.innerText]);
+                // debugger;
+
+            } else {
+                tc.resume();
+            }
+        };
+
+        rootEl.addEventListener('click', (e) => clickEventHandler(e));
+        rootEl.addEventListener('mouseover', (e) => pauseResume(e, tc));
+        rootEl.addEventListener('mouseout', (e) => pauseResume(e, tc));
+
+    </script>
 </div>
     
 
 </article><!--End of body content--><footer id="footer">
-            Contents © 2022         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2023         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
             
