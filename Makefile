@@ -1,21 +1,18 @@
-# Collection of handy commands, refs, examples
-# https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_node/make_34.html
-.PHONY: run clean
+VENV_NAME?=venv
+PYTHON=${VENV_NAME}/bin/python3
 
-VENV = venv
-PYTHON = $(VENV)/bin/python3
-PIP = $(VENV)/bin/pip
+venv:
+	python3.11 -m venv ${VENV_NAME}
 
-#The variables can be overridden by providing the values when running the make command:
-#make VENV=my_venv run
+# activate venv manually in terminal, for some reason it doesn't work in makefile
+# activate:
+	# . ${VENV_NAME}/bin/activate
 
-run: $(VENV)/bin/activate
-	$(PYTHON) app.py
-
-$(VENV)/bin/activate: requirements.txt
-	python3 -m venv $(VENV)
-	$(PIP) install -r requirements.txt
+install:
+	${PYTHON} -m pip install --upgrade pip
+	${PYTHON} -m pip install -r requirements.txt
 
 clean:
-	rm -rf __pycache__
-	rm -rf $(VENV)
+	rm -rf ${VENV_NAME}
+
+.PHONY: venv install clean
