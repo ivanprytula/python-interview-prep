@@ -5,20 +5,7 @@
 .. type: text
 -->
 
-<header>
-    <h1>Hello world!</h1>
-    <h3> Use WASD / arrow keys to move snake around.</h3>
-    <p>Click at any word/symbol and check out info in tooltip :)</p>
-</header>
-<section id="walkingContainer">
-    <img id="walkingSnake"
-         aria-describedby="tooltip"
-         class="walking-snake"
-         src="../images/show-me-the-code/snake_bw.png"
-         alt="walking-snake">
-    <div id="tooltip" role="tooltip">foo spam eggs
-        <div id="arrow" data-popper-arrow></div>
-    </div>
+# Syntax - all in one
 
 ```python
 # By adding the line #!/usr/bin/python3 on the top of the script, we can run the file.py
@@ -37,6 +24,7 @@ PEP = Python Enhancement Proposal
   foo = ClassFoo()
   bar = foo.function_bar()
 """
+
 # ####### 1. Standard Library imports
 import datetime
 import importlib
@@ -67,65 +55,3 @@ multiline_comment = '''
   a second line if printed.
   '''
 ```
-
-</section>
-
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script>
-    const snakeWithTooltip = document.querySelector('#walkingSnake');
-    const emptyTooltip = document.querySelector('#tooltip');
-
-    const popperInstance = Popper.createPopper(snakeWithTooltip, emptyTooltip, {
-        placement: 'top',
-        modifiers: [
-            {
-                name: 'offset',
-                options: {
-                    offset: [0, 8],
-                },
-            },
-        ],
-    });
-
-    function show() {
-        // Make the tooltip visible
-        emptyTooltip.setAttribute('data-show', '');
-
-        // Enable the event listeners
-        popperInstance.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                {name: 'eventListeners', enabled: true},
-            ],
-        }));
-
-        // Update its position
-        popperInstance.update();
-    }
-
-    function hide() {
-        // Hide the tooltip
-        emptyTooltip.removeAttribute('data-show');
-
-        // Disable the event listeners
-        popperInstance.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                {name: 'eventListeners', enabled: false},
-            ],
-        }));
-    }
-
-    const showEvents = ['mouseenter', 'focus'];
-    const hideEvents = ['mouseleave', 'blur'];
-
-    showEvents.forEach((event) => {
-        snakeWithTooltip.addEventListener(event, show);
-    });
-
-    hideEvents.forEach((event) => {
-        snakeWithTooltip.addEventListener(event, hide);
-    });
-</script>
