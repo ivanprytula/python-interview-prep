@@ -7,14 +7,15 @@
 -->
 
 # Python Core
+
 1. [Jupyter notebooks for teaching/learning Python 3](https://jerry-git.github.io/learn-python3/)
 2. [30 built-in Python modules you better be using](https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/)
 3. [The Hitchhiker’s Guide to Python](https://docs.python-guide.org/)
 4. [Python speed](https://wiki.python.org/moin/PythonSpeed)
 5. ...
 
+## Cheatsheets, curated list of awesome resources, "easter eggs"
 
-# Cheatsheets, curated list of awesome resources, "easter eggs"
 1. [Comprehensive Python Cheatsheet](https://gto76.github.io/python-cheatsheet/)
 2. [SpeedSheet](https://speedsheet.io/)
 3. [Awesome Python](https://awesome-python.com/)
@@ -23,9 +24,9 @@
 6. [PYnative](https://pynative.com/)
 7. ...
 
+## Clean & idiomatic code, good patterns vs. anti-patterns
 
-# Clean & idiomatic code, good patterns vs. anti-patterns
-1. [Python libraries to make your code readable, reliable and maintainable ](https://isaak.dev/2020/08/python-libraries-to-make-your-code-readable-and-maintainable)
+1. [Python libraries to make your code readable, reliable and maintainable](https://isaak.dev/2020/08/python-libraries-to-make-your-code-readable-and-maintainable)
 2. [10 must-know patterns for writing clean code with Python](https://dev.to/alexomeyer/10-must-know-patterns-for-writing-clean-code-with-python-56bf)
 3. [The 10 Most Common Mistakes That Python Developers Make](https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)
 4. [Idiomatic Python](https://intermediate-and-advanced-software-carpentry.readthedocs.io/en/latest/idiomatic-python.html)
@@ -34,32 +35,32 @@
 7. [Idiomatic Python. Coding the smart way](https://medium.com/the-andela-way/idiomatic-python-coding-the-smart-way-cc560fa5f1d6)
 8. ...
 
+## VCS
 
-# VCS
 1. [Take Your GitHub Repository To The Next Level](https://dev.to/eludadev/take-your-github-repository-to-the-next-level-17ge)
 2. ...
 
+## Design principles, architecture, methodologies
 
-# Design principles, architecture, methodologies
 1. [SOLID](https://devopedia.org/solid-design-principles)
 2. [The Twelve-Factor app](https://www.12factor.net/uk/)
 3. ...
 
+## Show your best and coding interview
 
-# Show your best and coding interview
 1. [Preparing for a Python Developer Interview](https://stackabuse.com/preparing-for-a-python-developer-interview/)
 2. [How to Stand Out in a Python Coding Interview](https://realpython.com/python-coding-interview-tips/)
 3. [Python Practice Problems: Get Ready for Your Next Interview](https://realpython.com/python-practice-problems/)
 4. ...
 
+## Security
 
-# Security
 1. [Python security best practices cheat sheet](https://snyk.io/blog/python-security-best-practices-cheat-sheet/)
 2. [10 Unknown Security Pitfalls for Python](https://blog.sonarsource.com/10-unknown-security-pitfalls-for-python)
 3. ...
 
+## Pythonistas to follow and learn from them
 
-# Pythonistas to follow and learn from them
 1. Guido van Rossum [GitHub](https://github.com/gvanrossum)
 2. Brett Cannon [GitHub](https://github.com/brettcannon) - [Tall, Snarky Canadian](https://snarky.ca/)
 3. Łukasz Langa [GitHub](https://github.com/ambv) - [Website](https://lukasz.langa.pl/)
@@ -68,22 +69,24 @@
 6. Hynek Schlawack [GitHub](https://github.com/hynek) - [Website](https://hynek.me/)
 7. ...
 
+## Books, articles, etc
 
-# Books, articles, etc.
 1. [Writing Idiomatic Python](https://jeffknupp.com/writing-idiomatic-python-ebook/)
 2. [Python Tricks, the Book](https://realpython.com/products/python-tricks-book/)
 3. ...
 
-# Static analysis
+## Static analysis
+
 1. [DeepSource](https://deepsource.io/)
 2. ...
 
+## Play & Learn
 
-# Play & Learn
 1. [Command Line Heroes: BASH](https://www.redhat.com/en/command-line-heroes/bash/index.html?extIdCarryOver=true&sc_cid=701f2000001OH79AAG)
 2. ...
 
-# Misc collection
+## Misc collection
+
 1. [David Beazley - Python Concurrency From the Ground Up  PyCon 2015](https://youtu.be/MCs5OvhV9S4?list=WL)
 2. [Clean Code summary](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)
 3. [Comprehensive Python Cheatsheet](https://gto76.github.io/python-cheatsheet/)

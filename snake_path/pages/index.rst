@@ -4,8 +4,6 @@
 .. description:
 .. type: text
 
-...and some memes :=)
----------------------
 
 .. container::
 
@@ -13,8 +11,5 @@
 
     .. image:: /images/index/Python_logo_01.png
         :class: rounded mx-auto d-block
-        :alt: Alternative text
+        :alt: Python logo
         :align: center
-
-    .. image:: /images/index/Python_logo_01.png
-        :class: rounded mx-auto d-block

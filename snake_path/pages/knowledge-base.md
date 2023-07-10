@@ -6,27 +6,25 @@
 .. type: text
 -->
 
-**Acquisition & refreshment of knowledge based on:**
+# **Acquisition & refreshment of knowledge based on:**
 
 - A. Interview questions/answers <a href="#section-interview-questions"><em>[Qs&As]</em></a>
 - B. Best practices <a href="#section-best-practices"><em>[Action Items]</em></a>
 - C. Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a>
-- D. Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a>
-- E. ... <a href="#"><em>[...TODO...]</em></a>
 
 ---
 
-# A. Interview questions/answers
+## A. Interview questions/answers
 
 <div id="section-interview-questions"><a href="#">[Return Up]</a></div>
 
-## A.1 Language Core
+### A.1 Language Core
 
-### Fundamentals
+#### Fundamentals
 
 [Ground rules glossary: READ IT NOW, BRO!](https://docs.python.org/3/glossary.html)
 
-#### Q: What is Python? Name some characteristics of Python?
+##### Q: What is Python? Name some characteristics of Python?
 
 1. Python (CPython) is an interpreted language (like PHP, Ruby). That means that, unlike languages like C and its
    variants, Python does not need to be compiled before it is run (well, some compilation happens)
@@ -186,7 +184,7 @@ implement:
     class MyClass(object):  # (object) is for Python 2.*
         def method_a(self):
             pass
-    
+
         def method_b(self):
             print("I'm method_b")
 
@@ -397,7 +395,7 @@ For slicing/accessing from the end of list, types and other sequences.
 Python sequences can be indexed with positive and negative numbers. For positive index, 0 is the first index, 1 is the
 second index and so forth. For negative index, (-1) is the last index and (-2) is the second last index and so forth.
 
-    demo_lst = [2, 33, 222, 14, 25] 
+    demo_lst = [2, 33, 222, 14, 25]
     demo_lst[-1] >> 25.
 
 #### Q: What is type conversion?
@@ -662,9 +660,9 @@ You need to do 2 things:
 
 3) The first is done by executing `$ chmod +x scriptfile_name` or perhaps `$ chmod 755 scriptfile_name`.
 
-```shell 
+```shell
 $ chmod +x myscript.py
-``` 
+```
 
 The second can be done in a number of ways. The most straightforward way is to put
 
@@ -677,9 +675,7 @@ If you would like the script to be independent of where the Python interpreter l
 Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s `$PATH`:
 [more details...](http://effbot.org/pyfaq/how-do-i-make-a-python-script-executable-on-unix.htm)
 
-```python
-#!/usr/bin/env python
-```
+    #!/usr/bin/env python
 
 #### Q: What is pickling and unpickling?
 
@@ -697,7 +693,9 @@ import pickle
 The difference between dump and dumps is that dump writes the pickled object to an open file, and dumps returns the pickled object as bytes.
 The file must be opened for writing in binary mode. The pickled version of the object is exactly the same with both dump and dumps.
 """
+
 # So, if you did the following for object obj:
+
 obj = {}
 with open("pickle1", "wb") as f:
     pickle.dump(obj, f)
@@ -867,7 +865,7 @@ result of a list comprehension, but not directly on that of a generator expressi
     import sys
     nums_squared_lc = [i * 2 for i in range(10000)]
     sys.getsizeof(nums_squared_lc)  # 87632 bytes, x680 times bigger
-    
+
     nums_squared_gc = (i * 2 for i in range(10000))
     sys.getsizeof(nums_squared_gc)  # 128 bytes
 
@@ -894,12 +892,12 @@ resources, closing opened files, etc.
     class ManagedFile:
         def __init__(self, name):
             self.name = name
-    
+
         def __enter__(self):
             self.file = open(self.name, 'w')
             return self.file
-    
-    
+
+
         def __exit__(self, exc_type, exc_val, exc_tb):
             if self.file:
                 self.file.close()
@@ -956,7 +954,7 @@ Its main purpose is to separate the code that will be executed when the code is 
 another script) - and when the module itself is launched as a separate file.
 
     # this means that if this script is executed, then some_func() will be executed
-    
+
     if __name__ == '__main__':
         some_func()
 
@@ -977,23 +975,23 @@ and in most cases it’s possible to get reference to them.
         def func():
             print("func() is being called")
     DEMO_VAR = ‘don”t change me!’
-    
+
     # our cool tricky hook.py
     import gorilla_lib
     def monkey_f(self):
         print("monkey_f() is being called")
     gorilla_lib.DEMO_VAR = ‘sorry, it”s just a programming’
-    
+
     # replacing address of "func" with "monkey_f"
     gorilla_lib.A.func = monkey_f
     obj_gor = gorilla_lib.A()
-    
+
     # calling function "func" whose address got replaced with function "monkey_f()"
     obj_gor.func()  # monkey_f() is being called
 
 #### Q: How are arguments passed by value or by reference?
 
-**Background knowledge**:  
+**Background knowledge**:
 When you pass function arguments **by reference**, those arguments are only references to existing values. In contrast,
 when
 you pass arguments by value, those arguments become independent copies of the original values.
@@ -1094,12 +1092,12 @@ your answer is correct?
         l1 = sorted(lIn)
         l2 = [i for i in l1 if i < 0.5]
         return [i * i for i in l2]
-    
+
     def f2(lIn):
         l1 = [i for i in lIn if i < 0.5]
         l2 = sorted(l1)
         return [i * i for i in l2]
-    
+
     def f3(lIn):
         l1 = [i * i for i in lIn]
         l2 = sorted(l1)
@@ -1126,11 +1124,11 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
 
 ### A.1.2 Standard Library
 
-**Built-in functions / modules**
+Built-in functions / modules
 
 #### Q: How to display a list of all available modules?
 
-`>>> help('modules')`  
+`>>> help('modules')`
 [The Python Standard Library](https://docs.python.org/3.8/library/index.html)
 
 #### Q: 30 built-in Python modules you should be using
@@ -1141,17 +1139,17 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
 
     import os
     def print_directory_contents(sPath):
-        """ 
+        """
         This function takes the name of a directory
         and prints out the paths files within that
         directory as well as any files contained in
         contained directories.
 
         This function is similar to os.walk. Please don't
-        use os.walk in your answer. We are interested in your 
-        ability to work with nested structures. 
+        use os.walk in your answer. We are interested in your
+        ability to work with nested structures.
         """
-        for sChild in os.listdir(sPath):                
+        for sChild in os.listdir(sPath):
             sChildPath = os.path.join(sPath, sChild)
         if os.path.isdir(sChildPath):
             print_directory_contents(sChildPath)
@@ -1172,14 +1170,14 @@ By using a command `os.remove(filename, *, dir_fd=None)` or `os.unlink(filename)
 
 `Module = =PyImport_ImportModule("<modulename>");`
 
-**Built-in constants**  
+**Built-in constants**
 A small number of constants live in the built-in namespace: **True**, **False**, **None**, **NotImplemented**, **
 Ellipsis**, **__debug__**.
 
 Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
 programs: copyright, credits, license  [docs.python.org](https://docs.python.org/3/library/constants.html)
 
-**Built-in exceptions**  
+**Built-in exceptions**
 A Python program terminates as soon as it encounters an error. An error can be:
 
 * a _syntax error_: raised when the parser detects an incorrect statement, print(0/0))
@@ -1213,7 +1211,7 @@ the program will stop.
     except ZeroDivisionError:
         # execute this code if there is an exception generated
         print("someError has occurred")
-    except TypeError:  
+    except TypeError:
         ...
     except <specify type of exception>:
         pass # avoid this silent handling as this is an anti-pattern
@@ -1248,24 +1246,24 @@ Metaclasses are classes whose instances are also classes.
          def __new__(cls, name, bases, dict):
              print("Create a new class {}".format(name))
              return type.__new__(cls, name, bases, dict)
-    
-    
+
+
          # class initialization
          def __init__ (cls, name, bases, dict):
              print("Initializing a new class {}".format(name))
              return super().__init__(name, bases, dict)
-    
-    
+
+
     # spawning a class based on a metaclass
     SomeClass = MetaClass("SomeClass", (), {})
-    
-    
+
+
     # normal inheritance
     class Child(SomeClass):
          def __init__(self, param):
              print(param)
-    
-    
+
+
     # getting an instance of a class
     obj = Child("Hello")
 
@@ -1427,20 +1425,20 @@ $ python -m django <command> [options]
 
 #### Q: Application dependency management / virtualenv isolation
 
-* _pipenv_ (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
+- _pipenv_ (!ensures compliance with hash-locked dependency specifiers, and eases uninstallation of
   packages/dependencies): Pipfile+pip+virtualenv
-* _pip_ + _venv_
-* _pip-tools_:  set of tools to keep your pinned Python dependencies fresh
-* _Poetry_ (dependency resolver + isolation + build+ packaging + publish to PyPI)
-* _setuptools_ is a collection of enhancements to the Python distutils that allows more easily build and distribute
+- _pip_ + _venv_
+- _pip-tools_:  set of tools to keep your pinned Python dependencies fresh
+- _Poetry_ (dependency resolver + isolation + build+ packaging + publish to PyPI)
+- _setuptools_ is a collection of enhancements to the Python distutils that allows more easily build and distribute
   Python
   distributions, especially ones that have dependencies on other packages.
-* _pyenv_: simple Python version management:
-    * Let you change the global Python version on a per-user basis.
-    * Provide support for per-project Python versions.
-    * Allow you to override the Python version with an environment variable.
-    * Search commands from multiple versions of Python at a time
-* _conda_ is the package management tool for Anaconda Python installations.
+- _pyenv_: simple Python version management:
+  - Let you change the global Python version on a per-user basis.
+  - Provide support for per-project Python versions.
+  - Allow you to override the Python version with an environment variable.
+  - Search commands from multiple versions of Python at a time
+- _conda_ is the package management tool for Anaconda Python installations.
 
 ### Quality Tools
 
@@ -1459,13 +1457,12 @@ $ python -m django <command> [options]
 - **flake8**: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files
   with # flake8: noqa or lines with # noqa
 
-```text
-setup.cfg - configuration file by projects (also: tox.ini, .flake8)
-[flake8]
-ignore = D203
-exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
-max-complexity = 10
-```
+    setup.cfg - configuration file by projects (also: tox.ini, .flake8)
+    [flake8]
+    ignore = D203
+    exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+    max-complexity = 10
+
 
 - **add-trailing-comma**: a pre-commit hook that does various style enforcing (not just trailing commas)
 - **black**: The uncompromising code auto-formatter, sometimes will make a change that just looks really bad; it’s
@@ -1483,12 +1480,12 @@ VCSs are broken down into two main categories, **(1) centralized** and **(2) dec
 
 ***Background knowledge***
 
-* _Repository_ model describes the relationship between various copies of the source code repository. In a (1)
+- _Repository_ model describes the relationship between various copies of the source code repository. In a (1)
   client–server model, users access a master repository via a client; typically, their local machines hold only a
   working copy of a project tree. Changes in one working copy must be committed to the master repository before they are
   propagated to other users. In a (2) distributed model, repositories act as peers, and users typically have a local
   repository with version history available, in addition to their working copies.
-* _Concurrency_ model describes how changes to the working copy are managed to prevent simultaneous edits from causing
+- _Concurrency_ model describes how changes to the working copy are managed to prevent simultaneous edits from causing
   nonsensical data in the repository. In a lock model, changes are disallowed until the user requests and receives an
   exclusive lock on the file from the master repository. In a merge model, users may freely edit files, but are informed
   of possible conflicts upon checking their changes into the repository, whereupon the version control system may merge
@@ -1523,7 +1520,7 @@ workflow to enhance the effectiveness of your team and not be a burden that limi
 
 ### Networking
 
-##### Q: Fundamentals of HTTP/HTTPS
+#### Q: Fundamentals of HTTP/HTTPS
 
 They are application layer protocols designed to transfer information between networked devices and run on top of other
 layers of the network protocol stack. A typical flow over HTTP involves a client machine making a request to a server,
@@ -1539,9 +1536,9 @@ Keep in mind that HTTP is a “stateless” protocol, which means that each comm
 In the original spec, HTTP requests each created and closed a TCP connection. In newer versions of the HTTP protocol (
 HTTP 1.1 and above), persistent connection allows for multiple HTTP requests to pass over a persistent TCP connection,
 improving resource consumption. In the context of DoS or DDoS attacks, HTTP requests in large quantities can be used to
-mount an attack on a target device.  
-[more details...](https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/)  
-[more details2...](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)  
+mount an attack on a target device.
+[more details...](https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/)
+[more details2...](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 [more on HTTP/2](https://cascadingmedia.com/insites/2015/03/http-2.html)
 
 #### Q: What is DNS?
@@ -1570,7 +1567,7 @@ IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
    Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser is able to make the
    request for the web page
 9. The browser makes a HTTP request to the IP address.
-10. The server at that IP returns the webpage to be rendered in the browser (step 10).  
+10. The server at that IP returns the webpage to be rendered in the browser (step 10).
     [more details...](https://www.cloudflare.com/learning/dns/what-is-dns/)
 
 #### Q: Explain how request / response work
@@ -1610,11 +1607,12 @@ Examples of Client-Server Model are Email, World Wide Web, etc.
 In this article we are going to take a dive into the _Client-Server_ model and have a look at how the Internet works via
 web browsers. This article will help us in having a solid foundation of the WEB and help in working with WEB
 technologies with ease.
+``
 
-* _Client_: When we talk about the word Client, it means to talk of a person or an organization using a particular
+- _Client_: When we talk about the word Client, it means to talk of a person or an organization using a particular
   service. Similarly in the digital world a Client is a computer (Host) i.e. capable of receiving information or using a
   particular service from the service providers (Servers).
-* _Server_: Similarly, when we talk about the word Servers, It means a person or medium that serves something. Similarly
+- _Server_: Similarly, when we talk about the word Servers, It means a person or medium that serves something. Similarly
   in this digital world a Server is a remote computer which provides information (data) or access to particular
   services.
 
@@ -1633,16 +1631,16 @@ So, it's basically the Client requesting something and the Server serving it as 
 
 **Advantages of Client-Server model:**
 
-* Centralized system with all data in a single place.
-* Cost efficiency requires less maintenance cost and Data recovery is possible.
-* The capacity of the Client and Servers can be changed separately.
+- Centralized system with all data in a single place.
+- Cost efficiency requires less maintenance cost and Data recovery is possible.
+- The capacity of the Client and Servers can be changed separately.
 
 **Disadvantages of Client-Server model:**
 
-* Clients are prone to viruses, Trojans and worms if present in the Server or uploaded into the Server.
-* Servers are prone to Denial of Service (DOS) attacks.
-* Data packets may be spoofed or modified during transmission.
-* Phishing or capturing login credentials or other useful information of the user are common and MITM(Man in the Middle)
+- Clients are prone to viruses, Trojans and worms if present in the Server or uploaded into the Server.
+- Servers are prone to Denial of Service (DOS) attacks.
+- Data packets may be spoofed or modified during transmission.
+- Phishing or capturing login credentials or other useful information of the user are common and MITM(Man in the Middle)
   attacks are common.
 
 ### Multithreading Programming
@@ -1651,8 +1649,8 @@ So, it's basically the Client requesting something and the Server serving it as 
 
 There are two types of multitasking in OS:
 
-* Thread-based parallelism (Multithreading)
-* Process-based parallelism (Multiprocessing)
+- Thread-based parallelism (Multithreading)
+- Process-based parallelism (Multiprocessing)
 
 Multithreading in Python is sort of a myth.
 
@@ -1745,22 +1743,22 @@ A semaphore manages an internal counter which is decremented by each `acquire()`
 each `release()`
 call. The counter can never go below zero; when `acquire()` finds that it is zero, it blocks, waiting until some other
 thread calls `release()`.
-Deprecated since version 2.6: The mutex module has been removed in Python 3.  
-[Theory](https://www.8bitavenue.com/python-mutex-example/)  
-[Python-concurrency](https://realpython.com/python-concurrency/)  
+Deprecated since version 2.6: The mutex module has been removed in Python 3.
+[Theory](https://www.8bitavenue.com/python-mutex-example/)
+[Python-concurrency](https://realpython.com/python-concurrency/)
 [advanced things about threading](https://realpython.com/intro-to-python-threading/)
 
 ### Object-Oriented Design/Architecture Approaches
 
-* Classes in Python are objects too
-* Dynamically changing and adding class attributes is allowed
-* The life cycle of an object can be managed
-* Many operators can be reloaded
-* Many of the built-in object methods can be emulated
-* Syntax conventions are used to hide internal data
-* Inheritance is supported
-* Polymorphism is provided by the virtuality of all methods
-* Metaprogramming is available
+- Classes in Python are objects too
+- Dynamically changing and adding class attributes is allowed
+- The life cycle of an object can be managed
+- Many operators can be reloaded
+- Many of the built-in object methods can be emulated
+- Syntax conventions are used to hide internal data
+- Inheritance is supported
+- Polymorphism is provided by the virtuality of all methods
+- Metaprogramming is available
 
 #### Q: Does Python fully support OOP?
 
@@ -1823,20 +1821,20 @@ derived / child class**.
 
 Inheritance provides the following properties:
 
-* It represents real-world relationships well (with composition concept)
-* It provides reusability of code. We don’t have to write the same code again and again. Also, it allows us to add more
+- It represents real-world relationships well (with composition concept)
+- It provides reusability of code. We don’t have to write the same code again and again. Also, it allows us to add more
   features to a class without modifying it
-* It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses of B
+- It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses of B
   would automatically inherit from class A
 
 They are different types of inheritance supported by Python:
 
-* _Single Inheritance_ – where a derived class acquires the members of a single super class (aka child/one parent)
-* _Multiple Inheritance_ – a derived class is inherited from more than one base class (aka child/parents)
-* _Multilevel Inheritance_ – a derived class d1 is inherited from base class b1, and b1 is inherited from b0 (aka child
+- _Single Inheritance_ – where a derived class acquires the members of a single super class (aka child/one parent)
+- _Multiple Inheritance_ – a derived class is inherited from more than one base class (aka child/parents)
+- _Multilevel Inheritance_ – a derived class d1 is inherited from base class b1, and b1 is inherited from b0 (aka child
   and grandfather)
-* _Hierarchical inheritance_ – from one base class you can inherit any number of child classes (aka many childs/parent)
-* _Hybrid Inheritance_ – consisting of multiple types of
+- _Hierarchical inheritance_ – from one base class you can inherit any number of child classes (aka many childs/parent)
+- _Hybrid Inheritance_ – consisting of multiple types of
   inheritance  [more details...](https://realpython.com/inheritance-composition-python/#what-are-inheritance-and-composition)
 
 #### Q: Explain Abstraction in Python
@@ -1945,17 +1943,17 @@ well.
 
 #### Q: Explain most common “Bad smells in code”
 
-* **Correctness**: Anti-patterns that will literally break your code or make it do the wrong things.
-* **Maintainability**: Anti-patterns that will make your code hard to maintain or extend.
-* **Readability**: Anti-patterns that will make your code hard to read or understand.
-* **Performance**: Anti-patterns that will unnecessarily slow your code down.
-* **Security**: Anti-patterns that will pose a security risk to your program.
-* E.g. Mutable default arguments, Broad exceptions, Suppressed inspections, Variables named the same as built-ins,
+- **Correctness**: Anti-patterns that will literally break your code or make it do the wrong things.
+- **Maintainability**: Anti-patterns that will make your code hard to maintain or extend.
+- **Readability**: Anti-patterns that will make your code hard to read or understand.
+- **Performance**: Anti-patterns that will unnecessarily slow your code down.
+- **Security**: Anti-patterns that will pose a security risk to your program.
+- E.g. Mutable default arguments, Broad exceptions, Suppressed inspections, Variables named the same as built-ins,
   Complex comprehensions, especially if nested, Comments like, “I'm not sure how this works.”
   [more 'code smells' examples](https://blog.codinghorror.com/code-smells/)
   , [Python-anti-patterns book](https://docs.quantifiedcode.com/https://docs.quantifiedcode.com/python-anti-patterns//)
   , [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
-* Other classification:Bloaters, Object-Orientation Abusers, Change Preventers, Dispensables, Couplers
+- Other classification:Bloaters, Object-Orientation Abusers, Change Preventers, Dispensables, Couplers
 
 #### Good book -> [refactoring.guru](https://refactoring.guru/refactoring)
 
@@ -2343,8 +2341,8 @@ The 4 basic steps in Software Project Estimation are:
 
 ##### **Estimation methods** [full presentation](https://massmediagroup.pro/PDF/SK903V1_WP_Estimating.pdf)
 
-A. Historical data  
-B. Counting  
+A. Historical data
+B. Counting
 C. Decomposition
 
 _Decomposition_: Once the user stories has been selected, each is decomposed into the set of tasks necessary to deliver
@@ -2403,9 +2401,9 @@ Refs.:
 - Modular design == better re-usability
 
 ```text
-Don't put too much stuff into one module  
-Split the project into packages  
-Be consistent with your naming conventions  
+Don't put too much stuff into one module
+Split the project into packages
+Be consistent with your naming conventions
 ```
 
 ### Utilize the capabilities of your editor
@@ -2542,7 +2540,7 @@ Strictly speaking, a Python function that returns multiple values actually retur
     >>> some_string = "hello world"
     >>> ' '.join(format(ord(x), 'b') for x in some_string)
     '1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
-    
+
     # using `bytearray`
     >>> ' '.join(format(x, 'b') for x in bytearray(st, 'utf-8'))
     '1101000 1100101 1101100 1101100 1101111 100000 1110111 1101111 ...'
@@ -2575,25 +2573,25 @@ unanticipated and undesired behavior as shown below.
 
     # Python 2.7
     # "/" for integers, act as floor division, for float - returns float value
-    
+
     print 5/2 # 2
     print -5/2 # -3
     print 5.0/2 # 2.5
     print -5.0/2 # -2.5
-    
+
     # “//” returns floor value for both integer and floating point arguments
-    
+
     print 5//2 # 2
     print -5//2 # -3
     print 5.0//2 # 2.0
     print -5.0//2 # -3.0
-    
+
     # In Python 3, ‘/’ operator does floating point division for both int and float arguments
     print(5/2)  # 2.5
     print(-5/2)  # -2.5
     print(5.0/2)  # 2.5
     print(-5.0/2)  # -2.5
-    
+
     Behavior of “//” is the same in Python 2.7 and Python 3.
 
 #### Q: How to check that tuple A contains all elements of tuple B?
@@ -2628,13 +2626,13 @@ they would have the same length is if all elements in tup were unique.
 
     # Convert string to ASCII values
     # Method 1: using loop + ord()
-    
+
     test_str = "let’s do more Python!"
     res1 = ''
     for elem in test_str:
     res1 += ‘’.join(str(ord(elem)))
     print(int(res1)) # sys.getsizeof(res1) >> 106 bytes
-    
+
     # Method 2: list comprehension
     test_str2 = “let’s do more Python!”
     res2 = ''.join([str(ord(elem)) for elem in test_str2])
@@ -2670,7 +2668,7 @@ unique_list = set(list_with_duplicates)
 
     def star_triangle(r):
         for x in range(r):
-            print(' ' * (r - x - 1) + '*' * (2 * x + 1))    
+            print(' ' * (r - x - 1) + '*' * (2 * x + 1))
     star_triangle(9)
 
 #### Q: Write a program in Python to check if a sequence is a palindrome
@@ -2691,7 +2689,7 @@ unique_list = set(list_with_duplicates)
         for character in text:
         if character.isupper():
         count += 1
-        
+
         # one-liner
         count = sum(1 for line in f for character in line if character.isupper())
         print(count)
@@ -2701,19 +2699,9 @@ unique_list = set(list_with_duplicates)
     list_of_str_numbers = ["1", "4", "0", "6", "9"]
     list_of_integers = [int(i) for i in list_of_str_numbers]
     list_of_integers.sort()
-    
+
     # or with sorted() which does not change original list in contrast to sort()
     new_sorted_list_of_integers = sorted(list_of_integers)
     print(list_of_integers, new_sorted_list_of_integers)
-
-# ...content...Quizzes/games
-
-<div id="section-quizzes"><a href="#">[Return Up]</a></div>
-
-dsfsdf
-sdf  
-sdf  
-sdf  
-sdf
 
 <div><a href="#">[Return Up]</a></div>

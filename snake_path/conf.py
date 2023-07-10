@@ -25,68 +25,16 @@ SITE_URL = "https://localhost.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://localhost.com/"
 BLOG_EMAIL = "ivanprytula87@gmail.com"
-BLOG_DESCRIPTION = "Hands-on materials for knowledge refreshing and interview " \
-                   "preparation"  # (translatable)
+BLOG_DESCRIPTION = "Hands-on materials for knowledge refreshing and interview preparation"  # (translatable)
 
 # Nikola is multilingual!
 #
 # Currently supported languages are:
 #
 # en        English
-# af        Afrikaans
-# ar        Arabic
-# az        Azerbaijani
-# bg        Bulgarian
-# bs        Bosnian
-# ca        Catalan
-# cs        Czech [ALTERNATIVELY cz]
-# da        Danish
-# de        German
-# el        Greek [NOT gr]
-# eo        Esperanto
-# es        Spanish
-# et        Estonian
-# eu        Basque
-# fa        Persian
-# fi        Finnish
-# fr        French
-# fur       Friulian
-# gl        Galician
-# he        Hebrew
-# hi        Hindi
-# hr        Croatian
-# hu        Hungarian
-# ia        Interlingua
-# id        Indonesian
-# it        Italian
-# ja        Japanese [NOT jp]
-# ko        Korean
-# lt        Lithuanian
-# mi        Maori
-# ml        Malayalam
-# mr        Marathi
-# nb        Norwegian (Bokmål)
-# nl        Dutch
-# oc        Occitan
-# pa        Punjabi
-# pl        Polish
-# pt        Portuguese
-# pt_br     Portuguese (Brazil)
-# ru        Russian
-# sk        Slovak
-# sl        Slovene
-# sq        Albanian
-# sr        Serbian (Cyrillic)
-# sr_latin  Serbian (Latin)
-# sv        Swedish
-# te        Telugu
-# th        Thai
-# tr        Turkish [NOT tr_TR]
+# ...
 # uk        Ukrainian
-# ur        Urdu
-# vi        Vietnamese
-# zh_cn     Chinese (Simplified)
-# zh_tw     Chinese (Traditional)
+
 #
 # If you want to use Nikola with a non-supported language you have to provide
 # a module containing the necessary translations
@@ -148,12 +96,8 @@ NAVIGATION_LINKS = {
         ("/lake-of-links", "Lake of Links"),
         ("/cloud-of-terms", "Cloud of Terms"),
         ("/show-me-the-code", "Listings"),
-        (
-            (
-                ("/naming-convention", "Naming Convention"),
-                ("/in-progress", "TODO")
-            ), "Extras"
-        ),
+        ("/naming-convention", "Naming Convention"),
+        ("/in-progress", "TODO"),
     ),
 }
 
@@ -264,7 +208,7 @@ PAGES = (
 # (e.g. 'Europe/Zurich')
 # Also, if you want to use a different time zone in some of your posts,
 # you can use the ISO 8601/RFC 3339 format (ex. 2012-03-30T23:00:00+02:00)
-TIMEZONE = "Europe/Kiev"
+TIMEZONE = "Europe/Warsaw"
 
 # If you want to use ISO 8601 (also valid RFC 3339) throughout Nikola
 # (especially in new_post), set this to True.
@@ -395,7 +339,7 @@ COMPILERS = {
 # Final locations are:
 # output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
-# output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
+# output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTEKievSION (RSS feed for a tag)
 # (translatable)
 # TAG_PATH = "categories"
 
@@ -416,8 +360,7 @@ COMPILERS = {
 # and displayed underneath the tag list or index page’s title.
 # (translatable)
 # TAG_DESCRIPTIONS = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging.",
+#    DEFAULT_LANG: {Kiev,
 #        "open source": "My contributions to my many, varied, ever-changing,
 #        and eternal libre software projects."
 #    },
@@ -453,13 +396,11 @@ HIDDEN_TAGS = ['mathjax']
 # TAG_TRANSLATIONS = []
 
 # If set to True, a tag in a language will be treated as a translation
-# of the literally same tag in all other languages. Enable this if you
-# do not translate tags, for example.
+# of the literally same tag in aKievmple.
 # TAG_TRANSLATIONS_ADD_DEFAULTS = True
 
 # Final locations are:
-# output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of
+# output / TRANSLATION[lang] / CATEGORY_PATH / indexKievGORY_PREFIX category.html (list of
 # posts for a category)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION
 # (RSS feed for a category)
@@ -952,7 +893,6 @@ IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 # <link rel="name" href="file" sizes="size"/>
 FAVICONS = (
     # ("icon", "/favicon.ico", "16x16"),
-    # ("icon", "/py_file_icon_512x512.png", "512x512"),  # also O
     ("icon", "/py_icon_512x512.png", "512x512"),  # more visible among browser tabs
 )
 

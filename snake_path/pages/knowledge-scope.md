@@ -6,41 +6,21 @@
 .. type: text
 -->
 
-# **Depth & width of desired knowledge**
+# Depth & width of desired knowledge
 
-- [x] Must-have hard/soft skills ***[[Subjective list](#section-hard-skills)]***
-- [x] Different "shapes" of developer _[[Schemas/img](#section-shaped-models)]_
-- [x] OpenEDG Python Institute certification exams  _[[Syllabus](#section-certification)]_
-
-```python
-certifications_levels_desc: dict[str, dict] = {
-    "PCEP": {
-        "full_name": "Certified Entry-Level Python Programmer",
-        "codes": ["PCEP-30-01", "PCEP-30-02"],
-    },
-    "PCAP": {
-        "full_name": "Certified Associate in Python Programming",
-        "codes": ["PCAP-31-02", "PCAP-31-03"],
-    },
-    "PCPP1": {
-        "full_name": "Certified Professional in Python Programming 1",
-        "codes": ["PCPP-32-101"],
-    },
-    "PCPP2": {
-        "full_name": "Certified Professional in Python Programming 2",
-        "codes": ["PCPP-32-201"],
-    },
-}
-```
+- [x] Must-have hard/soft skills _[Subjective list](#section-hard-skills)_
+- [x] Different "shapes" of developer _[Schemas/img](#section-shaped-models)_
+- [x] OpenEDG Python Institute certification exams  _[Syllabus](#section-certification)_
 
 ---
+
 <div id="section-hard-skills"><a href="#">[Return Up]</a></div>
 
-# Developer Skills To Become a Successful Python Developer
+## Developer Skills To Become a Successful Python Developer
 
-~~Sometimes~~ Often you can see them in vacancy description. Let's use more <mark>fancy/stylish</mark> words  
+~~Sometimes~~ Often you can see them in vacancy description. Let's use more _fancy/stylish_ words
 
-1. Expertise in Core Python 
+1. Expertise in Core Python
 2. Sound Knowledge of Web Frameworks
 3. Object Relational Mappers (ORM)
 4. Good Debugging and Unit Test Skills
@@ -67,7 +47,7 @@ certifications_levels_desc: dict[str, dict] = {
 
 <div id="section-shaped-models"><a href="#">[Return Up]</a></div>
 
-# Different "shapes" of developer
+## Different "shapes" of developer
 
 ![Skills have shapes](/images/knowledge_scope/skills_have_shapes.jpeg)
 
@@ -75,9 +55,9 @@ certifications_levels_desc: dict[str, dict] = {
 
 <div id="section-certification"><a href="#">[Return Up]</a></div>
 
-# PCEP – Certified Entry-Level Python Programmer PCEP-30-0x
+## PCEP – Certified Entry-Level Python Programmer PCEP-30-0x
 
-## Objectives
+### Objectives
 
 1. The fundamentals of computer programming, i.e.:
    how the computer works,
@@ -171,8 +151,7 @@ certifications_levels_desc: dict[str, dict] = {
 - parameters vs. arguments,
 - positional keyword and mixed argument passing,
 - default parameter values
-- converting generator objects into lists using the **list()** function
-- name scopes, name hiding (shadowing), the **global** keyword
+- converrucopes, name hiding (shadowing), the **global** keyword
 
 ---
 
@@ -180,66 +159,64 @@ certifications_levels_desc: dict[str, dict] = {
 
 #### Block 1: Computer Programming and Python Fundamentals
 
-* PCEP 1.1 Understand fundamental terms and definitions
-    - interpreting and the interpreter, compilation and the compiler, lexis, syntax and semantics
-* PCEP 1.2 Understand Python’s logic and structure
-    - keywords, instructions, indenting, comments
-* PCEP 1.3 Introduce literals and variables into code and use different numeral systems
-    - Boolean, integers, floating-point numbers, scientific notation, strings, binary, octal, decimal, and hexadecimal
+- PCEP 1.1 Understand fundamental terms and definitions
+  - interpreting and the interpreter, compilation and the compiler, lexis, syntax and semantics
+- PCEP 1.2 Understand Python’s logic and structure
+  - keywords, instructions, indenting, comments
+- PCEP 1.3 Introduce literals and variables into code and use different numeral systems
+  - Boolean, integers, floating-point numbers, scientific notation, strings, binary, octal, decimal, and hexadecimal
       numeral system, variables, naming conventions, implementing PEP-8 recommendations
-* PCEP 1.4 Choose operators and data types adequate to the problem
-    - numeric operators: ** * / % // + –, string operators: * +, assignments and shortcut operators, operators: unary
-      and binary, priorities and binding, bitwise operators: ~ & ^ | << >>, Boolean operators: not and or, Boolean
-      expressions, relational operators ( == != > >= < <= ), the accuracy of floating-point numbers, type casting
-* PCEP 1.5 Perform Input/Output console operations
-    - print(), input() functions, sep= and end= keyword parameters, int() and float() functions
+- PCEP 1.4 Choose operators and data types adequate to the problem
+  - numeric operators: ** * / % // + –, string operators: * +, assignments and shortcut operators, operators: unary
+   ruEP 1.5 Perform Input/Output console operations
+  - print(), input() functions, sep= and end= keyword parameters, int() and float() functions
 
 #### Block 2: Control Flow – Conditional Blocks and Loops
 
-* PCEP 2.1 Make decisions and branch the flow with the if instruction
-    - conditional statements: if, if-else, if-elif, if-elif-else, multiple conditional statements, nesting conditional
+- PCEP 2.1 Make decisions and branch the flow with the if instruction
+  - conditional statements: if, if-else, if-elif, if-elif-else, multiple conditional statements, nesting conditional
       statements
-* PCEP 2.2 Perform different types of iterations
-    - the *pass* instruction, building loops with while, for, range(), and in; iterating through sequences, expanding
+- PCEP 2.2 Perform different types of iterations
+  - the _pass_ instruction, building loops with while, for, range(), and in; iterating through sequences, expanding
       loops with while-else and for-else, nesting loops and conditional statements, controlling loop execution with
       break and continue
 
 #### Block 3: Data Collections – Tuples, Dictionaries, Lists, and Strings
 
-* PCEP 3.1 Collect and process data using lists
-    - constructing vectors, indexing and slicing, the len() function, basic list methods (append(), insert(), index())
+- PCEP 3.1 Collect and process data using lists
+  - constructing vectors, indexing and slicing, the len() function, basic list methods (append(), insert(), index())
       and functions (len(), sorted(), etc.), the del instruction; iterating through lists with the for loop,
       initializing loops; in and not in operators, list comprehensions; copying and cloning, lists in lists: matrices
       and cubes
-* PCEP 3.2 Collect and process data using tuples
-    - tuples: indexing, slicing, building, immutability; tuples vs. lists: similarities and differences, lists inside
+- PCEP 3.2 Collect and process data using tuples
+  - tuples: indexing, slicing, building, immutability; tuples vs. lists: similarities and differences, lists inside
       tuples and tuples inside lists
-* PCEP 3.3 Collect and process data using dictionaries
-    - dictionaries: building, indexing, adding and removing keys; iterating through dictionaries and their keys and
+- PCEP 3.3 Collect and process data using dictionaries
+  - dictionaries: building, indexing, adding and removing keys; iterating through dictionaries and their keys and
       values, checking the existence of keys; keys(), items() and values() methods
-* PCEP 3.4 Operate with strings
-    - constructing strings, indexing, slicing, immutability; escaping using the \ character; quotes and apostrophes
+- PCEP 3.4 Operate with strings
+  - constructing strings, indexing, slicing, immutability; escaping using the \ character; quotes and apostrophes
       inside strings, multi-line strings, basic string functions and methods
 
 #### Block 4: Functions and Exceptions
 
-* PCEP 4.1 Decompose the code using functions
-    - defining and invoking user-defined functions and generators; the return keyword, returning results, the None
+- PCEP 4.1 Decompose the code using functions
+  - defining and invoking user-defined functions and generators; the return keyword, returning results, the None
       keyword, recursion
-* PCEP 4.2 Organize interaction between the function and its environment
-    - parameters vs. arguments; positional, keyword and mixed argument passing; default parameter values, name scopes,
+- PCEP 4.2 Organize interaction between the function and its environment
+  - parameters vs. arguments; positional, keyword and mixed argument passing; default parameter values, name scopes,
       name hiding (shadowing), the global keyword
-* PCEP 4.3 Python Built-In Exceptions Hierarchy
-    - BaseException, Exception, SystemExit, KeyboardInterrupt, abstractive exceptions, ArithmeticError, LookupError
+- PCEP 4.3 Python Built-In Exceptions Hierarchy
+  - BaseException, Exception, SystemExit, KeyboardInterrupt, abstractive exceptions, ArithmeticError, LookupError
       along with IndexError and KeyError; TypeError and ValueError exceptions, the AssertError exception along with the
       assert keyword
-* PCEP 4.4 Basics of Python Exception Handling
-    - try-except, try-except Exception, ordering the except branches, propagating exceptions through function
+- PCEP 4.4 Basics of Python Exception Handling
+  - try-except, try-except Exception, ordering the except branches, propagating exceptions through function
       boundaries; delegating responsibility for handling exceptions
 
-# PCAP – Certified Associate in Python Programming PCAP-31-0x
+## PCAP – Certified Associate in Python Programming PCAP-31-0x
 
-## Objectives
+### Objectives
 
 1. Objectives of Entry-Level plus...
 2. Objectives of Entry-Level plus...
@@ -353,19 +330,7 @@ certifications_levels_desc: dict[str, dict] = {
 - dir(); sys.path variable
 - math: ceil(), floor(), trunc(), factorial(), hypot(), sqrt(); random: random(), seed(), choice(), sample()
 - platform: platform(), machine(), processor(), system(), version(), python_implementation(), python_version_tuple()
-- idea, __pycache__, __name__, public variables, __init__.py
-- searching for modules/packages; nested packages vs directory tree
-
-#### Block 2: Exceptions
-
-- except, except:-except; except:-else:, except (e1,e2)
-- the hierarchy of exceptions
-- raise, raise ex, assert
-- event classes, except E as e, arg property
-- self-defined exceptions, defining and using
-
-#### Block 3: Strings
-
+- idea, **pru
 - ASCII, UNICODE, UTF-8, codepoints, escape sequences
 - ord(), chr(), literals
 - indexing, slicing, immutability
@@ -379,15 +344,14 @@ certifications_levels_desc: dict[str, dict] = {
 
 - ideas: class, object, property, method, encapsulation, inheritance, grammar vs class, superclass, subclass
 - instance vs class variables: declaring, initializing
-- __dict__ property (objects vs classes)
-- private components (instance vs classes), name mangling
+- **ruivate components (instance vs classes), name mangling
 - methods: declaring, using, self parameter
-- instrospection: hasattr() (objects vs classes), __name__, __module__, __bases__ properties
+- instrospection: hasattr() (objects vs classes), **name**, **module**, **bases** properties
 - inheritance: single, multiple, isinstance(), overriding, not is and is operators
 - inheritance: single, multiple, isinstance(), overriding, not is and is operators
 - constructors: declaring and invoking
 - polymorphism
-- __name__, __module__, __bases__ properties, __str__() method
+- **name**, **module**, **bases** properties, **str**() method
 - multiple inheritance, diamonds
 
 #### Block 5: Miscellaneous (List Comprehensions, Lambdas, Closures, and I/O Operations)
@@ -401,7 +365,7 @@ certifications_levels_desc: dict[str, dict] = {
 
 ---
 
-# PCPP1 – Certified Professional in Python Programming 1 PCPP-32-10x
+## PCPP1 – Certified Professional in Python Programming 1 PCPP-32-10x
 
 ### Syllabus PCPP-32-101
 
@@ -413,8 +377,8 @@ certifications_levels_desc: dict[str, dict] = {
 - Inheritance and Polymorphism;
 - Different faces of Python methods: _static_ and _class_ methods;
 - Abstract classes vs. method overloading;
-- Composition vs. Inheritance – two ways to the same destination;
-- Implementing Core Syntax;
+- Compodict** property (objects vs classes)
+- prenting Core Syntax;
 - Subclassing built-ins;
 - Attribute Encapsulation;
 - Advanced techniques of creating and serving exceptions;
@@ -458,20 +422,20 @@ certifications_levels_desc: dict[str, dict] = {
 #### Block 5: File Processing and Communicating with a Program’s Environment
 
 - Processing files:
-    - _sqlite3_ – interacting with SQLite databases;
-    - _xml_ – creating and processing XML files;
-    - _csv_ – CSV file reading and writing;
-    - _logging_ – basics logging facility for Python;
-    - _configparser_ – configuration file parser.
+  - _sqlite3_ – interacting with SQLite databases;
+  - _xml_ – creating and processing XML files;
+  - _csv_ – CSV file reading and writing;
+  - _logging_ – basics logging facility for Python;
+  - _configparser_ – configuration file parser.
 - Communicating with a program’s environment:
-    - _os_ – interacting with the operating system;
-    - _datetime_ – manipulating with dates and time;
-    - _io_ – working with streams;
-    - _time_ – time access and conversions.
+  - _os_ – interacting with the operating system;
+  - _datetime_ – manipulating with dates and time;
+  - _io_ – working with streams;
+  - _time_ – time access and conversions.
 
 ---
 
-# PCPP2 – Certified Professional in Python Programming 2 PCPP-32-20x
+## PCPP2 – Certified Professional in Python Programming 2 PCPP-32-20x
 
 ### Syllabus PCPP-32-201
 
@@ -484,8 +448,8 @@ certifications_levels_desc: dict[str, dict] = {
 - Documentation
 - License
 - Testing principles and techniques
-    - **unittest** – Unit testing framework
-    - **Pytest** – framework to write tests
+  - **unittest** – Unit testing framework
+  - **Pytest** – framework to write tests
 
 #### Block 2: Design Patterns
 
@@ -501,35 +465,35 @@ certifications_levels_desc: dict[str, dict] = {
 - The _State Design_ Pattern
 
 #### Block 3: Interprocess Communication
-
-- multiprocessing — Process-based parallelism
+sition vs. Inheritance – two ways to the same destination;
+- Implemessing — Process-based parallelism
 - threading — Thread-based parallelism
 - subprocess — Subprocess management
 - Multiprocess synchronisation
-    - **queue** — A synchronized queue class
-    - **socket** — Low-level networking interface
-    - **mmap** — Memory-mapped file support
+  - **queue** — A synchronized queue class
+  - **socket** — Low-level networking interface
+  - **mmap** — Memory-mapped file support
 
 #### Block 4: Python Network Programming
 
 - Python Socket Module
-    - Introduction to sockets
-    - Server Socket Methods
-    - Client socket methods
-    - General socket methods
-    - Client-Server vs. Peer-to-peer
-    - Other Internet modules
+  - Introduction to sockets
+  - Server Socket Methods
+  - Client socket methods
+  - General socket methods
+  - Client-Server vs. Peer-to-peer
+  - Other Internet modules
 
 #### Block 5: Python-MySQL Database Access
 
 - Relational databases – fundamental principles and how to work with them
 - MySQL vs. rest of the world
 - **CRUD** Application
-    - db connection
-    - db create
-    - db insert
-    - db read
-    - db update
-    - db delete
+  - db connection
+  - db create
+  - db insert
+  - db read
+  - db update
+  - db delete
 
 <div><a href="#">[Return Up]</a></div>

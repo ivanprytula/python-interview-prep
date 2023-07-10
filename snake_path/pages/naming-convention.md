@@ -1,13 +1,15 @@
+<!--
 .. title: Naming Convention
 .. slug: naming-convention
 .. date: 2022-04-17 15:42:21 UTC+03:00
-.. description: 
+.. description:
 .. type: text
+-->
 
 # Clean code is ...?
 
-focused  
-: Each function, class, or module should do one thing and do it well 
+focused
+: Each function, class, or module should do one thing and do it well
 
 easy to read and speak about
 : Clean code is read like well-written prose
@@ -25,7 +27,7 @@ highly performant
 # Python Naming Conventions
 
 ## 1. General
-- Avoid using names that are too general or too wordy. Strike a good balance between the two. Use descriptive names that are easy to read. 
+- Avoid using names that are too general or too wordy. Strike a good balance between the two. Use descriptive names that are easy to read.
     * Bad: `data_structure`, `my_list`, `info_map`, `dictionary_for_the_purpose_of_storing_data_representing_word_definitions`
     * Good: `user_profile`, `menu_options`, `word_definitions`
 - Don’t be a jackass and name things "O", "l", "O1" or "I". Avoid using ambiguous shorthand.
@@ -48,7 +50,7 @@ def roll_dice():
     return random.randint(0, 4)  # what is 4 supposed to represent?
 
 
-# Recommended 
+# Recommended
 total_active_users = 105
 countries = ["UK", "USA", "UAE"]
 first_name = 'John'
