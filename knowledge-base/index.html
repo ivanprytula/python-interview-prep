@@ -55,13 +55,12 @@ bg-dark
                 </li>
 <li class="nav-item">
 <a href="../show-me-the-code" class="nav-link">Listings</a>
-            </li>
-<li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Extras</a>
-            <div class="dropdown-menu">
-                    <a href="../naming-convention" class="dropdown-item">Naming Convention</a>
-                    <a href="../in-progress" class="dropdown-item">TODO</a>
-            </div>
+                </li>
+<li class="nav-item">
+<a href="../naming-convention" class="nav-link">Naming Convention</a>
+                </li>
+<li class="nav-item">
+<a href="../in-progress" class="nav-link">TODO</a>
 
                 
             </li>
@@ -82,7 +81,7 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p><strong>Acquisition &amp; refreshment of knowledge based on:</strong></p>
+    <h2><strong>Acquisition &amp; refreshment of knowledge based on:</strong></h2>
 <ul>
 <li>A. Interview questions/answers <a href="#section-interview-questions"><em>[Qs&amp;As]</em></a>
 </li>
@@ -90,19 +89,15 @@ bg-dark
 </li>
 <li>C. Exercises/idioms/snippets/"easter eggs" <a href="#section-exercises"><em>[Listings]</em></a>
 </li>
-<li>D. Quizzes/games <a href="#section-quizzes"><em>[Playground]</em></a>
-</li>
-<li>E. ... <a href="."><em>[...TODO...]</em></a>
-</li>
 </ul>
 <hr>
-<h2>A. Interview questions/answers</h2>
+<h3>A. Interview questions/answers</h3>
 <div id="section-interview-questions"><a href=".">[Return Up]</a></div>
 
-<h3>A.1 Language Core</h3>
-<h4>Fundamentals</h4>
+<h4>A.1 Language Core</h4>
+<h5>Fundamentals</h5>
 <p><a href="https://docs.python.org/3/glossary.html">Ground rules glossary: READ IT NOW, BRO!</a></p>
-<h5>Q: What is Python? Name some characteristics of Python?</h5>
+<h6>Q: What is Python? Name some characteristics of Python?</h6>
 <ol>
 <li>Python (CPython) is an interpreted language (like PHP, Ruby). That means that, unlike languages like C and its
    variants, Python does not need to be compiled before it is run (well, some compilation happens)</li>
@@ -452,7 +447,7 @@ sequence types like list, tuple, strings etc.:</p>
 <p>For slicing/accessing from the end of list, types and other sequences.
 Python sequences can be indexed with positive and negative numbers. For positive index, 0 is the first index, 1 is the
 second index and so forth. For negative index, (-1) is the last index and (-2) is the second last index and so forth.</p>
-<div class="code"><pre class="code literal-block">demo_lst = [2, 33, 222, 14, 25] 
+<div class="code"><pre class="code literal-block">demo_lst = [2, 33, 222, 14, 25]
 demo_lst[-1] &gt;&gt; 25.
 </pre></div>
 
@@ -733,9 +728,11 @@ get away with calling a base class's <code>__new__</code>).</p>
 <p>If you would like the script to be independent of where the Python interpreter lives, you can use the “env” program.
 Almost all Unix variants support the following, assuming the python interpreter is in a directory on the user’s <code>$PATH</code>:
 <a href="http://effbot.org/pyfaq/how-do-i-make-a-python-script-executable-on-unix.htm">more details...</a></p>
-<div class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env python</span>
-</pre></div>
-
+<div class="code"><table class="codetable"><tr>
+<td class="linenos linenodiv"><a href="#-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><span class="ch">#!/usr/bin/env python</span>
+</code></td>
+</tr></table></div>
 <h5>Q: What is pickling and unpickling?</h5>
 <p>The <code>pickle</code> module implements a fundamental, but powerful algorithm (binary protocols) for serializing and
 de-serializing a Python object structure.</p>
@@ -752,7 +749,9 @@ de-serializing a Python object structure.</p>
 <span class="sd">The difference between dump and dumps is that dump writes the pickled object to an open file, and dumps returns the pickled object as bytes.</span>
 <span class="sd">The file must be opened for writing in binary mode. The pickled version of the object is exactly the same with both dump and dumps.</span>
 <span class="sd">"""</span>
+
 <span class="c1"># So, if you did the following for object obj:</span>
+
 <span class="n">obj</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"pickle1"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
@@ -1019,7 +1018,7 @@ and in most cases it’s possible to get reference to them.</p>
 </pre></div>
 
 <h5>Q: How are arguments passed by value or by reference?</h5>
-<p><strong>Background knowledge</strong>:<br>
+<p><strong>Background knowledge</strong>:
 When you pass function arguments <strong>by reference</strong>, those arguments are only references to existing values. In contrast,
 when
 you pass arguments by value, those arguments become independent copies of the original values.
@@ -1142,25 +1141,26 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
   tools. It's good to know about these tools.</li>
 </ul>
 <h4>A.1.2 Standard Library</h4>
-<p><strong>Built-in functions / modules</strong></p>
+<p>Built-in functions / modules</p>
 <h5>Q: How to display a list of all available modules?</h5>
-<p><code>&gt;&gt;&gt; help('modules')</code><br><a href="https://docs.python.org/3.8/library/index.html">The Python Standard Library</a></p>
+<p><code>&gt;&gt;&gt; help('modules')</code>
+<a href="https://docs.python.org/3.8/library/index.html">The Python Standard Library</a></p>
 <h5>Q: 30 built-in Python modules you should be using</h5>
 <p><a href="https://sunscrapers.com/blog/30-built-in-python-modules-you-should-be-using/">30 built-in Python modules you better be using</a></p>
 <h5>Q: Print directory content</h5>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">def</span> <span class="nf">print_directory_contents</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">""" </span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    This function takes the name of a directory</span>
 <span class="sd">    and prints out the paths files within that</span>
 <span class="sd">    directory as well as any files contained in</span>
 <span class="sd">    contained directories.</span>
 
 <span class="sd">    This function is similar to os.walk. Please don't</span>
-<span class="sd">    use os.walk in your answer. We are interested in your </span>
-<span class="sd">    ability to work with nested structures. </span>
+<span class="sd">    use os.walk in your answer. We are interested in your</span>
+<span class="sd">    ability to work with nested structures.</span>
 <span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">sChild</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>                
+    <span class="k">for</span> <span class="n">sChild</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">sPath</span><span class="p">):</span>
         <span class="n">sChildPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sPath</span><span class="p">,</span> <span class="n">sChild</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">):</span>
         <span class="n">print_directory_contents</span><span class="p">(</span><span class="n">sChildPath</span><span class="p">)</span>
@@ -1178,12 +1178,12 @@ Locating and avoiding bottlenecks is often pretty worthwhile. A lot of coding fo
 
 <h5>Q: Explain how you can access a module written in Python from C?</h5>
 <p><code>Module = =PyImport_ImportModule("&lt;modulename&gt;");</code></p>
-<p><strong>Built-in constants</strong><br>
+<p><strong>Built-in constants</strong>
 A small number of constants live in the built-in namespace: <strong>True</strong>, <strong>False</strong>, <strong>None</strong>, <strong>NotImplemented</strong>, **
 Ellipsis<strong>, </strong><strong>debug</strong>**.</p>
 <p>Constants added by the site module. They are useful for the interactive interpreter shell and should not be used in
 programs: copyright, credits, license  <a href="https://docs.python.org/3/library/constants.html">docs.python.org</a></p>
-<p><strong>Built-in exceptions</strong><br>
+<p><strong>Built-in exceptions</strong>
 A Python program terminates as soon as it encounters an error. An error can be:</p>
 <ul>
 <li>a <em>syntax error</em>: raised when the parser detects an incorrect statement, print(0/0))</li>
@@ -1216,7 +1216,7 @@ the program will stop.</p>
 <span class="nx">except</span><span class="w"> </span><span class="nx">ZeroDivisionError</span><span class="p">:</span>
 <span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">execute</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">there</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">exception</span><span class="w"> </span><span class="nx">generated</span>
 <span class="w">    </span><span class="nx">print</span><span class="p">(</span><span class="s">"someError has occurred"</span><span class="p">)</span>
-<span class="nx">except</span><span class="w"> </span><span class="nx">TypeError</span><span class="p">:</span><span class="w">  </span>
+<span class="nx">except</span><span class="w"> </span><span class="nx">TypeError</span><span class="p">:</span>
 <span class="w">    </span><span class="o">...</span>
 <span class="nx">except</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">specify</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">exception</span><span class="p">&gt;:</span>
 <span class="w">    </span><span class="nx">pass</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="nx">avoid</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">silent</span><span class="w"> </span><span class="nx">handling</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">anti</span><span class="o">-</span><span class="nx">pattern</span>
@@ -1431,13 +1431,11 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
   Python
   distributions, especially ones that have dependencies on other packages.</li>
 <li>
-<em>pyenv</em>: simple Python version management:<ul>
+<em>pyenv</em>: simple Python version management:</li>
 <li>Let you change the global Python version on a per-user basis.</li>
 <li>Provide support for per-project Python versions.</li>
 <li>Allow you to override the Python version with an environment variable.</li>
 <li>Search commands from multiple versions of Python at a time</li>
-</ul>
-</li>
 <li>
 <em>conda</em> is the package management tool for Anaconda Python installations.</li>
 </ul>
@@ -1458,19 +1456,17 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 <li>
 <strong>pyflakes</strong>: similar to pylint, except never complains about style, faster that pylint/pychecker</li>
 <li>
-<strong>flake8</strong>: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files
-  with # flake8: noqa or lines with # noqa</li>
-</ul>
-<div class="code"><pre class="code literal-block">setup.cfg - configuration file by projects (also: tox.ini, .flake8)
+<p><strong>flake8</strong>: the modular source code checker, wraps pyflakes/pycodestyle/maccabe (complexity checker); can skip files
+  with # flake8: noqa or lines with # noqa</p>
+<p>setup.cfg - configuration file by projects (also: tox.ini, .flake8)
 [flake8]
 ignore = D203
-exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
-max-complexity = 10
-</pre></div>
-
-<ul>
+exclude = .git,<strong>pycache</strong>,docs/source/conf.py,old,build,dist
+max-complexity = 10</p>
+</li>
 <li>
-<strong>add-trailing-comma</strong>: a pre-commit hook that does various style enforcing (not just trailing commas)</li>
+<p><strong>add-trailing-comma</strong>: a pre-commit hook that does various style enforcing (not just trailing commas)</p>
+</li>
 <li>
 <strong>black</strong>: The uncompromising code auto-formatter, sometimes will make a change that just looks really bad; it’s
   good (if you really want) to use it as a pre-commit hook with default config alongside flake8 for non-style linting.</li>
@@ -1517,7 +1513,7 @@ workflow to enhance the effectiveness of your team and not be a burden that limi
 <p><a href="https://git-scm.com/docs/gitglossary">official docs...</a> <a href="https://opensource.com/article/19/2/git-terminology">more details...</a></p>
 <h3>A.4 Software Design and Development Process</h3>
 <h4>Networking</h4>
-<h6>Q: Fundamentals of HTTP/HTTPS</h6>
+<h5>Q: Fundamentals of HTTP/HTTPS</h5>
 <p>They are application layer protocols designed to transfer information between networked devices and run on top of other
 layers of the network protocol stack. A typical flow over HTTP involves a client machine making a request to a server,
 which then sends a response message.</p>
@@ -1529,7 +1525,10 @@ Protocol (TCP) connections to communicate with servers.</p>
 In the original spec, HTTP requests each created and closed a TCP connection. In newer versions of the HTTP protocol (
 HTTP 1.1 and above), persistent connection allows for multiple HTTP requests to pass over a persistent TCP connection,
 improving resource consumption. In the context of DoS or DDoS attacks, HTTP requests in large quantities can be used to
-mount an attack on a target device.<br><a href="https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/">more details...</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">more details2...</a><br><a href="https://cascadingmedia.com/insites/2015/03/http-2.html">more on HTTP/2</a></p>
+mount an attack on a target device.
+<a href="https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/">more details...</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">more details2...</a>
+<a href="https://cascadingmedia.com/insites/2015/03/http-2.html">more on HTTP/2</a></p>
 <h5>Q: What is DNS?</h5>
 <p>The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names,
 like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain
@@ -1553,7 +1552,8 @@ IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).</p>
    Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser is able to make the
    request for the web page</li>
 <li>The browser makes a HTTP request to the IP address.</li>
-<li>The server at that IP returns the webpage to be rendered in the browser (step 10).<br><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">more details...</a>
+<li>The server at that IP returns the webpage to be rendered in the browser (step 10).
+    <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">more details...</a>
 </li>
 </ol>
 <h5>Q: Explain how request / response work</h5>
@@ -1586,7 +1586,8 @@ Examples of Client-Server Model are Email, World Wide Web, etc.</p>
 <p><strong>How does the Client-Server Model work?</strong></p>
 <p>In this article we are going to take a dive into the <em>Client-Server</em> model and have a look at how the Internet works via
 web browsers. This article will help us in having a solid foundation of the WEB and help in working with WEB
-technologies with ease.</p>
+technologies with ease.
+``</p>
 <ul>
 <li>
 <em>Client</em>: When we talk about the word Client, it means to talk of a person or an organization using a particular
@@ -1703,7 +1704,10 @@ if it is using the resource, changes the value to reflect this so that subsequen
 each <code>release()</code>
 call. The counter can never go below zero; when <code>acquire()</code> finds that it is zero, it blocks, waiting until some other
 thread calls <code>release()</code>.
-Deprecated since version 2.6: The mutex module has been removed in Python 3.<br><a href="https://www.8bitavenue.com/python-mutex-example/">Theory</a><br><a href="https://realpython.com/python-concurrency/">Python-concurrency</a><br><a href="https://realpython.com/intro-to-python-threading/">advanced things about threading</a></p>
+Deprecated since version 2.6: The mutex module has been removed in Python 3.
+<a href="https://www.8bitavenue.com/python-mutex-example/">Theory</a>
+<a href="https://realpython.com/python-concurrency/">Python-concurrency</a>
+<a href="https://realpython.com/intro-to-python-threading/">advanced things about threading</a></p>
 <h4>Object-Oriented Design/Architecture Approaches</h4>
 <ul>
 <li>Classes in Python are objects too</li>
@@ -2258,8 +2262,8 @@ product.</p>
 <h6>
 <strong>Estimation methods</strong> <a href="https://massmediagroup.pro/PDF/SK903V1_WP_Estimating.pdf">full presentation</a>
 </h6>
-<p>A. Historical data<br>
-B. Counting<br>
+<p>A. Historical data
+B. Counting
 C. Decomposition</p>
 <p><em>Decomposition</em>: Once the user stories has been selected, each is decomposed into the set of tasks necessary to deliver
 the new functionality.</p>
@@ -2314,9 +2318,9 @@ take. <a href="http://www.agilenutshell.com/cone_of_uncertainty">detailed descri
 <li>Package and module structure gives an overview about the project</li>
 <li>Modular design == better re-usability</li>
 </ul>
-<div class="code"><pre class="code literal-block">Don't put too much stuff into one module  
-Split the project into packages  
-Be consistent with your naming conventions  
+<div class="code"><pre class="code literal-block">Don't put too much stuff into one module
+Split the project into packages
+Be consistent with your naming conventions
 </pre></div>
 
 <h4>Utilize the capabilities of your editor</h4>
@@ -2572,7 +2576,7 @@ f()  # 15
 <h5>Q: Write a program in Python to produce stars triangle</h5>
 <div class="code"><pre class="code literal-block"><span class="nv">def</span><span class="w"> </span><span class="nv">star_triangle</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span>:
-<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="s1">' '</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="nv">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="ss">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'*'</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="ss">))</span><span class="w">    </span>
+<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="s1">' '</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="nv">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="ss">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'*'</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ss">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="ss">))</span>
 <span class="nv">star_triangle</span><span class="ss">(</span><span class="mi">9</span><span class="ss">)</span>
 </pre></div>
 
@@ -2609,14 +2613,6 @@ f()  # 15
 <span class="nv">print</span><span class="ss">(</span><span class="nv">list_of_integers</span>,<span class="w"> </span><span class="nv">new_sorted_list_of_integers</span><span class="ss">)</span>
 </pre></div>
 
-<h2>...content...Quizzes/games</h2>
-<div id="section-quizzes"><a href=".">[Return Up]</a></div>
-
-<p>dsfsdf
-sdf<br>
-sdf<br>
-sdf<br>
-sdf</p>
 <div><a href=".">[Return Up]</a></div>
     </div>
     
