@@ -1,9 +1,8 @@
-<!--
 .. title: Show Me The Code
 .. slug: show-me-the-code
 .. date: 2022-04-27 11:23:57 UTC+03:00
 .. type: text
--->
+
 
 .. sidebar:: [ Tip ]
 

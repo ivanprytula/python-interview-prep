@@ -95,7 +95,6 @@ NAVIGATION_LINKS = {
         ("/knowledge-base", "Knowledge Base"),
         ("/lake-of-links", "Lake of Links"),
         ("/cloud-of-terms", "Cloud of Terms"),
-        # ("/show-me-the-code", "Listings"),
     ),
 }
 

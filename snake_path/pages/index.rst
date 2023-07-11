@@ -5,10 +5,11 @@
 .. type: text
 
 
-.. container::
+Navbar links + below
+====================
 
-    .. class:: col-md-6
-
-
-1. `Knowledge Scope </knowledge-scope>`_
+1. `Python best practices </python-best-practices>`_
 2. `Code listings/snippets </show-me-the-code>`_
+3. `Tools/shell cheatsheets </tools_cheatsheet>`_
+4. `System design </system-design>`_
+5. ...
