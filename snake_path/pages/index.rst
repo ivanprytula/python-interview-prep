@@ -9,7 +9,6 @@
 
     .. class:: col-md-6
 
-    .. image:: /images/index/Python_logo_01.png
-        :class: rounded mx-auto d-block
-        :alt: Python logo
-        :align: center
+
+1. `Knowledge Scope </knowledge-scope>`_
+2. `Code listings/snippets </show-me-the-code>`_

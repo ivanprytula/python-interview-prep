@@ -343,7 +343,7 @@ def explore_builtins():
     _tracemalloc        gzip                random              zipimport
     _uuid               hashlib             re                  zlib
     _warnings           heapq               readline            zoneinfo
-    _weakref            help_dir            regex_demos         
+    _weakref            help_dir            regex_demos
     '''
 
     symbols = """
@@ -740,8 +740,6 @@ from collections import namedtuple
 # of the code have been executed, then analyzes the source to identify code that could have been executed but was not.
 # - That exact # pragma: no cover is the hint that the part of code should be ignored by the tool.
 
-
-
 if __name__ == '__main__':  # Runs main() if file wasn't imported.
     # explore_file_handling()
     # explore_data_types()
@@ -754,4 +752,3 @@ if __name__ == '__main__':  # Runs main() if file wasn't imported.
     # explore_f_string_with_colors()
     # check_palindrome()
     pass
-
