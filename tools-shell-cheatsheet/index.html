@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tools-shell-cheatsheet | Mastering Python</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://ivanprytula.github.io/python-the-snake-path/tools-shell-cheatsheet/">
+<link rel="icon" href="../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ivan Prytula">
+<meta property="og:site_name" content="Mastering Python">
+<meta property="og:title" content="tools-shell-cheatsheet">
+<meta property="og:url" content="https://ivanprytula.github.io/python-the-snake-path/tools-shell-cheatsheet/">
+<meta property="og:description" content="Cheat sheet tools/shell commands
+
+Cheat sheet tools/shell commands
+Commands That Will Change The Way You Use Linux Forever
+Kill process on port
+Python related
+PostgreSQL related
+Docker Engine
+Docker C">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-07-11T03:42:28+02:00">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://ivanprytula.github.io/python-the-snake-path/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search on this site only…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">tools-shell-cheatsheet</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <h2>Cheat sheet tools/shell commands</h2>
+<ul>
+<li><a href="#cheat-sheet-toolsshell-commands">Cheat sheet tools/shell commands</a></li>
+<li><a href="#commands-that-will-change-the-way-you-use-linux-forever">Commands That Will Change The Way You Use Linux Forever</a></li>
+<li><a href="#kill-process-on-port">Kill process on port</a></li>
+<li><a href="#python-related">Python related</a></li>
+<li><a href="#postgresql-related">PostgreSQL related</a></li>
+<li><a href="#docker-engine">Docker Engine</a></li>
+<li><a href="#docker-compose">Docker Compose</a></li>
+<li><a href="#ruby">Ruby</a></li>
+<li>
+<a href="#hands-on-shell-commands">Hands-on shell commands</a><ul>
+<li><a href="#grep">grep</a></li>
+<li><a href="#different">Different</a></li>
+<li><a href="#export-var-into-shell">Export var into shell</a></li>
+<li><a href="#battery-life">Battery life</a></li>
+<li><a href="#disk-usage">Disk usage</a></li>
+<li><a href="#current-systems-timezone">Current system’s timezone</a></li>
+<li><a href="#permissions">Permissions</a></li>
+</ul>
+</li>
+<li><a href="#use-flake8">Use flake8</a></li>
+<li><a href="#use-black">Use black</a></li>
+<li><a href="#use-pytest">Use pytest</a></li>
+<li><a href="#task-runners-build-tools--pipelines">Task Runners, Build tools \&amp; Pipelines</a></li>
+</ul>
+<div class="code"><pre class="code literal-block"><span class="c1"># often used</span>
+man<span class="w"> </span>man
+<span class="nb">alias</span><span class="w"> </span>git<span class="w"> </span><span class="nv">st</span><span class="o">=</span><span class="s1">'git status'</span>
+ls
+ls<span class="w"> </span>-la<span class="w"> </span>--human-readable
+ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+ls<span class="w"> </span>-l<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello"</span>
+ls<span class="w"> </span>-l<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello"</span>
+<span class="nb">cd</span>
+<span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>../..
+<span class="nb">cd</span><span class="w"> </span>-
+<span class="nb">pwd</span>
+uname<span class="w"> </span>-ra
+who
+whoami
+date
+<span class="nb">time</span>
+uptime
+du
+reset
+ctrl+l
+reboot
+cp
+mv
+cat<span class="w"> </span>-b<span class="w"> </span>hello.txt
+tail<span class="w"> </span>-n,<span class="w"> </span>--lines<span class="o">=[</span>+<span class="o">]</span>NUM<span class="w"> </span><span class="m">5</span><span class="w"> </span>hello.txt
+head<span class="w"> </span>-n,<span class="w"> </span>--lines<span class="o">=[</span>-<span class="o">]</span>NUM<span class="w"> </span><span class="m">5</span><span class="w"> </span>hello.txt
+more
+less
+env
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello"</span><span class="w"> </span>&gt;<span class="w"> </span>hello.txt
+<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+<span class="nb">history</span>
+!2023
+ctrl+u
+ctrl+a
+ctrl+e
+ctrl+<span class="w"> </span>arrow<span class="w"> </span>left/right
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/home/username/.local/bin:<span class="nv">$PATH</span>
+top
+<span class="nb">pushd</span><span class="w"> </span>.
+<span class="nb">popd</span>
+vi<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="c1"># Esc -&gt; :q</span>
+nano<span class="w"> </span>/etc/ssh/sshd_config
+sudo<span class="w"> </span>!!
+find<span class="w"> </span>-name<span class="w"> </span><span class="s2">"docker-*"</span>
+touch<span class="w"> </span>hello.txt
+mkdir<span class="w"> </span><span class="nb">test</span>
+truncate<span class="w"> </span>--size<span class="w"> </span><span class="m">0</span><span class="w"> </span>hello.txt
+</pre></div>
+
+<h3>Commands That Will Change The Way You Use Linux Forever</h3>
+<ol>
+<li>
+<code>cd -</code> : back to the last directory we've been to.</li>
+<li>
+<code>ctrl+l</code>: clear screen</li>
+<li>
+<code>reset</code>: clear on steroids - resets terminal session</li>
+<li>
+<code>pushd /var</code> + few other <code>cd</code> commands + <code>popd</code>: commands that allow you to work with directory stack and change the current working directory</li>
+<li>
+<code>vim /etc/ssh/sshd_config</code> + ctrl+fz (if nano -&gt; ctrl+tz) : isn't closing, but minimizing the window to the back ground</li>
+<li>
+<code>fg</code> : bring back the window to the front.</li>
+<li>
+<code>apt update</code>: would fail - cuz we forgot sudo</li>
+<li>
+<code>sudo !!</code> : would run the last command as sudo</li>
+<li>
+<code>ctrl+r</code> : "(reverse-i-search)<em>apt</em>: sudo <em>apt</em> update" -&gt; type what you want to find, press <code>ctrl+r</code> until you find, then <code>Enter</code>
+</li>
+<li>run command that already been run - <code>history</code>, choose a number of command and run it <code>!102</code> -&gt; the 102 command from the history would run again</li>
+<li>HISTTIMEFORMAT="%Y-%m-%d %T " : <code>history</code> would show the history commands by the format.
+   another way to add the format, is add it to the <code>~/.bashrc</code> file with <code>vim</code> or <code>nano</code> commands.</li>
+<li>cmatrix -&gt; let you look cool + ctrl c to escape</li>
+<li>adjust font up <code>ctrl+shift +</code> or down <code>ctrl -</code>, <code>reset</code> command would reset the font size</li>
+<li>line navigation:<ol>
+<li>
+<code>ctrl a</code> - go to the start of the line</li>
+<li>
+<code>ctrl e</code> - got to the end of the line</li>
+<li>
+<code>ctrl u</code> - delete whole line</li>
+</ol>
+</li>
+<li>chaining commands -&gt; <code>ls -l; echo "hello"</code> or -&gt; <code>ls -l &amp;&amp; echo "hello"</code> &amp;&amp; - would stop when meets an error <code>;</code> - would pop up an error and keep on running the second/next command</li>
+<li>
+<code>tail</code> / <code>head</code> commands to see top or bottom of a file.<ol>
+<li>
+<code>tail -f /var/log/syslog</code> : monitor in real-life time</li>
+</ol>
+</li>
+<li>truncate (be cautious while using this one - its risky) : it allows to change the size of a very large files (like log files) or example <code>truncate -s &lt;size_of_file&gt; &lt;name_of_file&gt;</code> == truncate -s 0 hello.txt to empty the hello.txt file</li>
+<li>
+<code>mount | column -t</code> : make sure all the output shows in columns any verbose and messy command output would look better using <code>| column -t</code>
+</li>
+</ol>
+<h3>Kill process on port</h3>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>lsof<span class="w"> </span>-i<span class="w"> </span>-P<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;port<span class="w"> </span>number&gt;<span class="w"> </span><span class="c1"># List who's using the port</span>
+<span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;process<span class="w"> </span>id&gt;<span class="w"> </span><span class="o">(</span>macOS<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>sudo<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>&lt;process<span class="w"> </span>id&gt;<span class="w"> </span><span class="o">(</span>Linux<span class="o">)</span>
+
+<span class="c1"># e.g.</span>
+sudo<span class="w"> </span>lsof<span class="w"> </span>-i<span class="w"> </span>-P<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">5432</span>
+sudo<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">1234</span>
+</pre></div>
+
+<h3>Python related</h3>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># find Django path in env</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import django; print(django.__path__)"</span>
+
+./manage.py<span class="w"> </span>migrate<span class="w"> </span>--check
+git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1
+
+git<span class="w"> </span>log<span class="w"> </span>--follow<span class="w"> </span>-p<span class="w"> </span>--<span class="w"> </span>pyproject.toml
+git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~4
+
+p<span class="w"> </span>sha1
+p<span class="w"> </span>sha2
+s<span class="w"> </span>sha3
+s<span class="w"> </span>sha4
+<span class="c1"># will squash 2, 3 and 4 commits into one &gt;&gt;&gt; we need do `push --force`</span>
+
+<span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="w"> </span>poetry<span class="w"> </span>env<span class="w"> </span>list<span class="w"> </span>--full-path<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Activated<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">' '</span><span class="w"> </span>-f1<span class="w"> </span><span class="k">)</span><span class="s2">/bin/activate"</span>
+</pre></div>
+
+<h3>PostgreSQL related</h3>
+<div class="code"><pre class="code literal-block"><span class="c1"># For a interactive login shell as `postgres` user</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>-i
+<span class="c1"># is !! preferable to...</span>
+sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+
+
+postgres@ws-lv-cp3528:~$<span class="w"> </span>psql
+psql<span class="w"> </span><span class="o">(</span><span class="m">15</span>.1<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span><span class="m">15</span>.1-1.pgdg22.04+1<span class="o">)</span>,<span class="w"> </span>server<span class="w"> </span><span class="m">14</span>.6<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span><span class="m">14</span>.6-1.pgdg22.04+1<span class="o">))</span>
+Type<span class="w"> </span><span class="s2">"help"</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>help.
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \du</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># CREATE DATABASE db_foo_name;</span>
+
+
+<span class="c1"># command execution</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">"SELECT 1"</span>
+
+<span class="c1"># Use systemctl/service/other commands to manage postgresql service:</span>
+<span class="c1"># Initialize the server by running the command:</span>
+sudo<span class="w"> </span>service<span class="w"> </span>postgresql<span class="w"> </span>initdb
+
+<span class="c1"># 1. START</span>
+<span class="c1"># all</span>
+systemctl<span class="w"> </span>start<span class="w"> </span>postgresql
+sudo<span class="w"> </span>service<span class="w"> </span>postgresql<span class="w"> </span>start
+
+<span class="c1"># start specific server</span>
+systemctl<span class="w"> </span>start<span class="w"> </span>postgresql@14-main
+sudo<span class="w"> </span>service<span class="w"> </span>postgresql<span class="w"> </span>start
+sudo<span class="w"> </span>service<span class="w"> </span>postgresql-14.2<span class="w"> </span>start
+
+<span class="c1">## 2. STOP</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span>postgresql
+service<span class="w"> </span>postgresql<span class="w"> </span>stop
+
+<span class="c1"># 3. STATUS</span>
+systemctl<span class="w"> </span>status<span class="w"> </span>postgresql@14-main
+service<span class="w"> </span>postgresql<span class="w"> </span>status
+pgrep<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>-fa<span class="w"> </span>--<span class="w"> </span>-D
+
+<span class="c1"># show information about all PostgreSQL clusters</span>
+pg_lsclusters
+
+<span class="c1"># 4. DISABLE (not auto-start any more)</span>
+systemctl<span class="w"> </span>disable<span class="w"> </span>postgresql
+
+<span class="c1"># 5. ENABLE (auto-start)</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql@14-main
+
+<span class="c1"># Find PostgreSQL location</span>
+sudo<span class="w"> </span>find<span class="w"> </span>/usr<span class="w"> </span>-wholename<span class="w"> </span><span class="s1">'*/bin/postgres'</span>
+
+<span class="c1"># Find your port</span>
+<span class="c1"># example: sudo sed -n 4p &lt;$PGDATA&gt;/postmaster.pid</span>
+sudo<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span>4p<span class="w"> </span>/var/lib/postgresql/14/main/postmaster.pid
+
+<span class="c1"># Control cluster startup</span>
+cat<span class="w"> </span>/etc/postgresql/14/main/start.conf
+</pre></div>
+
+<h3>Docker Engine</h3>
+<div class="code"><pre class="code literal-block"><span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>systemctl<span class="w"> </span><span class="o">(</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">)</span><span class="w"> </span>docker
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>containerd.service
+
+<span class="c1"># Rootless Docker mode</span>
+<span class="c1">## deamon</span>
+
+<span class="sb">```</span>shell
+<span class="c1"># Use systemctl --user to manage the lifecycle of the daemon:</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>docker
+
+<span class="c1"># To launch the daemon on system startup, enable the systemd service and lingering:</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+sudo<span class="w"> </span>loginctl<span class="w"> </span>enable-linger<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
+
+<span class="c1">## client</span>
+<span class="sb">```</span>shell
+<span class="c1"># To specify the socket path using $DOCKER_HOST:</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix://<span class="nv">$XDG_RUNTIME_DIR</span>/docker.sock
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx
+
+<span class="c1"># To specify the CLI context using docker context:</span>
+docker<span class="w"> </span>context<span class="w"> </span>use<span class="w"> </span>rootless
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx
+
+<span class="c1"># Stop and remove containers</span>
+docker-compose<span class="w"> </span>down<span class="w">  </span><span class="c1"># Stop container on current dir if there is a docker-compose.yml</span>
+docker<span class="w"> </span>rm<span class="w"> </span>-fv<span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>ps<span class="w"> </span>-aq<span class="k">)</span><span class="w">  </span><span class="c1"># Remove all containers</span>
+
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>yournamecontainer<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">"CREATE DATABASE mydatabase ENCODING 'utf8' TEMPLATE template0 LC_COLLATE 'C' LC_CTYPE 'C';"</span>
+
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>yournamecontainer<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">"GRANT ALL PRIVILEGES ON DATABASE mydatabase TO user_name;"</span>
+
+docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>images<span class="w"> </span>-f<span class="w"> </span><span class="s2">"dangling=true"</span><span class="w"> </span>-q<span class="k">)</span>
+</pre></div>
+
+<h3>Docker Compose</h3>
+<div class="code"><pre class="code literal-block"><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Just specify a path and let the Engine create a volume</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/mysql</span>
+
+<span class="w">  </span><span class="c1"># Specify an absolute path mapping</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/data:/var/lib/mysql</span>
+
+<span class="w">  </span><span class="c1"># Path on the host, relative to the Compose file</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./cache:/tmp/cache</span>
+
+<span class="w">  </span><span class="c1"># User-relative path</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/configs:/etc/configs/:ro</span>
+
+<span class="w">  </span><span class="c1"># Named volume</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datavolume:/var/lib/mysql</span>
+</pre></div>
+
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>scripts/local_docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>redis<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>-
+<span class="nb">cd</span><span class="w"> </span>scripts/local_docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>-
+
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>app<span class="w"> </span>python3
+</pre></div>
+
+<h3>Ruby</h3>
+<div class="code"><pre class="code literal-block">/usr/bin/zsh<span class="w"> </span>--login
+rvm<span class="w"> </span>use<span class="w"> </span><span class="m">3</span>.1.2
+</pre></div>
+
+<h3>Hands-on shell commands</h3>
+<h4>grep</h4>
+<p>snap info microk8s | grep installed</p>
+<h4>Different</h4>
+<div class="code"><pre class="code literal-block">openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span>
+
+chmod<span class="w"> </span>+x<span class="w"> </span>./setup-scripts/*.sh
+cat<span class="w"> </span>/etc/*-release
+</pre></div>
+
+<h4>Export var into shell</h4>
+<div class="code"><pre class="code literal-block"><span class="ch">#!/bin/bash</span>
+
+<span class="nb">set</span><span class="w"> </span>-a
+<span class="c1"># Automatically mark new and altered variables to be exported to subsequent environments.</span>
+<span class="c1"># set -o allexport</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">DJANGO_READ_DOT_ENV_FILE</span><span class="o">=</span>True
+
+<span class="nb">set</span><span class="w"> </span>+a
+<span class="c1"># set +o allexport</span>
+</pre></div>
+
+<h4>Battery life</h4>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>/sys/class/power_supply/BAT0/
+cat<span class="w"> </span>uevent
+</pre></div>
+
+<h4>Disk usage</h4>
+<div class="code"><pre class="code literal-block">du<span class="w"> </span>-h<span class="w"> </span>--summarize<span class="w"> </span>--total
+du<span class="w"> </span>-h<span class="w"> </span>--all<span class="w"> </span>--exclude<span class="o">=</span><span class="s2">"venv"</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">".idea"</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">"htmlcov"</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">".git"</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">".pytest_cache"</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s2">"tmp"</span>
+du<span class="w"> </span>-h<span class="w"> </span>-a/-s<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-h
+</pre></div>
+
+<h4>Current system’s timezone</h4>
+<div class="code"><pre class="code literal-block">timedatectl
+</pre></div>
+
+<h4>Permissions</h4>
+<div class="code"><pre class="code literal-block">rwx rwx rwx = 111 111 111
+rw- rw- rw- = 110 110 110
+rwx --- --- = 111 000 000
+
+and so on...
+
+rwx = 111 in binary = 7
+rw- = 110 in binary = 6
+r-x = 101 in binary = 5
+r-- = 100 in binary = 4
+
+d is a directory
+
+rwx the user has read, write, and execute permissions
+
+rw- the group has read and write permissions
+
+r– all others have read only permissions
+
+-rw-r--r-- 12 ivan.prytula domain users 12.0K Apr 28 10:10 file_name
+|[-][-][-]- [------] [---]
+| | | | | | |
+| | | | | | +-----------&gt; 7. Group
+| | | | | +-----------------------&gt; 6. Owner
+| | | | +------------------------------&gt; 5. Alternate Access Method
+| | | +--------------------------------&gt; 4. Others Permissions
+| | +-----------------------------------&gt; 3. Group Permissions
+| +--------------------------------------&gt; 2. Owner Permissions
++----------------------------------------&gt; 1. File Type
+</pre></div>
+
+<h3>Use flake8</h3>
+<p>The error code of flake8 are E<strong><em>, W</em></strong> used in pep8 and F<strong>* and C9</strong>.</p>
+<p>E<strong><em>/W</em></strong>: Error and warning of pep8
+F<strong>*: Detection of PyFlakes
+C9</strong>: Detection of circulate complexity by McCabe</p>
+<div class="code"><pre class="code literal-block">flake8<span class="w"> </span>&lt;file_name.py&gt;
+</pre></div>
+
+<div class="code"><pre class="code literal-block"><span class="c1"># flake8: noqa</span>
+</pre></div>
+
+<h3>Use black</h3>
+<div class="code"><pre class="code literal-block">black<span class="w"> </span>&lt;file_name.py&gt;<span class="w"> </span>--check
+
+<span class="c1"># -S, --skip-string-normalization: Don't normalize string quotes or prefixes.</span>
+black<span class="w"> </span>&lt;file_name.py&gt;<span class="w"> </span>-S
+
+<span class="c1">#  --diff Don't write the files back, just output a</span>
+<span class="c1">#                                  diff for each file on stdout.</span>
+<span class="c1"># --color / --no-color            Show colored diff. Only applies when</span>
+<span class="c1">#                                  `--diff` is given.</span>
+black<span class="w"> </span>--diff<span class="w"> </span>--color<span class="w"> </span>main.py
+<span class="c1"># Format all files in dir</span>
+black<span class="w"> </span>.
+
+<span class="sb">```</span>text
+https://naereen.github.io/badges/
+
+<span class="c1">## Use bandit</span>
+
+<span class="sb">```</span>shell
+bandit<span class="w"> </span>-c<span class="w"> </span>pyproject.toml<span class="w"> </span>-r<span class="w"> </span>quiz/
+</pre></div>
+
+<h3>Use pytest</h3>
+<div class="code"><pre class="code literal-block"><span class="c1"># run all tests</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests
+
+<span class="c1"># run tests in `chat` directory</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/chat
+
+<span class="c1"># run only the quiz tests</span>
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/quiz/test_question_models.py
+
+<span class="c1"># run 2 tests concurrently</span>
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span>
+</pre></div>
+
+<h3>Task Runners, Build tools &amp; Pipelines</h3>
+<ul>
+<li><code>doit</code></li>
+<li><code>make</code></li>
+<li>plain <code>bash</code> script</li>
+<li><code>pypyr</code></li>
+</ul>
+</div>
+    
+
+</article><!--End of body content--><footer id="footer">
+            Contents © 2023         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

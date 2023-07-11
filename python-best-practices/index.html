@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Acquisition &amp; refreshment of knowledge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python best practices | Mastering Python</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://ivanprytula.github.io/python-the-snake-path/python-best-practices/">
+<link rel="icon" href="../py_icon_512x512.png" sizes="512x512">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ivan Prytula">
+<meta property="og:site_name" content="Mastering Python">
+<meta property="og:title" content="Python best practices">
+<meta property="og:url" content="https://ivanprytula.github.io/python-the-snake-path/python-best-practices/">
+<meta property="og:description" content="Acquisition &amp; refreshment of knowledge">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-07-11T03:15:48+02:00">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+
+            <span id="blog-title">Mastering Python</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../knowledge-scope" class="nav-link">Knowledge Scope</a>
+                </li>
+<li class="nav-item">
+<a href="../knowledge-base" class="nav-link">Knowledge Base</a>
+                </li>
+<li class="nav-item">
+<a href="../lake-of-links" class="nav-link">Lake of Links</a>
+                </li>
+<li class="nav-item">
+<a href="../cloud-of-terms" class="nav-link">Cloud of Terms</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://ivanprytula.github.io/python-the-snake-path/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search on this site only…" class="span2" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Python best practices</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <h2>General</h2>
+<ul>
+<li>One virtual environment per project</li>
+<li>Isolation</li>
+<li>Different projects have different dependency versions</li>
+<li>You don't want to mess up the system Python</li>
+<li>Structure your code and projects</li>
+<li>Package and module structure gives an overview about the project</li>
+<li>Modular design == better re-usability</li>
+<li>Utilize the capabilities of your editor</li>
+<li>Efficient and fluent development</li>
+<li>There's plenty of tools to make your daily programming easier, why would you not use them</li>
+<li>Use existing solutions</li>
+<li>Python Standard Library is extensive - and stable!</li>
+<li>There are 370k+ packages in PyPI</li>
+<li>Someone has most likely solved the problem you're trying to solve</li>
+<li>Spend 5 minutes doing a web search before starting to solve a new problem</li>
+<li>Learn how to debug efficiently</li>
+<li>You won't write completely stable code anyway - impossible looking conditions will occur</li>
+<li>When something is not working as expected, there are plenty of tools out there to help you figure out what's going on</li>
+<li>Test your code</li>
+<li>No surprises (especially in production)</li>
+<li>Make sure that everything works as expected</li>
+<li>Make sure that old stuff works as expected after introducing new features (regression)</li>
+<li>Tests give you confidence while refactoring</li>
+<li>Good tests demonstrate the use cases of application, i.e. they also document the implementation</li>
+<li>Write high quality code</li>
+<li>Easy to read</li>
+<li>Better maintainability</li>
+<li>Better quality == less bugs</li>
+<li>Use continuous integration and deployment</li>
+<li>Make sure the tests pass</li>
+<li>CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to skip on their local machines</li>
+<li>Make sure there's no linting errors</li>
+<li>Ideally, the place to test against all target versions and platforms</li>
+<li>Overall, CI is the last resort for automatically ensuring the quality</li>
+<li>Manual deployments are time consuming and error-prone, CD is automated and deterministic</li>
+<li>You want to automate as much as possible, human time is expensive</li>
+<li>Minimize the time required for code reviews, what could be detected with automatic tools, should be detected by using those tools, human time is expensive</li>
+<li>Unclutter the repo with <code>.gitignore</code>
+</li>
+<li>No passwords in the code: use configuration files or environment variables</li>
+<li>Have a README.md[.rst]</li>
+<li>If you use third-party libraries, have a requirements.txt/Pipfile/pyproject.toml</li>
+<li>Format your code</li>
+<li>Remove unused imports</li>
+<li>Remove unused variables</li>
+<li>Follow PEP-8 naming conventions</li>
+</ul>
+<h3>5 Tips To Achieve Low Coupling In Your Python Code</h3>
+<p><a href="https://www.youtube.com/watch?v=qR4-PBLUZNw">source link</a></p>
+<ul>
+<li>Tip 1: Avoid deep inheritance relationships</li>
+<li>Tip 2: Separate creating resources from using them</li>
+<li>Tip 3: Introduce abstractions</li>
+<li>Tip 4: Avoid inappropriate intimacy</li>
+<li>Tip 5: Introduce an intermediate data structure</li>
+</ul>
+<h3>Specifying Versions of a Package</h3>
+<p><a href="https://pipenv-fork.readthedocs.io/en/latest/basics.html#specifying-versions-of-a-package">Pipenv documentation</a></p>
+<p>The use of ~= is preferred over the == identifier as the latter prevents pip/pipenv/poetry/etc from updating the packages.
+It locks the major version of the package and install version 1.2 and any <strong>minor</strong> updates, but <strong>not 2.0</strong>.</p>
+<div class="code"><pre class="code literal-block">pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"requests~=1.2"</span>
+</pre></div>
+
+<h3>Testing</h3>
+<ol>
+<li>If it can break, it should be tested. This includes models, views, forms, templates, validators, and so forth.</li>
+<li>Each test should generally only test one function.</li>
+<li>Keep it simple. You do not want to have to write tests on top of other tests.</li>
+<li>Run tests whenever code is PULLed or PUSHed from the repo and in the staging environment before PUSHing to production.</li>
+<li>When upgrading to a newer version of Django:</li>
+<li>upgrade locally,</li>
+<li>run your test suite,</li>
+<li>fix bugs,</li>
+<li>PUSH to the repo and staging, and then</li>
+<li>test again in staging before shipping the code.</li>
+</ol>
+<h3>English in IT area</h3>
+<ol>
+<li>Emphasis on <strong>functional</strong> language, constant expressions that customers use in the work environment.</li>
+<li>Phrases like "could you be so kind", "I was wondering if you could", more "please" and "thank you" will help make English more polite.</li>
+<li>Objectives in the ability to <strong>communicate</strong> effectively. Therefore, it is important to emphasize the development of <strong>listening</strong> skills.</li>
+<li>Certificates of English - IELTS, TOEFL, FCE, CPE - adequate tests. It's good to have them valid/"fresh".</li>
+<li>Adequate evaluation of English level - speaking, writing, listening and reading.</li>
+</ol>
+</div>
+    
+
+</article><!--End of body content--><footer id="footer">
+            Contents © 2023         <a href="mailto:ivanprytula87@gmail.com">Ivan Prytula</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> - Icons from <a href="https://www.flaticon.com" title="free icons" target="_blank">Flaticon</a>
+            
+            
+
+            <!-- Scroll to top button -->
+            <button id="scrollToTopBtn" title="Go to top">☝️TOP </button>
+
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/custom.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

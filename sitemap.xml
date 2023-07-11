@@ -7,7 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/</loc>
-  <lastmod>2023-07-10T21:52:00Z</lastmod>
+  <lastmod>2023-07-11T01:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/Python%20best%20practices/</loc>
+  <lastmod>2023-07-11T01:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/archive.html</loc>
@@ -19,10 +23,6 @@
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/cloud-of-terms/</loc>
-  <lastmod>2023-07-06T22:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://ivanprytula.github.io/python-the-snake-path/in-progress/</loc>
   <lastmod>2023-07-06T22:46:00Z</lastmod>
  </url>
  <url>
@@ -382,11 +382,39 @@
   <lastmod>2023-07-11T00:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://ivanprytula.github.io/python-the-snake-path/naming-convention/</loc>
-  <lastmod>2023-07-06T22:46:00Z</lastmod>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/python%20best%20practices/</loc>
+  <lastmod>2023-07-11T01:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/python-best-practices/</loc>
+  <lastmod>2023-07-11T01:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/python_best_practices/</loc>
+  <lastmod>2023-07-11T01:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/show-me-the-code/</loc>
   <lastmod>2023-07-06T22:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/system-design/</loc>
+  <lastmod>2023-07-11T01:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/system_design/</loc>
+  <lastmod>2023-07-11T01:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/tools-shell-cheatsheet/</loc>
+  <lastmod>2023-07-11T01:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/tools_cheatsheet/</loc>
+  <lastmod>2023-07-11T00:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/tools_shell_cheatsheet/</loc>
+  <lastmod>2023-07-11T01:04:00Z</lastmod>
  </url>
 </urlset>
