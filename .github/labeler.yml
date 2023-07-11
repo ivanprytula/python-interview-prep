@@ -1,6 +1,6 @@
 # Add 'site_source' label to any change to snake_path files
 site_source:
-- any: ['snake_path/**/*', '!src/docs/']
+- any: ['snake_path/**/*']
 
 # Add 'repo' label to any root file changes EXCEPT for the snake_path/.github dirs
 repo_root:
