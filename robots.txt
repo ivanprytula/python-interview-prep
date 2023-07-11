@@ -1,4 +1,4 @@
-Sitemap: https://localhost.com/sitemapindex.xml
+Sitemap: https://ivanprytula.github.io/python-the-snake-path/sitemapindex.xml
 
 User-Agent: *
-Host: localhost.com
+Host: ivanprytula.github.io

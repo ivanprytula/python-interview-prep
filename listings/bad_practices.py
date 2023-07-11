@@ -16,7 +16,7 @@ def show_bad_ugLiesTFuncEveR_patterns(abc=42, foo=[]):
     """
     # === Not Using Context Managers for Files ===
     file_obj = open('abc.txt', 'r')
-    data = file_obj.read()
+    data = file_obj.read()  # noqa
     # do something exciting
     file_obj.close()
 
