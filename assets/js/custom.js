@@ -28,4 +28,6 @@ function scrollToTop() {
 }
 
 scrollToTopBtn.addEventListener("click", scrollToTop)
-// ...Scroll top button - END
+// ==================
+// Scroll top button - END
+// ==================

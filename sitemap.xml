@@ -7,11 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/</loc>
-  <lastmod>2023-07-11T01:42:00Z</lastmod>
+  <lastmod>2023-07-12T12:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/about-me/</loc>
+  <lastmod>2023-07-12T12:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ivanprytula.github.io/python-the-snake-path/about/</loc>
+  <lastmod>2023-07-12T12:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/archive.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/categories/</loc>
@@ -39,7 +47,7 @@
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/bad_practices.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/</loc>
@@ -47,111 +55,111 @@
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/Pythonlearn-15-Database-Handout.sql.html</loc>
-  <lastmod>2023-07-11T00:35:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/__init__.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/age_script.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/args_passing.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/ascii_transformation.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/basic_collections.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/check_palindrome.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/classplay.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/comprehensions.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/context_managers.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/continuous%20_countries.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/copying_objects.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/count_capital_letters.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/countries_visited.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/dash_m_option_shell.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/decorators.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/emaildb.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/employee_due_be_paid.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/employee_is_owed_overtime.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/encapsulation.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/enumerate_demo.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/example.txt.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/exhausting_iterators.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/file1.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/file_for_importing.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/fizz_buzz.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/get_pass_from_input.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/gorilla_lib/</loc>
@@ -159,167 +167,167 @@
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/gorilla_lib/__init__.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/hello.txt.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/help_dir.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/importing_with_asterisk.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/init_del_example.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/iterators_vs_lists.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/json_sandbox.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/keywordplay.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/main.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/many_to_many_demo.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/monkey_path_module_func.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/most_frequent_word.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/movie_budgets.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/mutable_default_args.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/numpybasics.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/oop_explorations.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/operator_overloading.md.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/pass_keyword.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/passing_args.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/performance_improvement.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/polymorphism.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/print_closer_look.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/print_star_triangle.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/python_zen.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/regex_sandbox.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/remove_empty_lines.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/requirements.txt.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/scopes.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/setattr_getattr.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/shuffle_list.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/simple_browser_low_level_sockets.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/simple_browser_with_urllib.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/simple_earnings_calculator.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/skip_for_flake.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/string_of_numbers.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/structuresplay.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/switch_implementation.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/ternary_conditionals.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/test.md.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/treasure_hunters.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/tricksandfuncs.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/type_hinting/</loc>
@@ -327,55 +335,55 @@
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/type_hinting/__init__.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/type_hinting/aka_lib.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/type_hinting/aka_lib.pyi.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/type_hinting/main.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/typeplay.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/underscore_placeholders.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/unpacking_sequences.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/very_big_text.txt.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/xml1.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/xml2.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/exercises/zip%28%29_demo.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/good_practices.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/listings/snake_walks_the_big_story.py.html</loc>
-  <lastmod>2023-07-11T00:32:00Z</lastmod>
+  <lastmod>2023-07-12T12:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ivanprytula.github.io/python-the-snake-path/python-best-practices/</loc>
