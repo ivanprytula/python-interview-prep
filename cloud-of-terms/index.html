@@ -111,10 +111,7 @@ bg-dark
         const pauseResume = (e, tc) => {
             if (e.target.className === 'tagcloud--item') {
                 tc.pause();
-
                 e.target.setAttribute('title', termsWithDefinitions[e.target.innerText]);
-                // debugger;
-
             } else {
                 tc.resume();
             }
@@ -122,7 +119,7 @@ bg-dark
 
         rootEl.addEventListener('click', (e) => clickEventHandler(e));
 
-        ['mousemove', 'touchmove', 'touchstart', 'touchend'].forEach(eventType => {
+        ['mouseover', 'mouseout', 'touchstart', 'touchend'].forEach(eventType => {
             rootEl.addEventListener(eventType, e => pauseResume(e, tc));
         });
 
