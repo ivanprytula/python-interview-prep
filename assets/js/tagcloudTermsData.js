@@ -29,7 +29,9 @@ let termsG = {
     GitHub: "GitHub is a provider of Internet hosting for software development and version control using Git.",
     GitLab: "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc.",
 };
-let termsH = {};
+let termsH = {
+    HTTP: "The Hypertext Transfer Protocol is an application protocol for distributed, collaborative, hypermedia information systems.",
+};
 let termsI = {};
 let termsJ = {};
 let termsK = {};
@@ -46,7 +48,9 @@ let termsP = {
 let termsQ = {};
 let termsR = {};
 let termsS = {};
-let termsT = {};
+let termsT = {
+    TCP_IP: "Transmission Control Protocol/Internet Protocol. TCP is the component that collects and reassembles the packets of data, while IP is responsible for making sure the packets are sent to the right destination",
+};
 let termsU = {
     UNIX: "Unix is a family of multitasking, multi-user computer operating systems that derive from the original AT&T Unix.",
 };
